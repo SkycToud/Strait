@@ -1,0 +1,50 @@
+[
+  {
+    "id": "websyllabus",
+    "title": "学務情報システム",
+    "description": "履修登録・成績照会はこちらから",
+    "url": "https://gakumu-web1.tufs.ac.jp/campusweb/campusportal.do",
+    "category": "academic",
+    "icon": "school"
+  },
+  {
+    "id": "moodle",
+    "title": "TUFS Moodle",
+    "description": "授業資料のダウンロード、課題の提出",
+    "url": "https://moodle.tufs.ac.jp/",
+    "category": "academic",
+    "icon": "laptop"
+  },
+  {
+    "id": "tufs-mail",
+    "title": "大学メール (Google Workspace)",
+    "description": "大学からの公式連絡用メール",
+    "url": "https://mail.google.com/a/tufs.ac.jp",
+    "category": "tools",
+    "icon": "mail"
+  },
+  {
+    "id": "study-abroad",
+    "title": "留学支援情報",
+    "description": "協定校一覧や奨学金、留学相談について",
+    "url": "https://www.tufs.ac.jp/student/studyabroad/",
+    "category": "support",
+    "icon": "flight_takeoff"
+  },
+  {
+    "id": "library",
+    "title": "附属図書館 OPAC",
+    "description": "蔵書検索およびMyLibraryへのアクセス",
+    "url": "https://opac.tufs.ac.jp/",
+    "category": "academic",
+    "icon": "menu_book"
+  },
+  {
+    "id": "career",
+    "title": "グローバル・キャリア・センター",
+    "description": "就職活動支援、インターンシップ情報",
+    "url": "https://www.tufs.ac.jp/student/career/",
+    "category": "support",
+    "icon": "work"
+  }
+]

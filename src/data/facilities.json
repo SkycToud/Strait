@@ -1,0 +1,67 @@
+[
+  {
+    "id": "library",
+    "name": "附属図書館",
+    "type": "study",
+    "hours": {
+      "weekdays": "09:00 - 21:00",
+      "saturday": "10:00 - 18:00",
+      "sunday": "Closed",
+      "holidays": "Closed"
+    },
+    "note": "試験期間中は延長開館します",
+    "icon": "library"
+  },
+  {
+    "id": "cafeteria",
+    "name": "大学会館（生協食堂）",
+    "type": "food",
+    "hours": {
+      "weekdays": "11:00 - 19:30",
+      "saturday": "11:30 - 14:00",
+      "sunday": "Closed",
+      "holidays": "Closed"
+    },
+    "note": "昼休みの時間帯は大変混雑します",
+    "icon": "restaurant"
+  },
+  {
+    "id": "coop-store",
+    "name": "生協購買（ハッチポッチ）",
+    "type": "store",
+    "hours": {
+      "weekdays": "08:30 - 18:30",
+      "saturday": "Closed",
+      "sunday": "Closed",
+      "holidays": "Closed"
+    },
+    "note": "文房具、書籍、軽食の販売",
+    "icon": "store"
+  },
+  {
+    "id": "agora",
+    "name": "研究講義棟 アゴラ・グローバル",
+    "type": "study",
+    "hours": {
+      "weekdays": "08:30 - 21:00",
+      "saturday": "08:30 - 18:00",
+      "sunday": "Closed",
+      "holidays": "Closed"
+    },
+    "note": "自習スペース利用可能",
+    "icon": "meeting_room"
+  },
+  {
+    "id": "circle-building",
+    "name": "サークル棟",
+    "type": "extracurricular",
+    "hours": {
+      "weekdays": "08:00 - 21:30",
+      "saturday": "08:00 - 21:30",
+      "sunday": "08:00 - 21:30",
+      "holidays": "08:00 - 21:30"
+    },
+    "note": "登録済み団体のみ利用可",
+    "icon": "groups"
+  }
+]

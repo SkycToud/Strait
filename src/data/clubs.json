@@ -329,13 +329,6 @@
     "description": "Manga Creation & Study"
   },
   {
-    "id": "literatureclub",
-    "nameJa": "文芸部",
-    "nameEn": "Literature Club",
-    "category": "Music & Arts",
-    "description": "Creative Writing & Reading"
-  },
-  {
     "id": "xbull",
     "nameJa": "お笑いサークルXBULL",
     "nameEn": "XBULL",
@@ -551,36 +544,6 @@
     "instagram": "https://www.instagram.com/munkuniken_shinkan/"
   },
   {
-    "id": "syriastudiesclub",
-    "nameJa": "Syria Studies Club",
-    "nameEn": "Syria Studies Club",
-    "category": "Japanese Culture / Language / Social",
-    "description": "Middle Eastern Studies",
-    "instagram": "https://www.instagram.com/tufsyria/"
-  },
-  {
-    "id": "pendaafrica",
-    "nameJa": "Penda Africa",
-    "nameEn": "Penda Africa",
-    "category": "Japanese Culture / Language / Social",
-    "description": "African Studies",
-    "instagram": "https://www.instagram.com/tufs_penda/"
-  },
-  {
-    "id": "estudamosportugus",
-    "nameJa": "Estudamos Português!",
-    "nameEn": "Estudamos Português!",
-    "category": "Japanese Culture / Language / Social",
-    "description": "Portuguese Studies"
-  },
-  {
-    "id": "russiancirclelyubov",
-    "nameJa": "Russian Circle Lyubov",
-    "nameEn": "Russian Circle Lyubov",
-    "category": "Japanese Culture / Language / Social",
-    "description": "Russian Culture & Language"
-  },
-  {
     "id": "tufpost",
     "nameJa": "TUFPOST",
     "nameEn": "TUFPOST",
@@ -651,21 +614,6 @@
     "xUrl": "https://x.com/tufsPeekABoo"
   },
   {
-    "id": "",
-    "nameJa": "くらふと",
-    "nameEn": "くらふと",
-    "category": "Volunteer & Other Organizations",
-    "description": "Education",
-    "instagram": "https://www.instagram.com/tufs_kraft/"
-  },
-  {
-    "id": "",
-    "nameJa": "くりふ",
-    "nameEn": "くりふ",
-    "category": "Volunteer & Other Organizations",
-    "description": "Education Support"
-  },
-  {
     "id": "femmecaf",
     "nameJa": "Femme Café",
     "nameEn": "Femme Café",
@@ -698,14 +646,6 @@
     "instagram": "https://www.instagram.com/mres_habitatforhumanity_tufs/"
   },
   {
-    "id": "",
-    "nameJa": "外語祭実行委員会",
-    "nameEn": "外語祭実行委員会",
-    "category": "Volunteer & Other Organizations",
-    "description": "Event Planning",
-    "instagram": "https://www.instagram.com/tufs_gaigosai/"
-  },
-  {
     "id": "tucos",
     "nameJa": "生協学生委員会 TuCos",
     "nameEn": "生協学生委員会 TuCos",
@@ -714,10 +654,52 @@
     "instagram": "https://www.instagram.com/tufs_tucos/"
   },
   {
-    "id": "",
+    "id": "studentpublicrelationsambassador",
     "nameJa": "学生広報アンバサダー",
-    "nameEn": "学生広報アンバサダー",
+    "nameEn": "Student Public Relations Ambassador",
     "category": "Volunteer & Other Organizations",
     "description": "Public Relations"
+  },
+  {
+    "id": "judoclub",
+    "nameJa": "柔道部",
+    "nameEn": "Judo Club",
+    "category": "Martial Arts",
+    "description": "Traditional Japanese martial art"
+  },
+  {
+    "id": "handballclub",
+    "nameJa": "ハンドボール部",
+    "nameEn": "Handball Club",
+    "category": "Ball Sports",
+    "description": "Team handball sport"
+  },
+  {
+    "id": "vacs",
+    "nameJa": "声優放送研究会",
+    "nameEn": "VACS",
+    "category": "Music & Arts",
+    "description": "Voice acting and broadcasting"
+  },
+  {
+    "id": "tosfia",
+    "nameJa": "国際交流サークル",
+    "nameEn": "TOSFIA",
+    "category": "Language & Social Studies",
+    "description": "International exchange and cultural activities"
+  },
+  {
+    "id": "sentosociety",
+    "nameJa": "銭湯サークル",
+    "nameEn": "Sento Society",
+    "category": "Hobbies",
+    "description": "Public bathhouse culture and visits"
+  },
+  {
+    "id": "trickytrip",
+    "nameJa": "鉄道研究会",
+    "nameEn": "Tricky Trip",
+    "category": "Hobbies",
+    "description": "Railway studies and enthusiasts"
   }
 ]

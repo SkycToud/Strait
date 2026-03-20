@@ -3,143 +3,88 @@
     "id": "research-lecture",
     "name": "研究講義棟",
     "type": "study",
-    "hours": {
-      "weekdays": "08:30 - 21:00",
-      "saturday": "08:30 - 18:00",
-      "sunday": "Closed",
-      "holidays": "Closed"
-    },
     "note": "講義と研究活動の拠点",
-    "icon": "school"
+    "icon": "school",
+    "accuracy": "medium"
   },
   {
     "id": "library",
     "name": "附属図書館",
     "type": "study",
-    "hours": {
-      "weekdays": "09:00 - 21:00",
-      "saturday": "10:00 - 18:00",
-      "sunday": "Closed",
-      "holidays": "Closed"
-    },
     "note": "試験期間中は延長開館します",
-    "icon": "library"
+    "icon": "library",
+    "accuracy": "high"
   },
   {
     "id": "circle-building",
     "name": "サークル棟",
     "type": "extracurricular",
-    "hours": {
-      "weekdays": "08:00 - 21:30",
-      "saturday": "08:00 - 21:30",
-      "sunday": "08:00 - 21:30",
-      "holidays": "08:00 - 21:30"
-    },
     "note": "登録済み団体のみ利用可",
-    "icon": "groups"
+    "icon": "groups",
+    "accuracy": "medium"
   },
   {
     "id": "agora",
     "name": "アゴラグローバル",
     "type": "study",
-    "hours": {
-      "weekdays": "08:30 - 21:00",
-      "saturday": "08:30 - 18:00",
-      "sunday": "Closed",
-      "holidays": "Closed"
-    },
     "note": "自習スペース利用可能",
-    "icon": "meeting_room"
+    "icon": "meeting_room",
+    "accuracy": "low"
   },
   {
     "id": "meal-cafeteria",
     "name": "一階食堂ミール",
     "type": "food",
-    "hours": {
-      "weekdays": "11:00 - 19:30",
-      "saturday": "11:30 - 14:00",
-      "sunday": "Closed",
-      "holidays": "Closed"
-    },
     "note": "定食と軽食を提供",
-    "icon": "restaurant"
+    "icon": "restaurant",
+    "accuracy": "high"
   },
   {
     "id": "hatchpotchi",
     "name": "購買書籍部ハッチポッチ",
     "type": "store",
-    "hours": {
-      "weekdays": "08:30 - 18:30",
-      "saturday": "Closed",
-      "sunday": "Closed",
-      "holidays": "Closed"
-    },
     "note": "文房具、書籍、軽食の販売",
-    "icon": "store"
+    "icon": "store",
+    "accuracy": "high"
   },
   {
     "id": "savoru-cafeteria",
     "name": "2階食堂さぼおる",
     "type": "food",
-    "hours": {
-      "weekdays": "11:00 - 19:30",
-      "saturday": "11:30 - 14:00",
-      "sunday": "Closed",
-      "holidays": "Closed"
-    },
     "note": "カフェメニューと軽食を提供",
-    "icon": "cafe"
+    "icon": "cafe",
+    "accuracy": "high"
   },
   {
     "id": "student-affairs",
     "name": "教務・学生・留学生課",
     "type": "administration",
-    "hours": {
-      "weekdays": "08:30 - 17:15",
-      "saturday": "Closed",
-      "sunday": "Closed",
-      "holidays": "Closed"
-    },
     "note": "教務、学生支援、留学生サポート",
-    "icon": "office"
+    "icon": "office",
+    "accuracy": "medium"
   },
   {
     "id": "admissions-office",
     "name": "入試課",
     "type": "administration",
-    "hours": {
-      "weekdays": "08:30 - 17:15",
-      "saturday": "Closed",
-      "sunday": "Closed",
-      "holidays": "Closed"
-    },
     "note": "入学試験に関する手続き",
-    "icon": "office"
+    "icon": "office",
+    "accuracy": "medium"
   },
   {
     "id": "accounting-office",
     "name": "会計課",
     "type": "administration",
-    "hours": {
-      "weekdays": "08:30 - 17:15",
-      "saturday": "Closed",
-      "sunday": "Closed",
-      "holidays": "Closed"
-    },
     "note": "学費や経費に関する手続き",
-    "icon": "office"
+    "icon": "office",
+    "accuracy": "medium"
   },
   {
     "id": "certificate-machine",
     "name": "証明書発行機",
     "type": "service",
-    "hours": {
-      "weekdays": "08:30 - 20:00",
-      "saturday": "09:00 - 17:00",
-      "sunday": "09:00 - 17:00",
-      "holidays": "09:00 - 17:00"
-    },
     "note": "成績証明書、卒業証明書等を発行",
-    "icon": "print"
+    "icon": "print",
+    "accuracy": "medium"
   }
 ]

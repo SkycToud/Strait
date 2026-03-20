@@ -7,7 +7,8 @@ const transformedEvents = calendarData.events.map((event, index) => ({
   endDate: event.endDate,
   title: event.label,
   type: event.endDate ? '期間' : '単日',
-  description: ''
+  description: '',
+  isSemesterSchedule: event.isSemesterSchedule || false
 }));
 
 export default function CalendarPage() {

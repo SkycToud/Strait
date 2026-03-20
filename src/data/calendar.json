@@ -110,12 +110,7 @@
       "endDate": "2026-06-05",
       "label": "9月卒業追加申請受付"
     },
-    {
-      "startDate": "2026-06-01",
-      "endDate": "2026-06-10",
-      "label": "第2年次学生コース・指導教員希望届受付【国際社会学部】"
-    },
-    {
+     {
       "startDate": "2026-07-09",
       "endDate": "2026-07-10",
       "label": "卒業論文・卒業研究受付（9月卒業）"
@@ -148,27 +143,8 @@
       "label": "夏季一斉休業"
     },
     {
-      "startDate": "2026-08-10",
-      "endDate": "2026-08-20",
-      "label": "春学期成績Web閲覧開始"
-    },
-    {
-      "startDate": "2026-08-10",
-      "endDate": "2026-08-20",
-      "label": "春学期成績問い合わせ期間（9月卒業予定者対象）"
-    },
-    {
-      "startDate": "2026-09-01",
-      "endDate": "2026-09-10",
-      "label": "春学期成績問い合わせ期間（9月卒業予定者以外の学生対象）"
-    },
-    {
       "date": "2026-09-11",
       "label": "夏学期授業終了"
-    },
-    {
-      "date": "2026-09-21",
-      "label": "卒業式（9月卒業）"
     },
     {
       "startDate": "2026-09-07",
@@ -195,16 +171,6 @@
       "label": "秋学期授業開始"
     },
     {
-      "startDate": "2026-09-25",
-      "endDate": "2026-10-05",
-      "label": "夏学期成績Web閲覧開始"
-    },
-    {
-      "startDate": "2026-09-25",
-      "endDate": "2026-10-05",
-      "label": "夏学期成績問い合わせ期間"
-    },
-    {
       "startDate": "2026-10-05",
       "endDate": "2026-10-09",
       "label": "履修登録修正期間"
@@ -226,21 +192,6 @@
       "startDate": "2026-11-18",
       "endDate": "2026-11-24",
       "label": "外語祭 (18日準備, 24日後片付け)"
-    },
-    {
-      "startDate": "2026-12-01",
-      "endDate": "2026-12-05",
-      "label": "英語力テスト（1年次学生）"
-    },
-    {
-      "startDate": "2026-12-01",
-      "endDate": "2026-12-10",
-      "label": "第2年次学生コース・指導教員希望届受付【言語文化学部】"
-    },
-    {
-      "startDate": "2026-12-01",
-      "endDate": "2026-12-10",
-      "label": "第3年次学生指導教員希望届受付【国際日本学部】"
     },
     {
       "date": "2026-12-23",
@@ -304,26 +255,6 @@
       "label": "冬学期授業終了"
     },
     {
-      "startDate": "2027-02-05",
-      "endDate": "2027-02-15",
-      "label": "秋学期成績Web閲覧開始"
-    },
-    {
-      "startDate": "2027-02-05",
-      "endDate": "2027-02-15",
-      "label": "秋学期成績問い合わせ期間"
-    },
-    {
-      "startDate": "2027-02-20",
-      "endDate": "2027-02-28",
-      "label": "冬学期成績Web閲覧開始"
-    },
-    {
-      "startDate": "2027-02-20",
-      "endDate": "2027-02-28",
-      "label": "冬学期成績問い合わせ期間"
-    },
-    {
       "startDate": "2027-02-24",
       "endDate": "2027-02-25",
       "label": "全学臨時休講（入構制限日）"
@@ -331,10 +262,6 @@
     {
       "date": "2027-02-25",
       "label": "第2次学力試験（前期日程）"
-    },
-    {
-      "date": "2027-02-28",
-      "label": "卒業予定者発表"
     },
     {
       "startDate": "2027-03-11",
@@ -346,16 +273,98 @@
       "label": "第2次学力試験（後期日程）"
     },
     {
-      "date": "2027-03-15",
-      "label": "卒業者発表・進級者発表"
-    },
-    {
-      "date": "2027-03-25",
-      "label": "卒業式"
-    },
-    {
       "date": "2027-03-31",
       "label": "学年終わり"
+    },
+    {
+      "date": "2026-06-上旬",
+      "label": "第2年次学生コース・指導教員希望届受付【国際社会学部】",
+      "isSemesterSchedule": true
+    },
+    {
+      "date": "2026-08-中旬",
+      "label": "春学期成績 Web 閲覧開始",
+      "isSemesterSchedule": true
+    },
+    {
+      "date": "2026-08-中旬",
+      "label": "春学期成績問い合わせ期間（9月卒業予定者対象）",
+      "isSemesterSchedule": true
+    },
+    {
+      "date": "2026-09-上旬",
+      "label": "春学期成績問い合わせ期間（9月卒業予定者以外の学生対象）",
+      "isSemesterSchedule": true
+    },
+    {
+      "date": "2026-09-下旬",
+      "label": "卒業式（9月卒業）",
+      "isSemesterSchedule": true
+    },
+    {
+      "startDate": "2026-09-末頃",
+      "endDate": "2026-10-初旬",
+      "label": "夏学期成績 Web 閲覧開始",
+      "isSemesterSchedule": true
+    },
+    {
+      "startDate": "2026-09-末頃",
+      "endDate": "2026-10-初旬",
+      "label": "夏学期成績問い合わせ期間",
+      "isSemesterSchedule": true
+    },
+    {
+      "date": "2026-12-初旬",
+      "label": "英語力テスト（1年次学生）",
+      "isSemesterSchedule": true
+    },
+    {
+      "date": "2026-12-上旬",
+      "label": "第2年次学生コース・指導教員希望届受付【言語文化学部】",
+      "isSemesterSchedule": true
+    },
+    {
+      "date": "2026-12-上旬",
+      "label": "第3年次学生指導教員希望届受付【国際日本学部】",
+      "isSemesterSchedule": true
+    },
+    {
+      "startDate": "2027-02-上旬",
+      "endDate": "2027-02-中旬",
+      "label": "秋学期成績 Web 閲覧開始",
+      "isSemesterSchedule": true
+    },
+    {
+      "startDate": "2027-02-上旬",
+      "endDate": "2027-02-中旬",
+      "label": "秋学期成績問い合わせ期間",
+      "isSemesterSchedule": true
+    },
+    {
+      "date": "2027-02-下旬",
+      "label": "冬学期成績 Web 閲覧開始",
+      "isSemesterSchedule": true
+    },
+    {
+      "date": "2027-02-下旬",
+      "label": "冬学期成績問い合わせ期間",
+      "isSemesterSchedule": true
+    },
+    {
+      "startDate": "2027-02-末頃",
+      "endDate": "2027-03-初旬",
+      "label": "卒業予定者発表",
+      "isSemesterSchedule": true
+    },
+    {
+      "date": "2027-03-中旬",
+      "label": "卒業者発表・進級者発表",
+      "isSemesterSchedule": true
+    },
+    {
+      "date": "2027-03-下旬",
+      "label": "卒業式",
+      "isSemesterSchedule": true
     }
   ]
 }

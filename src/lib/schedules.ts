@@ -30,6 +30,8 @@ export type FacilityData = {
     unpublishedFrom?: string; // YYYY-MM-DD
 };
 
+import calendarData from '../data/calendar.json';
+
 // Helper Functions
 const times = (start: string, end: string) => [{ start, end }];
 
@@ -95,56 +97,26 @@ const COMMON_ADMIN_RULES: ScheduleRule[] = [
 
     // Weekends are closed
     ...Rules.closedWeekends(),
-];
-
-// University Events Rules
-const UNIVERSITY_EVENTS_RULES: ScheduleRule[] = [
-    Rules.date('2026-01-05', [], '授業再開'),
-    Rules.date('2026-01-08', [], '履修登録･修正期間(冬学期)'),
-    Rules.date('2026-01-09', [], '履修登録･修正期間(冬学期) / 卒業論文・卒業研究 提出締切'),
-    Rules.date('2026-01-13', [], '金曜授業実施日'),
-    Rules.date('2026-01-15', [], '秋学期授業終了'),
-    Rules.closedDate('2026-01-16', 'note.class_cancellation_restricted'),
-    Rules.closedRange('2026-01-17', '2026-01-18', 'note.class_cancellation_restricted'),
-    Rules.range('2026-01-19', '2026-01-23', [], '秋学期 定期試験期間'),
-    Rules.date('2026-01-26', [], '冬学期 授業開始'),
-
-    // February 2026
-    Rules.date('2026-02-02', [], '秋学期成績Web閲覧開始(9:00) / 問い合わせ期間開始'),
-    Rules.range('2026-02-03', '2026-02-05', [], '秋学期成績問い合わせ期間'),
-    Rules.date('2026-02-06', [], '冬学期 授業終了 / 秋学期成績問い合わせ期限(~16:30)'),
-    Rules.date('2026-02-16', [], '冬学期成績Web閲覧開始(9:00) / 問い合わせ期間開始'),
-    Rules.range('2026-02-17', '2026-02-19', [], '冬学期成績問い合わせ期間'),
-    Rules.date('2026-02-20', [], '冬学期成績問い合わせ期限(~16:30)'),
-    Rules.closedDate('2026-02-24', 'note.class_cancellation_restricted'),
-    Rules.closedDate('2026-02-25', '第2次学力試験（前期）/ 入構制限'),
-
-    // March 2026
-    Rules.closedRange('2026-03-11', '2026-03-12', 'note.class_cancellation_restricted'),
-    Rules.date('2026-03-12', [], '第2次学力試験（後期）'),
-    Rules.range('2026-03-11', '2026-03-20', [], '卒業者・進級者発表'),
-    Rules.date('2026-03-20', [], '卒業式（学位記授与式）'),
-    Rules.date('2026-03-31', [], '学年終わり'),
-
-    // April 2026
-    Rules.date('2026-04-01', [], '新入生オリエンテーション（履修ガイダンス） / 春学期開始'),
-    Rules.date('2026-04-02', [], '入学時定期健康診断'),
-    Rules.date('2026-04-03', [], '（在学生）定期健康診断'),
-    Rules.date('2026-04-04', [], '入学式'),
-    Rules.date('2026-04-05', [], '新入生歓迎行事'),
-    Rules.date('2026-04-06', [], '（在学生）定期健康診断'),
-    Rules.date('2026-04-07', [], '履修相談コーナー / 履修登録期間（全科目）開始'),
-    Rules.range('2026-04-08', '2026-04-14', [], '春学期授業開始 / 履修登録期間（全科目）'),
-];
+]
 
 // Restricted Entry Rules for Lecture Building
-const RESTRICTED_ENTRY_RULES = UNIVERSITY_EVENTS_RULES.filter((r) => {
-    if (!r.note) return false;
-    return r.note === 'note.class_cancellation_restricted' || r.note.includes('入構制限');
-}).map(r => ({
-    ...r,
-    isClosed: true,
-}));
+const RESTRICTED_ENTRY_RULES: ScheduleRule[] = calendarData.events
+    .filter(event => 
+        event.label && (
+            event.label.includes('入構制限日') || 
+            event.label.includes('大学入学共通テスト') ||
+            event.label.includes('第2次学力試験')
+        )
+    )
+    .map(event => {
+        if (event.startDate && event.endDate) {
+            return Rules.closedRange(event.startDate, event.endDate, event.label);
+        } else if (event.date) {
+            return Rules.closedDate(event.date, event.label);
+        }
+        return null;
+    })
+    .filter((rule): rule is ScheduleRule => rule !== null);
 
 export const CONST_SCHEDULE_DATA: Record<FacilityId, FacilityData> = {
     'research-lecture': {

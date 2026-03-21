@@ -1,17 +1,53 @@
+'use client';
 import Link from 'next/link';
-import { Waves } from 'lucide-react';
+import { usePathname } from 'next/navigation';
+import { Home, Calendar, Building2, Users, Link2 } from 'lucide-react';
+import { cn } from '@/lib/utils';
+
+const navItems = [
+  { name: 'Home', href: '/', icon: Home },
+  { name: 'Calendar', href: '/calendar', icon: Calendar },
+  { name: 'Facilities', href: '/facilities', icon: Building2 },
+  { name: 'Clubs', href: '/clubs', icon: Users },
+  { name: 'Links', href: '/links', icon: Link2 },
+];
 
 export default function Header() {
+  const pathname = usePathname();
+
+  // Highlight matches even for subpaths e.g /calendar/detailed
+  const isActivePath = (path: string) => {
+    if (path === '/') return pathname === '/';
+    return pathname?.startsWith(path);
+  };
+
   return (
-    <header className="fixed top-0 left-0 right-0 h-16 glass z-50 flex items-center px-4 sm:px-6 lg:px-8">
-      <div className="max-w-5xl mx-auto w-full flex items-center">
-        <Link href="/" className="flex items-center gap-2 transition-transform hover:scale-105 group">
-          <div className="bg-accent text-white p-1.5 rounded-lg shadow-md group-hover:shadow-lg transition-all">
-            <Waves className="w-5 h-5" />
-          </div>
-          <span className="text-xl font-bold tracking-tight text-gradient">Strait</span>
-        </Link>
+    <nav className="fixed top-0 w-full z-50 glass-nav shadow-sm shadow-slate-200/50">
+      <div className="flex justify-between items-center h-16 px-6 md:px-12 max-w-[1440px] mx-auto">
+        <div className="text-2xl font-bold tracking-tighter text-primary">Strait</div>
+        
+        {/* Desktop Navigation */}
+        <div className="hidden md:flex items-center gap-8">
+          {navItems.map((item) => {
+            const isActive = isActivePath(item.href);
+            const Icon = item.icon;
+            
+            return (
+              <Link
+                key={item.name}
+                href={item.href}
+                className={cn(
+                  isActive 
+                    ? "text-primary font-semibold border-b-2 border-primary pb-1" 
+                    : "text-slate-600 font-medium hover:text-primary transition-colors"
+                )}
+              >
+                {item.name}
+              </Link>
+            );
+          })}
+        </div>
       </div>
-    </header>
+    </nav>
   );
 }

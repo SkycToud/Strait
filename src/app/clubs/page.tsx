@@ -18,8 +18,8 @@ export default function ClubsPage() {
   return (
     <div className="space-y-8">
       <header className="animate-fade-in text-center p-2 mb-4">
-        <h1 className="text-3xl font-extrabold text-slate-900 dark:text-white mb-3">サークル情報</h1>
-        <p className="text-slate-600 dark:text-slate-400">見たいカテゴリを選んでください。</p>
+        <h1 className="text-3xl font-extrabold text-foreground mb-3">サークル情報</h1>
+        <p className="text-foreground/80">見たいカテゴリを選んでください。</p>
       </header>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
@@ -37,10 +37,10 @@ export default function ClubsPage() {
                   {getCategoryIcon(category)}
                 </div>
                 <div className="flex-1">
-                  <h2 className="text-lg font-bold text-slate-800 dark:text-slate-100 group-hover:text-accent transition-colors">{category}</h2>
-                  <p className="text-sm text-slate-500 mt-1">{count} 団体</p>
+                  <h2 className="text-lg font-bold text-foreground group-hover:text-accent transition-colors">{category}</h2>
+                  <p className="text-sm text-foreground/70 mt-1">{count} 団体</p>
                 </div>
-                <ArrowRight className="w-5 h-5 text-slate-300 opacity-0 group-hover:opacity-100 group-hover:text-accent transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
+                <ArrowRight className="w-5 h-5 text-foreground/40 opacity-0 group-hover:opacity-100 group-hover:text-accent transform -translate-x-2 group-hover:translate-x-0 transition-all duration-300" />
               </div>
             </Link>
           );

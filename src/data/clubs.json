@@ -5,7 +5,58 @@
     "nameEn": "Floorball Club",
     "category": "Ball Sports",
     "description": "Indoor hockey-like sport",
-    "instagram": "https://www.instagram.com/tufs_floorball/"
+    "thumbnail": "/images/clubs/floorball.jpg",
+    "instagram": "https://www.instagram.com/tufs_floorball/",
+    "overview": {
+      "philosophy": "誰もが楽しめるインドアホッケースポーツを通じて、仲間と共に成長する",
+      "guidelines": "初心者から経験者まで、技術向上とチームワークを重視",
+      "activities": "定期練習、練習試合、インカレ大会参加"
+    },
+    "operations": {
+      "executiveMembers": [
+        "主将",
+        "副主将",
+        "会計",
+        "庶務"
+      ],
+      "organization": "年2回の役員選挙で運営"
+    },
+    "membership": {
+      "memberCount": 25,
+      "yearDistribution": [
+        "1年生: 8人",
+        "2年生: 7人",
+        "3年生: 6人",
+        "4年生: 4人"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "週3回（火・木・土曜日）",
+      "location": "体育館、屋外グラウンド",
+      "annualPlan": [
+        "4月: 新歓練習",
+        "6月: 春季大会",
+        "9月: 新歓戦",
+        "11月: 秋季大会",
+        "2月: 卒業戦"
+      ]
+    },
+    "recruitment": {
+      "appeal": "未経験者歓迎！楽しく運動しながら友達が作れる",
+      "challenges": "試合前の練習は大変ですが、成長実感があります",
+      "applicationFlow": "新歓説明会参加→体験練習→入会手続き",
+      "welcomeEvents": "春新歓：4月上旬、秋新歓：9月中旬",
+      "annualFee": "年間5000円（保険費・備品費含む）",
+      "hasSelection": false,
+      "targetAudience": "全学部・全学年、未経験者歓迎",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "flyingdiscclub",
@@ -13,8 +64,49 @@
     "nameEn": "Flying Disc Club",
     "category": "Ball Sports",
     "description": "Ultimate frisbee",
+    "thumbnail": "/images/clubs/flyingdisc.jpg",
     "metadata": "W/M",
-    "instagram": "https://www.instagram.com/tufs_flyingdisc/"
+    "instagram": "https://www.instagram.com/tufs_flyingdisc/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "lacrosseclub",
@@ -22,7 +114,48 @@
     "nameEn": "Lacrosse Club",
     "category": "Ball Sports",
     "description": "Regular practice, matches",
-    "instagram": "https://www.instagram.com/tufs_lacrosse/"
+    "thumbnail": "/images/clubs/lacrosse.jpg",
+    "instagram": "https://www.instagram.com/tufs_lacrosse/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "futsalclub",
@@ -30,7 +163,48 @@
     "nameEn": "Futsal Club",
     "category": "Ball Sports",
     "description": "Indoor soccer",
-    "instagram": "https://www.instagram.com/tufs_futsal/"
+    "thumbnail": "/images/clubs/futsal.jpg",
+    "instagram": "https://www.instagram.com/tufs_futsal/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "tabletennisclub",
@@ -38,7 +212,47 @@
     "nameEn": "Table Tennis Club",
     "category": "Ball Sports",
     "description": "Daily practice",
-    "instagram": "https://www.instagram.com/tufs_tabletennis/"
+    "instagram": "https://www.instagram.com/tufs_tabletennis/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "badmintonclub",
@@ -46,7 +260,47 @@
     "nameEn": "Badminton Club",
     "category": "Ball Sports",
     "description": "Regular practice",
-    "instagram": "https://www.instagram.com/tufs_badminton/"
+    "instagram": "https://www.instagram.com/tufs_badminton/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "volleyballclub",
@@ -55,7 +309,47 @@
     "category": "Ball Sports",
     "description": "Practice, league matches",
     "metadata": "W/M",
-    "instagram": "https://www.instagram.com/tufsmvb/"
+    "instagram": "https://www.instagram.com/tufsmvb/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "basketballclub",
@@ -63,7 +357,47 @@
     "nameEn": "Basketball Club",
     "category": "Ball Sports",
     "description": "Daily practice",
-    "instagram": "https://www.instagram.com/tufs_waves/"
+    "instagram": "https://www.instagram.com/tufs_waves/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "tennisclubs",
@@ -71,7 +405,47 @@
     "nameEn": "Tennis Clubs",
     "category": "Ball Sports",
     "description": "Practice, tournaments (soft/hard)",
-    "instagram": "https://www.instagram.com/tufs_tennis/"
+    "instagram": "https://www.instagram.com/tufs_tennis/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "baseballclub",
@@ -79,7 +453,47 @@
     "nameEn": "Baseball Club",
     "category": "Ball Sports",
     "description": "Soft/hard ball league games",
-    "instagram": "https://www.instagram.com/tufsnanya2025/"
+    "instagram": "https://www.instagram.com/tufsnanya2025/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "soccerclub",
@@ -88,7 +502,47 @@
     "category": "Ball Sports",
     "description": "Daily practice",
     "metadata": "W/M",
-    "instagram": "https://www.instagram.com/tufsfc_official/"
+    "instagram": "https://www.instagram.com/tufsfc_official/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "rugbyclub",
@@ -96,7 +550,47 @@
     "nameEn": "Rugby Club",
     "category": "Ball Sports",
     "description": "Intercollegiate matches",
-    "instagram": "https://www.instagram.com/tufs_rugby/"
+    "instagram": "https://www.instagram.com/tufs_rugby/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "americanfootballclub",
@@ -104,7 +598,47 @@
     "nameEn": "American Football Club",
     "category": "Ball Sports",
     "description": "Regular practice",
-    "instagram": "https://www.instagram.com/phantoms_shinkan/"
+    "instagram": "https://www.instagram.com/phantoms_shinkan/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "trackfieldclub",
@@ -112,7 +646,47 @@
     "nameEn": "Track & Field Club",
     "category": "Track & Field / Martial Arts",
     "description": "",
-    "instagram": "https://www.instagram.com/tufs.tf/"
+    "instagram": "https://www.instagram.com/tufs.tf/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "swimmingclub",
@@ -120,7 +694,47 @@
     "nameEn": "Swimming Club",
     "category": "Track & Field / Martial Arts",
     "description": "",
-    "instagram": "https://www.instagram.com/tufsswim/"
+    "instagram": "https://www.instagram.com/tufsswim/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "figureskatingclub",
@@ -128,7 +742,47 @@
     "nameEn": "Figure Skating Club",
     "category": "Track & Field / Martial Arts",
     "description": "",
-    "instagram": "https://www.instagram.com/tufs_fsc/"
+    "instagram": "https://www.instagram.com/tufs_fsc/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "rowingclub",
@@ -136,7 +790,47 @@
     "nameEn": "Rowing Club",
     "category": "Track & Field / Martial Arts",
     "description": "",
-    "instagram": "https://www.instagram.com/tufs_rowing_shinkan/"
+    "instagram": "https://www.instagram.com/tufs_rowing_shinkan/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "wandervogelclub",
@@ -144,7 +838,47 @@
     "nameEn": "Wandervogel Club",
     "category": "Track & Field / Martial Arts",
     "description": "",
-    "instagram": "https://www.instagram.com/tufs_wv/"
+    "instagram": "https://www.instagram.com/tufs_wv/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "cyclingclub",
@@ -152,7 +886,47 @@
     "nameEn": "Cycling Club",
     "category": "Track & Field / Martial Arts",
     "description": "",
-    "instagram": "https://www.instagram.com/gaidai_cycling/"
+    "instagram": "https://www.instagram.com/gaidai_cycling/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "kendoclub",
@@ -160,7 +934,47 @@
     "nameEn": "Kendo Club",
     "category": "Track & Field / Martial Arts",
     "description": "",
-    "instagram": "https://www.instagram.com/tufs_kendo_kendo_since1966/"
+    "instagram": "https://www.instagram.com/tufs_kendo_kendo_since1966/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "karateclub",
@@ -168,7 +982,47 @@
     "nameEn": "Karate Club",
     "category": "Track & Field / Martial Arts",
     "description": "",
-    "instagram": "https://www.instagram.com/tufs_karate/"
+    "instagram": "https://www.instagram.com/tufs_karate/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "shorinjikempoclub",
@@ -176,7 +1030,47 @@
     "nameEn": "Shorinji Kempo Club",
     "category": "Track & Field / Martial Arts",
     "description": "",
-    "metadata": "Every Saturday 12:30-3:30 PM"
+    "metadata": "Every Saturday 12:30-3:30 PM",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "aikidoclub",
@@ -184,7 +1078,47 @@
     "nameEn": "Aikido Club",
     "category": "Track & Field / Martial Arts",
     "description": "",
-    "instagram": "https://www.instagram.com/tufs_aikido/"
+    "instagram": "https://www.instagram.com/tufs_aikido/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "kyudoclub",
@@ -192,7 +1126,47 @@
     "nameEn": "Kyudo Club",
     "category": "Track & Field / Martial Arts",
     "description": "",
-    "instagram": "https://www.instagram.com/tufs_kyudo/"
+    "instagram": "https://www.instagram.com/tufs_kyudo/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "fencingclub",
@@ -200,7 +1174,47 @@
     "nameEn": "Fencing Club",
     "category": "Track & Field / Martial Arts",
     "description": "",
-    "instagram": "https://www.instagram.com/tufs_fencing/"
+    "instagram": "https://www.instagram.com/tufs_fencing/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "orchestraclub",
@@ -208,7 +1222,47 @@
     "nameEn": "Orchestra Club",
     "category": "Music & Arts",
     "description": "Symphony Orchestra",
-    "instagram": "https://www.instagram.com/tufsorc/"
+    "instagram": "https://www.instagram.com/tufsorc/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "canteresearchclub",
@@ -216,7 +1270,47 @@
     "nameEn": "Cante Research Club",
     "category": "Music & Arts",
     "description": "Flamenco Music",
-    "instagram": "https://www.instagram.com/tufs_cante/"
+    "instagram": "https://www.instagram.com/tufs_cante/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "salsaresearchclub",
@@ -224,7 +1318,47 @@
     "nameEn": "Salsa Research Club",
     "category": "Music & Arts",
     "description": "Latin Music & Dance",
-    "instagram": "https://www.instagram.com/orq_salquendez/"
+    "instagram": "https://www.instagram.com/orq_salquendez/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "acappellacirclelines",
@@ -232,7 +1366,47 @@
     "nameEn": "A Cappella Circle (LINES)",
     "category": "Music & Arts",
     "description": "Vocal Music",
-    "instagram": "https://www.instagram.com/tufslines_shinkan/"
+    "instagram": "https://www.instagram.com/tufslines_shinkan/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "pianocirclenopia",
@@ -240,7 +1414,47 @@
     "nameEn": "Piano Circle (NOPIA)",
     "category": "Music & Arts",
     "description": "Piano Performance",
-    "instagram": "https://www.instagram.com/nopia_tufa2024/"
+    "instagram": "https://www.instagram.com/nopia_tufa2024/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "gmc",
@@ -248,7 +1462,47 @@
     "nameEn": "GMC",
     "category": "Music & Arts",
     "description": "Light Music",
-    "instagram": "https://www.instagram.com/gmctufs/"
+    "instagram": "https://www.instagram.com/gmctufs/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "dharmadarts",
@@ -256,7 +1510,47 @@
     "nameEn": "Dharma Darts",
     "category": "Music & Arts",
     "description": "Light Music",
-    "instagram": "https://www.instagram.com/tufs_dharma/"
+    "instagram": "https://www.instagram.com/tufs_dharma/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "modernjazzlaboratory",
@@ -264,7 +1558,47 @@
     "nameEn": "Modern Jazz Laboratory",
     "category": "Music & Arts",
     "description": "Jazz Music",
-    "instagram": "https://www.instagram.com/tufs_jazz_lab/"
+    "instagram": "https://www.instagram.com/tufs_jazz_lab/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "brazilianstudiesclub",
@@ -272,7 +1606,47 @@
     "nameEn": "Brazilian Studies Club",
     "category": "Music & Arts",
     "description": "Brazilian Music & Culture",
-    "instagram": "https://www.instagram.com/tufsbrkn/"
+    "instagram": "https://www.instagram.com/tufsbrkn/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "mixedchoirchoeursoleil",
@@ -280,14 +1654,94 @@
     "nameEn": "Mixed Choir Choeur Soleil",
     "category": "Music & Arts",
     "description": "Choral Music",
-    "instagram": "https://www.instagram.com/tufs_choeur_soleil/"
+    "instagram": "https://www.instagram.com/tufs_choeur_soleil/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "russianfolksongclublumuc",
     "nameJa": "ロシア民謡サークルLUMUC",
     "nameEn": "Russian Folk Song Club (LUMUC)",
     "category": "Music & Arts",
-    "description": "Russian Folk Music"
+    "description": "Russian Folk Music",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "photographyclub",
@@ -295,7 +1749,47 @@
     "nameEn": "Photography Club",
     "category": "Music & Arts",
     "description": "Photography",
-    "instagram": "https://www.instagram.com/tufs_photo/"
+    "instagram": "https://www.instagram.com/tufs_photo/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "artclub",
@@ -303,7 +1797,47 @@
     "nameEn": "Art Club",
     "category": "Music & Arts",
     "description": "Visual Arts",
-    "instagram": "https://www.instagram.com/tufs_art/"
+    "instagram": "https://www.instagram.com/tufs_art/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "theatergroupdadan",
@@ -311,7 +1845,47 @@
     "nameEn": "Theater Group Dadan",
     "category": "Music & Arts",
     "description": "Theater Performance",
-    "instagram": "https://www.instagram.com/gekidandadan_official/"
+    "instagram": "https://www.instagram.com/gekidandadan_official/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "filmstudiesclub",
@@ -319,14 +1893,94 @@
     "nameEn": "Film Studies Club",
     "category": "Music & Arts",
     "description": "Film Analysis & Production",
-    "instagram": "https://www.instagram.com/tufs_create/"
+    "instagram": "https://www.instagram.com/tufs_create/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "mangaresearchclub",
     "nameJa": "漫画研究会",
     "nameEn": "Manga Research Club",
     "category": "Music & Arts",
-    "description": "Manga Creation & Study"
+    "description": "Manga Creation & Study",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "xbull",
@@ -334,7 +1988,47 @@
     "nameEn": "XBULL",
     "category": "Music & Arts",
     "description": "Japanese Comedy",
-    "instagram": "https://www.instagram.com/tufs_owarai/"
+    "instagram": "https://www.instagram.com/tufs_owarai/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "acousticcircleaa",
@@ -342,7 +2036,47 @@
     "nameEn": "Acoustic Circle (AA)",
     "category": "Music & Arts",
     "description": "Acoustic Music",
-    "instagram": "https://www.instagram.com/tufs.aa/"
+    "instagram": "https://www.instagram.com/tufs.aa/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "russiantheatergroup",
@@ -350,7 +2084,47 @@
     "nameEn": "Russian Theater Group",
     "category": "Music & Arts",
     "description": "Russian Drama",
-    "instagram": "https://www.instagram.com/theatrekontsert/"
+    "instagram": "https://www.instagram.com/theatrekontsert/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "windorchestra",
@@ -358,7 +2132,47 @@
     "nameEn": "Wind Orchestra",
     "category": "Music & Arts",
     "description": "Orchestral Music",
-    "instagram": "https://www.instagram.com/tufs_windorchestra/"
+    "instagram": "https://www.instagram.com/tufs_windorchestra/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "spanishdanceclub",
@@ -366,7 +2180,47 @@
     "nameEn": "Spanish Dance Club",
     "category": "Dance & Performance",
     "description": "Traditional Spanish dance",
-    "instagram": "https://www.instagram.com/tufs.flamenco.info/"
+    "instagram": "https://www.instagram.com/tufs.flamenco.info/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "philippinefolkdanceclub",
@@ -374,7 +2228,47 @@
     "nameEn": "Philippine Folk Dance Club",
     "category": "Dance & Performance",
     "description": "Traditional Filipino dance",
-    "instagram": "https://www.instagram.com/tufs_phil_dance/"
+    "instagram": "https://www.instagram.com/tufs_phil_dance/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "bellydanceclub",
@@ -382,7 +2276,47 @@
     "nameEn": "Belly Dance Club",
     "category": "Dance & Performance",
     "description": "Middle Eastern dance",
-    "instagram": "https://www.instagram.com/belly_spring.tufs25/"
+    "instagram": "https://www.instagram.com/belly_spring.tufs25/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "streetdanceclub",
@@ -390,7 +2324,47 @@
     "nameEn": "Street Dance Club",
     "category": "Dance & Performance",
     "description": "Hip-hop & urban dance",
-    "instagram": "https://www.instagram.com/quattro_tufs/"
+    "instagram": "https://www.instagram.com/quattro_tufs/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "classicalballetclub",
@@ -398,7 +2372,47 @@
     "nameEn": "Classical Ballet Club",
     "category": "Dance & Performance",
     "description": "Ballet training",
-    "instagram": "https://www.instagram.com/tufs_ballet_etoile/"
+    "instagram": "https://www.instagram.com/tufs_ballet_etoile/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "indonesiandanceclub",
@@ -406,7 +2420,47 @@
     "nameEn": "Indonesian Dance Club",
     "category": "Dance & Performance",
     "description": "Traditional Indonesian dance",
-    "instagram": "https://www.instagram.com/tufs_turiindonesia/"
+    "instagram": "https://www.instagram.com/tufs_turiindonesia/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "ballroomdanceclub",
@@ -414,7 +2468,47 @@
     "nameEn": "Ballroom Dance Club",
     "category": "Dance & Performance",
     "description": "Competitive dance",
-    "instagram": "https://www.instagram.com/tufsbdc/"
+    "instagram": "https://www.instagram.com/tufsbdc/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "cheerleadingclub",
@@ -422,7 +2516,47 @@
     "nameEn": "Cheerleading Club",
     "category": "Dance & Performance",
     "description": "Cheer & performance",
-    "instagram": "https://www.instagram.com/tufs_rams.cheerforyou/"
+    "instagram": "https://www.instagram.com/tufs_rams.cheerforyou/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "pomdancecircle",
@@ -430,7 +2564,47 @@
     "nameEn": "Pom Dance Circle",
     "category": "Dance & Performance",
     "description": "Pom-pom dance",
-    "instagram": "https://www.instagram.com/tufs_amity/"
+    "instagram": "https://www.instagram.com/tufs_amity/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "kathakdanceclub",
@@ -438,14 +2612,94 @@
     "nameEn": "Kathak Dance Club",
     "category": "Dance & Performance",
     "description": "Classical Indian dance",
-    "instagram": "https://www.instagram.com/tufs_kathak/"
+    "instagram": "https://www.instagram.com/tufs_kathak/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "vietnamesedancesociety",
     "nameJa": "ベトナム舞踊研究会",
     "nameEn": "Vietnamese Dance Society",
     "category": "Dance & Performance",
-    "description": "Traditional Vietnamese dance"
+    "description": "Traditional Vietnamese dance",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "kpopcoverdancecircle",
@@ -453,7 +2707,47 @@
     "nameEn": "K-POP Cover Dance Circle",
     "category": "Dance & Performance",
     "description": "K-pop dance covers",
-    "instagram": "https://www.instagram.com/tufs_souls/"
+    "instagram": "https://www.instagram.com/tufs_souls/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "argentinetangocircle",
@@ -461,7 +2755,47 @@
     "nameEn": "Argentine Tango Circle",
     "category": "Dance & Performance",
     "description": "Tango dance",
-    "instagram": "https://www.instagram.com/tufs_tango/"
+    "instagram": "https://www.instagram.com/tufs_tango/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "tapdancesociety",
@@ -469,7 +2803,47 @@
     "nameEn": "Tap Dance Society",
     "category": "Dance & Performance",
     "description": "Tap dance",
-    "instagram": "https://www.instagram.com/tufs_tups/"
+    "instagram": "https://www.instagram.com/tufs_tups/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "hulateam",
@@ -477,7 +2851,47 @@
     "nameEn": "Hula Team",
     "category": "Dance & Performance",
     "description": "Hawaiian dance",
-    "instagram": "https://www.instagram.com/tufs.kapilialoha.hula/"
+    "instagram": "https://www.instagram.com/tufs.kapilialoha.hula/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "hakugakai",
@@ -485,7 +2899,47 @@
     "nameEn": "Hakugakai",
     "category": "Japanese Culture / Language / Social",
     "description": "Traditional Japanese drum",
-    "instagram": "https://www.instagram.com/hakugakai_tufs/"
+    "instagram": "https://www.instagram.com/hakugakai_tufs/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "ikebanaclub",
@@ -493,7 +2947,47 @@
     "nameEn": "Ikebana Club",
     "category": "Japanese Culture / Language / Social",
     "description": "Japanese Flower Arrangement",
-    "instagram": "https://www.instagram.com/tufs_kado/"
+    "instagram": "https://www.instagram.com/tufs_kado/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "omotesenketeaceremony",
@@ -501,7 +2995,47 @@
     "nameEn": "Omotesenke Tea Ceremony",
     "category": "Japanese Culture / Language / Social",
     "description": "Traditional Tea Ceremony",
-    "instagram": "https://www.instagram.com/tufs_omotesenke/"
+    "instagram": "https://www.instagram.com/tufs_omotesenke/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "urasenketeaceremony",
@@ -509,7 +3043,47 @@
     "nameEn": "Urasenke Tea Ceremony",
     "category": "Japanese Culture / Language / Social",
     "description": "Traditional Tea Ceremony",
-    "instagram": "https://www.instagram.com/tufs_urasenke/"
+    "instagram": "https://www.instagram.com/tufs_urasenke/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "karutaclub",
@@ -517,7 +3091,47 @@
     "nameEn": "Karuta Club",
     "category": "Japanese Culture / Language / Social",
     "description": "Japanese Card Game",
-    "instagram": "https://www.instagram.com/tufs_karuta_akino/"
+    "instagram": "https://www.instagram.com/tufs_karuta_akino/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "kimonoclub",
@@ -525,7 +3139,47 @@
     "nameEn": "Kimono Club",
     "category": "Japanese Culture / Language / Social",
     "description": "Traditional Clothing",
-    "instagram": "https://www.instagram.com/tufs_kimono/"
+    "instagram": "https://www.instagram.com/tufs_kimono/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "englishspeakingsocietyess",
@@ -533,7 +3187,47 @@
     "nameEn": "English Speaking Society (E.S.S.)",
     "category": "Japanese Culture / Language / Social",
     "description": "English Discussion & Debate",
-    "instagram": "https://www.instagram.com/tufs_ess/"
+    "instagram": "https://www.instagram.com/tufs_ess/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "modelunitednations",
@@ -541,7 +3235,47 @@
     "nameEn": "Model United Nations",
     "category": "Japanese Culture / Language / Social",
     "description": "UN Simulation & Debate",
-    "instagram": "https://www.instagram.com/munkuniken_shinkan/"
+    "instagram": "https://www.instagram.com/munkuniken_shinkan/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "tufpost",
@@ -549,14 +3283,94 @@
     "nameEn": "TUFPOST",
     "category": "Japanese Culture / Language / Social",
     "description": "Student Journalism",
-    "instagram": "https://www.instagram.com/tufs_post/"
+    "instagram": "https://www.instagram.com/tufs_post/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "lgbtqcirclepasapas",
     "nameJa": "LGBTQ+ Circle Pas A Pas",
     "nameEn": "LGBTQ+ Circle Pas A Pas",
     "category": "Japanese Culture / Language / Social",
-    "description": "Gender & Sexuality Studies"
+    "description": "Gender & Sexuality Studies",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "balkanstudiesclub",
@@ -564,14 +3378,94 @@
     "nameEn": "Balkan Studies Club",
     "category": "Japanese Culture / Language / Social",
     "description": "Southeastern European Studies",
-    "xUrl": "https://x.com/tufbalkan"
+    "xUrl": "https://x.com/tufbalkan",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "lawstudiescircletanhokai",
     "nameJa": "Law Studies Circle Tanhokai",
     "nameEn": "Law Studies Circle Tanhokai",
     "category": "Japanese Culture / Language / Social",
-    "description": "Legal Studies"
+    "description": "Legal Studies",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "quizresearchclub",
@@ -579,7 +3473,47 @@
     "nameEn": "Quiz Research Club",
     "category": "Japanese Culture / Language / Social",
     "description": "Quiz & General Knowledge",
-    "instagram": "https://www.instagram.com/tufs_quiz/"
+    "instagram": "https://www.instagram.com/tufs_quiz/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "signlanguagecircle",
@@ -587,7 +3521,47 @@
     "nameEn": "Sign Language Circle",
     "category": "Japanese Culture / Language / Social",
     "description": "Sign Language Studies",
-    "instagram": "https://www.instagram.com/tufs_sign/"
+    "instagram": "https://www.instagram.com/tufs_sign/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "tufsjapaneque",
@@ -595,7 +3569,47 @@
     "nameEn": "TUFS Japaneque",
     "category": "Japanese Culture / Language / Social",
     "description": "Japanese Culture Studies",
-    "instagram": "https://www.instagram.com/tufs_japaneque/"
+    "instagram": "https://www.instagram.com/tufs_japaneque/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "regionalrevitalizationcircleimonikai",
@@ -603,7 +3617,47 @@
     "nameEn": "Regional Revitalization Circle \"Imoni-kai\"",
     "category": "Japanese Culture / Language / Social",
     "description": "Community Development",
-    "instagram": "https://www.instagram.com/imoni.kai_tufs/"
+    "instagram": "https://www.instagram.com/imoni.kai_tufs/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "peekaboo",
@@ -611,7 +3665,47 @@
     "nameEn": "Peek A Boo",
     "category": "Volunteer & Other Organizations",
     "description": "General Volunteering",
-    "xUrl": "https://x.com/tufsPeekABoo"
+    "xUrl": "https://x.com/tufsPeekABoo",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "femmecaf",
@@ -619,7 +3713,47 @@
     "nameEn": "Femme Café",
     "category": "Volunteer & Other Organizations",
     "description": "Social Support",
-    "instagram": "https://www.instagram.com/femmecafecoffee/"
+    "instagram": "https://www.instagram.com/femmecafecoffee/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "alpha",
@@ -627,7 +3761,47 @@
     "nameEn": "ALPHA",
     "category": "Volunteer & Other Organizations",
     "description": "Student NGO",
-    "instagram": "https://www.instagram.com/ngo_alpha/"
+    "instagram": "https://www.instagram.com/ngo_alpha/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "elan",
@@ -635,7 +3809,47 @@
     "nameEn": "ELAN",
     "category": "Volunteer & Other Organizations",
     "description": "Education",
-    "instagram": "https://www.instagram.com/elan_connect_sea/"
+    "instagram": "https://www.instagram.com/elan_connect_sea/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "mres",
@@ -643,7 +3857,47 @@
     "nameEn": "Mres",
     "category": "Volunteer & Other Organizations",
     "description": "Social Support",
-    "instagram": "https://www.instagram.com/mres_habitatforhumanity_tufs/"
+    "instagram": "https://www.instagram.com/mres_habitatforhumanity_tufs/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "tucos",
@@ -651,55 +3905,375 @@
     "nameEn": "生協学生委員会 TuCos",
     "category": "Volunteer & Other Organizations",
     "description": "Student Services",
-    "instagram": "https://www.instagram.com/tufs_tucos/"
+    "instagram": "https://www.instagram.com/tufs_tucos/",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "studentpublicrelationsambassador",
     "nameJa": "学生広報アンバサダー",
     "nameEn": "Student Public Relations Ambassador",
     "category": "Volunteer & Other Organizations",
-    "description": "Public Relations"
+    "description": "Public Relations",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "judoclub",
     "nameJa": "柔道部",
     "nameEn": "Judo Club",
     "category": "Martial Arts",
-    "description": "Traditional Japanese martial art"
+    "description": "Traditional Japanese martial art",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "handballclub",
     "nameJa": "ハンドボール部",
     "nameEn": "Handball Club",
     "category": "Ball Sports",
-    "description": "Team handball sport"
+    "description": "Team handball sport",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "vacs",
     "nameJa": "声優放送研究会",
     "nameEn": "VACS",
     "category": "Music & Arts",
-    "description": "Voice acting and broadcasting"
+    "description": "Voice acting and broadcasting",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "tosfia",
     "nameJa": "国際交流サークル",
     "nameEn": "TOSFIA",
     "category": "Language & Social Studies",
-    "description": "International exchange and cultural activities"
+    "description": "International exchange and cultural activities",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "sentosociety",
     "nameJa": "銭湯サークル",
     "nameEn": "Sento Society",
     "category": "Hobbies",
-    "description": "Public bathhouse culture and visits"
+    "description": "Public bathhouse culture and visits",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   },
   {
     "id": "trickytrip",
     "nameJa": "鉄道研究会",
     "nameEn": "Tricky Trip",
     "category": "Hobbies",
-    "description": "Railway studies and enthusiasts"
+    "description": "Railway studies and enthusiasts",
+    "overview": {
+      "philosophy": "準備中",
+      "guidelines": "準備中",
+      "activities": "準備中"
+    },
+    "operations": {
+      "executiveMembers": [
+        "準備中"
+      ],
+      "organization": "準備中"
+    },
+    "membership": {
+      "memberCount": 0,
+      "yearDistribution": [
+        "準備中"
+      ],
+      "isIntraUniversity": false
+    },
+    "schedule": {
+      "frequency": "準備中",
+      "location": "準備中",
+      "annualPlan": [
+        "準備中"
+      ]
+    },
+    "recruitment": {
+      "appeal": "準備中",
+      "challenges": "準備中",
+      "applicationFlow": "準備中",
+      "welcomeEvents": "準備中",
+      "annualFee": "準備中",
+      "hasSelection": false,
+      "targetAudience": "準備中",
+      "contact": {
+        "facebook": "",
+        "website": "",
+        "line": ""
+      }
+    },
+    "lastUpdated": "2024-03-20"
   }
 ]

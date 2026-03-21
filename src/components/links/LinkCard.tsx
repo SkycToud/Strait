@@ -35,10 +35,10 @@ export default function LinkCard({ item, index }: { item: LinkItem; index: numbe
       </div>
       <div className="flex-1">
         <div className="flex items-center justify-between">
-          <h3 className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-accent transition-colors">{item.title}</h3>
+          <h3 className="font-bold text-foreground group-hover:text-accent transition-colors">{item.title}</h3>
           <ArrowUpRight className="w-4 h-4 text-slate-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
         </div>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{item.description}</p>
+        <p className="text-xs text-slate-600 dark:text-slate-400 mt-0.5 font-medium">{item.description}</p>
       </div>
     </a>
   );

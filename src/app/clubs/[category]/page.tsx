@@ -37,12 +37,12 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   return (
     <div className="space-y-8 animate-fade-in relative z-10">
       <div className="p-2 mb-2">
-        <Link href="/clubs" className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-accent mb-6 transition-colors">
+        <Link href="/clubs" className="inline-flex items-center gap-2 text-sm font-bold text-foreground/80 hover:text-accent mb-6 transition-colors">
           <ArrowLeft className="w-4 h-4" /> カテゴリ一覧へ戻る
         </Link>
-        <h1 className="text-3xl font-extrabold text-slate-900 dark:text-white flex flex-col sm:flex-row sm:items-baseline gap-2">
+        <h1 className="text-3xl font-extrabold text-foreground flex flex-col sm:flex-row sm:items-baseline gap-2">
           {activeCategory}
-          <span className="text-lg text-slate-400 font-medium">({categoryClubs.length} 団体)</span>
+          <span className="text-lg text-foreground/60 font-medium">({categoryClubs.length} 団体)</span>
         </h1>
       </div>
 

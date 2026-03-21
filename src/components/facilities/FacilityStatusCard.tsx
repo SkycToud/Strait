@@ -66,11 +66,11 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
       <div>
         <div className="flex items-start justify-between mb-4">
           <div className="flex items-center gap-3">
-            <div className="p-2.5 bg-slate-100 dark:bg-slate-800 rounded-xl text-slate-700 dark:text-slate-300">
+            <div className="p-2.5 bg-slate-100 dark:bg-slate-800 rounded-xl text-foreground">
               {getIcon(facility.type)}
             </div>
             <div className="flex items-center gap-2">
-              <h3 className="font-bold text-lg leading-tight">{facility.name}</h3>
+              <h3 className="font-bold text-lg leading-tight text-foreground">{facility.name}</h3>
               <div className="relative group">
                 {getAccuracyIcon(facility.accuracy)}
                 <div className="absolute bottom-full left-1/2 transform -translate-x-1/2 mb-2 px-2 py-1 bg-slate-800 dark:bg-slate-200 text-white dark:text-slate-800 text-xs rounded opacity-0 group-hover:opacity-100 transition-opacity whitespace-nowrap pointer-events-none">
@@ -82,7 +82,7 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
         </div>
 
         <div className="space-y-2 mb-6">
-          <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400">
+          <div className="flex items-center gap-2 text-sm text-slate-600 dark:text-slate-400 font-medium">
             <Clock className="w-4 h-4 opacity-70" />
             <span>
               {status.hours.length > 0 
@@ -100,7 +100,7 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
             {status.isOpen && <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-green-400 opacity-75"></span>}
             <span className={cn("relative inline-flex rounded-full h-3 w-3", status.isOpen ? "bg-green-500" : "bg-red-500")}></span>
           </span>
-          <span className={cn("font-bold text-sm", status.isOpen ? "text-green-600 dark:text-green-400" : "text-red-600 dark:text-red-400")}>
+          <span className={cn("font-bold text-sm", status.isOpen ? "text-green-700 dark:text-green-400" : "text-red-700 dark:text-red-400")}>
             {status.isOpen ? '営業中' : '営業時間外'}
           </span>
         </div>

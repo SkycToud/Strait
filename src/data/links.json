@@ -49,10 +49,18 @@
   },
   {
     "id": "icc",
-    "title": "国立大学法人 東京外国語大学総合情報コラボレーションセンター",
-    "description": "総合情報コラボレーションセンター",
+    "title": "総合情報コラボレーションセンター(ICC)",
+    "description": "VPN利用方法、Microsoft Officeダウンロードなど",
     "url": "https://www.tufs.ac.jp/common/icc/",
     "category": "support",
     "icon": "groups"
+  },
+  {
+    "id": "tufs-today",
+    "title": "TUFS Today",
+    "description": "東京外国語大学の公式広報ウェブメディア",
+    "url": "https://www.tufs.ac.jp/tufstoday/index.html",
+    "category": "news",
+    "icon": "article"
   }
 ]

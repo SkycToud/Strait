@@ -1,92 +1,213 @@
 import Link from 'next/link';
-import { ArrowRight, CalendarDays, Building2, ExternalLink } from 'lucide-react';
+import { 
+  BookOpen, 
+  Utensils, 
+  Building, 
+  Calendar,
+  Building2,
+  Settings
+} from 'lucide-react';
 import calendarData from '@/data/calendar.json';
 import facilityData from '@/data/facilities.json';
-import FacilityStatusCard from '@/components/facilities/FacilityStatusCard';
+import { CONST_SCHEDULE_DATA, FacilityId } from '@/lib/schedules';
+import { getFacilityStatus as calculateStatus } from '@/lib/schedule-utils';
+import linksData from '@/data/links.json';
 
 export default function Home() {
-  const rawEvent = calendarData.events[0];
-  const nextEvent = {
-    title: rawEvent.label,
-    date: rawEvent.date || rawEvent.startDate || '',
-  }; // Simplified for dashboard
-  const topFacilities = facilityData.slice(0, 2);
+  const quickLinks = linksData.slice(0, 3);
+  const getNextEvent = () => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const upcoming = calendarData.events.find(e => {
+      const dateStr = e.date || e.startDate;
+      if (!dateStr || /[^\x00-\x7F]/.test(dateStr)) return false;
+      const eventDate = new Date(dateStr);
+      return eventDate >= today;
+    }) || calendarData.events[0];
+
+    const dateStr = upcoming.date || upcoming.startDate || '';
+    let day = '--';
+    let month = 'TBD';
+    
+    if (dateStr) {
+      const d = new Date(dateStr);
+      if (!isNaN(d.getTime())) {
+         day = d.getDate().toString();
+         month = d.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+      }
+    }
+
+    return {
+      title: upcoming.label,
+      date: dateStr,
+      startTime: 'All Day',
+      day,
+      month
+    };
+  };
+
+  const nextEvent = getNextEvent();
+
+  const facilities = facilityData.slice(0, 3);
+
+  const getFacilityStatus = (facility: any) => {
+    const scheduleData = CONST_SCHEDULE_DATA[facility.id as FacilityId];
+    if (!scheduleData) {
+      return {
+        isOpen: false,
+        status: 'Closed',
+        time: 'No data'
+      };
+    }
+
+    const currentStatus = calculateStatus(new Date(), scheduleData);
+    return {
+      isOpen: currentStatus.isOpen,
+      status: currentStatus.isOpen ? 'Open' : (currentStatus.hours.length > 0 ? 'Closed' : 'Closed'),
+      time: currentStatus.hours.length > 0 
+        ? currentStatus.hours.map(h => `${h.start}-${h.end}`).join(', ')
+        : (currentStatus.note || '営業時間外')
+    };
+  };
+
+  const getFacilityIcon = (name: string) => {
+    if (name.includes('図書館') || name.includes('Library')) return BookOpen;
+    if (name.includes('食堂') || name.includes('Dining')) return Utensils;
+    return Building;
+  };
 
   return (
-    <div className="space-y-10">
+    <>
       {/* Hero Section */}
-      <section className="text-center space-y-4 py-8">
-        <div className="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-accent/10 text-accent text-sm font-bold mb-4 animate-fade-in">
-          <span className="relative flex h-2 w-2">
-            <span className="animate-ping absolute inline-flex h-full w-full rounded-full bg-accent opacity-75"></span>
-            <span className="relative inline-flex rounded-full h-2 w-2 bg-accent"></span>
-          </span>
-          Phase 1 稼働中
-        </div>
-        <h1 className="text-4xl sm:text-5xl font-extrabold tracking-tight text-slate-900 dark:text-white">
-          あなたの<span className="text-gradient">大学生活</span>の<br className="hidden sm:block" />要所となる。
+      <header className="mb-12">
+        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-on-background mb-4 text-center md:text-left">
+          Strait
         </h1>
-        <p className="text-slate-600 dark:text-slate-400 max-w-xl mx-auto text-lg pt-4">
-          Straitは東京外国語大学の学生向け情報プラットフォームです。学期予定や施設情報、サークル情報を一つの場所に。
+        <p className="text-lg text-on-surface-variant max-w-2xl leading-relaxed text-center md:text-left md:mx-0 mx-auto">
+          東京外国語大学の学生のための、スマートなアカデミックポータル。<br/>
+          <span className="text-sm font-medium opacity-70">A streamlined academic portal for Tokyo University of Foreign Studies students.</span>
         </p>
-      </section>
+      </header>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {/* Next Event Widget */}
-        <section className="glass-card p-6 flex flex-col justify-between group cursor-pointer hover:border-accent/50 transition-colors">
-          <div>
-            <div className="flex items-center justify-between mb-4">
-              <div className="flex items-center gap-2 text-accent font-bold">
-                <CalendarDays className="w-5 h-5" />
-                <h2>直近の予定</h2>
+      {/* Bento Grid Layout */}
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+        {/* '直近の予定' (Upcoming Schedule) - Large Anchor Card */}
+        <section className="lg:col-span-8">
+          <div className="flex items-center justify-between mb-4 px-2">
+            <h2 className="text-xl font-bold flex items-center gap-2">
+              直近の予定 <span className="text-sm font-normal text-on-surface-variant ml-2">Upcoming Schedule</span>
+            </h2>
+            <Link href="/calendar" className="text-sm font-semibold text-primary hover:underline">See All</Link>
+          </div>
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary-container p-8 text-white shadow-xl shadow-primary/20 group">
+            <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
+              <div>
+                <span className="bg-white/20 backdrop-blur-md px-4 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-4 inline-block">Recommended Task</span>
+                <h3 className="text-3xl md:text-4xl font-bold mb-2">{nextEvent.title}</h3>
               </div>
-              <Link href="/calendar" className="text-sm font-bold text-slate-500 hover:text-accent flex items-center gap-1 transition-colors">
-                すべて見る <ArrowRight className="w-4 h-4" />
-              </Link>
+              <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/20 text-center min-w-[140px]">
+                <div className="text-4xl font-black mb-1">{nextEvent.day}</div>
+                <div className="text-sm font-bold opacity-90">{nextEvent.month}</div>
+                <div className="mt-2 pt-2 border-t border-white/20 text-xs font-medium">{nextEvent.startTime}</div>
+              </div>
             </div>
-            <div className="py-4">
-              <span className="text-sm font-bold text-accent bg-accent/10 px-2 py-1 rounded-md mb-2 inline-block">
-                {nextEvent.date}
-              </span>
-              <h3 className="text-2xl font-bold mt-1 text-slate-800 dark:text-slate-100">{nextEvent.title}</h3>
-            </div>
+            {/* Abstract Background Shape */}
+            <div className="absolute -right-12 -bottom-12 w-64 h-64 bg-white/5 rounded-full blur-3xl group-hover:bg-white/10 transition-colors"></div>
           </div>
         </section>
 
-        {/* Quick Links Widget */}
-        <section className="glass-card p-6 flex flex-col justify-between">
-          <div className="flex items-center justify-between mb-4">
-            <div className="flex items-center gap-2 text-purple-600 dark:text-purple-400 font-bold">
-              <ExternalLink className="w-5 h-5" />
-              <h2>よく使うリンク</h2>
-            </div>
+        {/* '施設の営業状況' (Facility Status) - Compact Stack */}
+        <section className="lg:col-span-4 flex flex-col">
+          <div className="flex items-center justify-between mb-4 px-2">
+            <h2 className="text-xl font-bold">施設の営業状況 <span className="text-xs font-normal text-on-surface-variant block md:inline md:ml-2">Facility Status</span></h2>
+            <Link href="/facilities" className="text-sm font-semibold text-primary hover:underline">See All</Link>
           </div>
-          <div className="grid grid-cols-2 gap-3 mt-2">
-            <a href="https://gakumu-web1.tufs.ac.jp/campusweb/campusportal.do" target="_blank" className="flex items-center justify-center gap-2 p-4 rounded-xl bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-bold text-sm">学務情報システム</a>
-            <a href="https://moodle.tufs.ac.jp/" target="_blank" className="flex items-center justify-center gap-2 p-4 rounded-xl bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-bold text-sm">TUFS Moodle</a>
-            <a href="https://mail.google.com/a/tufs.ac.jp" target="_blank" className="flex items-center justify-center gap-2 p-4 rounded-xl bg-slate-100 dark:bg-slate-800/50 hover:bg-slate-200 dark:hover:bg-slate-700 transition-colors font-bold text-sm">大学メール</a>
-            <Link href="/links" className="flex items-center justify-center gap-2 p-4 rounded-xl text-accent hover:bg-accent/10 transition-colors font-bold text-sm">その他のリンク <ArrowRight className="w-4 h-4" /></Link>
+          <div className="flex flex-col gap-3 h-full">
+            {facilities.map((facility, index) => {
+              const Icon = getFacilityIcon(facility.name);
+              const status = getFacilityStatus(facility);
+              
+              return (
+                <div key={facility.id} className="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex items-center justify-between border border-outline-variant/5">
+                  <div className="flex items-center gap-4">
+                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${
+                      index === 0 ? 'bg-tertiary-container' : 
+                      index === 1 ? 'bg-secondary-container' : 
+                      'bg-surface-container-high'
+                    }`}>
+                      <Icon className={`${
+                        index === 0 ? 'text-on-tertiary-container' : 
+                        index === 1 ? 'text-on-secondary-container' : 
+                        'text-on-surface-variant'
+                      } w-6 h-6`} />
+                    </div>
+                    <div>
+                      <h4 className="font-bold">{facility.name}</h4>
+                      <p className="text-xs text-on-surface-variant">{facility.name}</p>
+                    </div>
+                  </div>
+                  <div className="flex flex-col items-end">
+                    <span className={`px-3 py-1 rounded-full text-xs font-bold mb-1 flex items-center gap-1 ${
+                      status.isOpen 
+                        ? 'bg-primary/10 text-primary' 
+                        : 'bg-surface-container-high text-on-surface-variant'
+                    }`}>
+                      <span className={`w-1.5 h-1.5 rounded-full ${
+                        status.isOpen ? 'bg-primary' : 'bg-outline-variant'
+                      }`}></span>
+                      {status.status}
+                    </span>
+                    <span className="text-[10px] text-on-surface-variant">{status.time}</span>
+                  </div>
+                </div>
+              );
+            })}
+          </div>
+        </section>
+
+        <section className="lg:col-span-12">
+          <div className="mb-4 px-2 flex justify-between items-center">
+            <h2 className="text-xl font-bold">よく使うリンク <span className="text-sm font-normal text-on-surface-variant ml-2">Quick Links</span></h2>
+            <Link href="/links" className="text-sm font-semibold text-primary hover:underline md:hidden">View All</Link>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+            {quickLinks.map((link, index) => (
+              <a 
+                key={link.id}
+                href={link.url} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-surface-container-low hover:bg-white p-6 rounded-3xl transition-all duration-300 flex items-start gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5 animate-fade-in"
+                style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'both' }}
+              >
+                <div className={`w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                  <span className="material-symbols-outlined text-primary text-2xl select-none">{link.icon}</span>
+                </div>
+                <div className="flex-1">
+                  <h5 className="font-bold text-sm mb-1 group-hover:text-primary transition-colors line-clamp-1">{link.title}</h5>
+                  <p className="text-xs text-on-surface-variant leading-tight line-clamp-2">{link.description}</p>
+                </div>
+              </a>
+            ))}
+
+            {/* Others */}
+            <Link 
+              href="/links"
+              className="group bg-surface-container-low hover:bg-white p-6 rounded-3xl transition-all duration-300 items-start gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5 hidden lg:flex"
+            >
+              <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-primary text-2xl select-none">grid_view</span>
+              </div>
+              <div>
+                <h5 className="font-bold text-sm mb-1 group-hover:text-primary transition-colors">Other Resources</h5>
+                <p className="text-xs text-on-surface-variant leading-tight">その他便利なサービス</p>
+              </div>
+            </Link>
           </div>
         </section>
       </div>
 
-      {/* Facilities Widget */}
-      <section className="pt-6">
-         <div className="flex items-center justify-between mb-6 px-2">
-            <div className="flex items-center gap-2 text-slate-800 dark:text-slate-200 font-bold text-xl">
-              <Building2 className="w-6 h-6 text-accent" />
-              <h2>施設の営業状況</h2>
-            </div>
-            <Link href="/facilities" className="text-sm font-bold text-slate-500 hover:text-accent flex items-center gap-1 transition-colors">
-              すべて見る <ArrowRight className="w-4 h-4" />
-            </Link>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-            {topFacilities.map((fac, i) => (
-              <FacilityStatusCard key={fac.id} facility={fac} index={i} />
-            ))}
-          </div>
-      </section>
-    </div>
+    </>
   );
 }

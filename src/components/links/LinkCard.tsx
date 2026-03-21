@@ -1,4 +1,3 @@
-import { Link as LinkIcon, School, Laptop, Mail, PlaneTakeoff, BookOpen, Briefcase, ArrowUpRight } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 export type LinkItem = {
@@ -10,35 +9,42 @@ export type LinkItem = {
   icon: string;
 };
 
-const iconMap: Record<string, React.ReactNode> = {
-  school: <School className="w-6 h-6" />,
-  laptop: <Laptop className="w-6 h-6" />,
-  mail: <Mail className="w-6 h-6" />,
-  flight_takeoff: <PlaneTakeoff className="w-6 h-6" />,
-  menu_book: <BookOpen className="w-6 h-6" />,
-  work: <Briefcase className="w-6 h-6" />
-};
+const cardStyles = [
+  { bg: 'bg-secondary-container', text: 'text-primary' },
+  { bg: 'bg-tertiary-container', text: 'text-tertiary' },
+  { bg: 'bg-primary-container', text: 'text-on-primary-container' },
+  { bg: 'bg-surface-container-high', text: 'text-on-surface' },
+  { bg: 'bg-secondary-container/50', text: 'text-primary' },
+  { bg: 'bg-tertiary-container/30', text: 'text-tertiary' },
+  { bg: 'bg-primary-container/20', text: 'text-primary' },
+  { bg: 'bg-secondary-container/80', text: 'text-primary-dim' },
+];
 
 export default function LinkCard({ item, index }: { item: LinkItem; index: number }) {
-  const IconComponent = iconMap[item.icon] || <LinkIcon className="w-6 h-6" />;
+  const style = cardStyles[index % cardStyles.length];
+  
+  // Format id to make a English label
+  const englishLabel = item.id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 
   return (
     <a 
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
-      className="glass-card p-4 flex items-center gap-4 group hover:-translate-y-1 animate-fade-in"
+      className="group relative flex flex-col p-8 bg-surface-container-lowest rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#0e61a51a] animate-fade-in"
       style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'both' }}
     >
-      <div className="w-12 h-12 rounded-xl bg-accent/10 flex items-center justify-center text-accent group-hover:bg-accent group-hover:text-white transition-all duration-300 shadow-inner">
-        {IconComponent}
-      </div>
-      <div className="flex-1">
-        <div className="flex items-center justify-between">
-          <h3 className="font-bold text-slate-800 dark:text-slate-100 group-hover:text-accent transition-colors">{item.title}</h3>
-          <ArrowUpRight className="w-4 h-4 text-slate-400 opacity-0 -translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition-all duration-300" />
+      <div className="mb-6 flex items-center justify-between">
+        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 ${style.bg} ${style.text}`}>
+          <span className="material-symbols-outlined text-3xl select-none">{item.icon}</span>
         </div>
-        <p className="text-xs text-slate-500 dark:text-slate-400 mt-0.5">{item.description}</p>
+        <span className="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors select-none">north_east</span>
+      </div>
+      <h3 className="text-lg font-bold text-on-surface mb-2">{item.title}</h3>
+      <p className="text-sm text-on-surface-variant leading-relaxed mb-4">{item.description}</p>
+      
+      <div className="mt-auto pt-4 border-t border-surface-container-high flex items-center gap-2">
+        <span className="text-[10px] font-bold text-primary tracking-widest uppercase">{englishLabel}</span>
       </div>
     </a>
   );

@@ -4,7 +4,7 @@
     "name": "研究講義棟",
     "type": "study",
     "note": "講義と研究活動の拠点",
-    "icon": "school",
+    "icon": "apartment",
     "accuracy": "medium"
   },
   {
@@ -12,7 +12,7 @@
     "name": "附属図書館",
     "type": "study",
     "note": "試験期間中は延長開館します",
-    "icon": "library",
+    "icon": "local_library",
     "accuracy": "high"
   },
   {
@@ -20,7 +20,7 @@
     "name": "サークル棟",
     "type": "extracurricular",
     "note": "登録済み団体のみ利用可",
-    "icon": "groups",
+    "icon": "sports_basketball",
     "accuracy": "medium"
   },
   {
@@ -28,7 +28,7 @@
     "name": "アゴラグローバル",
     "type": "study",
     "note": "自習スペース利用可能",
-    "icon": "meeting_room",
+    "icon": "corporate_fare",
     "accuracy": "low"
   },
   {
@@ -52,15 +52,16 @@
     "name": "2階食堂さぼおる",
     "type": "food",
     "note": "カフェメニューと軽食を提供",
-    "icon": "cafe",
+    "icon": "local_cafe",
     "accuracy": "high"
   },
+
   {
     "id": "student-affairs",
     "name": "教務・学生・留学生課",
     "type": "administration",
     "note": "教務、学生支援、留学生サポート",
-    "icon": "office",
+    "icon": "support_agent",
     "accuracy": "medium"
   },
   {
@@ -68,7 +69,7 @@
     "name": "入試課",
     "type": "administration",
     "note": "入学試験に関する手続き",
-    "icon": "office",
+    "icon": "business",
     "accuracy": "medium"
   },
   {
@@ -76,7 +77,7 @@
     "name": "会計課",
     "type": "administration",
     "note": "学費や経費に関する手続き",
-    "icon": "office",
+    "icon": "business",
     "accuracy": "medium"
   },
   {
@@ -88,3 +89,4 @@
     "accuracy": "medium"
   }
 ]
+

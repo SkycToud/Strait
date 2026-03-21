@@ -13,7 +13,7 @@
     "description": "授業資料のダウンロード、課題の提出",
     "url": "https://moe.tufs.ac.jp/login/index.php",
     "category": "academic",
-    "icon": "laptop"
+    "icon": "laptop_chromebook"
   },
   {
     "id": "study-abroad",
@@ -21,7 +21,7 @@
     "description": "協定校一覧や奨学金、留学相談について",
     "url": "https://www.tufs.ac.jp/student/studyabroad/",
     "category": "support",
-    "icon": "flight_takeoff"
+    "icon": "public"
   },
   {
     "id": "library",
@@ -61,6 +61,14 @@
     "description": "東京外国語大学の公式広報ウェブメディア",
     "url": "https://www.tufs.ac.jp/tufstoday/index.html",
     "category": "news",
-    "icon": "article"
+    "icon": "newspaper"
+  },
+  {
+    "id": "seminar",
+    "title": "ゼミ案内",
+    "description": "ゼミ（専門演習）の開講情報",
+    "url": "https://gakumu-web1.tufs.ac.jp/portal/Public/Seminar/SeminarList.aspx",
+    "category": "academic",
+    "icon": "school"
   }
 ]

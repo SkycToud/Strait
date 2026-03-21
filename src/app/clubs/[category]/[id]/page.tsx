@@ -1,4 +1,4 @@
-import clubsData from '@/data/clubs.json';
+import { getAllClubs, getClubById } from '@/lib/clubs';
 import { slugify } from '@/lib/utils';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
@@ -8,6 +8,7 @@ import { ClubDetail } from '@/types/club';
 
 export async function generateStaticParams() {
   const paths: Array<{ category: string; id: string }> = [];
+  const clubsData = getAllClubs();
   
   clubsData.forEach((club) => {
     paths.push({
@@ -27,7 +28,7 @@ export default async function ClubDetailPageWrapper({
   const { category: categorySlug, id } = await params;
   
   // Find the club by ID
-  const club = clubsData.find((c) => c.id === id);
+  const club = getClubById(id);
   
   // Verify the category matches
   if (!club || slugify(club.category) !== categorySlug) {
@@ -56,13 +57,18 @@ export default async function ClubDetailPageWrapper({
       location: "準備中",
       annualPlan: ["準備中"]
     },
-    recruitment: club.recruitment || {
+    recruitment: club.recruitment ? {
+      ...club.recruitment,
+      targetGrades: (club.recruitment as any).targetGrades || [],
+    } : {
       appeal: "準備中",
       challenges: "準備中",
       applicationFlow: "準備中",
       welcomeEvents: "準備中",
+      applicationDeadline: "準備中",
       annualFee: "準備中",
       hasSelection: false,
+      targetGrades: [],
       targetAudience: "準備中",
       contact: {
         facebook: "",

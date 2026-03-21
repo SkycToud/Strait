@@ -1,41 +1,73 @@
 import Link from 'next/link';
 import { 
-  MapPin, 
   BookOpen, 
   Utensils, 
   Building, 
-  GraduationCap, 
-  Laptop, 
-  Mail, 
-  Grid3x3, 
-  Globe, 
-  AtSign,
-  Home as HomeIcon,
   Calendar,
   Building2,
   Settings
 } from 'lucide-react';
 import calendarData from '@/data/calendar.json';
 import facilityData from '@/data/facilities.json';
+import { CONST_SCHEDULE_DATA, FacilityId } from '@/lib/schedules';
+import { getFacilityStatus as calculateStatus } from '@/lib/schedule-utils';
+import linksData from '@/data/links.json';
 
 export default function Home() {
-  const rawEvent = calendarData.events[0];
-  const nextEvent = {
-    title: rawEvent.label,
-    date: rawEvent.date || rawEvent.startDate || '',
-    location: 'Research Lecture Building, Room 101',
-    startTime: '14:30'
+  const quickLinks = linksData.slice(0, 3);
+  const getNextEvent = () => {
+    const today = new Date();
+    today.setHours(0, 0, 0, 0);
+
+    const upcoming = calendarData.events.find(e => {
+      const dateStr = e.date || e.startDate;
+      if (!dateStr || /[^\x00-\x7F]/.test(dateStr)) return false;
+      const eventDate = new Date(dateStr);
+      return eventDate >= today;
+    }) || calendarData.events[0];
+
+    const dateStr = upcoming.date || upcoming.startDate || '';
+    let day = '--';
+    let month = 'TBD';
+    
+    if (dateStr) {
+      const d = new Date(dateStr);
+      if (!isNaN(d.getTime())) {
+         day = d.getDate().toString();
+         month = d.toLocaleString('en-US', { month: 'short' }).toUpperCase();
+      }
+    }
+
+    return {
+      title: upcoming.label,
+      date: dateStr,
+      startTime: 'All Day',
+      day,
+      month
+    };
   };
+
+  const nextEvent = getNextEvent();
 
   const facilities = facilityData.slice(0, 3);
 
   const getFacilityStatus = (facility: any) => {
-    // Mock status logic - replace with actual data
-    const isOpen = Math.random() > 0.3;
+    const scheduleData = CONST_SCHEDULE_DATA[facility.id as FacilityId];
+    if (!scheduleData) {
+      return {
+        isOpen: false,
+        status: 'Closed',
+        time: 'No data'
+      };
+    }
+
+    const currentStatus = calculateStatus(new Date(), scheduleData);
     return {
-      isOpen,
-      status: isOpen ? 'Open' : 'Closed',
-      time: isOpen ? `Until ${21 + Math.floor(Math.random() * 3)}:00` : `Opens ${11 + Math.floor(Math.random() * 2)}:30`
+      isOpen: currentStatus.isOpen,
+      status: currentStatus.isOpen ? 'Open' : (currentStatus.hours.length > 0 ? 'Closed' : 'Closed'),
+      time: currentStatus.hours.length > 0 
+        ? currentStatus.hours.map(h => `${h.start}-${h.end}`).join(', ')
+        : (currentStatus.note || '営業時間外')
     };
   };
 
@@ -73,15 +105,11 @@ export default function Home() {
               <div>
                 <span className="bg-white/20 backdrop-blur-md px-4 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-4 inline-block">Recommended Task</span>
                 <h3 className="text-3xl md:text-4xl font-bold mb-2">{nextEvent.title}</h3>
-                <p className="text-on-primary/80 flex items-center gap-2">
-                  <MapPin className="w-4 h-4" />
-                  {nextEvent.location}
-                </p>
               </div>
               <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/20 text-center min-w-[140px]">
-                <div className="text-4xl font-black mb-1">15</div>
-                <div className="text-sm font-bold opacity-90">OCTOBER</div>
-                <div className="mt-2 pt-2 border-t border-white/20 text-xs font-medium">{nextEvent.startTime} START</div>
+                <div className="text-4xl font-black mb-1">{nextEvent.day}</div>
+                <div className="text-sm font-bold opacity-90">{nextEvent.month}</div>
+                <div className="mt-2 pt-2 border-t border-white/20 text-xs font-medium">{nextEvent.startTime}</div>
               </div>
             </div>
             {/* Abstract Background Shape */}
@@ -138,64 +166,38 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 'よく使うリンク' (Quick Links) - Grid with Icons */}
         <section className="lg:col-span-12">
-          <div className="mb-4 px-2">
+          <div className="mb-4 px-2 flex justify-between items-center">
             <h2 className="text-xl font-bold">よく使うリンク <span className="text-sm font-normal text-on-surface-variant ml-2">Quick Links</span></h2>
+            <Link href="/links" className="text-sm font-semibold text-primary hover:underline md:hidden">View All</Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
-            {/* Academic Info */}
-            <a 
-              href="https://gakumu-web1.tufs.ac.jp/campusweb/campusportal.do" 
-              target="_blank"
-              className="group bg-surface-container-low hover:bg-white p-6 rounded-3xl transition-all duration-300 flex items-start gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5"
-            >
-              <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                <GraduationCap className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h5 className="font-bold text-sm mb-1 group-hover:text-primary transition-colors">Academic Info System</h5>
-                <p className="text-xs text-on-surface-variant leading-tight">学務情報システムへのアクセス</p>
-              </div>
-            </a>
-
-            {/* TUFS Moodle */}
-            <a 
-              href="https://moodle.tufs.ac.jp/" 
-              target="_blank"
-              className="group bg-surface-container-low hover:bg-white p-6 rounded-3xl transition-all duration-300 flex items-start gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5"
-            >
-              <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Laptop className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h5 className="font-bold text-sm mb-1 group-hover:text-primary transition-colors">TUFS Moodle</h5>
-                <p className="text-xs text-on-surface-variant leading-tight">授業資料・課題の提出</p>
-              </div>
-            </a>
-
-            {/* University Email */}
-            <a 
-              href="https://mail.google.com/a/tufs.ac.jp" 
-              target="_blank"
-              className="group bg-surface-container-low hover:bg-white p-6 rounded-3xl transition-all duration-300 flex items-start gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5"
-            >
-              <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Mail className="w-6 h-6 text-primary" />
-              </div>
-              <div>
-                <h5 className="font-bold text-sm mb-1 group-hover:text-primary transition-colors">University Email</h5>
-                <p className="text-xs text-on-surface-variant leading-tight">Outlook Web App</p>
-              </div>
-            </a>
+            {quickLinks.map((link, index) => (
+              <a 
+                key={link.id}
+                href={link.url} 
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group bg-surface-container-low hover:bg-white p-6 rounded-3xl transition-all duration-300 flex items-start gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5 animate-fade-in"
+                style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'both' }}
+              >
+                <div className={`w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                  <span className="material-symbols-outlined text-primary text-2xl select-none">{link.icon}</span>
+                </div>
+                <div className="flex-1">
+                  <h5 className="font-bold text-sm mb-1 group-hover:text-primary transition-colors line-clamp-1">{link.title}</h5>
+                  <p className="text-xs text-on-surface-variant leading-tight line-clamp-2">{link.description}</p>
+                </div>
+              </a>
+            ))}
 
             {/* Others */}
             <Link 
               href="/links"
-              className="group bg-surface-container-low hover:bg-white p-6 rounded-3xl transition-all duration-300 flex items-start gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5"
+              className="group bg-surface-container-low hover:bg-white p-6 rounded-3xl transition-all duration-300 items-start gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5 hidden lg:flex"
             >
               <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                <Grid3x3 className="w-6 h-6 text-primary" />
+                <span className="material-symbols-outlined text-primary text-2xl select-none">grid_view</span>
               </div>
               <div>
                 <h5 className="font-bold text-sm mb-1 group-hover:text-primary transition-colors">Other Resources</h5>
@@ -206,61 +208,6 @@ export default function Home() {
         </section>
       </div>
 
-      {/* Footer */}
-      <footer className="w-full mt-auto border-t border-slate-200/50 bg-surface-container-low">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-8 px-6 md:px-12 py-12 max-w-[1440px] mx-auto">
-          <div className="md:col-span-4">
-            <div className="font-bold text-slate-900 text-xl mb-4">Strait</div>
-            <p className="text-xs font-medium text-slate-500 max-w-xs leading-relaxed">
-              © Tokyo University of Foreign Studies - Strait Academic Platform. Providing elegant solutions for student productivity.
-            </p>
-          </div>
-          <div className="md:col-span-2">
-            <h4 className="text-xs font-bold text-on-surface mb-4">System</h4>
-            <ul className="space-y-2">
-              <li><a className="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Privacy Policy</a></li>
-              <li><a className="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Terms of Service</a></li>
-            </ul>
-          </div>
-          <div className="md:col-span-2">
-            <h4 className="text-xs font-bold text-on-surface mb-4">Support</h4>
-            <ul className="space-y-2">
-              <li><a className="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Campus Map</a></li>
-              <li><a className="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Contact</a></li>
-            </ul>
-          </div>
-          <div className="md:col-span-4 flex flex-col items-end">
-            <div className="flex gap-4">
-              <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:shadow-md transition-shadow">
-                <Globe className="w-5 h-5 text-on-surface-variant" />
-              </button>
-              <button className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:shadow-md transition-shadow">
-                <AtSign className="w-5 h-5 text-on-surface-variant" />
-              </button>
-            </div>
-          </div>
-        </div>
-      </footer>
-
-      {/* Mobile Bottom Navigation */}
-      <div className="md:hidden fixed bottom-0 left-0 w-full glass-nav px-4 py-3 flex justify-around items-center border-t border-outline-variant/10 z-50">
-        <button className="flex flex-col items-center gap-1 text-primary">
-          <HomeIcon className="w-6 h-6" style={{ fontVariationSettings: "'FILL' 1" }} />
-          <span className="text-[10px] font-bold">Home</span>
-        </button>
-        <button className="flex flex-col items-center gap-1 text-on-surface-variant">
-          <Calendar className="w-6 h-6" />
-          <span className="text-[10px] font-medium">Events</span>
-        </button>
-        <button className="flex flex-col items-center gap-1 text-on-surface-variant">
-          <Building2 className="w-6 h-6" />
-          <span className="text-[10px] font-medium">Campus</span>
-        </button>
-        <button className="flex flex-col items-center gap-1 text-on-surface-variant">
-          <Settings className="w-6 h-6" />
-          <span className="text-[10px] font-medium">Tools</span>
-        </button>
-      </div>
     </>
   );
 }

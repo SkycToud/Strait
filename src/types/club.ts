@@ -24,6 +24,7 @@ export interface ClubDetail {
     memberCount?: number;
     yearDistribution?: string[];
     isIntraUniversity?: boolean;
+    demographics?: string;
   };
   schedule: {
     frequency?: string;
@@ -35,8 +36,10 @@ export interface ClubDetail {
     challenges?: string;
     applicationFlow?: string;
     welcomeEvents?: string;
+    applicationDeadline?: string;
     annualFee?: string;
     hasSelection?: boolean;
+    targetGrades: string[];
     targetAudience?: string;
     contact: {
       facebook?: string;

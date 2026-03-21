@@ -80,7 +80,15 @@
   html {
     font-family: 'Inter', 'Noto Sans JP', sans-serif;
   }
+
+  .material-symbols-outlined {
+    font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+    vertical-align: middle;
+    display: inline-block;
+    line-height: 1;
+  }
 }
+
 
 @layer utilities {
   .glass-nav {

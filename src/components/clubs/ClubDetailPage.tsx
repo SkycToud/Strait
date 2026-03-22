@@ -4,6 +4,7 @@ import { useState } from 'react';
 import { ClubDetail } from '@/types/club';
 import { slugify } from '@/lib/utils';
 import Link from 'next/link';
+import Image from 'next/image';
 
 const ExpandableText = ({ text }: { text: string }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -75,10 +76,13 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
       <section className="max-w-7xl mx-auto px-6 mb-12">
         <div className="relative h-[400px] lg:h-[500px] rounded-xl overflow-hidden shadow-xl shadow-blue-900/5">
           {club.thumbnail ? (
-            <img 
-              alt={club.nameJa} 
-              className="absolute inset-0 w-full h-full object-cover" 
+            <Image
+              alt={club.nameJa}
               src={club.thumbnail}
+              fill
+              className="object-cover"
+              preload
+              sizes="(max-width: 1280px) 100vw, 1280px"
             />
           ) : (
             <div className="absolute inset-0 bg-surface-container flex items-center justify-center text-on-surface-variant font-bold text-2xl">

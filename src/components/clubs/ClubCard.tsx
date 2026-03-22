@@ -1,6 +1,6 @@
-import { Search, ExternalLink, Instagram } from 'lucide-react';
-import { cn } from '@/lib/utils';
+import { Instagram } from 'lucide-react';
 import Link from 'next/link';
+import Image from 'next/image';
 import { slugify } from '@/lib/utils';
 import { Club } from '@/types/club';
 
@@ -15,15 +15,14 @@ export default function ClubCard({ club, index }: { club: Club; index: number })
         style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'both' }}
       >
         {club.thumbnail && (
-          <div className="mb-4 -mx-5 -mt-5 h-32 overflow-hidden rounded-t-2xl">
-            <img 
-              src={club.thumbnail} 
+          <div className="mb-4 -mx-5 -mt-5 h-32 overflow-hidden rounded-t-2xl relative">
+            <Image
+              src={club.thumbnail}
               alt={`${club.nameJa} thumbnail`}
-              className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-300"
-              onError={(e) => {
-                // Fallback to hide image if it fails to load
-                e.currentTarget.style.display = 'none';
-              }}
+              fill
+              className="object-cover group-hover:scale-105 transition-transform duration-300"
+              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+              loading="lazy"
             />
           </div>
         )}

@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NoticeSection from '@/components/notice/NoticeSection';
 import { 
   BookOpen, 
   Utensils, 
@@ -165,6 +166,9 @@ export default function Home() {
             })}
           </div>
         </section>
+
+        {/* 最新のお知らせ (Notice) */}
+        <NoticeSection />
 
         <section className="lg:col-span-12">
           <div className="mb-4 px-2 flex justify-between items-center">

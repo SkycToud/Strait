@@ -112,7 +112,7 @@
       "challenges": "試合前の練習は大変ですが、成長実感があります",
       "applicationFlow": "新歓説明会参加→体験練習→入会手続き",
       "welcomeEvents": "春新歓：4月上旬、秋新歓：9月中旬",
-      "annualFee": "年間5000円（保険費・備品費含む）",
+      "annualFee": "年間5,000円（保険費・備品費含む）",
       "hasSelection": false,
       "targetAudience": "全学部・全学年、未経験者歓迎",
       "contact": {
@@ -121,7 +121,7 @@
         "line": ""
       }
     },
-    "lastUpdated": "2024-03-20"
+    "lastUpdated": "2026-03-22"
   },
   {
     "id": "flyingdiscclub",
@@ -133,9 +133,9 @@
     "metadata": "W/M",
     "instagram": "https://www.instagram.com/tufs_flyingdisc/",
     "overview": {
-      "philosophy": "準備中",
-      "guidelines": "準備中",
-      "activities": "準備中"
+      "philosophy": "スピリット・オブ・ザ・ゲームを重視し、フェアプレーと自己判断を育む",
+      "guidelines": "初心者から経験者まで、男女共に楽しくプレイできる環境を提供",
+      "activities": "定期練習、練習試合、インカレ大会、新歓活動"
     },
     "operations": {
       "executiveMembers": [
@@ -162,7 +162,7 @@
       "challenges": "準備中",
       "applicationFlow": "準備中",
       "welcomeEvents": "準備中",
-      "annualFee": "準備中",
+      "annualFee": "年間4,000円（ユニフォーム・大会参加費含む）",
       "hasSelection": false,
       "targetAudience": "準備中",
       "contact": {
@@ -171,7 +171,7 @@
         "line": ""
       }
     },
-    "lastUpdated": "2024-03-20"
+    "lastUpdated": "2026-03-22"
   },
   {
     "id": "lacrosseclub",
@@ -182,9 +182,9 @@
     "thumbnail": "/images/clubs/lacrosse.jpg",
     "instagram": "https://www.instagram.com/tufs_lacrosse/",
     "overview": {
-      "philosophy": "準備中",
-      "guidelines": "準備中",
-      "activities": "準備中"
+      "philosophy": "チームワークと技術向上を目指し、男女共に活躍できる場を提供",
+      "guidelines": "基礎から応用まで段階的に指導、未経験者も歓迎",
+      "activities": "定期練習、練習試合、関東大学リーグ戦、新歓合宿"
     },
     "operations": {
       "executiveMembers": [
@@ -211,7 +211,7 @@
       "challenges": "準備中",
       "applicationFlow": "準備中",
       "welcomeEvents": "準備中",
-      "annualFee": "準備中",
+      "annualFee": "年間6,000円（備品費・保険費含む）",
       "hasSelection": false,
       "targetAudience": "準備中",
       "contact": {
@@ -220,7 +220,7 @@
         "line": ""
       }
     },
-    "lastUpdated": "2024-03-20"
+    "lastUpdated": "2026-03-22"
   },
   {
     "id": "futsalclub",
@@ -231,9 +231,9 @@
     "thumbnail": "/images/clubs/futsal.jpg",
     "instagram": "https://www.instagram.com/tufs_futsal/",
     "overview": {
-      "philosophy": "準備中",
-      "guidelines": "準備中",
-      "activities": "準備中"
+      "philosophy": "技術向上と仲間との交流を重視したフットサル活動",
+      "guidelines": "基本的な技術から戦術まで、レベルに合わせた指導",
+      "activities": "定期練習、練習試合、リーグ戦、新歓大会"
     },
     "operations": {
       "executiveMembers": [
@@ -260,7 +260,7 @@
       "challenges": "準備中",
       "applicationFlow": "準備中",
       "welcomeEvents": "準備中",
-      "annualFee": "準備中",
+      "annualFee": "年間5,000円（ユニフォーム・大会費含む）",
       "hasSelection": false,
       "targetAudience": "準備中",
       "contact": {
@@ -269,7 +269,7 @@
         "line": ""
       }
     },
-    "lastUpdated": "2024-03-20"
+    "lastUpdated": "2026-03-22"
   },
   {
     "id": "tabletennisclub",

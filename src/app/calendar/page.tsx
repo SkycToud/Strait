@@ -78,8 +78,8 @@ export default function CalendarPage() {
           <div className="space-y-1">
             {view === 'calendar' ? (
               <>
-                <p className="text-on-surface-variant text-sm font-medium">2026 Academic Year</p>
-                <h1 className="text-4xl font-extrabold text-on-surface tracking-tight">April 2026 / 4月</h1>
+                <p className="text-on-surface-variant text-sm font-medium">2026年度</p>
+                <h1 className="text-4xl font-extrabold text-on-surface tracking-tight">2026 / 4月</h1>
               </>
             ) : (
               <>

@@ -8,9 +8,10 @@ export type Facility = {
   id: string;
   name: string;
   type: string;
-  note: string;
+  note?: string;
   icon: string;
   accuracy: 'high' | 'medium' | 'low';
+  link?: string;
 };
 
 const getAccuracyLabel = (accuracy: string) => {
@@ -58,13 +59,22 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
     return '開館時間';
   };
 
+  const Tag = facility.link ? 'a' : 'div';
+  const tagProps = facility.link ? {
+    href: facility.link,
+    target: "_blank",
+    rel: "noopener noreferrer"
+  } : {};
+
   return (
-    <div 
+    <Tag 
+      {...tagProps as any}
       className={cn(
         "group rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden flex flex-col",
         isOpen 
           ? "bg-surface-container-lowest hover:shadow-xl hover:shadow-primary/5 border border-surface-container-high/50" 
-          : "bg-surface-container-low/50 border border-surface-container-high hover:border-surface-variant opacity-80 hover:opacity-100"
+          : "bg-surface-container-low/50 border border-surface-container-high hover:border-surface-variant opacity-80 hover:opacity-100",
+        facility.link ? "cursor-pointer" : ""
       )}
     >
       <div className="absolute top-0 right-0 p-3">
@@ -127,6 +137,6 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
         </span>
         <span className="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
       </div>
-    </div>
+    </Tag>
   );
 }

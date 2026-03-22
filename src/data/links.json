@@ -70,5 +70,13 @@
     "url": "https://gakumu-web1.tufs.ac.jp/portal/Public/Seminar/SeminarList.aspx",
     "category": "academic",
     "icon": "school"
+  },
+  {
+    "id": "csmc",
+    "title": "教育情報化支援室",
+    "description": "機材貸出や、クラスルームサポートなど",
+    "url": "https://wp3.tufs.ac.jp/csmc/home/hours-and-map/",
+    "category": "support",
+    "icon": "computer"
   }
 ]

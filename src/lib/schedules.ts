@@ -9,7 +9,8 @@ export type FacilityId =
     | 'student-affairs'
     | 'admissions-office'
     | 'accounting-office'
-    | 'certificate-machine';
+    | 'certificate-machine'
+    | 'health-care-center';
 
 export type ScheduleRule = {
     type: 'weekday' | 'wednesday' | 'saturday' | 'sunday' | 'specific_date' | 'range' | 'national_holiday';
@@ -293,6 +294,19 @@ export const CONST_SCHEDULE_DATA: Record<FacilityId, FacilityData> = {
             Rules.weekday(times('09:00', '17:00')),
             Rules.subWeekday('saturday', [], true),
             Rules.subWeekday('sunday', [], true),
+        ]
+    },
+    'health-care-center': {
+        name: '保健管理センター',
+        nameEn: 'Health Care Center',
+        category: 'admin',
+        rules: [
+            ...COMMON_ADMIN_RULES,
+            Rules.nationalHoliday(true),
+            Rules.weekday([
+                { start: '09:30', end: '12:30' },
+                { start: '13:30', end: '16:00' }
+            ]),
         ]
     }
 };

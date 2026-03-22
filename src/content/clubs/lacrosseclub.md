@@ -6,9 +6,9 @@ description: 'Regular practice, matches'
 thumbnail: /images/clubs/lacrosse.jpg
 instagram: 'https://www.instagram.com/tufs_lacrosse/'
 overview:
-  philosophy: 準備中
-  guidelines: 準備中
-  activities: 準備中
+  philosophy: チームワークと技術向上を目指し、男女共に活躍できる場を提供
+  guidelines: 基礎から応用まで段階的に指導、未経験者も歓迎
+  activities: 定期練習、練習試合、関東大学リーグ戦、新歓合宿
 operations:
   executiveMembers:
     - 準備中
@@ -28,14 +28,14 @@ recruitment:
   challenges: 準備中
   applicationFlow: 準備中
   welcomeEvents: 準備中
-  annualFee: 準備中
+  annualFee: '年間6,000円（備品費・保険費含む）'
   hasSelection: false
   targetAudience: 準備中
   contact:
     facebook: ''
     website: ''
     line: ''
-lastUpdated: '2024-03-20'
+lastUpdated: '2026-03-22'
 ---
 <!-- 
   Markdown Body: 今後必要であればここに自由記述を増やせます。

@@ -50,5 +50,3 @@ export interface ClubDetail {
   lastUpdated?: string;
 }
 
-// For backward compatibility with existing components
-export type Club = Omit<ClubDetail, 'overview' | 'operations' | 'membership' | 'schedule' | 'recruitment' | 'lastUpdated'>;

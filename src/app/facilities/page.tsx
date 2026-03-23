@@ -9,7 +9,7 @@ export default function FacilitiesPage() {
 
   const filteredData = facilityData.filter(f => {
     if (filter === 'all') return true;
-    if (filter === 'study') return f.id === 'research-lecture' || f.id === 'agora';
+    if (filter === 'study') return ['student-affairs', 'admissions-office', 'accounting-office', 'certificate-machine', 'health-care-center'].includes(f.id);
     if (filter === 'library') return f.id === 'library';
     if (filter === 'amenity') return f.type === 'food' || f.type === 'store';
     return true;

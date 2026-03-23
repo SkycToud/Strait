@@ -1,6 +1,6 @@
 import { cn } from '@/lib/utils';
 
-export type LinkItem = {
+type LinkItem = {
   id: string;
   title: string;
   description: string;

@@ -112,23 +112,23 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
           </span>
         </div>
 
-        {isOpen ? (
-          <div className="pt-4">
-            <div className="flex justify-between items-end mb-2">
-              <span className="text-xs font-bold text-on-surface-variant">情報の精度</span>
-              <span className="text-xs font-bold text-primary">{getAccuracyLabel(facility.accuracy)}</span>
-            </div>
-            <div className="flex gap-1">
-              <div className={cn("h-1.5 flex-1 rounded-full", facility.accuracy === 'high' || facility.accuracy === 'medium' || facility.accuracy === 'low' ? "bg-[#61a0e8]" : "bg-surface-container-high")}></div>
-              <div className={cn("h-1.5 flex-1 rounded-full", facility.accuracy === 'high' || facility.accuracy === 'medium' ? "bg-[#61a0e8]" : "bg-surface-container-high")}></div>
-              <div className={cn("h-1.5 flex-1 rounded-full", facility.accuracy === 'high' ? "bg-[#61a0e8]" : "bg-surface-container-high")}></div>
-            </div>
-          </div>
-        ) : (
-          <div className="bg-surface-container-high/50 p-3 rounded-xl text-xs text-on-surface-variant leading-relaxed">
+        {!isOpen && (
+          <div className="bg-surface-container-high/50 p-3 rounded-xl text-xs text-on-surface-variant leading-relaxed mt-2">
             {status.note || facility.note || '本日は利用できません。'}
           </div>
         )}
+
+        <div className="pt-4 mt-auto">
+          <div className="flex justify-between items-end mb-2">
+            <span className="text-xs font-bold text-on-surface-variant">情報の精度</span>
+            <span className="text-xs font-bold text-primary">{getAccuracyLabel(facility.accuracy)}</span>
+          </div>
+          <div className="flex gap-1">
+            <div className={cn("h-1.5 flex-1 rounded-full", facility.accuracy === 'high' || facility.accuracy === 'medium' || facility.accuracy === 'low' ? "bg-[#61a0e8]" : "bg-surface-container-high")}></div>
+            <div className={cn("h-1.5 flex-1 rounded-full", facility.accuracy === 'high' || facility.accuracy === 'medium' ? "bg-[#61a0e8]" : "bg-surface-container-high")}></div>
+            <div className={cn("h-1.5 flex-1 rounded-full", facility.accuracy === 'high' ? "bg-[#61a0e8]" : "bg-surface-container-high")}></div>
+          </div>
+        </div>
       </div>
 
       <div className="mt-6 pt-6 border-t border-surface-container-high flex justify-between items-center">

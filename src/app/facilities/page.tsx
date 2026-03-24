@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import FacilityStatusCard from '@/components/facilities/FacilityStatusCard';
 import facilityData from '@/data/facilities.json';
+import PageHeader from '@/components/layout/PageHeader';
 
 export default function FacilitiesPage() {
   const [filter, setFilter] = useState('all');
@@ -20,15 +21,11 @@ export default function FacilitiesPage() {
       {/* Main Content Area centered by removing the aside and wrapping in a narrower max-width container */}
       <div className="flex-1">
         {/* Page Header */}
-        <div className="mb-10 text-center md:text-left">
-          <div className="flex flex-col md:flex-row items-baseline gap-3 mb-4 justify-center md:justify-start">
-            <h1 className="text-4xl font-extrabold tracking-tight text-on-surface">施設情報</h1>
-            <span className="text-lg text-on-surface-variant font-medium">Facility Information</span>
-          </div>
-          <p className="text-on-surface-variant max-w-2xl leading-relaxed mx-auto md:mx-0">
-            キャンパス内の主要施設、食堂、事務窓口の開館状況を確認できます。
-          </p>
-        </div>
+        <PageHeader
+          title="施設情報"
+          subtitle="Facility Information"
+          description="キャンパス内の主要施設、食堂、事務窓口の開館状況を確認できます。"
+        />
         {/* Quick Filter Tabs */}
         <div className="flex flex-wrap gap-2 mb-10 justify-center md:justify-start">
           <button

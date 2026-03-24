@@ -3,6 +3,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { ExternalLink, Bell, ChevronRight } from 'lucide-react';
 import type { TufsNewsItem } from '@/app/api/tufs-news/route';
+import PageHeader from '@/components/layout/PageHeader';
 
 const CATEGORIES = ['すべて', '教務', '留学', '学生生活', 'キャリア支援', 'その他'] as const;
 
@@ -43,25 +44,11 @@ export default function NoticesPage() {
   return (
     <>
       {/* Page Header */}
-      <header className="mb-8">
-        <div className="flex items-center gap-3 mb-2">
-          <Bell className="w-7 h-7 text-primary" />
-          <h1 className="text-4xl md:text-5xl font-extrabold tracking-tight text-on-background">
-            お知らせ
-          </h1>
-        </div>
-        <p className="text-on-surface-variant text-sm">
-          東京外国語大学 在学生向けお知らせ一覧
-          <a
-            href="https://www.tufs.ac.jp/student/NEWS/index.html"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="ml-2 inline-flex items-center gap-1 text-primary hover:underline text-xs"
-          >
-            公式サイトで見る <ExternalLink className="w-3 h-3" />
-          </a>
-        </p>
-      </header>
+      <PageHeader
+        title="お知らせ"
+        subtitle="Notices"
+        description="東京外国語大学 在学生向けお知らせ一覧"
+      />
 
       {/* Category Tabs */}
       <div className="flex gap-2 flex-wrap mb-6">

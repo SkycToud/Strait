@@ -1,6 +1,7 @@
 'use client';
 import React, { useState } from 'react';
-import { Calendar as CalendarIcon, Clock, MapPin, AlertCircle } from 'lucide-react';
+import { Calendar as CalendarIcon, Clock, MapPin, AlertCircle, CalendarPlus } from 'lucide-react';
+import { buildGoogleCalendarUrl } from '@/lib/google-calendar';
 
 interface EventData {
   date?: string;
@@ -41,8 +42,42 @@ const getThemeBorderClass = (theme: string) => {
   }
 };
 
-export default function CalendarGrid({ events }: { events: EventData[] }) {
-  const [selectedDate, setSelectedDate] = useState('2026-04-01');
+export default function CalendarGrid({ events, currentMonth }: { events: EventData[], currentMonth: Date }) {
+  const [selectedDate, setSelectedDate] = useState(() => {
+    const today = new Date();
+    const isSameMonth = 
+      today.getFullYear() === currentMonth.getFullYear() && 
+      today.getMonth() === currentMonth.getMonth();
+    
+    if (isSameMonth) {
+      const year = today.getFullYear();
+      const month = String(today.getMonth() + 1).padStart(2, '0');
+      const day = String(today.getDate()).padStart(2, '0');
+      return `${year}-${month}-${day}`;
+    }
+    
+    const year = currentMonth.getFullYear();
+    const month = String(currentMonth.getMonth() + 1).padStart(2, '0');
+    return `${year}-${month}-01`;
+  });
+
+  // Reset selectedDate when month changes
+  React.useEffect(() => {
+    const today = new Date();
+    const isSameMonth = 
+      today.getFullYear() === currentMonth.getFullYear() && 
+      today.getMonth() === currentMonth.getMonth();
+
+    const year = currentMonth.getFullYear();
+    const month = String(currentMonth.getMonth() + 1).padStart(2, '0');
+    
+    if (isSameMonth) {
+      const day = String(today.getDate()).padStart(2, '0');
+      setSelectedDate(`${year}-${month}-${day}`);
+    } else {
+      setSelectedDate(`${year}-${month}-01`);
+    }
+  }, [currentMonth]);
 
   // Helper to check if an event falls on a specific date string (YYYY-MM-DD)
   const getEventsForDate = (dateKey: string) => {
@@ -55,44 +90,51 @@ export default function CalendarGrid({ events }: { events: EventData[] }) {
     });
   };
 
-  // Grid for April 2026 (starting Sunday Mar 29)
-  const gridCells = [
-    { day: 29, isCurrentMonth: false, dateKey: '2026-03-29' },
-    { day: 30, isCurrentMonth: false, dateKey: '2026-03-30' },
-    { day: 31, isCurrentMonth: false, dateKey: '2026-03-31' },
-    { day: 1, isCurrentMonth: true, dateKey: '2026-04-01' },
-    { day: 2, isCurrentMonth: true, dateKey: '2026-04-02' },
-    { day: 3, isCurrentMonth: true, dateKey: '2026-04-03' },
-    { day: 4, isCurrentMonth: true, dateKey: '2026-04-04' },
-    { day: 5, isCurrentMonth: true, dateKey: '2026-04-05' },
-    { day: 6, isCurrentMonth: true, dateKey: '2026-04-06' },
-    { day: 7, isCurrentMonth: true, dateKey: '2026-04-07' },
-    { day: 8, isCurrentMonth: true, dateKey: '2026-04-08' },
-    { day: 9, isCurrentMonth: true, dateKey: '2026-04-09' },
-    { day: 10, isCurrentMonth: true, dateKey: '2026-04-10' },
-    { day: 11, isCurrentMonth: true, dateKey: '2026-04-11' },
-    { day: 12, isCurrentMonth: true, dateKey: '2026-04-12' },
-    { day: 13, isCurrentMonth: true, dateKey: '2026-04-13' },
-    { day: 14, isCurrentMonth: true, dateKey: '2026-04-14' },
-    { day: 15, isCurrentMonth: true, dateKey: '2026-04-15' },
-    { day: 16, isCurrentMonth: true, dateKey: '2026-04-16' },
-    { day: 17, isCurrentMonth: true, dateKey: '2026-04-17' },
-    { day: 18, isCurrentMonth: true, dateKey: '2026-04-18' },
-    { day: 19, isCurrentMonth: true, dateKey: '2026-04-19' },
-    { day: 20, isCurrentMonth: true, dateKey: '2026-04-20' },
-    { day: 21, isCurrentMonth: true, dateKey: '2026-04-21' },
-    { day: 22, isCurrentMonth: true, dateKey: '2026-04-22' },
-    { day: 23, isCurrentMonth: true, dateKey: '2026-04-23' },
-    { day: 24, isCurrentMonth: true, dateKey: '2026-04-24' },
-    { day: 25, isCurrentMonth: true, dateKey: '2026-04-25' },
-    { day: 26, isCurrentMonth: true, dateKey: '2026-04-26' },
-    { day: 27, isCurrentMonth: true, dateKey: '2026-04-27' },
-    { day: 28, isCurrentMonth: true, dateKey: '2026-04-28' },
-    { day: 29, isCurrentMonth: true, dateKey: '2026-04-29' },
-    { day: 30, isCurrentMonth: true, dateKey: '2026-04-30' },
-    { day: 1, isCurrentMonth: false, dateKey: '2026-05-01' },
-    { day: 2, isCurrentMonth: false, dateKey: '2026-05-02' },
-  ];
+  // Dynamically generate grid cells for the current month
+  const generateGridCells = () => {
+    const year = currentMonth.getFullYear();
+    const month = currentMonth.getMonth();
+    
+    // First day of the month
+    const firstDayOfMonth = new Date(year, month, 1);
+    // Day of the week of the first day (0-6)
+    const startDayOfWeek = firstDayOfMonth.getDay();
+    
+    // Last day of the current month
+    const lastDayOfMonth = new Date(year, month + 1, 0);
+    const totalDaysInMonth = lastDayOfMonth.getDate();
+    
+    // Padding from previous month
+    const prevMonthLastDay = new Date(year, month, 0).getDate();
+    const cells = [];
+    
+    for (let i = startDayOfWeek - 1; i >= 0; i--) {
+      const d = prevMonthLastDay - i;
+      const m = month === 0 ? 11 : month - 1;
+      const y = month === 0 ? year - 1 : year;
+      const dateKey = `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+      cells.push({ day: d, isCurrentMonth: false, dateKey });
+    }
+    
+    // Current month days
+    for (let d = 1; d <= totalDaysInMonth; d++) {
+      const dateKey = `${year}-${String(month + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+      cells.push({ day: d, isCurrentMonth: true, dateKey });
+    }
+    
+    // Padding from next month to fill the 7xN grid (usually 5 or 6 rows)
+    const remainingCells = 42 - cells.length; // 6 rows * 7 days
+    for (let d = 1; d <= remainingCells; d++) {
+      const m = month === 11 ? 0 : month + 1;
+      const y = month === 11 ? year + 1 : year;
+      const dateKey = `${y}-${String(m + 1).padStart(2, '0')}-${String(d).padStart(2, '0')}`;
+      cells.push({ day: d, isCurrentMonth: false, dateKey });
+    }
+    
+    return cells;
+  };
+
+  const gridCells = generateGridCells();
 
   const getDayColor = (index: number) => {
     if (index % 7 === 0) return 'text-error';
@@ -170,9 +212,9 @@ export default function CalendarGrid({ events }: { events: EventData[] }) {
                 const isReg = isRegistrationEvent(event.label);
                 return (
                     <div key={i} className={`relative pl-4 border-l-4 ${getThemeBorderClass(theme)}`}>
-                        <div className="flex items-center justify-between gap-2 mb-1">
-                            <h3 className="text-sm font-bold text-on-surface line-clamp-2">{event.label}</h3>
-                            {isReg && <AlertCircle className="w-3.5 h-3.5 text-error shrink-0" />}
+                        <div className="flex items-start justify-between gap-2 mb-1">
+                            <h3 className="text-sm font-bold text-on-surface line-clamp-2 flex-1">{event.label}</h3>
+                            {isReg && <AlertCircle className="w-3.5 h-3.5 text-error shrink-0 mt-0.5" />}
                         </div>
                         <div className="flex items-center gap-1.5 text-[10px] text-on-surface-variant">
                             <Clock className="w-3 h-3" />
@@ -183,6 +225,20 @@ export default function CalendarGrid({ events }: { events: EventData[] }) {
                                 </span>
                             )}
                         </div>
+                        {(() => {
+                          const gcUrl = buildGoogleCalendarUrl(event);
+                          return gcUrl ? (
+                            <a
+                              href={gcUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="mt-2 inline-flex items-center gap-1.5 text-[10px] font-bold text-primary hover:text-primary/70 transition-colors"
+                            >
+                              <CalendarPlus className="w-3 h-3" />
+                              Googleカレンダーに追加
+                            </a>
+                          ) : null;
+                        })()}
                     </div>
                 );
             }) : (
@@ -215,17 +271,6 @@ export default function CalendarGrid({ events }: { events: EventData[] }) {
           </div>
         </div>
 
-        {/* Next Month Banner */}
-        <div className="relative overflow-hidden bg-gradient-to-br from-[#1c4b44] to-[#0c2a25] rounded-[2rem] p-6 shadow-md text-white">
-          <div className="absolute top-0 right-0 w-32 h-32 bg-white/5 rounded-full blur-2xl -translate-y-12 translate-x-12" />
-          <h3 className="text-lg font-light text-white/90 leading-tight">Next Month Campus</h3>
-          <p className="text-[10px] text-white/50 tracking-widest uppercase mb-4 opacity-50 italic">Informational</p>
-          <p className="text-[9px] text-white/60 leading-relaxed mb-6">
-            May brings the blooming of local events and the transition into full academic activities. Stay tuned for details on the school boat competition and more.
-          </p>
-          <span className="text-[10px] uppercase font-bold text-white/80 block mb-1">Upcoming</span>
-          <p className="text-sm font-bold text-white">May 2026 Focus</p>
-        </div>
       </div>
     </div>
   );

@@ -53,7 +53,7 @@ export async function TufsNotices() {
           href="/notices"
           className="text-sm font-semibold text-primary hover:underline"
         >
-          すべて見る
+          See All
         </Link>
       </div>
 

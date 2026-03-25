@@ -6,7 +6,8 @@ export interface RawCalendarEvent {
   date?: string;
   startDate?: string;
   endDate?: string;
-  label: string;
+  label?: string;
+  title?: string;
   isSemesterSchedule?: boolean;
 }
 
@@ -44,9 +45,11 @@ export function buildGoogleCalendarUrl(event: RawCalendarEvent): string | null {
     ? nextDayStr(event.endDate)   // 期間イベント: 終了日の翌日
     : nextDayStr(startStr);        // 単日イベント: 開始日の翌日
 
+  const eventName = event.label ?? event.title ?? '';
+
   const params = new URLSearchParams({
     action: 'TEMPLATE',
-    text: event.label,
+    text: eventName,
     dates: `${startDate}/${endDate}`,
   });
 

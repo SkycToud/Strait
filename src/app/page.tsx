@@ -13,6 +13,7 @@ import facilityData from '@/data/facilities.json';
 import { CONST_SCHEDULE_DATA, FacilityId } from '@/lib/schedules';
 import { getFacilityStatus as calculateStatus } from '@/lib/schedule-utils';
 import linksData from '@/data/links.json';
+import { TufsNotices } from '@/components/TufsNotices';
 
 export default function Home() {
   const quickLinks = linksData.slice(0, 3);
@@ -86,8 +87,7 @@ export default function Home() {
           Strait
         </h1>
         <p className="text-lg text-on-surface-variant max-w-2xl leading-relaxed text-center md:text-left md:mx-0 mx-auto">
-          東京外国語大学の学生のための、スマートなアカデミックポータル。<br/>
-          <span className="text-sm font-medium opacity-70">A streamlined academic portal for Tokyo University of Foreign Studies students.</span>
+          東京外国語大学の学生のための、スマートなアカデミックポータル。
         </p>
       </header>
 
@@ -97,7 +97,7 @@ export default function Home() {
         <section className="lg:col-span-8">
           <div className="flex items-center justify-between mb-4 px-2">
             <h2 className="text-xl font-bold flex items-center gap-2">
-              直近の予定 <span className="text-sm font-normal text-on-surface-variant ml-2">Upcoming Schedule</span>
+              直近の予定
             </h2>
             <Link href="/calendar" className="text-sm font-semibold text-primary hover:underline">See All</Link>
           </div>
@@ -121,7 +121,7 @@ export default function Home() {
         {/* '施設の営業状況' (Facility Status) - Compact Stack */}
         <section className="lg:col-span-4 flex flex-col">
           <div className="flex items-center justify-between mb-4 px-2">
-            <h2 className="text-xl font-bold">施設の営業状況 <span className="text-xs font-normal text-on-surface-variant block md:inline md:ml-2">Facility Status</span></h2>
+            <h2 className="text-xl font-bold">施設の営業状況</h2>
             <Link href="/facilities" className="text-sm font-semibold text-primary hover:underline">See All</Link>
           </div>
           <div className="flex flex-col gap-3 h-full">
@@ -167,12 +167,12 @@ export default function Home() {
           </div>
         </section>
 
-        {/* 最新のお知らせ (Notice) */}
-        <NoticeSection />
+        {/* TUFS Notice セクション */}
+        <TufsNotices />
 
         <section className="lg:col-span-12">
           <div className="mb-4 px-2 flex justify-between items-center">
-            <h2 className="text-xl font-bold">よく使うリンク <span className="text-sm font-normal text-on-surface-variant ml-2">Quick Links</span></h2>
+            <h2 className="text-xl font-bold">よく使うリンク</h2>
             <Link href="/links" className="text-sm font-semibold text-primary hover:underline md:hidden">View All</Link>
           </div>
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">

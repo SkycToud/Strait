@@ -3,7 +3,6 @@
     "id": "research-lecture",
     "name": "研究講義棟",
     "type": "study",
-    "note": "講義と研究活動の拠点",
     "icon": "apartment",
     "accuracy": "medium"
   },
@@ -11,15 +10,14 @@
     "id": "library",
     "name": "附属図書館",
     "type": "study",
-    "note": "試験期間中は延長開館します",
     "icon": "local_library",
-    "accuracy": "high"
+    "accuracy": "high",
+    "link": "https://www.tufs.ac.jp/library/"
   },
   {
     "id": "circle-building",
     "name": "サークル棟",
     "type": "extracurricular",
-    "note": "登録済み団体のみ利用可",
     "icon": "sports_basketball",
     "accuracy": "medium"
   },
@@ -27,7 +25,6 @@
     "id": "agora",
     "name": "アゴラグローバル",
     "type": "study",
-    "note": "自習スペース利用可能",
     "icon": "corporate_fare",
     "accuracy": "low"
   },
@@ -35,58 +32,64 @@
     "id": "meal-cafeteria",
     "name": "一階食堂ミール",
     "type": "food",
-    "note": "定食と軽食を提供",
     "icon": "restaurant",
-    "accuracy": "high"
+    "accuracy": "high",
+    "link": "https://www.univcoop.jp/tufs/time/"
   },
   {
     "id": "hatchpotchi",
     "name": "購買書籍部ハッチポッチ",
     "type": "store",
-    "note": "文房具、書籍、軽食の販売",
     "icon": "store",
-    "accuracy": "high"
+    "accuracy": "high",
+    "link": "https://www.univcoop.jp/tufs/time/"
   },
   {
     "id": "savoru-cafeteria",
     "name": "2階食堂さぼおる",
     "type": "food",
-    "note": "カフェメニューと軽食を提供",
     "icon": "local_cafe",
-    "accuracy": "high"
+    "accuracy": "high",
+    "link": "https://www.univcoop.jp/tufs/time/"
   },
-
   {
     "id": "student-affairs",
     "name": "教務・学生・留学生課",
     "type": "administration",
-    "note": "教務、学生支援、留学生サポート",
     "icon": "support_agent",
-    "accuracy": "medium"
+    "accuracy": "medium",
+    "link": "https://www.tufs.ac.jp/student/procedure/"
   },
   {
     "id": "admissions-office",
     "name": "入試課",
     "type": "administration",
-    "note": "入学試験に関する手続き",
     "icon": "business",
-    "accuracy": "medium"
+    "accuracy": "medium",
+    "link": "https://www.tufs.ac.jp/student/procedure/"
   },
   {
     "id": "accounting-office",
     "name": "会計課",
     "type": "administration",
-    "note": "学費や経費に関する手続き",
     "icon": "business",
-    "accuracy": "medium"
+    "accuracy": "medium",
+    "link": "https://www.tufs.ac.jp/student/procedure/"
   },
   {
     "id": "certificate-machine",
     "name": "証明書発行機",
     "type": "service",
-    "note": "成績証明書、卒業証明書等を発行",
     "icon": "print",
-    "accuracy": "medium"
+    "accuracy": "medium",
+    "link": "https://www.tufs.ac.jp/student/procedure/"
+  },
+  {
+    "id": "health-care-center",
+    "name": "保健管理センター",
+    "type": "administration",
+    "icon": "medical_services",
+    "accuracy": "medium",
+    "link": "https://www.tufs.ac.jp/institutions/facility/hoken/guide/"
   }
 ]
-

@@ -1,8 +1,10 @@
 'use client';
 import React, { useState } from 'react';
-import { CalendarPlus, Clock, MapPin, FileText, AlertCircle } from 'lucide-react';
+import { CalendarPlus, Clock, MapPin, FileText, AlertCircle, ChevronLeft, ChevronRight } from 'lucide-react';
+import { buildGoogleCalendarUrl } from '@/lib/google-calendar';
 import calendarData from '@/data/calendar.json';
 import CalendarGrid from '@/components/calendar/CalendarGrid';
+import PageHeader from '@/components/layout/PageHeader';
 
 // Helper to format date strings like "2026-04-01" to "4月1日"
 export const formatEventDate = (dateStr?: string) => {
@@ -67,66 +69,103 @@ export const getThemeClasses = (color: string) => {
 };
 
 export default function CalendarPage() {
-  const [view, setView] = useState<'list'|'calendar'>('calendar');
-  const events = calendarData.events;
+  const [view, setView] = useState<'list' | 'calendar'>('calendar');
+  const [currentMonth, setCurrentMonth] = useState(new Date()); // Default to current month
+  const timingToDay = (timing: string): number => {
+    switch (timing) {
+      case '初旬': return 1;
+      case '上旬': return 7;
+      case '中旬': return 15;
+      case '末頃': return 26;
+      default: return 15;
+    }
+  };
+
+  const getSortDate = (e: { date?: string; startDate?: string }): Date => {
+    const raw = e.startDate || e.date || '';
+    // 「2026-06-上旬」のような形式
+    const match = raw.match(/^(\d{4})-(\d{2})-(.+)$/);
+    if (match && isNaN(Number(match[3]))) {
+      return new Date(parseInt(match[1]), parseInt(match[2]) - 1, timingToDay(match[3]));
+    }
+    const d = new Date(raw);
+    return isNaN(d.getTime()) ? new Date(8640000000000000) : d;
+  };
+
+  const events = [...calendarData.events].sort(
+    (a, b) => getSortDate(a).getTime() - getSortDate(b).getTime()
+  );
+
+  const handlePrevMonth = () => {
+    setCurrentMonth(prev => new Date(prev.getFullYear(), prev.getMonth() - 1, 1));
+  };
+
+  const handleNextMonth = () => {
+    setCurrentMonth(prev => new Date(prev.getFullYear(), prev.getMonth() + 1, 1));
+  };
+
+  const year = currentMonth.getFullYear();
+  const month = currentMonth.getMonth() + 1;
 
   return (
     <div className="max-w-[1024px] mx-auto w-full">
       <section className="flex-1">
         {/* Header Section */}
-        <header className="flex flex-col md:flex-row md:items-end justify-between gap-6 mb-8">
-          <div className="space-y-1">
-            {view === 'calendar' ? (
-              <>
-                <p className="text-on-surface-variant text-sm font-medium">2026 Academic Year</p>
-                <h1 className="text-4xl font-extrabold text-on-surface tracking-tight">April 2026 / 4月</h1>
-              </>
-            ) : (
-              <>
-                 <h1 className="text-4xl font-extrabold text-on-surface tracking-tight">学期予定</h1>
-                 <p className="text-on-surface-variant font-medium pt-1">Academic Schedule & Timelines — Spring Semester 2024</p>
-              </>
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
+          <div className="flex flex-col gap-4">
+            <PageHeader
+              title={view === 'calendar' ? `${year} / ${month}月` : '学期予定'}
+              subtitle={view === 'calendar' ? 'Academic Calendar' : 'Academic Schedule & Timelines 2026'}
+            />
+
+            {view === 'calendar' && (
+              <div className="flex items-center gap-4">
+                <button
+                  onClick={handlePrevMonth}
+                  className="p-2 rounded-full hover:bg-surface-container-high transition-colors border border-outline-variant/30 text-on-surface"
+                  aria-label="Previous Month"
+                >
+                  <ChevronLeft className="w-5 h-5" />
+                </button>
+                <button
+                  onClick={handleNextMonth}
+                  className="p-2 rounded-full hover:bg-surface-container-high transition-colors border border-outline-variant/30 text-on-surface"
+                  aria-label="Next Month"
+                >
+                  <ChevronRight className="w-5 h-5" />
+                </button>
+              </div>
             )}
           </div>
-          <div className="flex flex-wrap items-center gap-3">
+
+          <div className="flex flex-wrap items-center gap-3 shrink-0 pt-2">
             <div className="flex items-center gap-1 p-1 bg-surface-container-high rounded-full w-fit">
               <button onClick={() => setView('list')} className={`px-5 py-2 text-sm font-bold rounded-full transition-all active:scale-95 ${view === 'list' ? 'bg-white shadow-sm text-primary' : 'text-on-surface-variant hover:text-on-surface'}`}>List View</button>
               <button onClick={() => setView('calendar')} className={`px-5 py-2 text-sm font-bold rounded-full transition-all active:scale-95 ${view === 'calendar' ? 'bg-white shadow-sm text-primary' : 'text-on-surface-variant hover:text-on-surface'}`}>Calendar View</button>
             </div>
-            <button className="flex items-center gap-2 bg-white border border-outline-variant/30 text-primary px-6 py-2.5 rounded-full text-sm font-bold shadow-sm hover:bg-surface-container-lowest active:scale-95 transition-all">
-              <CalendarPlus className="w-4 h-4" />
-              iCal Export
-            </button>
           </div>
-        </header>
+        </div>
 
         {view === 'list' ? (
           <>
-            {/* Export & Quick Filter Row */}
-            <div className="flex flex-wrap items-center justify-between gap-4 mb-8">
-              <div className="flex gap-2">
-                <span className="px-4 py-2 bg-primary/10 text-primary text-xs font-bold rounded-full">All Semesters</span>
-                <span className="px-4 py-2 bg-surface-container-high text-on-surface-variant text-xs font-medium rounded-full hover:bg-surface-container-highest cursor-pointer transition-colors">Undergraduate</span>
-                <span className="px-4 py-2 bg-surface-container-high text-on-surface-variant text-xs font-medium rounded-full hover:bg-surface-container-highest cursor-pointer transition-colors">Graduate</span>
-              </div>
-            </div>
+
 
             {/* Sophisticated Timeline */}
             <div className="relative space-y-12 pb-12">
               <div className="absolute left-10 md:left-14 top-4 bottom-4 w-px bg-gradient-to-b from-transparent via-outline-variant to-transparent opacity-20"></div>
 
               {events.map((event, index) => {
-                 const displayDate = formatEventDate(event.date || event.startDate);
-                 const isPeriod = !!event.endDate;
-                 const dateText = isPeriod ? `${displayDate} 〜 ${formatEventDate(event.endDate)}` : displayDate;
-                 
-                 const isRegistration = isRegistrationEvent(event.label);
-                 const colors = ['primary', 'tertiary', 'surface-dim'];
-                 const themeText = isRegistration ? 'registration' : colors[index % 3];
-                 const theme = getThemeClasses(themeText);
-                 
-                 return (
-                   <article key={index} className="relative flex items-start gap-6 md:gap-10 group">
+                const displayDate = formatEventDate(event.date || event.startDate);
+                const isPeriod = !!event.endDate;
+                const dateText = isPeriod ? `${displayDate} 〜 ${formatEventDate(event.endDate)}` : displayDate;
+
+                const isRegistration = isRegistrationEvent(event.label);
+                const colors = ['primary', 'tertiary', 'surface-dim'];
+                const themeText = isRegistration ? 'registration' : colors[index % 3];
+                const theme = getThemeClasses(themeText);
+
+                return (
+                  <article key={index} className="relative flex items-start gap-6 md:gap-10 group">
                     <div className="z-10 flex-shrink-0 w-20 md:w-28 flex flex-col items-center pt-2">
                       <div className={`px-3 py-1 ${theme.bg} ${theme.badgeText} text-[10px] md:text-xs font-bold rounded-full mb-2 tracking-tighter shadow-sm whitespace-nowrap`}>
                         {displayDate}
@@ -134,7 +173,7 @@ export default function CalendarPage() {
                       <div className={`w-4 h-4 rounded-full border-4 border-surface ${theme.bg} group-hover:scale-125 transition-transform duration-300`}></div>
                     </div>
                     <div className={`flex-1 bg-surface-container-lowest p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow duration-300 border-l-4 ${theme.border} relative overflow-hidden`}>
-                      
+
                       {(isRegistration || event.isSemesterSchedule) && (
                         <div className={`absolute top-0 right-0 ${isRegistration ? theme.accentBg : 'bg-secondary-container'} ${isRegistration ? theme.accentText : 'text-on-secondary-container'} px-6 py-1.5 rounded-bl-3xl text-[10px] font-bold uppercase tracking-widest flex items-center gap-1`}>
                           {isRegistration ? <AlertCircle className="w-3 h-3" /> : <MapPin className="w-3 h-3" />}
@@ -152,18 +191,33 @@ export default function CalendarPage() {
                       </div>
                       <h2 className="text-xl md:text-2xl font-bold text-on-surface leading-tight mb-2">{event.label}</h2>
                       <div className="mt-6 flex items-center gap-4">
-                        <button className="text-on-surface-variant font-medium text-xs hover:text-on-surface transition-colors flex items-center gap-1.5">
-                           <CalendarPlus className="w-4 h-4"/> Add to personal calendar
-                        </button>
+                        {(() => {
+                          const ev = event as { date?: string; startDate?: string; endDate?: string; label: string; isSemesterSchedule?: boolean };
+                          const gcUrl = buildGoogleCalendarUrl({ date: ev.date, startDate: ev.startDate, endDate: ev.endDate, label: ev.label, isSemesterSchedule: ev.isSemesterSchedule });
+                          return gcUrl ? (
+                            <a
+                              href={gcUrl}
+                              target="_blank"
+                              rel="noopener noreferrer"
+                              className="text-on-surface-variant font-medium text-xs hover:text-primary transition-colors flex items-center gap-1.5"
+                            >
+                              <CalendarPlus className="w-4 h-4" /> Googleカレンダーに追加
+                            </a>
+                          ) : (
+                            <span className="text-on-surface-variant/40 font-medium text-xs flex items-center gap-1.5 cursor-default">
+                              <CalendarPlus className="w-4 h-4" /> 日時未確定
+                            </span>
+                          );
+                        })()}
                       </div>
                     </div>
                   </article>
-                 );
+                );
               })}
             </div>
           </>
         ) : (
-          <CalendarGrid events={events} />
+          <CalendarGrid events={events} currentMonth={currentMonth} />
         )}
       </section>
     </div>

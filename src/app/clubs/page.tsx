@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import { slugify } from '@/lib/utils';
+import PageHeader from '@/components/layout/PageHeader';
 
 const categories = [
   {
@@ -73,14 +74,11 @@ export default function ClubsPage() {
       <div className="flex flex-col gap-12">
       <section className="flex-1">
         {/* Hero Header */}
-        <div className="text-center md:text-left mb-8">
-          <h1 className="text-4xl md:text-5xl font-extrabold text-on-surface mb-2 tracking-tight">サークル情報</h1>
-          <div className="flex items-center justify-center md:justify-start gap-2 text-on-surface-variant">
-            <span className="text-sm font-medium uppercase tracking-wider">Club Information</span>
-            <span className="w-8 h-px bg-outline-variant/30"></span>
-            <p className="text-primary font-medium">Select a category</p>
-          </div>
-        </div>
+        <PageHeader
+          title="サークル情報"
+          subtitle="Club Information"
+          description="カテゴリ別にサークルを探してみよう。"
+        />
 
         {/* Category Section */}
         <div className="mb-8 mt-12">

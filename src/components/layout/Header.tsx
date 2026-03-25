@@ -1,15 +1,15 @@
 'use client';
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
-import { Home, Calendar, Building2, Users, Link2 } from 'lucide-react';
+import { Home, Calendar, Building2, Users, Link2, Bell } from 'lucide-react';
 import { cn } from '@/lib/utils';
 
 const navItems = [
-  { name: 'Home', href: '/', icon: Home },
-  { name: 'Calendar', href: '/calendar', icon: Calendar },
-  { name: 'Facilities', href: '/facilities', icon: Building2 },
-  { name: 'Clubs', href: '/clubs', icon: Users },
-  { name: 'Links', href: '/links', icon: Link2 },
+  { name: 'ホーム', href: '/', icon: Home },
+  { name: '予定表', href: '/calendar', icon: Calendar },
+  { name: '施設情報', href: '/facilities', icon: Building2 },
+  { name: 'サークル情報', href: '/clubs', icon: Users },
+  { name: '関連リンク', href: '/links', icon: Link2 },
 ];
 
 export default function Header() {
@@ -23,7 +23,7 @@ export default function Header() {
 
   return (
     <nav className="fixed top-0 w-full z-50 glass-nav shadow-sm shadow-slate-200/50">
-      <div className="flex justify-between items-center h-16 px-6 md:px-12 max-w-[1440px] mx-auto">
+      <div className="flex justify-between items-center h-16 px-6 md:px-12 w-full">
         <div className="text-2xl font-bold tracking-tighter text-primary">Strait</div>
         
         {/* Desktop Navigation */}

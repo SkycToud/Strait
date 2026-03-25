@@ -1,3 +1,5 @@
+export type Club = Pick<ClubDetail, 'id' | 'nameJa' | 'nameEn' | 'category' | 'description' | 'thumbnail' | 'instagram' | 'xUrl'>;
+
 export interface ClubDetail {
   // Existing fields
   id: string;
@@ -50,5 +52,3 @@ export interface ClubDetail {
   lastUpdated?: string;
 }
 
-// For backward compatibility with existing components
-export type Club = Omit<ClubDetail, 'overview' | 'operations' | 'membership' | 'schedule' | 'recruitment' | 'lastUpdated'>;

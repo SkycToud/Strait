@@ -6,9 +6,9 @@ description: Indoor soccer
 thumbnail: /images/clubs/futsal.jpg
 instagram: 'https://www.instagram.com/tufs_futsal/'
 overview:
-  philosophy: 準備中
-  guidelines: 準備中
-  activities: 準備中
+  philosophy: 技術向上と仲間との交流を重視したフットサル活動
+  guidelines: 基本的な技術から戦術まで、レベルに合わせた指導
+  activities: 定期練習、練習試合、リーグ戦、新歓大会
 operations:
   executiveMembers:
     - 準備中
@@ -28,14 +28,14 @@ recruitment:
   challenges: 準備中
   applicationFlow: 準備中
   welcomeEvents: 準備中
-  annualFee: 準備中
+  annualFee: '年間5,000円（ユニフォーム・大会費含む）'
   hasSelection: false
   targetAudience: 準備中
   contact:
     facebook: ''
     website: ''
     line: ''
-lastUpdated: '2024-03-20'
+lastUpdated: '2026-03-22'
 ---
 <!-- 
   Markdown Body: 今後必要であればここに自由記述を増やせます。

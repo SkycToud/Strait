@@ -38,14 +38,14 @@ recruitment:
   challenges: 試合前の練習は大変ですが、成長実感があります
   applicationFlow: 新歓説明会参加→体験練習→入会手続き
   welcomeEvents: 春新歓：4月上旬、秋新歓：9月中旬
-  annualFee: 年間5000円（保険費・備品費含む）
+  annualFee: '年間5,000円（保険費・備品費含む）'
   hasSelection: false
   targetAudience: 全学部・全学年、未経験者歓迎
   contact:
     facebook: ''
     website: ''
     line: ''
-lastUpdated: '2024-03-20'
+lastUpdated: '2026-03-22'
 ---
 <!-- 
   Markdown Body: 今後必要であればここに自由記述を増やせます。

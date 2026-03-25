@@ -3,13 +3,14 @@
 import { useState } from 'react';
 import FacilityStatusCard from '@/components/facilities/FacilityStatusCard';
 import facilityData from '@/data/facilities.json';
+import PageHeader from '@/components/layout/PageHeader';
 
 export default function FacilitiesPage() {
   const [filter, setFilter] = useState('all');
 
   const filteredData = facilityData.filter(f => {
     if (filter === 'all') return true;
-    if (filter === 'study') return f.id === 'research-lecture' || f.id === 'agora';
+    if (filter === 'study') return ['student-affairs', 'admissions-office', 'accounting-office', 'certificate-machine', 'health-care-center'].includes(f.id);
     if (filter === 'library') return f.id === 'library';
     if (filter === 'amenity') return f.type === 'food' || f.type === 'store';
     return true;
@@ -20,36 +21,32 @@ export default function FacilitiesPage() {
       {/* Main Content Area centered by removing the aside and wrapping in a narrower max-width container */}
       <div className="flex-1">
         {/* Page Header */}
-        <div className="mb-10 text-center md:text-left">
-          <div className="flex flex-col md:flex-row items-baseline gap-3 mb-4 justify-center md:justify-start">
-            <h1 className="text-4xl font-extrabold tracking-tight text-on-surface">施設情報</h1>
-            <span className="text-lg text-on-surface-variant font-medium">Facility Information</span>
-          </div>
-          <p className="text-on-surface-variant max-w-2xl leading-relaxed mx-auto md:mx-0">
-            キャンパス内の主要施設、カフェテリア、事務窓口の開館状況と混雑具合を確認できます。リアルタイムのデータを活用して、効率的な学生生活を送りましょう。
-          </p>
-        </div>
+        <PageHeader
+          title="施設情報"
+          subtitle="Facility Information"
+          description="キャンパス内の主要施設、食堂、事務窓口の開館状況を確認できます。"
+        />
         {/* Quick Filter Tabs */}
         <div className="flex flex-wrap gap-2 mb-10 justify-center md:justify-start">
-          <button 
+          <button
             onClick={() => setFilter('all')}
             className={`px-5 py-2 rounded-full text-sm font-bold transition-all shadow-md ${filter === 'all' ? 'bg-primary text-on-primary shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
           >
             全て (All)
           </button>
-          <button 
+          <button
             onClick={() => setFilter('study')}
             className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${filter === 'study' ? 'bg-primary text-on-primary shadow-md shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
           >
-            講義・研究棟
+            本部管理棟
           </button>
-          <button 
+          <button
             onClick={() => setFilter('library')}
             className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${filter === 'library' ? 'bg-primary text-on-primary shadow-md shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
           >
             図書館
           </button>
-          <button 
+          <button
             onClick={() => setFilter('amenity')}
             className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${filter === 'amenity' ? 'bg-primary text-on-primary shadow-md shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
           >
@@ -63,22 +60,26 @@ export default function FacilitiesPage() {
           ))}
         </div>
 
-        {/* Campus Map Preview Section */}
-        <div className="mt-16 p-8 md:p-12 bg-[#f2f3fa] rounded-3xl relative overflow-hidden">
-          <div className="relative z-10 flex flex-col lg:flex-row items-center gap-12">
-            <div className="flex-1 text-center lg:text-left">
-              <h2 className="text-3xl font-bold text-on-surface mb-6">学内マップで場所を確認</h2>
-              <p className="text-on-surface-variant mb-8 text-lg leading-relaxed max-w-xl mx-auto lg:mx-0">
-                初めての施設でも安心。インタラクティブなキャンパスマップで、目的地までのルートと詳細なフロアガイドを閲覧できます。
-              </p>
-              <button className="px-10 py-4 bg-gradient-to-r from-primary to-primary-container text-white font-bold rounded-full shadow-lg shadow-primary/30 active:scale-95 transition-all">
-                マップを開く
-              </button>
-            </div>
-            <div className="flex-1 w-full max-w-lg aspect-[16/10] bg-white rounded-2xl shadow-xl overflow-hidden border-4 border-white/50">
-              <img className="w-full h-full object-cover" data-alt="Abstract minimalist campus map visualization" data-location="Tokyo" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAjdsxhZy9nxfcWpB51JbTM7z3PwnFjarZR5_WOmjLSxCr4q14RmScZNBnhsSFb0kIhG3LwK8yjQNx424CYn2AQEPzQdXWjrs1T3IH11BjEDxYlb6aH6omrzbLVFI8tJUmZus7ftXYCG4rkiCbFeivQ3eQr4GlgAxQiwSdF2tncCPv2xBxke-qjIYqNyIgiaDKsYYnXD42qZFyeeMxUbsz5vXdmdktheeWKShVohJpEVsksgsq5zM65lMZet2hasX_EWNjzl5zlQbhK" alt="Map Preview" />
-            </div>
+        {/* Campus Map Link Section */}
+        <div className="mt-12 p-6 md:p-8 bg-surface-container-lowest border border-outline-variant rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
+          <div className="text-center md:text-left">
+            <h2 className="text-xl font-bold text-on-surface mb-2 flex items-center justify-center md:justify-start gap-2">
+              <span className="material-symbols-outlined text-primary" aria-hidden="true">map</span>
+              キャンパスマップ
+            </h2>
+            <p className="text-on-surface-variant text-sm">
+              キャンパス内の施設配置や詳細なフロアガイドは、大学公式サイトのキャンパスマップからご確認いただけます。
+            </p>
           </div>
+          <a
+            href="https://www.tufs.ac.jp/abouttufs/contactus/campusmap.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="shrink-0 px-6 py-3 bg-surface-container-high text-on-surface font-medium rounded-full hover:bg-surface-container-highest transition-colors flex items-center gap-2"
+          >
+            マップを開く
+            <span className="material-symbols-outlined text-sm" aria-hidden="true">open_in_new</span>
+          </a>
         </div>
       </div>
 

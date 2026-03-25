@@ -81,6 +81,8 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               src={club.thumbnail}
               fill
               className="absolute inset-0 w-full h-full object-cover"
+              preload
+              sizes="(max-width: 1280px) 100vw, 1280px"
             />
           ) : (
             <div className="absolute inset-0 bg-surface-container flex items-center justify-center text-on-surface-variant font-bold text-2xl">

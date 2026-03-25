@@ -1,6 +1,7 @@
 'use client';
 
 import { useState } from 'react';
+import Image from 'next/image';
 
 interface ClubImageProps {
   src?: string;
@@ -20,11 +21,13 @@ export default function ClubImage({ src, alt, className }: ClubImageProps) {
   }
 
   return (
-    <img
+    <Image
       src={src}
       alt={alt}
-      className={className}
+      fill
+      className={`object-cover ${className ?? ''}`}
       onError={() => setHasError(true)}
+      sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
     />
   );
 }

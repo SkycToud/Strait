@@ -1,4 +1,5 @@
 import Link from 'next/link';
+import NoticeSection from '@/components/notice/NoticeSection';
 import { 
   BookOpen, 
   Utensils, 

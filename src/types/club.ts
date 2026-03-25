@@ -1,3 +1,5 @@
+export type Club = Pick<ClubDetail, 'id' | 'nameJa' | 'nameEn' | 'category' | 'description' | 'thumbnail' | 'instagram' | 'xUrl'>;
+
 export interface ClubDetail {
   // Existing fields
   id: string;

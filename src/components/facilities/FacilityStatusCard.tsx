@@ -100,40 +100,63 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
       </div>
 
       <div className="space-y-4 flex-grow">
-        <div className="flex items-center justify-between text-sm">
-          <span className="text-on-surface-variant flex items-center gap-2">
-            <span className="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> {getHoursLabel(facility.type)}
-          </span>
-          <span className={cn("font-semibold", isOpen ? "text-on-surface" : "text-on-surface-variant")}>
-            {status.hours.length > 0 
-              ? status.hours.map(h => `${h.start} - ${h.end}`).join(', ')
-              : '営業時間外'
-            }
-          </span>
-        </div>
+        {(status.hours.length > 0 || isOpen) && (
+          <div className="flex items-center justify-between text-sm">
+            <span className="text-on-surface-variant flex items-center gap-2">
+              <span className="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> {getHoursLabel(facility.type)}
+            </span>
+            <span className={cn("font-semibold", isOpen ? "text-on-surface" : "text-on-surface-variant")}>
+              {status.hours.length > 0 
+                ? status.hours.map(h => `${h.start} - ${h.end}`).join(', ')
+                : ''
+              }
+            </span>
+          </div>
+        )}
 
-        {!isOpen && (
+        {!isOpen && (status.note && status.note !== '営業時間外' || facility.note && facility.note !== '営業時間外') && (
           <div className="bg-surface-container-high/50 p-3 rounded-xl text-xs text-on-surface-variant leading-relaxed mt-2">
-            {status.note || facility.note || '本日は利用できません。'}
+            {status.note !== '営業時間外' ? status.note : (facility.note !== '営業時間外' ? facility.note : '')}
           </div>
         )}
 
         <div className="pt-4 mt-auto">
           <div className="flex justify-between items-end mb-2">
             <span className="text-xs font-bold text-on-surface-variant">情報の精度</span>
-            <span className="text-xs font-bold text-primary">{getAccuracyLabel(facility.accuracy)}</span>
+            <span className={cn(
+              "text-xs font-bold",
+              facility.accuracy === 'high' ? "text-primary" : 
+              facility.accuracy === 'medium' ? "text-[#d97706]" : "text-error"
+            )}>
+              {getAccuracyLabel(facility.accuracy)}
+            </span>
           </div>
           <div className="flex gap-1">
-            <div className={cn("h-1.5 flex-1 rounded-full", facility.accuracy === 'high' || facility.accuracy === 'medium' || facility.accuracy === 'low' ? "bg-[#61a0e8]" : "bg-surface-container-high")}></div>
-            <div className={cn("h-1.5 flex-1 rounded-full", facility.accuracy === 'high' || facility.accuracy === 'medium' ? "bg-[#61a0e8]" : "bg-surface-container-high")}></div>
-            <div className={cn("h-1.5 flex-1 rounded-full", facility.accuracy === 'high' ? "bg-[#61a0e8]" : "bg-surface-container-high")}></div>
+            <div className={cn(
+              "h-1.5 flex-1 rounded-full transition-colors duration-500", 
+              facility.accuracy === 'high' || facility.accuracy === 'medium' || facility.accuracy === 'low' 
+                ? (facility.accuracy === 'high' ? "bg-[#61a0e8]" : facility.accuracy === 'medium' ? "bg-[#fbbf24]" : "bg-error/60") 
+                : "bg-surface-container-high"
+            )}></div>
+            <div className={cn(
+              "h-1.5 flex-1 rounded-full transition-colors duration-500", 
+              facility.accuracy === 'high' || facility.accuracy === 'medium' 
+                ? (facility.accuracy === 'high' ? "bg-[#61a0e8]" : "bg-[#fbbf24]") 
+                : "bg-surface-container-high"
+            )}></div>
+            <div className={cn(
+              "h-1.5 flex-1 rounded-full transition-colors duration-500", 
+              facility.accuracy === 'high' 
+                ? "bg-[#61a0e8]" 
+                : "bg-surface-container-high"
+            )}></div>
           </div>
         </div>
       </div>
 
       <div className="mt-6 pt-6 border-t border-surface-container-high flex justify-between items-center">
         <span className={cn("text-xs", (status.note && status.note.includes('混雑')) ? "text-error font-medium" : "text-on-surface-variant")}>
-          {status.note || facility.note || '詳細を見る'}
+          {(status.note && status.note !== '営業時間外') ? status.note : (facility.note && facility.note !== '営業時間外' ? facility.note : '詳細を見る')}
         </span>
         <span className="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
       </div>

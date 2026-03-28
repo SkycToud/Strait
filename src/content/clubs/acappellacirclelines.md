@@ -16,7 +16,7 @@ membership:
   memberCount: 0
   yearDistribution:
     - 準備中
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 準備中
   location: 準備中

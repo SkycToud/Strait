@@ -1,74 +1,79 @@
-import { Instagram } from 'lucide-react';
+import { useMemo } from 'react';
 import Link from 'next/link';
-import Image from 'next/image';
+import { ClubDetail } from '@/types/club';
+import ClubImage from './ClubImage';
 import { slugify } from '@/lib/utils';
-import { Club } from '@/types/club';
 
-export default function ClubCard({ club, index }: { club: Club; index: number }) {
+interface ClubCardProps {
+  club: ClubDetail;
+  index?: number;
+}
+
+export default function ClubCard({ club }: ClubCardProps) {
+  const isIntra = club.membership?.isIntraUniversity !== false; 
+  
+  const targetYears = useMemo(() => {
+    const grades = club.recruitment?.targetGrades;
+    if (!grades || grades.length === 0) return "全学年";
+    
+    // Format grades (e.g., ["1年生", "2年生", "3年生"] -> "1~3年生")
+    const nums = grades
+      .map(g => parseInt(g.replace(/[^0-9]/g, '')))
+      .filter(n => !isNaN(n))
+      .sort((a, b) => a - b);
+      
+    if (nums.length === 0) return grades.join(', ');
+    
+    // Check if it's a continuous range
+    const isContinuous = nums.length > 1 && nums.every((n, i) => i === 0 || n === nums[i-1] + 1);
+    
+    if (isContinuous) {
+      return `${nums[0]}~${nums[nums.length - 1]}年生`;
+    }
+    
+    return nums.join(', ') + "年生";
+  }, [club.recruitment?.targetGrades]);
+  
+  const categorySlug = slugify(club.category);
+
   return (
     <Link 
-      href={`/clubs/${slugify(club.category)}/${club.id}`}
-      className="block group"
+      href={`/clubs/${categorySlug}/${club.id}`} 
+      className="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col h-full"
     >
-      <div 
-        className="glass-card p-5 group animate-slide-up flex flex-col h-full cursor-pointer hover:border-accent hover:shadow-accent/20 transition-all"
-        style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'both' }}
-      >
-        {club.thumbnail && (
-          <div className="mb-4 -mx-5 -mt-5 h-32 overflow-hidden rounded-t-2xl relative">
-            <Image
-              src={club.thumbnail}
-              alt={`${club.nameJa} thumbnail`}
-              fill
-              className="object-cover group-hover:scale-105 transition-transform duration-300"
-              sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
-              loading="lazy"
-            />
+      <div className="relative h-56 overflow-hidden bg-surface-variant">
+        <ClubImage 
+          src={club.thumbnail} 
+          alt={club.nameJa} 
+          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+        />
+        
+        {club.recruitment && (
+          <div className="absolute top-4 right-4 bg-primary px-3 py-1 rounded-full text-[10px] font-bold text-white shadow-sm">
+            Currently Recruiting
           </div>
         )}
-        
-        <div className="flex justify-between items-start mb-3">
-          <div>
-            <h3 className="font-bold text-lg text-foreground group-hover:text-accent transition-colors">{club.nameJa}</h3>
-            <p className="text-xs text-foreground/60 font-medium">{club.nameEn}</p>
+      </div>
+      
+      <div className="p-6 flex-grow flex flex-col">
+        <div className="flex justify-between items-start mb-4">
+          <div className="flex-grow pr-2">
+            <h3 className="text-xl font-bold text-on-surface leading-tight mb-1">{club.nameJa}</h3>
+            <p className="text-sm text-on-surface-variant line-clamp-2 mb-4">
+              {club.description || "Traditional club focused on learning and teamwork."}
+            </p>
           </div>
-          <span className="text-[10px] font-bold uppercase tracking-wider bg-slate-100 dark:bg-slate-800 text-foreground/70 px-2 py-1 rounded-full">
-            {club.category.replace('_', ' ')}
-          </span>
         </div>
         
-        <p className="text-sm text-foreground/80 mb-6 flex-1 line-clamp-3 font-medium">
-          {club.description}
-        </p>
-
-        <div className="flex items-center mt-auto pt-4 border-t border-slate-100 dark:border-slate-800">
-          {club.instagram && (
-            <a 
-              href={club.instagram} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm font-bold text-[#E1306C] hover:opacity-80 transition-opacity mr-4"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <Instagram className="w-4 h-4" />
-              <span>Instagram</span>
-            </a>
-          )}
-          {club.xUrl && (
-            <a 
-              href={club.xUrl} 
-              target="_blank" 
-              rel="noopener noreferrer"
-              className="flex items-center gap-1.5 text-sm font-bold text-foreground hover:opacity-80 transition-opacity mr-4"
-              onClick={(e) => e.stopPropagation()}
-            >
-              <span className="font-extrabold text-lg leading-none">𝕏</span>
-              <span>X (Twitter)</span>
-            </a>
-          )}
-          {!club.instagram && !club.xUrl && (
-            <span className="text-sm text-foreground/60 italic font-medium">連絡先不明</span>
-          )}
+        <div className="flex flex-wrap items-center gap-2 mt-auto w-full">
+          <span className="flex items-center gap-1.5 px-2.5 py-1 bg-surface-container-low text-on-surface-variant rounded-full text-[10px] font-bold">
+            <span className="material-symbols-outlined text-sm leading-none">{isIntra ? "school" : "public"}</span>
+            {isIntra ? "外大生のみ" : "インカレ"}
+          </span>
+          <span className="text-xs text-on-surface-variant font-medium">{targetYears}</span>
+          <span className="ml-auto text-[10px] text-outline-variant">
+            {club.lastUpdated ? `Last updated: ${club.lastUpdated}` : 'Recently updated'}
+          </span>
         </div>
       </div>
     </Link>

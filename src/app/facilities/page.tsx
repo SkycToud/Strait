@@ -27,7 +27,7 @@ export default function FacilitiesPage() {
           description="キャンパス内の主要施設、食堂、事務窓口の開館状況を確認できます。"
         />
         {/* Quick Filter Tabs */}
-        <div className="flex flex-wrap gap-2 mb-10 justify-center md:justify-start">
+        <div className="flex flex-wrap gap-2 mb-10 justify-start">
           <button
             onClick={() => setFilter('all')}
             className={`px-5 py-2 rounded-full text-sm font-bold transition-all shadow-md ${filter === 'all' ? 'bg-primary text-on-primary shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
@@ -62,8 +62,8 @@ export default function FacilitiesPage() {
 
         {/* Campus Map Link Section */}
         <div className="mt-12 p-6 md:p-8 bg-surface-container-lowest border border-outline-variant rounded-2xl flex flex-col md:flex-row items-center justify-between gap-6">
-          <div className="text-center md:text-left">
-            <h2 className="text-xl font-bold text-on-surface mb-2 flex items-center justify-center md:justify-start gap-2">
+          <div className="text-left">
+            <h2 className="text-xl font-bold text-on-surface mb-2 flex items-center justify-start gap-2">
               <span className="material-symbols-outlined text-primary" aria-hidden="true">map</span>
               キャンパスマップ
             </h2>

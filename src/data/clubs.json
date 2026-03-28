@@ -5,7 +5,7 @@
     "nameEn": "Kemari Circle Miyabi",
     "category": "Ball Sports",
     "description": "「鞠を蹴り、世界を繋ぐ。」勝敗を競うのではなく、相手が蹴りやすい球を返す「思いやり」の精神を重んじ、日本伝統文化の保存と国際交流の両立を目指す。",
-    "thumbnail": "/images/clubs/kemari.jpg",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2Fkemari.jpg?alt=media&token=cc72355f-3dbb-4f30-9952-998d79d68cee",
     "overview": {
       "philosophy": "「鞠を蹴り、世界を繋ぐ。」\n勝敗を競うのではなく、相手が蹴りやすい球を返す「思いやり」の精神を重んじ、日本伝統文化の保存と国際交流の両立を目指す。",
       "activities": "・蹴鞠（けまり）の練習および演武。\n・鹿革を使った鞠のメンテナンス・修繕。\n・平安時代の装束や文化に関する文献講読（外大の図書館をフル活用）。\n・留学生向けの体験ワークショップ開催。"
@@ -70,7 +70,7 @@
     "nameEn": "Floorball Club",
     "category": "Ball Sports",
     "description": "Indoor hockey-like sport",
-    "thumbnail": "/images/clubs/floorball.jpg",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2Ffloorball.jpg?alt=media&token=88019267-5e84-495a-98ab-b2c7fcd05155",
     "instagram": "https://www.instagram.com/tufs_floorball/",
     "overview": {
       "philosophy": "誰もが楽しめるインドアホッケースポーツを通じて、仲間と共に成長する",
@@ -129,7 +129,7 @@
     "nameEn": "Flying Disc Club",
     "category": "Ball Sports",
     "description": "Ultimate frisbee",
-    "thumbnail": "/images/clubs/flyingdisc.jpg",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2Fflyingdisc.jpg?alt=media&token=2f664566-7055-484c-aeab-f96ca35b07a3",
     "metadata": "W/M",
     "instagram": "https://www.instagram.com/tufs_flyingdisc/",
     "overview": {
@@ -179,7 +179,7 @@
     "nameEn": "Lacrosse Club",
     "category": "Ball Sports",
     "description": "Regular practice, matches",
-    "thumbnail": "/images/clubs/lacrosse.jpg",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2Flacrosse.jpg?alt=media&token=65755f8e-a569-447c-833a-308cab1a3e71",
     "instagram": "https://www.instagram.com/tufs_lacrosse/",
     "overview": {
       "philosophy": "チームワークと技術向上を目指し、男女共に活躍できる場を提供",
@@ -228,7 +228,7 @@
     "nameEn": "Futsal Club",
     "category": "Ball Sports",
     "description": "Indoor soccer",
-    "thumbnail": "/images/clubs/futsal.jpg",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2Ffutsal.jpg?alt=media&token=76363762-4633-4cd9-804f-253133a63ddc",
     "instagram": "https://www.instagram.com/tufs_futsal/",
     "overview": {
       "philosophy": "技術向上と仲間との交流を重視したフットサル活動",

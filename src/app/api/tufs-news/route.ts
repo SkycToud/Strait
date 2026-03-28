@@ -7,35 +7,6 @@ export interface TufsNewsItem {
   url: string;
 }
 
-// URLパスからカテゴリ名を判定
-function categoryFromUrl(url: string): string {
-  if (url.includes('/NEWS/education/') || url.includes('/education/')) return '教務';
-  if (url.includes('/NEWS/study_abroad/') || url.includes('/studyabroad/') || url.includes('/留学')) return '留学';
-  if (url.includes('/NEWS/career/') || url.includes('/careersupport/')) return 'キャリア支援';
-  if (url.includes('/NEWS/student_life/') || url.includes('/extraordinary/') || url.includes('/dorm/')) return '学生生活';
-  if (url.includes('/NEWS/other/')) return 'その他';
-  if (url.includes('/tuition_scholarship/scholarship/')) return '留学';
-  if (url.includes('/library/')) return 'その他';
-  if (url.includes('/pg-support/') || url.includes('/pg/')) return '教務';
-  return 'その他';
-}
-
-// ファイル名の日付パターン YYMMDD → YYYY.MM.DD
-function dateFromUrl(url: string): string {
-  // パターン1: /260304_1.html → 2026.03.04
-  const fileMatch = url.match(/\/(\d{2})(\d{2})(\d{2})_?\d*\.(html|pdf)$/i);
-  if (fileMatch) {
-    const [, yy, mm, dd] = fileMatch;
-    return `20${yy}.${mm}.${dd}`;
-  }
-  // パターン2: /2026/03/... など
-  const pathMatch = url.match(/\/(20\d{2})\/(\d{2})\//);
-  if (pathMatch) {
-    return `${pathMatch[1]}.${pathMatch[2]}.--`;
-  }
-  return '';
-}
-
 export async function GET() {
   try {
     const res = await fetch('https://www.tufs.ac.jp/student/NEWS/index.html', {
@@ -60,51 +31,75 @@ export async function GET() {
   }
 }
 
+/**
+ * TUFSのお知らせページは以下のHTML構造:
+ *
+ * <dl class="topics_list">
+ *   <dt class="topics_list_date"><time datetime="2026-03-27 16:37:00">2026.03.27</time></dt>
+ *   <dd class="topics_list_label">学生生活</dd>
+ *   <dd class="topics_list_link"><a href="...">タイトル</a><span class="topics_list_new">NEW</span></dd>
+ *   ...繰り返し...
+ * </dl>
+ */
 function parseNewsItems(html: string): TufsNewsItem[] {
   const items: TufsNewsItem[] = [];
   const seen = new Set<string>();
 
-  // <a href="...">タイトル</a> を全件抽出
-  const linkPattern = /<a\s[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/gi;
-  let match: RegExpExecArray | null;
+  // topics_list の dl ブロックを抽出
+  const dlMatch = html.match(/<dl\s[^>]*class=["'][^"']*topics_list[^"']*["'][^>]*>([\s\S]*?)<\/dl>/i);
+  if (!dlMatch) return items;
 
-  while ((match = linkPattern.exec(html)) !== null) {
-    let url = match[1].trim();
-    const rawTitle = match[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+  const dlContent = dlMatch[1];
 
-    if (!rawTitle || rawTitle.length < 5) continue;
+  // dt/dd の並びを順番に処理
+  // 各ニュース項目は: dt.topics_list_date → dd.topics_list_label → dd.topics_list_link
+  const tagPattern = /<(dt|dd)\s[^>]*class=["']([^"']+)["'][^>]*>([\s\S]*?)<\/\1>/gi;
+  let tagMatch: RegExpExecArray | null;
 
-    // 相対URL → 絶対URL
-    if (url.startsWith('/')) {
-      url = `https://www.tufs.ac.jp${url}`;
-    } else if (!url.startsWith('http')) {
-      continue;
+  let currentDate = '';
+  let currentCategory = '';
+
+  while ((tagMatch = tagPattern.exec(dlContent)) !== null) {
+    const className = tagMatch[2];
+    const innerHtml = tagMatch[3];
+
+    if (className.includes('topics_list_date')) {
+      // <time datetime="2026-03-27 16:37:00">2026.03.27</time>
+      const timeMatch = innerHtml.match(/<time[^>]*>([\s\S]*?)<\/time>/i);
+      currentDate = timeMatch
+        ? timeMatch[1].replace(/<[^>]+>/g, '').trim()
+        : innerHtml.replace(/<[^>]+>/g, '').trim();
+    } else if (className.includes('topics_list_label')) {
+      currentCategory = innerHtml.replace(/<[^>]+>/g, '').trim();
+    } else if (className.includes('topics_list_link')) {
+      // <a href="URL">タイトル</a>
+      const linkMatch = innerHtml.match(/<a\s[^>]*href=["']([^"']+)["'][^>]*>([\s\S]*?)<\/a>/i);
+      if (!linkMatch) continue;
+
+      let url = linkMatch[1].trim();
+      const rawTitle = linkMatch[2].replace(/<[^>]+>/g, '').replace(/\s+/g, ' ').trim();
+
+      if (!rawTitle || rawTitle.length < 3) continue;
+
+      // 相対URL → 絶対URL
+      if (url.startsWith('/')) {
+        url = `https://www.tufs.ac.jp${url}`;
+      } else if (!url.startsWith('http')) {
+        url = `https://www.tufs.ac.jp/student/NEWS/${url}`;
+      }
+
+      // 重複除外
+      if (seen.has(url)) continue;
+      seen.add(url);
+
+      items.push({
+        date: currentDate,
+        category: currentCategory || 'その他',
+        title: rawTitle,
+        url,
+      });
     }
-
-    // TUFSドメイン外は除外
-    if (!url.includes('tufs.ac.jp')) continue;
-
-    // ナビリンク・フッターなどを除外（パスが短すぎるもの）
-    const urlPath = new URL(url).pathname;
-    if (urlPath.split('/').filter(Boolean).length < 2) continue;
-
-    // 重複除外
-    if (seen.has(url)) continue;
-    seen.add(url);
-
-    const category = categoryFromUrl(url);
-    const date = dateFromUrl(url);
-
-    items.push({ date, category, title: rawTitle, url });
   }
-
-  // 日付の新しい順にソート（日付なしは末尾）
-  items.sort((a, b) => {
-    if (!a.date && !b.date) return 0;
-    if (!a.date) return 1;
-    if (!b.date) return -1;
-    return b.date.localeCompare(a.date);
-  });
 
   return items;
 }

@@ -69,7 +69,7 @@ export default function Home() {
       status: currentStatus.isOpen ? 'Open' : (currentStatus.hours.length > 0 ? 'Closed' : 'Closed'),
       time: currentStatus.hours.length > 0 
         ? currentStatus.hours.map(h => `${h.start}-${h.end}`).join(', ')
-        : (currentStatus.note || '営業時間外')
+        : (currentStatus.note && currentStatus.note !== '営業時間外' ? currentStatus.note : '')
     };
   };
 

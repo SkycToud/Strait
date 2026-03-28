@@ -68,7 +68,7 @@ recruitment:
     - 1年生
     - 2年生
     - 3年生
-lastUpdated: '2024-04-01'
+lastUpdated: '2026-03-28'
 ---
 <!-- 
   Markdown Body: 今後必要であればここに自由記述を増やせます。

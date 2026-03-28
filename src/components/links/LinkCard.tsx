@@ -1,4 +1,7 @@
+"use client";
+
 import { cn } from '@/lib/utils';
+import { logUserBehavior } from '@/lib/firebaseClient';
 
 type LinkItem = {
   id: string;
@@ -26,11 +29,22 @@ export default function LinkCard({ item, index }: { item: LinkItem; index: numbe
   // Format id to make a English label
   const englishLabel = item.id.replace(/-/g, ' ').replace(/\b\w/g, c => c.toUpperCase());
 
+  const handleClick = () => {
+    logUserBehavior("select_content", {
+      content_type: "link",
+      item_id: item.id,
+      item_url: item.url,
+      item_title: item.title,
+      item_category: item.category,
+    });
+  };
+
   return (
     <a 
       href={item.url}
       target="_blank"
       rel="noopener noreferrer"
+      onClick={handleClick}
       className="group relative flex flex-col p-8 bg-surface-container-lowest rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#0e61a51a] animate-fade-in"
       style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'both' }}
     >

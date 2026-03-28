@@ -4,9 +4,9 @@ const nextConfig: NextConfig = {
   images: {
     // ローカル開発時の next/image 最適化を有効化
     // 外部ドメインの画像を使う場合はここに追加する
-    // remotePatterns: [
-    //   { protocol: 'https', hostname: 'example.com' },
-    // ],
+    remotePatterns: [
+      { protocol: 'https', hostname: 'firebasestorage.googleapis.com' },
+    ],
 
     // 開発環境でも WebP/AVIF 変換を行う
     formats: ["image/avif", "image/webp"],

@@ -10,7 +10,7 @@ export default function LinksPage() {
       <PageHeader
         title="関連リンク集"
         subtitle="Relevant Links"
-        description="本学の公式リソースおよび、学生生活をサポートする主要な外部システムへのアクセスポイントです。必要なツールを素早く見つけ、学修効率を最大化しましょう。"
+        description="東京外国語大学の公式リソースおよび、主要な外部システムへのアクセスポイントです。"
       />
 
       <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">

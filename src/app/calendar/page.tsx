@@ -1,9 +1,8 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useMemo } from 'react';
 import { CalendarPlus, Clock, MapPin, FileText, AlertCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { buildGoogleCalendarUrl } from '@/lib/google-calendar';
 import calendarData from '@/data/calendar.json';
-import CalendarGrid from '@/components/calendar/CalendarGrid';
 import PageHeader from '@/components/layout/PageHeader';
 
 // Helper to format date strings like "2026-04-01" to "4月1日"
@@ -23,6 +22,11 @@ export const formatEventDate = (dateStr?: string) => {
 // Identify registration/course related events
 export const isRegistrationEvent = (label: string) => {
   return label.includes('履修') || label.includes('登録') || label.includes('抽選');
+};
+
+// Identify examination events
+export const isExaminationEvent = (label: string) => {
+  return label.includes('試験期間');
 };
 
 export const getThemeClasses = (color: string) => {
@@ -69,8 +73,9 @@ export const getThemeClasses = (color: string) => {
 };
 
 export default function CalendarPage() {
-  const [view, setView] = useState<'list' | 'calendar'>('calendar');
-  const [currentMonth, setCurrentMonth] = useState(new Date()); // Default to current month
+  const [view] = useState<'list' | 'calendar'>('list');
+  const [currentMonth] = useState(new Date()); // Default to current month
+  const [searchQuery, setSearchQuery] = useState('');
   const timingToDay = (timing: string): number => {
     switch (timing) {
       case '初旬': return 1;
@@ -92,17 +97,20 @@ export default function CalendarPage() {
     return isNaN(d.getTime()) ? new Date(8640000000000000) : d;
   };
 
-  const events = [...calendarData.events].sort(
+  const allEvents = [...calendarData.events].sort(
     (a, b) => getSortDate(a).getTime() - getSortDate(b).getTime()
   );
 
-  const handlePrevMonth = () => {
-    setCurrentMonth(prev => new Date(prev.getFullYear(), prev.getMonth() - 1, 1));
-  };
+  // Filter events based on search query
+  const events = useMemo(() => {
+    if (!searchQuery.trim()) return allEvents;
+    
+    const query = searchQuery.toLowerCase();
+    return allEvents.filter(event => 
+      event.label.toLowerCase().includes(query)
+    );
+  }, [allEvents, searchQuery]);
 
-  const handleNextMonth = () => {
-    setCurrentMonth(prev => new Date(prev.getFullYear(), prev.getMonth() + 1, 1));
-  };
 
   const year = currentMonth.getFullYear();
   const month = currentMonth.getMonth() + 1;
@@ -114,54 +122,56 @@ export default function CalendarPage() {
         <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
           <div className="flex flex-col gap-4">
             <PageHeader
-              title={view === 'calendar' ? `${year} / ${month}月` : '学期予定'}
-              subtitle={view === 'calendar' ? 'Academic Calendar' : 'Academic Schedule & Timelines 2026'}
+              title='学期予定'
+              subtitle='Academic Schedule & Timelines 2026'
             />
 
-            {view === 'calendar' && (
-              <div className="flex items-center gap-4">
-                <button
-                  onClick={handlePrevMonth}
-                  className="p-2 rounded-full hover:bg-surface-container-high transition-colors border border-outline-variant/30 text-on-surface"
-                  aria-label="Previous Month"
-                >
-                  <ChevronLeft className="w-5 h-5" />
-                </button>
-                <button
-                  onClick={handleNextMonth}
-                  className="p-2 rounded-full hover:bg-surface-container-high transition-colors border border-outline-variant/30 text-on-surface"
-                  aria-label="Next Month"
-                >
-                  <ChevronRight className="w-5 h-5" />
-                </button>
-              </div>
-            )}
+            {/* Search Bar */}
+            <div className="relative w-full max-w-md">
+              <span className="absolute left-5 top-1/2 -translate-y-1/2 material-symbols-outlined text-primary text-2xl" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>search</span>
+              <input
+                type="text"
+                placeholder="イベント名やキーワードを検索..."
+                className="w-full pl-14 pr-6 py-4 bg-surface-container-low rounded-2xl border-2 border-transparent focus:border-primary focus:bg-white focus:shadow-[0_0_0_4px_rgba(var(--primary-rgb),0.1)] outline-none transition-all text-lg placeholder:text-on-surface-variant/50"
+                value={searchQuery}
+                onChange={(e) => setSearchQuery(e.target.value)}
+              />
+            </div>
+
           </div>
 
-          <div className="flex flex-wrap items-center gap-3 shrink-0 pt-2">
-            <div className="flex items-center gap-1 p-1 bg-surface-container-high rounded-full w-fit">
-              <button onClick={() => setView('list')} className={`px-5 py-2 text-sm font-bold rounded-full transition-all active:scale-95 ${view === 'list' ? 'bg-white shadow-sm text-primary' : 'text-on-surface-variant hover:text-on-surface'}`}>List View</button>
-              <button onClick={() => setView('calendar')} className={`px-5 py-2 text-sm font-bold rounded-full transition-all active:scale-95 ${view === 'calendar' ? 'bg-white shadow-sm text-primary' : 'text-on-surface-variant hover:text-on-surface'}`}>Calendar View</button>
-            </div>
-          </div>
         </div>
 
-        {view === 'list' ? (
-          <>
-
+        {/* Timeline List View */}
+            {/* Search Results Summary */}
+            {searchQuery.trim() && (
+              <div className="mb-6 p-4 bg-surface-container-low rounded-2xl border border-outline-variant/20">
+                <p className="text-sm text-on-surface-variant">
+                  "{searchQuery}" の検索結果: <span className="font-bold text-primary">{events.length}件</span>
+                </p>
+              </div>
+            )}
 
             {/* Sophisticated Timeline */}
             <div className="relative space-y-12 pb-12">
               <div className="absolute left-10 md:left-14 top-4 bottom-4 w-px bg-gradient-to-b from-transparent via-outline-variant to-transparent opacity-20"></div>
 
-              {events.map((event, index) => {
+              {events.length > 0 ? events.map((event, index) => {
                 const displayDate = formatEventDate(event.date || event.startDate);
                 const isPeriod = !!event.endDate;
                 const dateText = isPeriod ? `${displayDate} 〜 ${formatEventDate(event.endDate)}` : displayDate;
 
                 const isRegistration = isRegistrationEvent(event.label);
-                const colors = ['primary', 'tertiary', 'surface-dim'];
-                const themeText = isRegistration ? 'registration' : colors[index % 3];
+                const isExamination = isExaminationEvent(event.label);
+                const colors = ['primary', 'tertiary'];
+                let themeText: string;
+                if (isRegistration) {
+                  themeText = 'registration';
+                } else if (isExamination) {
+                  themeText = 'surface-dim';
+                } else {
+                  themeText = colors[index % 2];
+                }
                 const theme = getThemeClasses(themeText);
 
                 return (
@@ -213,12 +223,14 @@ export default function CalendarPage() {
                     </div>
                   </article>
                 );
-              })}
+              }) : searchQuery.trim() ? (
+                <div className="flex flex-col items-center justify-center py-24 text-center">
+                  <span className="material-symbols-outlined text-6xl text-outline-variant mb-4">search_off</span>
+                  <h3 className="text-xl font-bold text-on-surface mb-2">イベントが見つかりません</h3>
+                  <p className="text-on-surface-variant">検索条件を変えてみてください。</p>
+                </div>
+              ) : null}
             </div>
-          </>
-        ) : (
-          <CalendarGrid events={events} currentMonth={currentMonth} />
-        )}
       </section>
     </div>
   );

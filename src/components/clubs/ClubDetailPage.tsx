@@ -5,6 +5,7 @@ import { ClubDetail } from '@/types/club';
 import { slugify } from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image';
+import { Instagram, Twitter, Globe, MessageCircle, ArrowLeft } from 'lucide-react';
 
 const ExpandableText = ({ text }: { text: string }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -81,7 +82,8 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               src={club.thumbnail}
               fill
               className="absolute inset-0 w-full h-full object-cover"
-              preload
+              priority
+              quality={100}
               sizes="(max-width: 1280px) 100vw, 1280px"
             />
           ) : (
@@ -91,9 +93,6 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
           <div className="absolute bottom-0 left-0 p-8 lg:p-12 text-white">
-            <div className="flex items-center space-x-3 mb-4">
-              <span className="px-3 py-1 bg-primary/20 backdrop-blur-md rounded-full text-sm font-medium border border-primary/30">公認サークル</span>
-            </div>
             <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tight mb-4 font-headline">{club.nameJa}</h1>
             <p className="text-lg lg:text-xl text-white/90 max-w-2xl font-body leading-relaxed">
               {club.description || "Enjoy activities and team bonding within the community."}
@@ -215,11 +214,12 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                   </div>
                 </div>
                 <div className="pt-4 border-t border-outline-variant/10">
-                  <p className="text-xs font-bold text-primary uppercase mb-1">学内/学外</p>
                   <div className="flex items-center gap-3">
-                    <span className="material-symbols-outlined text-primary text-lg">verified_user</span>
+                    <span className="material-symbols-outlined text-primary text-lg">
+                      {club.membership?.isIntraUniversity !== false ? "school" : "public"}
+                    </span>
                     <span className="text-sm font-bold">
-                      {club.membership?.isIntraUniversity !== false ? "学内サークル (外大生のみ)" : "インカレサークル"}
+                      {club.membership?.isIntraUniversity !== false ? "外大生のみ" : "インカレ"}
                     </span>
                   </div>
                 </div>
@@ -295,40 +295,30 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                 </div>
               </li>
             </ul>
-            {club.instagram && (
-              <a
-                href={club.instagram}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="block text-center mt-8 py-4 bg-white text-primary font-bold rounded-full hover:bg-opacity-90 transition-all active:scale-95 shadow-lg"
-              >
-                Instagramで問い合わせる
-              </a>
-            )}
           </section>
 
           {/* SNS情報 (Social Media) */}
-          <section className="bg-surface-container-low p-6 rounded-xl text-center">
-            <h3 className="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-4">SNS情報</h3>
-            <div className="flex justify-around items-center">
+          <section className="bg-surface-container-low p-6 rounded-xl">
+            <h3 className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4 pl-1">SNS情報</h3>
+            <div className="flex justify-start items-center gap-4">
               {club.instagram && (
-                <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary transition-colors shadow-sm group" href={club.instagram} target="_blank" title="Instagram">
-                  <span className="material-symbols-outlined">camera_style</span>
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
+                  <Instagram className="w-6 h-6" />
                 </a>
               )}
               {club.xUrl && (
-                <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary transition-colors shadow-sm group" href={club.xUrl} target="_blank" title="X">
-                  <span className="material-symbols-outlined">alternate_email</span>
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.xUrl} target="_blank" rel="noopener noreferrer" title="X">
+                  <Twitter className="w-6 h-6" />
                 </a>
               )}
               {club.recruitment?.contact?.website && (
-                <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary transition-colors shadow-sm group" href={club.recruitment.contact.website} target="_blank" title="HP">
-                  <span className="material-symbols-outlined">language</span>
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment.contact.website} target="_blank" rel="noopener noreferrer" title="HP">
+                  <Globe className="w-6 h-6" />
                 </a>
               )}
               {club.recruitment?.contact?.line && (
-                <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary transition-colors shadow-sm group" href={club.recruitment.contact.line} target="_blank" title="LINE">
-                  <span className="material-symbols-outlined">chat</span>
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment.contact.line} target="_blank" rel="noopener noreferrer" title="LINE">
+                  <MessageCircle className="w-6 h-6" />
                 </a>
               )}
             </div>
@@ -415,12 +405,38 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
         </div>
       )}
 
-      {/* Footer Meta */}
-      <div className="max-w-7xl mx-auto px-6 mt-12 mb-12 flex flex-col md:flex-row justify-between items-center py-8 border-t border-outline-variant/10 gap-6">
-        <p className="text-sm text-on-surface-variant">最終更新日: {club.lastUpdated || "2024-03-20"}</p>
-        <button className="px-6 py-2.5 rounded-full border border-outline text-on-surface-variant text-sm font-bold hover:bg-surface-container-highest hover:border-primary transition-all">
-          掲載情報修正依頼
-        </button>
+      {/* Navigation & Footer Meta */}
+      <div className="max-w-7xl mx-auto px-6 mt-16 mb-12 py-8 border-t border-outline-variant/10 space-y-12">
+        {/* Navigation - Bottom Left */}
+        <div className="flex flex-wrap gap-8 items-center border-l-4 border-primary pl-6 py-2">
+          <Link 
+            href={`/clubs/${categorySlug}`} 
+            className="group flex items-center gap-3 text-sm font-bold text-on-surface-variant hover:text-primary transition-all"
+          >
+            <div className="p-2 rounded-full border border-outline-variant group-hover:bg-primary-container group-hover:border-primary transition-all">
+              <ArrowLeft className="w-4 h-4" />
+            </div>
+            <span>{club.category}へ戻る</span>
+          </Link>
+          <Link 
+            href="/clubs/all" 
+            className="group flex items-center gap-3 text-sm font-bold text-on-surface-variant hover:text-primary transition-all"
+          >
+            <div className="p-2 rounded-full border border-outline-variant group-hover:bg-primary-container group-hover:border-primary transition-all">
+              <ArrowLeft className="w-4 h-4" />
+            </div>
+            <span>全てのサークル一覧へ</span>
+          </Link>
+        </div>
+
+        {/* Status Info (Metadata) */}
+        <div className="flex flex-col md:flex-row justify-between items-center gap-6 opacity-70 hover:opacity-100 transition-opacity">
+          <p className="text-sm text-on-surface-variant font-medium">最終更新日: {club.lastUpdated || "2024-03-20"}</p>
+          <button className="px-6 py-2.5 rounded-full border border-outline text-on-surface-variant text-sm font-bold hover:bg-surface-container-highest hover:border-primary transition-all flex items-center gap-2">
+            <span className="material-symbols-outlined text-sm">edit_note</span>
+            掲載情報修正依頼
+          </button>
+        </div>
       </div>
     </main>
   );

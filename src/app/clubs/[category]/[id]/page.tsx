@@ -81,23 +81,6 @@ export default async function ClubDetailPageWrapper({
 
   return (
     <div className="animate-fade-in">
-      {/* Navigation */}
-      <div className="max-w-3xl mx-auto px-4 sm:px-6 pt-8">
-        <div className="flex flex-wrap gap-4 mb-6">
-          <Link 
-            href={`/clubs/${categorySlug}`} 
-            className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-accent transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" /> {club.category}へ戻る
-          </Link>
-          <Link 
-            href="/clubs" 
-            className="inline-flex items-center gap-2 text-sm font-bold text-slate-500 hover:text-accent transition-colors"
-          >
-            <ArrowLeft className="w-4 h-4" /> サークル一覧へ
-          </Link>
-        </div>
-      </div>
 
       {/* Club Detail Page */}
       <ClubDetailPage club={comprehensiveClub} categorySlug={categorySlug} />

@@ -5,7 +5,7 @@
     "nameEn": "Kemari Circle Miyabi",
     "category": "Ball Sports",
     "description": "「鞠を蹴り、世界を繋ぐ。」勝敗を競うのではなく、相手が蹴りやすい球を返す「思いやり」の精神を重んじ、日本伝統文化の保存と国際交流の両立を目指す。",
-    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2Fkemari.jpg?alt=media&token=cc72355f-3dbb-4f30-9952-998d79d68cee",
+    "thumbnail": "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2Fkemari.jpg?alt=media&token=f69d2698-580e-42cf-9d2b-242baa119421",
     "overview": {
       "philosophy": "「鞠を蹴り、世界を繋ぐ。」\n勝敗を競うのではなく、相手が蹴りやすい球を返す「思いやり」の精神を重んじ、日本伝統文化の保存と国際交流の両立を目指す。",
       "activities": "・蹴鞠（けまり）の練習および演武。\n・鹿革を使った鞠のメンテナンス・修繕。\n・平安時代の装束や文化に関する文献講読（外大の図書館をフル活用）。\n・留学生向けの体験ワークショップ開催。"
@@ -1448,7 +1448,7 @@
       "yearDistribution": [
         "準備中"
       ],
-      "isIntraUniversity": false
+      "isIntraUniversity": true
     },
     "schedule": {
       "frequency": "準備中",

@@ -70,39 +70,39 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
     <Tag 
       {...tagProps as any}
       className={cn(
-        "group rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden flex flex-col",
+        "group rounded-2xl p-4 md:p-6 shadow-sm transition-all duration-300 relative overflow-hidden flex flex-col",
         isOpen 
           ? "bg-surface-container-lowest hover:shadow-xl hover:shadow-primary/5 border border-surface-container-high/50" 
           : "bg-surface-container-low/50 border border-surface-container-high hover:border-surface-variant opacity-80 hover:opacity-100",
         facility.link ? "cursor-pointer" : ""
       )}
     >
-      <div className="absolute top-0 right-0 p-3">
+      <div className="absolute top-0 right-0 p-2 md:p-3">
         <span className={cn(
-          "px-3 py-1 rounded-lg text-xs font-bold tracking-wide uppercase",
+          "px-2 md:px-3 py-1 rounded-lg text-[10px] md:text-xs font-bold tracking-wide uppercase",
           isOpen ? "bg-tertiary-container text-on-tertiary-container" : "bg-error-container text-on-error-container"
         )}>
           {isOpen ? 'Open' : 'Closed'}
         </span>
       </div>
 
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
         <div className={cn(
-          "w-12 h-12 rounded-xl flex items-center justify-center",
+          "w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center",
           isOpen ? "bg-secondary-container text-primary" : "bg-surface-container-highest text-on-surface-variant"
         )}>
-          <span className="material-symbols-outlined text-3xl" data-icon={facility.icon}>{facility.icon}</span>
+          <span className="material-symbols-outlined text-2xl md:text-3xl" data-icon={facility.icon}>{facility.icon}</span>
         </div>
         <div>
-          <h3 className="font-bold text-lg text-on-surface">{facility.name}</h3>
-          <p className="text-xs text-on-surface-variant">{getTypeLabel(facility.type)}</p>
+          <h3 className="font-bold text-base md:text-lg text-on-surface">{facility.name}</h3>
+          <p className="text-[10px] md:text-xs text-on-surface-variant">{getTypeLabel(facility.type)}</p>
         </div>
       </div>
 
-      <div className="space-y-4 flex-grow">
+      <div className="space-y-3 md:space-y-4 flex-grow">
         {(status.hours.length > 0 || isOpen) && (
-          <div className="flex items-center justify-between text-sm">
-            <span className="text-on-surface-variant flex items-center gap-2">
+          <div className="flex items-center justify-between text-xs md:text-sm">
+            <span className="text-on-surface-variant flex items-center gap-1 md:gap-2">
               <span className="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> {getHoursLabel(facility.type)}
             </span>
             <span className={cn("font-semibold", isOpen ? "text-on-surface" : "text-on-surface-variant")}>

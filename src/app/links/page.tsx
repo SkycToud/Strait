@@ -13,7 +13,7 @@ export default function LinksPage() {
         description="東京外国語大学の公式リソースおよび、主要な外部システムへのアクセスポイントです。"
       />
 
-      <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-3 gap-6">
+      <div className="grid grid-cols-2 md:grid-cols-2 xl:grid-cols-3 gap-3 md:gap-6">
         {linksData.map((link, index) => (
           <LinkCard key={link.id} item={link} index={index} />
         ))}

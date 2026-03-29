@@ -27,28 +27,28 @@ export default function FacilitiesPage() {
           description="キャンパス内の主要施設、食堂、事務窓口の開館状況を確認できます。"
         />
         {/* Quick Filter Tabs */}
-        <div className="flex flex-wrap gap-2 mb-10 justify-start">
+        <div className="flex flex-wrap gap-2 mb-6 md:mb-10 justify-start">
           <button
             onClick={() => setFilter('all')}
-            className={`px-5 py-2 rounded-full text-sm font-bold transition-all shadow-md ${filter === 'all' ? 'bg-primary text-on-primary shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
+            className={`px-3 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-bold transition-all shadow-md ${filter === 'all' ? 'bg-primary text-on-primary shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
           >
             全て (All)
           </button>
           <button
             onClick={() => setFilter('study')}
-            className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${filter === 'study' ? 'bg-primary text-on-primary shadow-md shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
+            className={`px-3 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all ${filter === 'study' ? 'bg-primary text-on-primary shadow-md shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
           >
             本部管理棟
           </button>
           <button
             onClick={() => setFilter('library')}
-            className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${filter === 'library' ? 'bg-primary text-on-primary shadow-md shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
+            className={`px-3 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all ${filter === 'library' ? 'bg-primary text-on-primary shadow-md shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
           >
             図書館
           </button>
           <button
             onClick={() => setFilter('amenity')}
-            className={`px-5 py-2 rounded-full text-sm font-medium transition-all ${filter === 'amenity' ? 'bg-primary text-on-primary shadow-md shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
+            className={`px-3 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all ${filter === 'amenity' ? 'bg-primary text-on-primary shadow-md shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
           >
             食生活・厚生
           </button>

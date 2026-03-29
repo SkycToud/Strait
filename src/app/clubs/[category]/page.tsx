@@ -1,9 +1,7 @@
-import Link from 'next/link';
 import { notFound } from 'next/navigation';
 import { getAllClubs } from '@/lib/clubs';
 import { slugify } from '@/lib/utils';
 import { ClubDetail } from '@/types/club';
-import ClubImage from '@/components/clubs/ClubImage';
 import ClubCard from '@/components/clubs/ClubCard';
 
 export function generateStaticParams() {
@@ -42,19 +40,8 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
 
   return (
     <div className="max-w-7xl mx-auto w-full pb-16">
-      {/* Breadcrumbs & Title */}
+      {/* Title */}
       <div className="mb-10">
-        <nav className="flex items-center gap-2 text-sm text-on-surface-variant mb-4">
-          <Link href="/" className="hover:text-primary flex items-center gap-1">
-            <span className="material-symbols-outlined text-lg" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>home</span>
-            Home
-          </Link>
-          <span className="material-symbols-outlined text-xs" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>chevron_right</span>
-          <Link href="/clubs" className="hover:text-primary">Categories</Link>
-          <span className="material-symbols-outlined text-xs" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>chevron_right</span>
-          <span className="text-on-surface font-medium">{activeCategory}</span>
-        </nav>
-        
         <div className="flex flex-col md:flex-row md:items-end justify-between gap-4">
           <div>
             <h1 className="text-4xl font-bold tracking-tight text-on-surface font-headline mb-2">{info.title}</h1>

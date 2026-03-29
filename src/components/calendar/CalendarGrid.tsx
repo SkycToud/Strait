@@ -16,10 +16,15 @@ const isRegistrationEvent = (label: string) => {
   return label.includes('履修') || label.includes('登録') || label.includes('抽選');
 };
 
+const isExaminationEvent = (label: string) => {
+  return label.includes('試験期間');
+};
+
 const getEventTheme = (event: EventData, index: number) => {
   if (isRegistrationEvent(event.label)) return 'registration';
-  const colors = ['primary', 'tertiary', 'surface-dim'];
-  return colors[index % 3];
+  if (isExaminationEvent(event.label)) return 'surface-dim';
+  const colors = ['primary', 'tertiary'];
+  return colors[index % 2];
 };
 
 const getThemeColorClass = (theme: string) => {
@@ -254,19 +259,15 @@ export default function CalendarGrid({ events, currentMonth }: { events: EventDa
           <div className="space-y-3">
             <div className="flex items-center gap-3">
               <div className="w-2.5 h-2.5 rounded-full bg-primary" />
-              <span className="text-xs font-medium text-on-surface">University Events</span>
-            </div>
-            <div className="flex items-center gap-3">
-              <div className="w-2.5 h-2.5 rounded-full bg-tertiary" />
-              <span className="text-xs font-medium text-on-surface">Academic Orientations</span>
+              <span className="text-xs font-medium text-on-surface">大学行事</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-2.5 h-2.5 rounded-full bg-error" />
-              <span className="text-xs font-medium text-on-surface">Registration Deadlines</span>
+              <span className="text-xs font-medium text-on-surface">履修関係</span>
             </div>
             <div className="flex items-center gap-3">
               <div className="w-2.5 h-2.5 rounded-full bg-surface-dim" />
-              <span className="text-xs font-medium text-on-surface">Examination Period</span>
+              <span className="text-xs font-medium text-on-surface">試験期間</span>
             </div>
           </div>
         </div>

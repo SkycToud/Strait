@@ -41,7 +41,7 @@ export default function AllClubsList({ initialClubs }: AllClubsListProps) {
   return (
     <div className="space-y-8">
       {/* Search and Filters Header */}
-      <div className="sticky top-0 z-10 py-6 bg-surface-container-lowest/90 backdrop-blur-xl rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.06)] border border-outline-variant/30 px-8">
+      <div className="pt-6 pb-2 bg-surface-container-lowest/90 backdrop-blur-xl rounded-3xl shadow-[0_8px_32px_rgba(0,0,0,0.06)] border border-outline-variant/30 px-8">
         <div className="flex flex-col gap-4">
           {/* Search Row */}
           <div className="relative w-full">
@@ -56,7 +56,7 @@ export default function AllClubsList({ initialClubs }: AllClubsListProps) {
           </div>
 
           {/* Accordion Toggle & Summary */}
-          <div className="flex items-center justify-between px-2">
+          <div className="flex items-center justify-end px-2">
             <button
               onClick={() => setIsExpanded(!isExpanded)}
               className="flex items-center gap-2 text-sm font-bold text-on-surface-variant hover:text-primary transition-colors group"
@@ -64,7 +64,7 @@ export default function AllClubsList({ initialClubs }: AllClubsListProps) {
               <span className={`material-symbols-outlined text-xl transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`}>
                 keyboard_arrow_down
               </span>
-              <span>絞り込み条件</span>
+              <span>条件絞り込み</span>
               {!isExpanded && activeFilterCount > 0 && (
                 <span className="ml-1 bg-primary/10 text-primary px-2 py-0.5 rounded-full text-[10px]">
                   {activeFilterCount}件適用中
@@ -126,11 +126,7 @@ export default function AllClubsList({ initialClubs }: AllClubsListProps) {
           </div>
         </div>
 
-        <div className="mt-4 flex items-center justify-between text-[11px] text-on-surface-variant font-medium pt-4 border-t border-outline-variant/10">
-          <div className="flex items-center gap-2">
-            <span className="material-symbols-outlined text-sm opacity-50">list_alt</span>
-            <span>{filteredClubs.length} 件のサークルが見つかりました</span>
-          </div>
+        <div className="mt-2 pt-2 border-t border-outline-variant/10">
         </div>
       </div>
 

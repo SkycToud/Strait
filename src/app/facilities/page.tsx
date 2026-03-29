@@ -82,13 +82,6 @@ export default function FacilitiesPage() {
           </a>
         </div>
       </div>
-
-      {/* FAB */}
-      <div className="fixed bottom-8 right-8 z-50">
-        <button className="w-14 h-14 bg-primary text-on-primary rounded-full shadow-2xl flex items-center justify-center active:scale-95 hover:scale-105 transition-all">
-          <span className="material-symbols-outlined" data-icon="chat_bubble">chat_bubble</span>
-        </button>
-      </div>
     </div>
   );
 }

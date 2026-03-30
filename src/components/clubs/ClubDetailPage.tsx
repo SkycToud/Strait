@@ -94,7 +94,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
           <div className="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
           <div className="absolute bottom-0 left-0 p-8 lg:p-12 text-white">
             <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tight mb-4 font-headline">{club.nameJa}</h1>
-            <p className="text-lg lg:text-xl text-white/90 max-w-2xl font-body leading-relaxed">
+            <p className="hidden lg:block text-lg lg:text-xl text-white/90 max-w-2xl font-body leading-relaxed">
               {club.description || "Enjoy activities and team bonding within the community."}
             </p>
           </div>

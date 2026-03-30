@@ -231,6 +231,27 @@ export default function CalendarPage() {
                 </div>
               ) : null}
             </div>
+
+            {/* 出典・最終更新日 */}
+            <div className="mt-12 p-6 bg-surface-container-low rounded-2xl border border-outline-variant/20">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-on-surface-variant">
+                <div className="flex items-center gap-2">
+                  <FileText className="w-4 h-4" />
+                  <span>出典: </span>
+                  <a
+                    href="https://www.tufs.ac.jp/documents/student/calendar/2026_academic_calendar_gakubu.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    東京外国語大学 学年暦（PDF）
+                  </a>
+                </div>
+                <div className="text-xs">
+                  最終更新: 2026年3月
+                </div>
+              </div>
+            </div>
       </section>
     </div>
   );

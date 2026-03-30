@@ -48,6 +48,17 @@ export default function NoticesPage() {
         title="お知らせ"
         subtitle="Notices"
         description="東京外国語大学 在学生向けお知らせ一覧"
+        actionButton={
+          <a
+            href="https://www.tufs.ac.jp/student/NEWS/index.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-sm font-medium rounded-full hover:bg-primary/90 transition-colors duration-200 shadow-sm shadow-primary/20"
+          >
+            HPを確認
+            <ExternalLink className="w-3.5 h-3.5" />
+          </a>
+        }
       />
 
       {/* Category Tabs */}

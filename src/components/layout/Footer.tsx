@@ -1,4 +1,5 @@
 import { Instagram } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
@@ -19,9 +20,15 @@ export default function Footer() {
             </div>
           </div>
           <div>
+            <h4 className="text-xs font-bold text-on-surface mb-4">Legal</h4>
+            <ul className="space-y-2">
+              <li><Link className="text-xs text-slate-500 hover:text-primary transition-colors" href="/disclaimer">免責事項</Link></li>
+              <li><Link className="text-xs text-slate-500 hover:text-primary transition-colors" href="/privacy">プライバシーポリシー</Link></li>
+            </ul>
+          </div>
+          <div>
             <h4 className="text-xs font-bold text-on-surface mb-4">Support</h4>
             <ul className="space-y-2">
-              <li><a className="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Help</a></li>
               <li><a className="text-xs text-slate-500 hover:text-primary transition-colors" href="https://docs.google.com/forms/d/e/1FAIpQLSckuJrcfuzOmyxf6cbxi09oYJNQNXc-E9M4V0LoBsgKaXcLqQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Contact</a></li>
             </ul>
           </div>

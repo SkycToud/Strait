@@ -119,20 +119,20 @@ export default function CalendarPage() {
     <div className="max-w-[1024px] mx-auto w-full">
       <section className="flex-1">
         {/* Header Section */}
-        <div className="flex flex-col md:flex-row md:items-start justify-between gap-6 mb-8">
+        <div className="flex flex-col md:flex-row md:items-start justify-between gap-4 md:gap-6 mb-6 md:mb-8">
           <div className="flex flex-col gap-4">
             <PageHeader
-              title='学期予定'
+              title='予定表'
               subtitle='Academic Schedule & Timelines 2026'
             />
 
             {/* Search Bar */}
             <div className="relative w-full max-w-md">
-              <span className="absolute left-5 top-1/2 -translate-y-1/2 material-symbols-outlined text-primary text-2xl" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>search</span>
+              <span className="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 material-symbols-outlined text-primary text-xl md:text-2xl" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>search</span>
               <input
                 type="text"
                 placeholder="イベント名やキーワードを検索..."
-                className="w-full pl-14 pr-6 py-4 bg-surface-container-low rounded-2xl border-2 border-transparent focus:border-primary focus:bg-white focus:shadow-[0_0_0_4px_rgba(var(--primary-rgb),0.1)] outline-none transition-all text-lg placeholder:text-on-surface-variant/50"
+                className="w-full pl-12 md:pl-14 pr-4 md:pr-6 py-3 md:py-4 bg-surface-container-low rounded-2xl border-2 border-transparent focus:border-primary focus:bg-white focus:shadow-[0_0_0_4px_rgba(var(--primary-rgb),0.1)] outline-none transition-all text-sm md:text-lg placeholder:text-on-surface-variant/50"
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
@@ -175,32 +175,32 @@ export default function CalendarPage() {
                 const theme = getThemeClasses(themeText);
 
                 return (
-                  <article key={index} className="relative flex items-start gap-6 md:gap-10 group">
-                    <div className="z-10 flex-shrink-0 w-20 md:w-28 flex flex-col items-center pt-2">
-                      <div className={`px-3 py-1 ${theme.bg} ${theme.badgeText} text-[10px] md:text-xs font-bold rounded-full mb-2 tracking-tighter shadow-sm whitespace-nowrap`}>
+                  <article key={index} className="relative flex items-start gap-4 md:gap-10 group">
+                    <div className="z-10 flex-shrink-0 w-16 md:w-28 flex flex-col items-center pt-2">
+                      <div className={`px-2 md:px-3 py-1 ${theme.bg} ${theme.badgeText} text-[10px] md:text-xs font-bold rounded-full mb-2 tracking-tighter shadow-sm whitespace-nowrap`}>
                         {displayDate}
                       </div>
-                      <div className={`w-4 h-4 rounded-full border-4 border-surface ${theme.bg} group-hover:scale-125 transition-transform duration-300`}></div>
+                      <div className={`w-3 h-3 md:w-4 md:h-4 rounded-full border-[3px] md:border-4 border-surface ${theme.bg} group-hover:scale-125 transition-transform duration-300`}></div>
                     </div>
-                    <div className={`flex-1 bg-surface-container-lowest p-6 md:p-8 rounded-3xl shadow-sm hover:shadow-md transition-shadow duration-300 border-l-4 ${theme.border} relative overflow-hidden`}>
+                    <div className={`flex-1 bg-surface-container-lowest p-5 md:p-8 rounded-2xl md:rounded-3xl shadow-sm hover:shadow-md transition-shadow duration-300 border-l-4 ${theme.border} relative overflow-hidden`}>
 
                       {(isRegistration || event.isSemesterSchedule) && (
-                        <div className={`absolute top-0 right-0 ${isRegistration ? theme.accentBg : 'bg-secondary-container'} ${isRegistration ? theme.accentText : 'text-on-secondary-container'} px-6 py-1.5 rounded-bl-3xl text-[10px] font-bold uppercase tracking-widest flex items-center gap-1`}>
+                        <div className={`absolute top-0 right-0 ${isRegistration ? theme.accentBg : 'bg-secondary-container'} ${isRegistration ? theme.accentText : 'text-on-secondary-container'} px-4 md:px-6 py-1 md:py-1.5 rounded-bl-2xl md:rounded-bl-3xl text-[9px] md:text-[10px] font-bold uppercase tracking-widest flex items-center gap-1`}>
                           {isRegistration ? <AlertCircle className="w-3 h-3" /> : <MapPin className="w-3 h-3" />}
                           {isRegistration ? 'Registration' : 'Semester'}
                         </div>
                       )}
 
-                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-4 mb-3">
-                        <span className={`${theme.text} font-bold text-xs uppercase tracking-widest`}>
+                      <div className="flex flex-col md:flex-row md:items-center justify-between gap-2 md:gap-4 mb-2 md:mb-3">
+                        <span className={`${theme.text} font-bold text-[10px] md:text-xs uppercase tracking-widest mt-2 md:mt-0`}>
                           {isRegistration ? 'Important Actions' : (isPeriod ? 'Period' : 'Event')}
                         </span>
-                        <span className="text-on-surface-variant text-xs flex items-center gap-1.5 break-keep">
-                          <Clock className="w-4 h-4" /> {dateText}
+                        <span className="text-on-surface-variant text-[10px] md:text-xs flex items-center gap-1.5 break-keep">
+                          <Clock className="w-3 h-3 md:w-4 md:h-4" /> {dateText}
                         </span>
                       </div>
-                      <h2 className="text-xl md:text-2xl font-bold text-on-surface leading-tight mb-2">{event.label}</h2>
-                      <div className="mt-6 flex items-center gap-4">
+                      <h2 className="text-lg md:text-2xl font-bold text-on-surface leading-tight mb-2 md:mb-2">{event.label}</h2>
+                      <div className="mt-4 md:mt-6 flex items-center gap-4">
                         {(() => {
                           const ev = event as { date?: string; startDate?: string; endDate?: string; label: string; isSemesterSchedule?: boolean };
                           const gcUrl = buildGoogleCalendarUrl({ date: ev.date, startDate: ev.startDate, endDate: ev.endDate, label: ev.label, isSemesterSchedule: ev.isSemesterSchedule });
@@ -230,6 +230,27 @@ export default function CalendarPage() {
                   <p className="text-on-surface-variant">検索条件を変えてみてください。</p>
                 </div>
               ) : null}
+            </div>
+
+            {/* 出典・最終更新日 */}
+            <div className="mt-12 p-6 bg-surface-container-low rounded-2xl border border-outline-variant/20">
+              <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 text-sm text-on-surface-variant">
+                <div className="flex items-center gap-2">
+                  <FileText className="w-4 h-4" />
+                  <span>出典: </span>
+                  <a
+                    href="https://www.tufs.ac.jp/documents/student/calendar/2026_academic_calendar_gakubu.pdf"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-primary hover:underline"
+                  >
+                    東京外国語大学 学年暦（PDF）
+                  </a>
+                </div>
+                <div className="text-xs">
+                  最終更新: 2026年3月
+                </div>
+              </div>
             </div>
       </section>
     </div>

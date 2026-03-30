@@ -45,20 +45,20 @@ export default function LinkCard({ item, index }: { item: LinkItem; index: numbe
       target="_blank"
       rel="noopener noreferrer"
       onClick={handleClick}
-      className="group relative flex flex-col p-8 bg-surface-container-lowest rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#0e61a51a] animate-fade-in"
+      className="group relative flex flex-col p-4 md:p-8 bg-surface-container-lowest rounded-2xl md:rounded-3xl transition-all duration-300 hover:-translate-y-1 hover:shadow-2xl hover:shadow-[#0e61a51a] animate-fade-in"
       style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'both' }}
     >
-      <div className="mb-6 flex items-center justify-between">
-        <div className={`w-14 h-14 rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 ${style.bg} ${style.text}`}>
-          <span className="material-symbols-outlined text-3xl select-none">{item.icon}</span>
+      <div className="mb-4 md:mb-6 flex items-center justify-between">
+        <div className={`w-10 h-10 md:w-14 md:h-14 rounded-xl md:rounded-2xl flex items-center justify-center group-hover:scale-110 transition-transform duration-500 ${style.bg} ${style.text}`}>
+          <span className="material-symbols-outlined text-xl md:text-3xl select-none">{item.icon}</span>
         </div>
         <span className="material-symbols-outlined text-outline-variant group-hover:text-primary transition-colors select-none">north_east</span>
       </div>
-      <h3 className="text-lg font-bold text-on-surface mb-2">{item.title}</h3>
-      <p className="text-sm text-on-surface-variant leading-relaxed mb-4">{item.description}</p>
+      <h3 className="text-sm md:text-lg font-bold text-on-surface mb-1 md:mb-2">{item.title}</h3>
+      <p className="text-[10px] md:text-sm text-on-surface-variant leading-relaxed mb-3 md:mb-4 line-clamp-2 md:line-clamp-none">{item.description}</p>
       
-      <div className="mt-auto pt-4 border-t border-surface-container-high flex items-center gap-2">
-        <span className="text-[10px] font-bold text-primary tracking-widest uppercase">{englishLabel}</span>
+      <div className="mt-auto pt-3 md:pt-4 border-t border-surface-container-high flex items-center gap-2">
+        <span className="text-[9px] md:text-[10px] font-bold text-primary tracking-widest uppercase">{englishLabel}</span>
       </div>
     </a>
   );

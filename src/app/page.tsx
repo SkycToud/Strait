@@ -82,17 +82,17 @@ export default function Home() {
   return (
     <>
       {/* Hero Section */}
-      <header className="mb-12">
-        <h1 className="text-5xl md:text-7xl font-extrabold tracking-tight text-on-background mb-4 text-left">
+      <header className="mb-6 md:mb-12">
+        <h1 className="text-4xl md:text-7xl font-extrabold tracking-tight text-on-background mb-2 md:mb-4 text-left">
           Strait
         </h1>
-        <p className="text-lg text-on-surface-variant max-w-2xl leading-relaxed text-left">
+        <p className="text-base md:text-lg text-on-surface-variant max-w-2xl leading-relaxed text-left">
           東京外国語大学の学生のための、ポータルサイト
         </p>
       </header>
 
       {/* Bento Grid Layout */}
-      <div className="grid grid-cols-1 lg:grid-cols-12 gap-6">
+      <div className="grid grid-cols-1 lg:grid-cols-12 gap-4 md:gap-6">
         {/* '直近の予定' (Upcoming Schedule) - Large Anchor Card */}
         <section className="lg:col-span-8">
           <div className="flex items-center justify-between mb-4 px-2">
@@ -101,16 +101,16 @@ export default function Home() {
             </h2>
             <Link href="/calendar" className="text-sm font-semibold text-primary hover:underline">See All</Link>
           </div>
-          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary-container p-8 text-white shadow-xl shadow-primary/20 group">
-            <div className="relative z-10 flex flex-col md:flex-row justify-between items-start md:items-center gap-6">
-              <div>
-                <span className="bg-white/20 backdrop-blur-md px-4 py-1 rounded-full text-xs font-bold tracking-wider uppercase mb-4 inline-block">Recommended Task</span>
-                <h3 className="text-3xl md:text-4xl font-bold mb-2">{nextEvent.title}</h3>
+          <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary-container p-5 md:p-8 text-white shadow-xl shadow-primary/20 group">
+            <div className="relative z-10 flex flex-row justify-between items-center gap-4 md:gap-6">
+              <div className="flex-1">
+                <span className="bg-white/20 backdrop-blur-md px-3 md:px-4 py-1 rounded-full text-[10px] md:text-xs font-bold tracking-wider uppercase mb-2 md:mb-4 inline-block">Recommended Task</span>
+                <h3 className="text-xl sm:text-2xl md:text-4xl font-bold mb-1 md:mb-2 line-clamp-2">{nextEvent.title}</h3>
               </div>
-              <div className="bg-white/10 backdrop-blur-xl p-6 rounded-2xl border border-white/20 text-center min-w-[140px]">
-                <div className="text-4xl font-black mb-1">{nextEvent.day}</div>
-                <div className="text-sm font-bold opacity-90">{nextEvent.month}</div>
-                <div className="mt-2 pt-2 border-t border-white/20 text-xs font-medium">{nextEvent.startTime}</div>
+              <div className="bg-white/10 backdrop-blur-xl p-4 md:p-6 rounded-2xl border border-white/20 text-center min-w-[90px] md:min-w-[140px] shrink-0">
+                <div className="text-2xl md:text-4xl font-black mb-1">{nextEvent.day}</div>
+                <div className="text-xs md:text-sm font-bold opacity-90">{nextEvent.month}</div>
+                <div className="mt-1 md:mt-2 pt-1 md:pt-2 border-t border-white/20 text-[10px] md:text-xs font-medium">{nextEvent.startTime}</div>
               </div>
             </div>
             {/* Abstract Background Shape */}
@@ -130,24 +130,24 @@ export default function Home() {
               const status = getFacilityStatus(facility);
 
               return (
-                <div key={facility.id} className="bg-surface-container-lowest p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex items-center justify-between border border-outline-variant/5">
-                  <div className="flex items-center gap-4">
-                    <div className={`w-12 h-12 rounded-xl flex items-center justify-center ${index === 0 ? 'bg-tertiary-container' :
+                <div key={facility.id} className="bg-surface-container-lowest p-4 md:p-5 rounded-2xl shadow-sm hover:shadow-md transition-shadow flex items-center justify-between border border-outline-variant/5">
+                  <div className="flex items-center gap-3 md:gap-4">
+                    <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center ${index === 0 ? 'bg-tertiary-container' :
                       index === 1 ? 'bg-secondary-container' :
                         'bg-surface-container-high'
                       }`}>
                       <Icon className={`${index === 0 ? 'text-on-tertiary-container' :
                         index === 1 ? 'text-on-secondary-container' :
                           'text-on-surface-variant'
-                        } w-6 h-6`} />
+                        } w-5 h-5 md:w-6 md:h-6`} />
                     </div>
                     <div>
-                      <h4 className="font-bold">{facility.name}</h4>
-                      <p className="text-xs text-on-surface-variant">{facility.name}</p>
+                      <h4 className="font-bold text-sm md:text-base">{facility.name}</h4>
+                      <p className="text-[10px] md:text-xs text-on-surface-variant line-clamp-1">{facility.name}</p>
                     </div>
                   </div>
-                  <div className="flex flex-col items-end">
-                    <span className={`px-3 py-1 rounded-full text-xs font-bold mb-1 flex items-center gap-1 ${status.isOpen
+                  <div className="flex flex-col items-end shrink-0 pl-2">
+                    <span className={`px-2 md:px-3 py-0.5 md:py-1 rounded-full text-[10px] md:text-xs font-bold mb-1 flex items-center gap-1 ${status.isOpen
                       ? 'bg-primary/10 text-primary'
                       : 'bg-surface-container-high text-on-surface-variant'
                       }`}>
@@ -155,7 +155,7 @@ export default function Home() {
                         }`}></span>
                       {status.status}
                     </span>
-                    <span className="text-[10px] text-on-surface-variant">{status.time}</span>
+                    <span className="text-[9px] md:text-[10px] text-on-surface-variant">{status.time}</span>
                   </div>
                 </div>
               );
@@ -171,22 +171,22 @@ export default function Home() {
             <h2 className="text-xl font-bold">よく使うリンク</h2>
             <Link href="/links" className="text-sm font-semibold text-primary hover:underline md:hidden">View All</Link>
           </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
             {quickLinks.map((link, index) => (
               <a
                 key={link.id}
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group bg-surface-container-low hover:bg-white p-6 rounded-3xl transition-all duration-300 flex items-start gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5 animate-fade-in"
+                className="group bg-surface-container-low hover:bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl transition-all duration-300 flex flex-col md:flex-row items-start gap-3 md:gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5 animate-fade-in"
                 style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'both' }}
               >
-                <div className={`w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform`}>
-                  <span className="material-symbols-outlined text-primary text-2xl select-none">{link.icon}</span>
+                <div className={`w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform`}>
+                  <span className="material-symbols-outlined text-primary text-xl md:text-2xl select-none">{link.icon}</span>
                 </div>
-                <div className="flex-1">
-                  <h5 className="font-bold text-sm mb-1 group-hover:text-primary transition-colors line-clamp-1">{link.title}</h5>
-                  <p className="text-xs text-on-surface-variant leading-tight line-clamp-2">{link.description}</p>
+                <div className="flex-1 w-full">
+                  <h5 className="font-bold text-xs md:text-sm mb-1 group-hover:text-primary transition-colors line-clamp-1">{link.title}</h5>
+                  <p className="text-[10px] md:text-xs text-on-surface-variant leading-tight line-clamp-2">{link.description}</p>
                 </div>
               </a>
             ))}
@@ -194,14 +194,14 @@ export default function Home() {
             {/* Others */}
             <Link
               href="/links"
-              className="group bg-surface-container-low hover:bg-white p-6 rounded-3xl transition-all duration-300 items-start gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5 hidden lg:flex"
+              className="group bg-surface-container-low hover:bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl transition-all duration-300 flex flex-col md:flex-row items-start gap-3 md:gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5 hidden lg:flex"
             >
-              <div className="w-12 h-12 rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
-                <span className="material-symbols-outlined text-primary text-2xl select-none">grid_view</span>
+              <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">
+                <span className="material-symbols-outlined text-primary text-xl md:text-2xl select-none">grid_view</span>
               </div>
-              <div>
-                <h5 className="font-bold text-sm mb-1 group-hover:text-primary transition-colors">Other Resources</h5>
-                <p className="text-xs text-on-surface-variant leading-tight">その他便利なサービス</p>
+              <div className="flex-1 w-full">
+                <h5 className="font-bold text-xs md:text-sm mb-1 group-hover:text-primary transition-colors">Other Resources</h5>
+                <p className="text-[10px] md:text-xs text-on-surface-variant leading-tight">その他便利なサービス</p>
               </div>
             </Link>
           </div>

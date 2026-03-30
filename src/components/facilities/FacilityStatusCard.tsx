@@ -70,39 +70,38 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
     <Tag 
       {...tagProps as any}
       className={cn(
-        "group rounded-2xl p-6 shadow-sm transition-all duration-300 relative overflow-hidden flex flex-col",
+        "group rounded-2xl p-4 md:p-6 shadow-sm transition-all duration-300 relative overflow-hidden flex flex-col",
         isOpen 
           ? "bg-surface-container-lowest hover:shadow-xl hover:shadow-primary/5 border border-surface-container-high/50" 
           : "bg-surface-container-low/50 border border-surface-container-high hover:border-surface-variant opacity-80 hover:opacity-100",
         facility.link ? "cursor-pointer" : ""
       )}
     >
-      <div className="absolute top-0 right-0 p-3">
+      <div className="absolute top-0 right-0 p-2 md:p-3">
         <span className={cn(
-          "px-3 py-1 rounded-lg text-xs font-bold tracking-wide uppercase",
+          "px-2 md:px-3 py-1 rounded-lg text-[10px] md:text-xs font-bold tracking-wide uppercase",
           isOpen ? "bg-tertiary-container text-on-tertiary-container" : "bg-error-container text-on-error-container"
         )}>
           {isOpen ? 'Open' : 'Closed'}
         </span>
       </div>
 
-      <div className="flex items-center gap-4 mb-6">
+      <div className="flex items-center gap-3 md:gap-4 mb-4 md:mb-6">
         <div className={cn(
-          "w-12 h-12 rounded-xl flex items-center justify-center",
+          "w-10 h-10 md:w-12 md:h-12 rounded-xl flex items-center justify-center",
           isOpen ? "bg-secondary-container text-primary" : "bg-surface-container-highest text-on-surface-variant"
         )}>
-          <span className="material-symbols-outlined text-3xl" data-icon={facility.icon}>{facility.icon}</span>
+          <span className="material-symbols-outlined text-2xl md:text-3xl" data-icon={facility.icon}>{facility.icon}</span>
         </div>
         <div>
-          <h3 className="font-bold text-lg text-on-surface">{facility.name}</h3>
-          <p className="text-xs text-on-surface-variant">{getTypeLabel(facility.type)}</p>
+          <h3 className="font-bold text-base md:text-lg text-on-surface">{facility.name}</h3>
         </div>
       </div>
 
-      <div className="space-y-4 flex-grow">
+      <div className="space-y-3 md:space-y-4 flex-grow">
         {(status.hours.length > 0 || isOpen) && (
-          <div className="flex items-center justify-between text-sm">
-            <span className="text-on-surface-variant flex items-center gap-2">
+          <div className="flex items-center justify-between text-xs md:text-sm">
+            <span className="text-on-surface-variant flex items-center gap-1 md:gap-2">
               <span className="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> {getHoursLabel(facility.type)}
             </span>
             <span className={cn("font-semibold", isOpen ? "text-on-surface" : "text-on-surface-variant")}>
@@ -119,47 +118,15 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
             {status.note !== '営業時間外' ? status.note : (facility.note !== '営業時間外' ? facility.note : '')}
           </div>
         )}
+      </div>
 
-        <div className="pt-4 mt-auto">
-          <div className="flex justify-between items-end mb-2">
-            <span className="text-xs font-bold text-on-surface-variant">情報の精度</span>
-            <span className={cn(
-              "text-xs font-bold",
-              facility.accuracy === 'high' ? "text-primary" : 
-              facility.accuracy === 'medium' ? "text-[#d97706]" : "text-error"
-            )}>
-              {getAccuracyLabel(facility.accuracy)}
-            </span>
-          </div>
-          <div className="flex gap-1">
-            <div className={cn(
-              "h-1.5 flex-1 rounded-full transition-colors duration-500", 
-              facility.accuracy === 'high' || facility.accuracy === 'medium' || facility.accuracy === 'low' 
-                ? (facility.accuracy === 'high' ? "bg-[#61a0e8]" : facility.accuracy === 'medium' ? "bg-[#fbbf24]" : "bg-error/60") 
-                : "bg-surface-container-high"
-            )}></div>
-            <div className={cn(
-              "h-1.5 flex-1 rounded-full transition-colors duration-500", 
-              facility.accuracy === 'high' || facility.accuracy === 'medium' 
-                ? (facility.accuracy === 'high' ? "bg-[#61a0e8]" : "bg-[#fbbf24]") 
-                : "bg-surface-container-high"
-            )}></div>
-            <div className={cn(
-              "h-1.5 flex-1 rounded-full transition-colors duration-500", 
-              facility.accuracy === 'high' 
-                ? "bg-[#61a0e8]" 
-                : "bg-surface-container-high"
-            )}></div>
-          </div>
+      <div className="flex justify-end pt-2">
+        <div className="flex items-center gap-1.5 text-on-surface-variant/70">
+          <span className="material-symbols-outlined text-sm" data-icon="info">info</span>
+          <span className="text-xs">情報の精度: {getAccuracyLabel(facility.accuracy)}</span>
         </div>
       </div>
 
-      <div className="mt-6 pt-6 border-t border-surface-container-high flex justify-between items-center">
-        <span className={cn("text-xs", (status.note && status.note.includes('混雑')) ? "text-error font-medium" : "text-on-surface-variant")}>
-          {(status.note && status.note !== '営業時間外') ? status.note : (facility.note && facility.note !== '営業時間外' ? facility.note : '詳細を見る')}
-        </span>
-        <span className="material-symbols-outlined text-on-surface-variant group-hover:translate-x-1 transition-transform" data-icon="arrow_forward">arrow_forward</span>
-      </div>
     </Tag>
   );
 }

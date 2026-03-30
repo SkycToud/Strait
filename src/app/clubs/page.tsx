@@ -81,19 +81,21 @@ export default function ClubsPage() {
           />
 
           {/* Category Section */}
-          <div className="mb-8 mt-12 flex items-end justify-between">
+          <div className="mb-4 md:mb-8 mt-6 md:mt-12 flex items-end justify-between">
             <div>
-              <h2 className="text-2xl font-bold text-on-surface tracking-tight">カテゴリ</h2>
+              <h2 className="text-xl md:text-2xl font-bold text-on-surface tracking-tight">カテゴリ</h2>
             </div>
             <Link
               href="/clubs/all"
-              className="text-sm font-bold text-primary flex items-center gap-1 hover:underline px-4 py-2 bg-primary/5 rounded-full transition-colors"
+              className="text-xs md:text-sm font-bold text-primary flex items-center gap-1 hover:underline px-3 md:px-4 py-1.5 md:py-2 bg-primary/5 rounded-full transition-colors"
             >
-              全てのサークルを表示 <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>arrow_forward</span>
+              <span className="hidden md:inline">全てのサークルを表示</span>
+              <span className="md:hidden">全て表示</span>
+              <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>arrow_forward</span>
             </Link>
           </div>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {categories.map((category) => (
               <Link
                 href={`/clubs/${slugify(category.id)}`}
@@ -107,9 +109,9 @@ export default function ClubsPage() {
                     src={category.img}
                   />
                 </div>
-                <div className="p-5">
-                  <h3 className="text-xl font-bold text-on-surface mb-1">{category.ja}</h3>
-                  <p className="text-xs text-on-surface-variant mb-4 uppercase tracking-wider font-medium">{category.en}</p>
+                <div className="p-3 md:p-5">
+                  <h3 className="text-sm md:text-xl font-bold text-on-surface mb-0.5 md:mb-1">{category.ja}</h3>
+                  <p className="text-[9px] md:text-xs text-on-surface-variant mb-1 md:mb-4 uppercase tracking-wider font-medium line-clamp-1">{category.en}</p>
 
                 </div>
               </Link>
@@ -117,36 +119,36 @@ export default function ClubsPage() {
           </div>
 
           {/* Latest Activity Section */}
-          <div className="mt-20">
-            <div className="flex items-end justify-between mb-8">
+          <div className="mt-12 md:mt-20">
+            <div className="flex items-end justify-between mb-4 md:mb-8">
               <div>
-                <h2 className="text-2xl font-bold text-on-surface tracking-tight">新着</h2>
+                <h2 className="text-xl md:text-2xl font-bold text-on-surface tracking-tight">新着</h2>
               </div>
-              <button className="text-sm font-bold text-primary flex items-center gap-1 hover:underline">
+              <button className="text-xs md:text-sm font-bold text-primary flex items-center gap-1 hover:underline">
                 View All <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>arrow_forward</span>
               </button>
             </div>
 
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl group cursor-pointer hover:bg-surface-container-high transition-colors">
-                <div className="w-16 h-16 rounded-lg bg-white shadow-sm flex-shrink-0 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>theater_comedy</span>
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-3 md:gap-4">
+              <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-surface-container-low rounded-xl group cursor-pointer hover:bg-surface-container-high transition-colors">
+                <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white shadow-sm flex-shrink-0 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-primary text-xl md:text-2xl" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>theater_comedy</span>
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold text-primary-dim uppercase tracking-widest">Performance</span>
-                  <h4 className="font-bold text-on-surface">劇団「外大座」新歓公演決定</h4>
-                  <p className="text-xs text-on-surface-variant line-clamp-1">Coming up on April 15th at the Arena...</p>
+                  <span className="text-[9px] md:text-[10px] font-bold text-primary-dim uppercase tracking-widest">Performance</span>
+                  <h4 className="font-bold text-sm md:text-base text-on-surface">劇団「外大座」新歓公演決定</h4>
+                  <p className="text-[10px] md:text-xs text-on-surface-variant line-clamp-1">Coming up on April 15th at the Arena...</p>
                 </div>
               </div>
 
-              <div className="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl group cursor-pointer hover:bg-surface-container-high transition-colors">
-                <div className="w-16 h-16 rounded-lg bg-white shadow-sm flex-shrink-0 flex items-center justify-center">
-                  <span className="material-symbols-outlined text-primary" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>menu_book</span>
+              <div className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-surface-container-low rounded-xl group cursor-pointer hover:bg-surface-container-high transition-colors">
+                <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white shadow-sm flex-shrink-0 flex items-center justify-center">
+                  <span className="material-symbols-outlined text-primary text-xl md:text-2xl" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>menu_book</span>
                 </div>
                 <div>
-                  <span className="text-[10px] font-bold text-primary-dim uppercase tracking-widest">Language</span>
-                  <h4 className="font-bold text-on-surface">Arabic Cafe: Weekly Meeting</h4>
-                  <p className="text-xs text-on-surface-variant line-clamp-1">Join us for cultural exchange every Friday...</p>
+                  <span className="text-[9px] md:text-[10px] font-bold text-primary-dim uppercase tracking-widest">Language</span>
+                  <h4 className="font-bold text-sm md:text-base text-on-surface">Arabic Cafe: Weekly Meeting</h4>
+                  <p className="text-[10px] md:text-xs text-on-surface-variant line-clamp-1">Join us for cultural exchange every Friday...</p>
                 </div>
               </div>
             </div>

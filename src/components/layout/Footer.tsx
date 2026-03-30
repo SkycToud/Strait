@@ -1,8 +1,9 @@
 import { Instagram } from 'lucide-react';
+import Link from 'next/link';
 
 export default function Footer() {
   return (
-    <footer className="w-full mt-auto border-t border-slate-200/50 bg-surface-container-low">
+    <footer className="w-full mt-auto border-t border-slate-200/50 bg-surface-container-low pb-24 md:pb-0">
       <div className="grid grid-cols-1 md:grid-cols-12 gap-8 px-6 md:px-12 py-12 w-full">
         <div className="md:col-span-4">
           <div className="font-bold text-slate-900 text-xl mb-4">Strait</div>
@@ -19,9 +20,15 @@ export default function Footer() {
             </div>
           </div>
           <div>
+            <h4 className="text-xs font-bold text-on-surface mb-4">Legal</h4>
+            <ul className="space-y-2">
+              <li><Link className="text-xs text-slate-500 hover:text-primary transition-colors" href="/disclaimer">免責事項</Link></li>
+              <li><Link className="text-xs text-slate-500 hover:text-primary transition-colors" href="/privacy">プライバシーポリシー</Link></li>
+            </ul>
+          </div>
+          <div>
             <h4 className="text-xs font-bold text-on-surface mb-4">Support</h4>
             <ul className="space-y-2">
-              <li><a className="text-xs text-slate-500 hover:text-primary transition-colors" href="#">Help</a></li>
               <li><a className="text-xs text-slate-500 hover:text-primary transition-colors" href="https://docs.google.com/forms/d/e/1FAIpQLSckuJrcfuzOmyxf6cbxi09oYJNQNXc-E9M4V0LoBsgKaXcLqQ/viewform?usp=dialog" target="_blank" rel="noopener noreferrer">Contact</a></li>
             </ul>
           </div>

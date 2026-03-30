@@ -753,10 +753,15 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
           <div className="flex-1"></div>
           <div className="flex flex-col md:flex-row items-center gap-6 text-right">
             <p className="text-sm text-on-surface-variant font-medium">最終更新日: {club.lastUpdated || "2024-03-20"}</p>
-            <button className="px-6 py-2.5 rounded-full border border-outline text-on-surface-variant text-sm font-bold hover:bg-surface-container-highest hover:border-primary transition-all flex items-center gap-2">
+            <a 
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeMkj-o5DL1o-pmjrAtCTabjB2v5_1BCa33hCpvHvHE21rjjQ/viewform?usp=publish-editor"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="px-6 py-2.5 rounded-full border border-outline text-on-surface-variant text-sm font-bold hover:bg-surface-container-highest hover:border-primary transition-all flex items-center gap-2"
+            >
               <span className="material-symbols-outlined text-sm">edit_note</span>
               掲載情報修正依頼
-            </button>
+            </a>
           </div>
         </div>
       </div>

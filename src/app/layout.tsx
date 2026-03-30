@@ -11,6 +11,11 @@ const inter = Inter({
 export const metadata: Metadata = {
   title: "Strait | TUFS Student Platform",
   description: "東京外国語大学の学生向け情報プラットフォーム。学期予定、施設情報、サークル情報を一元化。",
+  icons: {
+    icon: '/icon.png',
+    shortcut: '/icon.png',
+    apple: '/icon.png',
+  },
 };
 
 export default function RootLayout({

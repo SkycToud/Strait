@@ -24,7 +24,10 @@ export default function Header() {
   return (
     <nav className="fixed top-0 w-full z-50 glass-nav shadow-sm shadow-slate-200/50">
       <div className="flex justify-between items-center h-16 px-6 md:px-12 w-full">
-        <div className="text-2xl font-bold tracking-tighter text-primary">Strait</div>
+        <Link href="/" className="flex items-center gap-2 text-2xl font-bold tracking-tighter text-primary hover:opacity-80 transition-opacity">
+          <img src="/icon.png" alt="Strait" className="w-8 h-8" />
+          Strait
+        </Link>
         
         {/* Desktop Navigation */}
         <div className="hidden md:flex items-center gap-8">

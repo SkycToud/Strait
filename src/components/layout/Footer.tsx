@@ -1,4 +1,5 @@
 import { Instagram } from 'lucide-react';
+import { SiLine } from '@icons-pack/react-simple-icons';
 import Link from 'next/link';
 
 export default function Footer() {
@@ -16,6 +17,9 @@ export default function Footer() {
             <div className="flex gap-4">
               <a href="https://www.instagram.com/tufs_ai/" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:shadow-md transition-shadow text-on-surface-variant hover:text-primary">
                 <Instagram className="w-5 h-5" />
+              </a>
+              <a href="https://lin.ee/ukNINCZ" target="_blank" rel="noopener noreferrer" className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-sm hover:shadow-md transition-shadow text-on-surface-variant hover:text-[#06C755]">
+                <SiLine className="w-5 h-5" />
               </a>
             </div>
           </div>

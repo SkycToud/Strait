@@ -48,6 +48,12 @@ export default function ClubCard({ club }: ClubCardProps) {
           className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
         />
         
+        {club.isSample && (
+          <div className="absolute top-4 left-4 bg-amber-500 px-2.5 py-1 rounded-full text-[10px] font-bold text-white shadow-sm flex items-center gap-1">
+            <span className="material-symbols-outlined text-xs">science</span>
+            サンプル
+          </div>
+        )}
         {club.recruitment && (
           <div className="absolute top-4 right-4 bg-primary px-3 py-1 rounded-full text-[10px] font-bold text-white shadow-sm">
             Currently Recruiting

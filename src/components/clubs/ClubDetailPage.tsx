@@ -93,6 +93,12 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
           )}
           <div className="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
           <div className="absolute bottom-0 left-0 p-8 lg:p-12 text-white">
+            {club.isSample && (
+              <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-3 bg-amber-500/90 text-white rounded-full text-xs font-bold">
+                <span className="material-symbols-outlined text-sm">science</span>
+                サンプル（実在しない団体です）
+              </div>
+            )}
             <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tight mb-4 font-headline">{club.nameJa}</h1>
             <p className="hidden lg:block text-lg lg:text-xl text-white/90 max-w-2xl font-body leading-relaxed">
               {club.description || "Enjoy activities and team bonding within the community."}
@@ -650,8 +656,8 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
 
       {/* Full-width Appeal / Challenges sticky note row (PC only) */}
       {(club.recruitment?.appeal || club.recruitment?.challenges) && (
-        <div className="hidden lg:block max-w-7xl mx-auto px-6 mt-10 grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
-          {/* アピールポイント (魅力) - Yellow Sticky Note */}
+        <div className="hidden lg:grid max-w-7xl mx-auto px-6 mt-10 grid-cols-2 gap-10 items-start">
+          {/* アピールポイント (魅力) - Yellow Sticky Note - LEFT */}
           <div className="relative pt-8 pl-6 pb-4 pr-2">
             <div className="bg-[#fdf379] p-6 md:p-8 shadow-[4px_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[6px_6px_18px_rgba(0,0,0,0.2)] transition-shadow transform -rotate-2 min-h-[160px] relative">
               {/* Top left stars */}
@@ -688,7 +694,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
             </div>
           </div>
 
-          {/* 大変なところ (課題) - Purple Sticky Note */}
+          {/* 大変なところ (課題) - Purple Sticky Note - RIGHT */}
           {club.recruitment?.challenges && (
             <div className="relative pt-8 pl-2 pb-4 pr-6">
               <div className="bg-[#bda8e6] p-6 md:p-8 shadow-[4px_4px_12px_rgba(0,0,0,0.15)] hover:shadow-[6px_6px_18px_rgba(0,0,0,0.2)] transition-shadow transform rotate-2 min-h-[160px] relative">
@@ -738,13 +744,13 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
             <span>{club.category}へ戻る</span>
           </Link>
           <Link 
-            href="/clubs/all" 
+            href="/clubs" 
             className="group flex items-center gap-3 text-sm font-bold text-on-surface-variant hover:text-primary transition-all"
           >
             <div className="p-2 rounded-full border border-outline-variant group-hover:bg-primary-container group-hover:border-primary transition-all">
               <ArrowLeft className="w-4 h-4" />
             </div>
-            <span>全てのサークル一覧へ</span>
+            <span>サークル情報ホームへ</span>
           </Link>
         </div>
 

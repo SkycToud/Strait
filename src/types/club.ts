@@ -1,4 +1,4 @@
-export type Club = Pick<ClubDetail, 'id' | 'nameJa' | 'nameEn' | 'category' | 'description' | 'thumbnail' | 'instagram' | 'xUrl'>;
+export type Club = Pick<ClubDetail, 'id' | 'nameJa' | 'nameEn' | 'category' | 'description' | 'thumbnail' | 'instagram' | 'xUrl' | 'isSample'>;
 
 export interface ClubDetail {
   // Existing fields
@@ -11,6 +11,7 @@ export interface ClubDetail {
   instagram?: string;
   xUrl?: string;
   metadata?: string;
+  isSample?: boolean;
   
   // New comprehensive fields
   overview: {

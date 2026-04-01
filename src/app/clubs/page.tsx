@@ -7,64 +7,61 @@ const categories = [
     id: "Ball Sports",
     ja: "球技",
     en: "Ball Sports",
-    count: 24,
-    img: "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fcategories%2Fball-sports.jpg?alt=media&token=f894549f-ebb9-4bb1-9d85-7f737a10e041",
-  },
-  {
-    id: "Track & Field / Martial Arts",
-    ja: "陸上・滑走競技",
-    en: "Track & Field / Skating",
-    count: 12,
-    img: "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fcategories%2Ftrack-field-martial-arts.jpg?alt=media&token=6c9d1586-3f11-4bcc-a752-fd712313824e",
+    img: "",
   },
   {
     id: "Martial Arts",
     ja: "武道・武術",
     en: "Martial Arts",
-    count: 15,
-    img: "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fcategories%2Fmartial-arts.jpg?alt=media&token=fa0fd7bf-ad83-4aee-b653-9125f0c7bb98",
+    img: "",
+  },
+  {
+    id: "Arts & Music",
+    ja: "芸術・音楽",
+    en: "Arts & Music",
+    img: "",
   },
   {
     id: "Dance & Performance",
     ja: "舞踊・ダンス",
     en: "Dance & Performance",
-    count: 18,
-    img: "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fcategories%2Fdance-performance.jpg?alt=media&token=9a0e5ee1-e0d9-45fd-a827-3d0af8339eea",
+    img: "",
   },
   {
-    id: "Music & Arts",
-    ja: "音楽・芸術",
-    en: "Music & Arts",
-    count: 38,
-    img: "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fcategories%2Fmusic-arts.jpg?alt=media&token=a9509e0f-7737-4026-81e3-cd4b87c14720",
-  },
-  {
-    id: "Japanese Culture",
-    ja: "伝統文化",
-    en: "Japanese Culture",
-    count: 10,
-    img: "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fcategories%2Fjapanese-culture.jpg?alt=media&token=a120af12-9fa1-4698-8ade-4a703ac72112",
-  },
-  {
-    id: "Language & Social",
-    ja: "語学・社会",
-    en: "Language & Social",
-    count: 31,
-    img: "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fcategories%2Flanguage-social.jpg?alt=media&token=e59b78b8-566a-4e2c-bdce-b1d2f8736d51",
+    id: "Other Sports",
+    ja: "その他スポーツ",
+    en: "Other Sports",
+    img: "",
   },
   {
     id: "Volunteer",
     ja: "ボランティア",
     en: "Volunteer",
-    count: 8,
-    img: "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fcategories%2Fvolunteer.jpg?alt=media&token=44b1c98b-9645-4361-a824-7890bf8c0a07",
+    img: "",
   },
   {
-    id: "Hobbies",
+    id: "Language & International",
+    ja: "語学・国際交流",
+    en: "Language & International Exchange",
+    img: "",
+  },
+  {
+    id: "Social Issues",
+    ja: "社会課題",
+    en: "Social Issues",
+    img: "",
+  },
+  {
+    id: "Planning",
+    ja: "企画",
+    en: "Planning & Events",
+    img: "",
+  },
+  {
+    id: "Others",
     ja: "その他",
-    en: "Hobbies & Others",
-    count: 20,
-    img: "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fcategories%2Fhobbies.jpg?alt=media&token=f7a1624b-0c40-41b7-ad1d-eba81304478c",
+    en: "Others",
+    img: "",
   }
 ];
 
@@ -86,11 +83,11 @@ export default function ClubsPage() {
               <h2 className="text-xl md:text-2xl font-bold text-on-surface tracking-tight">カテゴリ</h2>
             </div>
             <Link
-              href="/clubs/all"
+              href="/clubs"
               className="text-xs md:text-sm font-bold text-primary flex items-center gap-1 hover:underline px-3 md:px-4 py-1.5 md:py-2 bg-primary/5 rounded-full transition-colors"
             >
-              <span className="hidden md:inline">全てのサークルを表示</span>
-              <span className="md:hidden">全て表示</span>
+              <span className="hidden md:inline">サークル情報ホームへ</span>
+              <span className="md:hidden">ホームへ</span>
               <span className="material-symbols-outlined text-sm" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>arrow_forward</span>
             </Link>
           </div>

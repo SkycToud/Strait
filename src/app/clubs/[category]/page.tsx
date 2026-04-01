@@ -3,6 +3,8 @@ import { getAllClubs } from '@/lib/clubs';
 import { slugify } from '@/lib/utils';
 import { ClubDetail } from '@/types/club';
 import ClubCard from '@/components/clubs/ClubCard';
+import Link from 'next/link';
+import { ArrowLeft } from 'lucide-react';
 
 export function generateStaticParams() {
   const clubsData = getAllClubs();
@@ -13,14 +15,16 @@ export function generateStaticParams() {
 }
 
 const categoryInfo: Record<string, { title: string, subtitle: string }> = {
-  "ball-sports": { title: "球技サークル一覧", subtitle: "Ball Sports Club List — Explore your passion on the court and field." },
-  "track-field-martial-arts": { title: "陸上・武道サークル一覧", subtitle: "Track & Field / Martial Arts — Push your limits." },
-  "music-arts": { title: "音楽・芸術サークル一覧", subtitle: "Music & Arts — Express yourself through creativity." },
-  "language-social": { title: "語学・社会サークル一覧", subtitle: "Language & Social — Connect with the world." },
-  "dance-performance": { title: "舞踊・ダンスサークル一覧", subtitle: "Dance & Performance — Move to the rhythm." },
-  "japanese-culture": { title: "伝統文化サークル一覧", subtitle: "Japanese Culture — Experience traditional arts." },
+  "ball-sports": { title: "球技サークル一覧", subtitle: "Ball Sports — Explore your passion on the court and field." },
+  "martial-arts": { title: "武道・武術サークル一覧", subtitle: "Martial Arts — Master traditional combat arts." },
+  "arts-and-music": { title: "芸術・音楽サークル一覧", subtitle: "Arts & Music — Express yourself through creativity." },
+  "dance-and-performance": { title: "舞踊・ダンスサークル一覧", subtitle: "Dance & Performance — Move to the rhythm." },
+  "other-sports": { title: "その他スポーツサークル一覧", subtitle: "Other Sports — Discover diverse athletic activities." },
   "volunteer": { title: "ボランティアサークル一覧", subtitle: "Volunteer — Make a difference in the community." },
-  "hobbies": { title: "その他サークル一覧", subtitle: "Hobbies & Others — Discover new interests." },
+  "language-and-international": { title: "語学・国際交流サークル一覧", subtitle: "Language & International Exchange — Connect with the world." },
+  "social-issues": { title: "社会課題サークル一覧", subtitle: "Social Issues — Address challenges in society." },
+  "planning": { title: "企画サークル一覧", subtitle: "Planning & Events — Create memorable experiences." },
+  "others": { title: "その他サークル一覧", subtitle: "Others — Discover new interests." },
 };
 
 export default async function CategoryPage({ params }: { params: Promise<{ category: string }> }) {
@@ -55,7 +59,21 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
         {categoryClubs.map((club) => (
           <ClubCard key={club.id} club={club} />
         ))}
+      </div>
 
+      {/* Navigation - Bottom */}
+      <div className="mt-16 pt-8 border-t border-outline-variant/10">
+        <div className="flex flex-wrap gap-8 items-center border-l-4 border-primary pl-6 py-2">
+          <Link 
+            href="/clubs" 
+            className="group flex items-center gap-3 text-sm font-bold text-on-surface-variant hover:text-primary transition-all"
+          >
+            <div className="p-2 rounded-full border border-outline-variant group-hover:bg-primary-container group-hover:border-primary transition-all">
+              <ArrowLeft className="w-4 h-4" />
+            </div>
+            <span>サークル情報ホームへ</span>
+          </Link>
+        </div>
       </div>
     </div>
   );

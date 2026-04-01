@@ -3,6 +3,7 @@ nameJa: 蹴鞠サークル「雅（みやび）」
 nameEn: Kemari Circle Miyabi
 category: Ball Sports
 description: 「鞠を蹴り、世界を繋ぐ。」勝敗を競うのではなく、相手が蹴りやすい球を返す「思いやり」の精神を重んじ、日本伝統文化の保存と国際交流の両立を目指す。
+isSample: true
 thumbnail: /images/clubs/kemari.jpg
 overview:
   philosophy: |-
@@ -29,7 +30,7 @@ membership:
     - '院生: 1人'
   isIntraUniversity: false
   demographics: |-
-    外大生のみ： 東京農工大学（鹿革の研究）やICUの学生も少数在籍。
+    東京農工大学（鹿革の研究）やICUの学生も少数在籍。
 
     人物像： 歴史好きの言語オタク、サッカー経験者（ただし走るのに疲れた人）、袴や着物を着たい人、日本文化を語りたい留学生。
 schedule:

@@ -40,3 +40,23 @@ export function getClubsByCategory(category: string): ClubDetail[] {
   // We'll leave filtering to the caller, or just provide it here.
   return allClubs;
 }
+
+export function getRecentlyUpdatedClubs(days: number = 30, limit?: number): ClubDetail[] {
+  const allClubs = getAllClubs();
+  const now = new Date();
+  const cutoffDate = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
+
+  const recentClubs = allClubs
+    .filter(club => {
+      if (!club.lastUpdated) return false;
+      const updatedDate = new Date(club.lastUpdated);
+      return updatedDate >= cutoffDate;
+    })
+    .sort((a, b) => {
+      const dateA = new Date(a.lastUpdated || '1970-01-01');
+      const dateB = new Date(b.lastUpdated || '1970-01-01');
+      return dateB.getTime() - dateA.getTime();
+    });
+
+  return limit ? recentClubs.slice(0, limit) : recentClubs;
+}

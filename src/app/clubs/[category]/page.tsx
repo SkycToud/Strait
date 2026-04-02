@@ -65,13 +65,13 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
       <div className="mt-16 pt-8 border-t border-outline-variant/10">
         <div className="flex flex-wrap gap-8 items-center border-l-4 border-primary pl-6 py-2">
           <Link 
-            href="/clubs" 
+            href="/clubs/all" 
             className="group flex items-center gap-3 text-sm font-bold text-on-surface-variant hover:text-primary transition-all"
           >
             <div className="p-2 rounded-full border border-outline-variant group-hover:bg-primary-container group-hover:border-primary transition-all">
               <ArrowLeft className="w-4 h-4" />
             </div>
-            <span>サークル情報ホームへ</span>
+            <span>サークル一覧</span>
           </Link>
         </div>
       </div>

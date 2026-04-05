@@ -1,5 +1,5 @@
 ---
-nameJa: 'Regional Revitalization Circle "Imoni-kai"'
+nameJa: '地域活性化サークルいもに会'
 nameEn: 'Regional Revitalization Circle "Imoni-kai"'
 category: Volunteer
 description: 外大生の視点を活かして日本の地域を活性化しよう！芋煮を食べたい人も大歓迎！

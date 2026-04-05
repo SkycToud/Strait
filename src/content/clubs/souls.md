@@ -1,7 +1,9 @@
 ---
-nameJa: K-POPカバーダンスサークル
+nameJa: K-POPカバーダンスサークル Souls
 nameEn: K-POP Cover Dance Circle
-category: Music & Arts
+category: 
+  - Music & Arts
+  - Dance & Performance
 description: 私たちと一緒にkpop踊りましょう♬❕️
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_souls.jpg?alt=media&token=fd2506eb-82a2-4cc7-9af0-dc78c087ce2b'
 instagram: 'https://www.instagram.com/tufs_souls/'
@@ -20,16 +22,20 @@ membership:
     - '2年生: 49人'
     - '3年生: 44人'
     - '4年生: 41人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 各グループごとに週1回2時間
   location: サークル棟地下舞踊場、サブアリーナ、武道場、多目的室
   annualPlan:
-    - '4月:新歓公演、5月:アユクデ、7月:7月公演、夏休み:合宿、11月外語祭公演、2月:卒業公演'
+    - 4月　新歓公演
+    - 5月　アユクデ
+    - 7月　7月公演
+    - 夏休み）合宿
+    - 11月　外語祭公演
+    - 2月　卒業公演
 recruitment:
   appeal: "とにかく仲が良い❗️推し活にもダンスにも全力で取り組んでいる人が多いです\U0001F63B\n有名な曲、大手事務所の曲はもちろん、マイナーな中小事務所のアイドルもカバーすることができます！！Youtubeに過去のカバーダンスも載っていますのでぜひご覧ください\U0001F3B6♡"
   challenges: メンバーの特徴を捉えたり、全員の振りをそろえて本家そっくりにカバーすること❗️
-  applicationFlow: "インスタグラムにて公開する入部フォームを提出していただければ完了です❗️\n体験会は3回開催してます\U0001F31F"
   welcomeEvents: "インスタグラムにて公開する入部フォームを提出していただければ完了です❗️\n体験会は3回開催してます\U0001F31F"
   annualFee: '入会費:なし、部費:年間5000円程度、その他公演毎衣装代'
   hasSelection: false

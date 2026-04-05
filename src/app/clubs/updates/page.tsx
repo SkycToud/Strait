@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getRecentlyUpdatedClubs } from '@/lib/clubs';
-import { slugify } from '@/lib/utils';
+import { toCategorySlug } from '@/lib/club-categories';
 import PageHeader from '@/components/layout/PageHeader';
 
 export default async function ClubUpdatesPage() {
@@ -20,7 +20,7 @@ export default async function ClubUpdatesPage() {
             {recentClubs.map((club) => (
               <Link
                 key={club.id}
-                href={`/clubs/${slugify(club.categories[0] || 'others')}/${club.id}`}
+                href={`/clubs/${toCategorySlug(club.categories[0] || 'others')}/${club.id}`}
                 className="flex items-center gap-4 p-4 bg-surface-container-low rounded-xl group cursor-pointer hover:bg-surface-container-high transition-colors"
               >
                 <div className="w-16 h-16 rounded-lg bg-white shadow-sm flex-shrink-0 flex items-center justify-center overflow-hidden">

@@ -3,8 +3,7 @@ nameJa: タップダンスサークルTUPS
 nameEn: TUPS
 category: Dance & Performance
 description: 「楽しく”タップダンス”してみませんか？」週に１度サークル棟で活動しているアットホームなインカレサークルです
-thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_tups.jpg?alt=media&token=d3e6682c-dc3a-421b-8f90-407b35c2650d'
-instagram: 'https://www.instagram.com/tufs_tups?igsh=MXZoY3dyNmplNDA2aQ=='
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_tups.jpg?alt=media&token=a5b5b26c-56e3-4211-89f5-ed4025339aef'
 xUrl: 'https://x.com/tufs_tups'
 overview:
   philosophy: |-
@@ -34,7 +33,7 @@ schedule:
   frequency: 週一
   location: サークル棟多目的スペース
   annualPlan:
-    - 毎年11月の外語祭に出演
+    - 11月　外語祭に出演
 recruitment:
   appeal: |-
     ・初心者が多くアットホームな雰囲気
@@ -46,7 +45,6 @@ recruitment:
     ・たまに全然できないステップがあり苦戦する
     ・サークル棟、夏暑すぎる
     ・外語祭時期はやっぱり少し大変
-  applicationFlow: 各種SNS(インスタ、X)のDMで随時受け付けています。体験希望や入会希望の旨を送ってください。
   welcomeEvents: 各種SNS(インスタ、X)のDMで随時受け付けています。体験希望や入会希望の旨を送ってください。
   annualFee: '部費はなし ・タップシューズ代（ものにもよるが大体　10000円ほど） レッスン代（1回2000 円前後） ・外語祭参加費（約1,500円） ・衣装を購入する場合は衣装代も'
   hasSelection: false

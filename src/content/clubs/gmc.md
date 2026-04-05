@@ -20,7 +20,7 @@ membership:
     - '2年生: 35人'
     - '3年生: 22人'
     - '4年生: 27人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 全体では月1程度
   location: サークル棟地下一階 音楽室B
@@ -29,7 +29,6 @@ schedule:
 recruitment:
   appeal: 様々な音楽の好みを持った人が集まり、それぞれ好きな音楽を楽しんでいます♪その分新しい音楽に出会うことも多々あり…。楽器未経験で始める方や⁡、2年生以上で入ってこられる方もたくさんいます。どんな方も楽しめるあたたかい雰囲気がGMCの特徴です！
   challenges: ライブへの参加は自由なので、忙しさややる気に応じて参加頻度を調節できます。
-  applicationFlow: インスタや新歓で配るチラシから、公式LINEを追加して入部手続きを行っていただきます。
   welcomeEvents: インスタや新歓で配るチラシから、公式LINEを追加して入部手続きを行っていただきます。
   annualFee: 例年通りだと半年で3000円、1年6000円ですが全く参加していない場合は免除になります。
   hasSelection: false

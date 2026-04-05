@@ -1,7 +1,9 @@
 ---
 nameJa: 表千家茶道部
 nameEn: Omotesenke Tea Ceremony
-category: Music & Arts
+category: 
+  - Music & Arts
+  - Others
 description: 表千家茶道部
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_omotesenke.jpeg?alt=media&token=c5095bce-0248-4cb1-b7ed-4c8b8ed30c45'
 instagram: 'https://www.instagram.com/tufs_omotesenke/'
@@ -23,7 +25,7 @@ membership:
     - '2年生: 7人'
     - '3年生: 6人'
     - '4年生: 4人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 週1〜2回（第二・第四月曜日、毎週金曜日）
   location: 学内の和室（学生会館1階）
@@ -40,7 +42,6 @@ schedule:
 recruitment:
   appeal: 外国のことを学んでいるけれど、日本のことを実はあまり知らないかも、という方もここでは日本文化「茶道」を学べます。留学生も在籍しており、日本人も留学生も一緒に茶道ができます。美味しいお菓子とお抹茶をいただいて和気あいあいとお稽古に励んでいます！
   challenges: 正座で足が痺れる
-  applicationFlow: 4月に和室で体験入部を実施。InstagramのDMよりお問い合わせください。
   welcomeEvents: 4月に和室で体験入部を実施。InstagramのDMよりお問い合わせください。
   annualFee: 5000円/半年（予定）（お稽古代、お菓子代、抹茶代等）
   hasSelection: false

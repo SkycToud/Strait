@@ -1,7 +1,9 @@
 ---
 nameJa: 朝鮮舞踊部
 nameEn: ''
-category: Music & Arts
+category: 
+  - Music & Arts
+  - Dance & Performance
 description: 朝鮮舞踊部です♪
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_koreandance.jpeg?alt=media&token=791b448f-0fcb-4257-8141-047b5cb2d923'
 xUrl: 'https://x.com/tufsmuyong1'
@@ -20,22 +22,18 @@ membership:
   yearDistribution:
     - '1年生: 2人'
     - '4年生: 1人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 週2日
   location: サークル棟5階武道場板間
   annualPlan:
-    - 4月の舞踊系合同新歓
-    - 11月の外語祭
+    - 4月　舞踊系合同新歓
+    - 11月　外語祭
 recruitment:
   appeal: |-
     少人数で、部員全員の都合に合わせて和気藹々と活動できるところが魅力です！
     また、朝鮮大学校を除けばおそらく日本の大学で唯一の朝鮮舞踊団体です！
   challenges: 部員が少ないので、運営が少し大変なのと、今後の引き継ぎが不安ではあります…新入生がたくさん入部してくれると助かります！
-  applicationFlow: |-
-    主に新歓に力を入れているのは4,5月ですが、年間を通して部員を募集しています！
-    4月の外新歓、舞踊系合同新歓に参加します。
-    いつでも活動時間中に見学・体験を行っているので、お気軽にインスタやXのDMまたはGmailでご連絡ください！
   welcomeEvents: |-
     主に新歓に力を入れているのは4,5月ですが、年間を通して部員を募集しています！
     4月の外新歓、舞踊系合同新歓に参加します。

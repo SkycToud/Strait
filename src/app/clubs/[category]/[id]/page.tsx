@@ -1,7 +1,5 @@
 import { getAllClubs, getClubById } from '@/lib/clubs';
-import { slugify } from '@/lib/utils';
-import Link from 'next/link';
-import { ArrowLeft } from 'lucide-react';
+import { normalizeCategorySlug, toCategorySlug } from '@/lib/club-categories';
 import { notFound } from 'next/navigation';
 import ClubDetailPage from '@/components/clubs/ClubDetailPage';
 import { ClubDetail } from '@/types/club';
@@ -11,9 +9,10 @@ export async function generateStaticParams() {
   const clubsData = getAllClubs();
   
   clubsData.forEach((club) => {
-    club.categories.forEach((cat) => {
+    const slugs = club.categorySlugs ?? club.categories.map((cat) => toCategorySlug(cat));
+    slugs.forEach((category) => {
       paths.push({
-        category: slugify(cat),
+        category,
         id: club.id,
       });
     });
@@ -28,14 +27,18 @@ export default async function ClubDetailPageWrapper({
   params: Promise<{ category: string; id: string }> 
 }) {
   const { category: categorySlug, id } = await params;
+  const normalizedCategorySlug = normalizeCategorySlug(categorySlug);
   
   // Find the club by ID
   const club = getClubById(id);
-  
-  // Verify the category matches
-  if (!club || !club.categories.some(cat => slugify(cat) === categorySlug)) {
+  if (!club) {
     notFound();
   }
+  
+  const clubCategorySlugs = club.categorySlugs ?? club.categories.map((cat) => toCategorySlug(cat));
+  const resolvedCategorySlug = clubCategorySlugs.includes(normalizedCategorySlug)
+    ? normalizedCategorySlug
+    : (club.primaryCategorySlug ?? clubCategorySlugs[0] ?? normalizedCategorySlug);
 
   // Ensure the club has the comprehensive structure
   const comprehensiveClub: ClubDetail = {
@@ -61,11 +64,11 @@ export default async function ClubDetailPageWrapper({
     },
     recruitment: club.recruitment ? {
       ...club.recruitment,
-      targetGrades: (club.recruitment as any).targetGrades || [],
+      targetGrades: Array.isArray(club.recruitment.targetGrades) ? club.recruitment.targetGrades : [],
     } : {
       appeal: "準備中",
       challenges: "準備中",
-      applicationFlow: "準備中",
+
       welcomeEvents: "準備中",
       applicationDeadline: "準備中",
       annualFee: "準備中",
@@ -85,7 +88,7 @@ export default async function ClubDetailPageWrapper({
     <div className="animate-fade-in">
 
       {/* Club Detail Page */}
-      <ClubDetailPage club={comprehensiveClub} categorySlug={categorySlug} />
+      <ClubDetailPage club={comprehensiveClub} categorySlug={resolvedCategorySlug} />
     </div>
   );
 }

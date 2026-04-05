@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { slugify } from '@/lib/utils';
+import { toCategorySlug } from '@/lib/club-categories';
 import PageHeader from '@/components/layout/PageHeader';
 import { getRecentlyUpdatedClubs } from '@/lib/clubs';
 
@@ -17,7 +17,7 @@ const categories = [
     img: "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fcategories%2FMartialArts.jpg?alt=media&token=4136d898-3b1f-401e-8a39-353f6df02f38",
   },
   {
-    id: "Arts & Music",
+    id: "Music & Arts",
     ja: "芸術・音楽",
     en: "Arts & Music",
     img: "https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fcategories%2FArt%26Music.jpg?alt=media&token=df6b0cf2-cfd8-480e-9d62-c07549b4771c",
@@ -97,7 +97,7 @@ export default async function ClubsPage() {
           <div className="grid grid-cols-2 md:grid-cols-2 lg:grid-cols-3 gap-3 md:gap-6">
             {categories.map((category) => (
               <Link
-                href={`/clubs/${slugify(category.id)}`}
+                href={`/clubs/${toCategorySlug(category.id)}`}
                 key={category.id}
                 className="group bg-surface-container-lowest rounded-xl overflow-hidden shadow-[0_4px_12px_-2px_rgba(46,51,58,0.08)] transition-all duration-300 hover:-translate-y-1 block"
               >
@@ -140,7 +140,7 @@ export default async function ClubsPage() {
                 {recentClubs.map((club) => (
                   <Link
                     key={club.id}
-                    href={`/clubs/${slugify(club.categories[0] || 'others')}/${club.id}`}
+                    href={`/clubs/${toCategorySlug(club.categories[0] || 'others')}/${club.id}`}
                     className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-surface-container-low rounded-xl group cursor-pointer hover:bg-surface-container-high transition-colors"
                   >
                     <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white shadow-sm flex-shrink-0 flex items-center justify-center overflow-hidden">

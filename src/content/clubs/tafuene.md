@@ -1,7 +1,9 @@
 ---
 nameJa: たふえね
 nameEn: ''
-category: Volunteer
+category: 
+  - Volunteer
+  - Social Issues
 description: たふえねのロゴです
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_tufuene.png?alt=media&token=6b2ce513-f4ea-4e6a-b133-994f18139dc9'
 instagram: 'https://www.instagram.com/＠tufsenergy/'
@@ -19,19 +21,23 @@ membership:
     - '2年生: 4人'
     - '3年生: 1人'
     - '4年生: 2人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
-  frequency: 週1昼休みの対面ミーティング、週1約1時間のオンラインミーティング
+  frequency: |-
+    週1昼休みの対面ミーティング、
+    週1約1時間のオンラインミーティング
   location: VOLAS、Zoom
   annualPlan:
-    - 4月：VOLAS新歓、外新歓
-    - 6月：エココンサート
-    - 11月：外語祭
+    - 4月　VOLAS新歓、外新歓
+    - 6月　エココンサート
+    - 11月　外語祭
     - その他、不定期にインタビュー企画や学内外でのイベント出展。
 recruitment:
-  appeal: 環境課題への知見を深められるだけでなく、少数精鋭の活動形態を活かして、1年生から企画運営に携われます。ミーティング中のふとしたアイデアを実行に移すことができるのが楽しいです。時には真面目に、時にはゆるーく活動できるのが魅力です。
+  appeal: 
+    - 環境課題への知見を深められるだけでなく、少数精鋭の活動形態を活かして、1年生から企画運営に携われます。
+    - ミーティング中のふとしたアイデアを実行に移すことができるのが楽しいです。
+    - 時には真面目に、時にはゆるーく活動できるのが魅力です。
   challenges: インタビュー企画で教授に送るメール文面を考えること・・・くらい？
-  applicationFlow: インスタのDMにて連絡をお待ちしています！
   welcomeEvents: インスタのDMにて連絡をお待ちしています！
   annualFee: 年会費なし。
   hasSelection: false

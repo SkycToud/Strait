@@ -5,7 +5,13 @@ import { ClubDetail } from '@/types/club';
 import { slugify } from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Instagram, Twitter, Globe, MessageCircle, ArrowLeft } from 'lucide-react';
+import { Instagram, Facebook, Globe, MessageCircle, ArrowLeft } from 'lucide-react';
+
+const XIcon = ({ className }: { className?: string }) => (
+  <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
+    <path d="M18.901 1.153h3.68l-8.04 9.19 9.45 12.504h-7.4l-5.794-7.57-6.62 7.57H.5l8.6-9.83L0 1.154h7.6l5.237 6.93 6.064-6.93zm-1.29 19.483h2.04L6.49 3.248H4.3z" />
+  </svg>
+);
 
 const ExpandableText = ({ text }: { text: string }) => {
   const [isExpanded, setIsExpanded] = useState(false);
@@ -36,6 +42,12 @@ interface ClubDetailPageProps {
   categorySlug: string;
 }
 
+const isValidUrl = (url: string | undefined) => {
+  if (!url) return false;
+  const invalidValues = ['なし', 'なし。', 'none', 'n/a', '-', ''];
+  return !invalidValues.includes(url.toLowerCase().trim());
+};
+
 export default function ClubDetailPage({ club, categorySlug }: ClubDetailPageProps) {
   // Helper to parse year distribution numbers
   const getYearNum = (str: string) => {
@@ -64,9 +76,9 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
 
   // Helper to parse annual plan months
   const parseAnnualPlan = (str: string) => {
-    const match = str.match(/(\d+)\s*月[:：]\s*(.*)/);
+    const match = str.match(/(\d+)\s*月[\s:：]+\s*(.*)/);
     if (match) {
-      return { month: match[1].padStart(2, '0'), event: match[2] };
+      return { month: match[1], event: match[2] };
     }
     return { month: '--', event: str };
   };
@@ -291,7 +303,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                     <div className="bg-outline-variant h-full" style={{ width: `${y4p}%` }}></div>
                     {y5 > 0 && <div className="bg-secondary h-full" style={{ width: `${y5p}%` }}></div>}
                   </div>
-                  <div className={`grid ${y5 > 0 ? 'grid-cols-5' : 'grid-cols-4'} gap-1 mt-2 text-[10px] text-center font-bold`}>
+                  <div className={`grid ${y5 > 0 ? 'grid-cols-5' : 'grid-cols-4'} gap-1 mt-2 text-xs text-center font-bold`}>
                     <div>1年生: {y1}</div>
                     <div>2年生: {y2}</div>
                     <div>3年生: {y3}</div>
@@ -323,9 +335,12 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               <h2 className="text-xl font-bold font-headline mb-4">活動概要</h2>
               <div className="space-y-3">
                 <div>
-                  <p className="text-xs font-bold text-primary uppercase mb-1">頻度・場所</p>
-                  <p className="font-medium text-sm">{club.schedule?.frequency || "週数回"}</p>
-                  <p className="text-sm text-on-surface-variant">{club.schedule?.location || "学内施設"}</p>
+                  <p className="text-xs font-bold text-primary uppercase mb-1">頻度</p>
+                  <p className="font-medium text-sm whitespace-pre-wrap">{club.schedule?.frequency || "週数回"}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-bold text-primary uppercase mb-1">場所</p>
+                  <p className="font-medium text-sm whitespace-pre-wrap">{club.schedule?.location || "学内施設"}</p>
                 </div>
               </div>
             </section>
@@ -435,14 +450,14 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                   <span className="material-symbols-outlined text-primary-container">event_available</span>
                   <div>
                     <p className="font-bold text-sm">新歓情報</p>
-                    <p className="text-sm opacity-90">{club.recruitment?.welcomeEvents || "4月から開始します。"}</p>
+                    <p className="text-sm opacity-90 whitespace-pre-wrap">{club.recruitment?.welcomeEvents || "4月から開始します。"}</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
                   <span className="material-symbols-outlined text-primary-container">payments</span>
                   <div>
                     <p className="font-bold text-sm">年会費</p>
-                    <p className="text-sm opacity-90">{club.recruitment?.annualFee || "未定"}</p>
+                    <p className="text-sm opacity-90 whitespace-pre-wrap">{club.recruitment?.annualFee || "未定"}</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
@@ -463,17 +478,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                   <span className="material-symbols-outlined text-primary-container">group_add</span>
                   <div>
                     <p className="font-bold text-sm">募集対象</p>
-                    <div className="text-sm opacity-90 space-y-1">
-                      <p>
-                        <span className="font-semibold text-primary">対象学年:</span>{' '}
-                        {club.recruitment?.targetGrades?.length > 0
-                          ? club.recruitment.targetGrades.join('、')
-                          : "指定なし"}
-                      </p>
-                      {club.recruitment?.targetAudience && (
-                        <p className="whitespace-pre-wrap">{club.recruitment.targetAudience}</p>
-                      )}
-                    </div>
+                    <p className="text-sm opacity-90 whitespace-pre-wrap">{club.recruitment?.targetAudience || "指定なし"}</p>
                   </div>
                 </li>
               </ul>
@@ -482,29 +487,37 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
             {/* SNS情報 */}
             <section className="bg-surface-container-low p-6 rounded-xl scroll-mt-20" id="sns">
               <h2 className="text-xl font-bold font-headline mb-4">SNS情報</h2>
-              <div className="flex gap-3">
-                {club.instagram && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all" href={club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
+              <div className="flex flex-wrap gap-3">
+                {isValidUrl(club.instagram) && (
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
                     <Instagram className="w-5 h-5" />
                   </a>
                 )}
-                {club.xUrl && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all" href={club.xUrl} target="_blank" rel="noopener noreferrer" title="X">
-                    <Twitter className="w-5 h-5" />
+                {isValidUrl(club.xUrl) && (
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.xUrl} target="_blank" rel="noopener noreferrer" title="X">
+                    <XIcon className="w-5 h-5" />
                   </a>
                 )}
-                {club.recruitment?.contact?.website && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all" href={club.recruitment.contact.website} target="_blank" rel="noopener noreferrer" title="HP">
+                {isValidUrl(club.recruitment?.contact?.facebook) && (
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.facebook} target="_blank" rel="noopener noreferrer" title="Facebook">
+                    <Facebook className="w-5 h-5" />
+                  </a>
+                )}
+                {isValidUrl(club.recruitment?.contact?.website) && (
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.website} target="_blank" rel="noopener noreferrer" title="HP">
                     <Globe className="w-5 h-5" />
                   </a>
                 )}
-                {club.recruitment?.contact?.line && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all" href={club.recruitment.contact.line} target="_blank" rel="noopener noreferrer" title="LINE">
+                {isValidUrl(club.recruitment?.contact?.line) && (
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE">
                     <MessageCircle className="w-5 h-5" />
                   </a>
                 )}
               </div>
-              {!club.instagram && !club.xUrl && !club.recruitment?.contact?.website && !club.recruitment?.contact?.line && (
+              {!isValidUrl(club.instagram) && !isValidUrl(club.xUrl) && 
+               !isValidUrl(club.recruitment?.contact?.facebook) && 
+               !isValidUrl(club.recruitment?.contact?.website) && 
+               !isValidUrl(club.recruitment?.contact?.line) && (
                 <p className="text-sm text-on-surface-variant">SNS情報は登録されていません。</p>
               )}
             </section>
@@ -537,12 +550,12 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                     <div className="bg-outline-variant h-full" style={{ width: `${y4p}%` }} title="4th Year"></div>
                     {y5 > 0 && <div className="bg-secondary h-full" style={{ width: `${y5p}%` }} title="Grad"></div>}
                   </div>
-                  <div className={`grid ${y5 > 0 ? 'grid-cols-5' : 'grid-cols-4'} gap-1 mt-2 text-[10px] text-center font-bold`}>
-                    <div>1st: {y1}</div>
-                    <div>2nd: {y2}</div>
-                    <div>3rd: {y3}</div>
-                    <div>4th: {y4}</div>
-                    {y5 > 0 && <div>Grad: {y5}</div>}
+                  <div className={`grid ${y5 > 0 ? 'grid-cols-5' : 'grid-cols-4'} gap-1 mt-2 text-xs text-center font-bold`}>
+                    <div>1年生: {y1}</div>
+                    <div>2年生: {y2}</div>
+                    <div>3年生: {y3}</div>
+                    <div>4年生: {y4}</div>
+                    {y5 > 0 && <div>院生: {y5}</div>}
                   </div>
                 </div>
                 <div className="pt-4 border-t border-outline-variant/10">
@@ -570,10 +583,15 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
           {/* 活動詳細 (Activity Details) */}
           <section className="bg-surface-container-low p-6 rounded-xl">
             <h3 className="text-sm font-bold uppercase tracking-widest text-on-surface-variant mb-4">活動詳細</h3>
-            <div>
-              <p className="text-xs font-bold text-primary uppercase mb-1">頻度・場所</p>
-              <p className="font-medium">{club.schedule?.frequency || "週数回"}</p>
-              <p className="text-sm text-on-surface-variant">{club.schedule?.location || "学内施設"}</p>
+            <div className="space-y-3">
+              <div>
+                <p className="text-xs font-bold text-primary uppercase mb-1">頻度</p>
+                <p className="font-medium whitespace-pre-wrap">{club.schedule?.frequency || "週数回"}</p>
+              </div>
+              <div>
+                <p className="text-xs font-bold text-primary uppercase mb-1">場所</p>
+                <p className="font-medium whitespace-pre-wrap">{club.schedule?.location || "学内施設"}</p>
+              </div>
             </div>
           </section>
 
@@ -585,14 +603,14 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                 <span className="material-symbols-outlined text-primary-container">event_available</span>
                 <div>
                   <p className="font-bold">新歓情報</p>
-                  <p className="text-sm opacity-90">{club.recruitment?.welcomeEvents || "4月から開始します。"}</p>
+                  <p className="text-sm opacity-90 whitespace-pre-wrap">{club.recruitment?.welcomeEvents || "4月から開始します。"}</p>
                 </div>
               </li>
               <li className="flex gap-4">
                 <span className="material-symbols-outlined text-primary-container">payments</span>
                 <div>
                   <p className="font-bold">年会費</p>
-                  <p className="text-sm opacity-90">{club.recruitment?.annualFee || "未定"}</p>
+                  <p className="text-sm opacity-90 whitespace-pre-wrap">{club.recruitment?.annualFee || "未定"}</p>
                 </div>
               </li>
               <li className="flex gap-4">
@@ -613,17 +631,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                 <span className="material-symbols-outlined text-primary-container">group_add</span>
                 <div>
                   <p className="font-bold">募集対象</p>
-                  <div className="text-sm opacity-90 space-y-1 mt-1">
-                    <p>
-                      <span className="font-semibold text-primary">対象学年:</span>{' '}
-                      {club.recruitment?.targetGrades?.length > 0
-                        ? club.recruitment.targetGrades.join('、')
-                        : "指定なし"}
-                    </p>
-                    {club.recruitment?.targetAudience && (
-                      <p className="whitespace-pre-wrap">{club.recruitment.targetAudience}</p>
-                    )}
-                  </div>
+                  <p className="text-sm opacity-90 whitespace-pre-wrap mt-1">{club.recruitment?.targetAudience || "指定なし"}</p>
                 </div>
               </li>
             </ul>
@@ -633,28 +641,36 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
           <section className="bg-surface-container-low p-6 rounded-xl">
             <h3 className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4 pl-1">SNS情報</h3>
             <div className="flex justify-start items-center gap-4">
-              {club.instagram && (
+              {isValidUrl(club.instagram) && (
                 <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
                   <Instagram className="w-6 h-6" />
                 </a>
               )}
-              {club.xUrl && (
+              {isValidUrl(club.xUrl) && (
                 <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.xUrl} target="_blank" rel="noopener noreferrer" title="X">
-                  <Twitter className="w-6 h-6" />
+                  <XIcon className="w-6 h-6" />
                 </a>
               )}
-              {club.recruitment?.contact?.website && (
-                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment.contact.website} target="_blank" rel="noopener noreferrer" title="HP">
+              {isValidUrl(club.recruitment?.contact?.facebook) && (
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.facebook} target="_blank" rel="noopener noreferrer" title="Facebook">
+                  <Facebook className="w-6 h-6" />
+                </a>
+              )}
+              {isValidUrl(club.recruitment?.contact?.website) && (
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.website} target="_blank" rel="noopener noreferrer" title="HP">
                   <Globe className="w-6 h-6" />
                 </a>
               )}
-              {club.recruitment?.contact?.line && (
-                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment.contact.line} target="_blank" rel="noopener noreferrer" title="LINE">
+              {isValidUrl(club.recruitment?.contact?.line) && (
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE">
                   <MessageCircle className="w-6 h-6" />
                 </a>
               )}
             </div>
-            {!club.instagram && !club.xUrl && !club.recruitment?.contact?.website && (
+            {!isValidUrl(club.instagram) && !isValidUrl(club.xUrl) && 
+             !isValidUrl(club.recruitment?.contact?.facebook) && 
+             !isValidUrl(club.recruitment?.contact?.website) && 
+             !isValidUrl(club.recruitment?.contact?.line) && (
               <p className="text-sm text-on-surface-variant">SNS情報は登録されていません。</p>
             )}
           </section>

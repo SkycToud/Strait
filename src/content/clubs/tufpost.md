@@ -27,20 +27,19 @@ membership:
     - '1年生: 3人'
     - '3年生: 4人'
     - '4年生: 5人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 個人のペース
   location: オンラインなど
   annualPlan:
-    - 新歓　4月
-    - 外語祭   11月
+    - 4月　新歓
+    - 11月　外語祭
     - 2026年度はZINEの販売やVlogの展示に加え、世界各地の若者たちに聞いたリアルな声を紹介するインタビュー企画など多彩なコンテンツを展示しました。
 recruitment:
   appeal: |-
     各々のペースに合わせて活動できます。
     文章を書くことや人の話を聞くことが好きな人など歓迎です！
   challenges: 特になし
-  applicationFlow: インスタのDMから入会希望や相談受け付けています
   welcomeEvents: インスタのDMから入会希望や相談受け付けています
   annualFee: なし ホームページ運用のためのサーバー代として部費を徴収することがあります。
   hasSelection: false

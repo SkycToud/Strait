@@ -1,8 +1,10 @@
+'use client';
+
 import { useMemo } from 'react';
 import Link from 'next/link';
 import { ClubDetail } from '@/types/club';
 import ClubImage from './ClubImage';
-import { slugify } from '@/lib/utils';
+import { toCategorySlug } from '@/lib/club-categories';
 
 interface ClubCardProps {
   club: ClubDetail;
@@ -35,7 +37,11 @@ export default function ClubCard({ club, categorySlug }: ClubCardProps) {
     return nums.join(', ') + "年生";
   }, [club.recruitment?.targetGrades]);
   
-  const actualCategorySlug = categorySlug || slugify(club.categories[0] || 'others');
+  const actualCategorySlug =
+    categorySlug ||
+    club.primaryCategorySlug ||
+    club.categorySlugs?.[0] ||
+    toCategorySlug(club.categories[0] || 'others');
 
   return (
     <Link 

@@ -25,12 +25,12 @@ schedule:
   frequency: 週2回
   location: メインアリーナ
   annualPlan:
-    - '6月: 調布市大会 9月: 東大、千葉大交流会'
+    - 6月　調布市大会
+    - 9月　東大、千葉大交流会
     - その他にも色々なイベントが随時あります!
 recruitment:
   appeal: 外大唯一の公認運動系サークルです!! 大学生活で陥りがちな運動不足を解消しましょうー!! 初心者大歓迎!! 手ぶらでいいので、ぜひ遊びに来てください!!
   challenges: コートの組み立て...
-  applicationFlow: "いつでも体験お待ちしてます！ インスタグラムのDMに一言くださると嬉しいです\U0001F61A"
   welcomeEvents: "いつでも体験お待ちしてます！ インスタグラムのDMに一言くださると嬉しいです\U0001F61A"
   annualFee: 無し
   hasSelection: false

@@ -6,6 +6,8 @@ export interface ClubDetail {
   nameJa: string;
   nameEn: string;
   categories: string[];
+  categorySlugs?: string[];
+  primaryCategorySlug?: string;
   description: string;
   thumbnail?: string;
   instagram?: string;
@@ -37,7 +39,7 @@ export interface ClubDetail {
   recruitment: {
     appeal?: string;
     challenges?: string;
-    applicationFlow?: string;
+
     welcomeEvents?: string;
     applicationDeadline?: string;
     annualFee?: string;

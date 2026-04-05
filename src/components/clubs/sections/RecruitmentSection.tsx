@@ -42,19 +42,6 @@ export default function RecruitmentSection({ club }: RecruitmentSectionProps) {
           </div>
         )}
 
-        {/* 入会までの流れ */}
-        {recruitment.applicationFlow && recruitment.applicationFlow !== "準備中" && (
-          <div>
-            <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-2 flex items-center gap-2">
-              <Target className="w-5 h-5 text-blue-500" />
-              入会までの流れ
-            </h3>
-            <p className="text-slate-600 dark:text-slate-400 leading-relaxed">
-              {recruitment.applicationFlow}
-            </p>
-          </div>
-        )}
-
         {/* 新歓情報 */}
         {recruitment.welcomeEvents && recruitment.welcomeEvents !== "準備中" && (
           <div>
@@ -146,7 +133,7 @@ export default function RecruitmentSection({ club }: RecruitmentSectionProps) {
           </div>
         )}
 
-        {!recruitment.appeal && !recruitment.challenges && !recruitment.applicationFlow && 
+        {!recruitment.appeal && !recruitment.challenges && 
          !recruitment.welcomeEvents && !recruitment.annualFee && typeof recruitment.hasSelection !== 'boolean' &&
          !recruitment.targetAudience && !recruitment.contact.facebook && !recruitment.contact.website && !recruitment.contact.line && (
           <div className="text-center py-8">

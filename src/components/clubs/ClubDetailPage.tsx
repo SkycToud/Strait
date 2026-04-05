@@ -767,13 +767,13 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
             <span>カテゴリへ戻る</span>
           </Link>
           <Link
-            href="/clubs/all"
+            href="/clubs"
             className="group flex items-center gap-3 text-sm font-bold text-on-surface-variant hover:text-primary transition-all"
           >
             <div className="p-2 rounded-full border border-outline-variant group-hover:bg-primary-container group-hover:border-primary transition-all">
               <ArrowLeft className="w-4 h-4" />
             </div>
-            <span>サークル一覧</span>
+            <span>サークル情報ホーム</span>
           </Link>
         </div>
 

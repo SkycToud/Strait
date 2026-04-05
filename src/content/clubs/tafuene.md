@@ -3,6 +3,7 @@ nameJa: たふえね
 nameEn: ''
 category: Volunteer
 description: たふえねのロゴです
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_tufuene.png?alt=media&token=6b2ce513-f4ea-4e6a-b133-994f18139dc9'
 instagram: 'https://www.instagram.com/＠tufsenergy/'
 overview:
   philosophy: 東京外国語大学が掲げる2030年カーボンニュートラル目標を学生の立場から推進する。

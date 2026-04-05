@@ -3,6 +3,7 @@ nameJa: お笑いサークルXBULL
 nameEn: XBULL
 category: 'Arts & Music'
 description: バモ
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_xbull.png?alt=media&token=e973c143-0322-4ee2-bc7e-e4d697865762'
 instagram: 'https://www.instagram.com/tufs_owarai/'
 overview:
   philosophy: お笑いをやりたい人やお笑い好きな人が集まって楽しくワイワイしよう！

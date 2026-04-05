@@ -3,6 +3,7 @@ nameJa: 軽音楽部GMC
 nameEn: GMC
 category: 'Arts & Music'
 description: 外大公認軽音サークル、ゆるゆるGMCです。
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_gmc.jpg?alt=media&token=3b821a1e-0ec6-4554-a736-f0a8a586c082'
 instagram: 'https://www.instagram.com/gmctufs/'
 overview:
   philosophy: 音楽を楽しみましょう🎶

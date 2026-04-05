@@ -1,17 +1,17 @@
 ---
 nameJa: 軽音楽部GMC
 nameEn: GMC
-category: 'Arts & Music'
+category: Music & Arts
 description: 外大公認軽音サークル、ゆるゆるGMCです。
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_gmc.jpg?alt=media&token=3b821a1e-0ec6-4554-a736-f0a8a586c082'
 instagram: 'https://www.instagram.com/gmctufs/'
 overview:
-  philosophy: 音楽を楽しみましょう🎶
+  philosophy: "音楽を楽しみましょう\U0001F3B6"
   guidelines: 準備中
   activities: 月1程度、大学内外でライブをおこなっています。
 operations:
   executiveMembers:
-    - '3年生'
+    - 3年生
   organization: 部長、副部長2名、会計、渉外、広報
 membership:
   memberCount: 139
@@ -39,9 +39,10 @@ recruitment:
     website: ''
     line: ''
   targetGrades:
-    - '1年生'
-    - '2年生'
-    - '3年生'
-    - '4年生'
+    - 1年生
+    - 2年生
+    - 3年生
+    - 4年生
 lastUpdated: '2026-04-05'
 ---
+

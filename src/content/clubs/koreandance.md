@@ -1,9 +1,9 @@
 ---
 nameJa: 朝鮮舞踊部
 nameEn: ''
-category: 'Arts & Music'
+category: Music & Arts
 description: 朝鮮舞踊部です♪
-instagram: 'https://www.instagram.com/tufsmuyong/'
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_koreandance.jpeg?alt=media&token=791b448f-0fcb-4257-8141-047b5cb2d923'
 xUrl: 'https://x.com/tufsmuyong1'
 overview:
   philosophy: 朝鮮舞踊を通して、朝鮮半島の文化や伝統を知り、楽しく踊ること。
@@ -25,8 +25,8 @@ schedule:
   frequency: 週2日
   location: サークル棟5階武道場板間
   annualPlan:
-    - '4月の舞踊系合同新歓'
-    - '11月の外語祭'
+    - 4月の舞踊系合同新歓
+    - 11月の外語祭
 recruitment:
   appeal: |-
     少人数で、部員全員の都合に合わせて和気藹々と活動できるところが魅力です！
@@ -48,9 +48,10 @@ recruitment:
     website: ''
     line: ''
   targetGrades:
-    - '1年生'
-    - '2年生'
-    - '3年生'
-    - '4年生'
+    - 1年生
+    - 2年生
+    - 3年生
+    - 4年生
 lastUpdated: '2026-04-05'
 ---
+

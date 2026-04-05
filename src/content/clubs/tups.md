@@ -1,8 +1,9 @@
 ---
 nameJa: タップダンスサークルTUPS
 nameEn: TUPS
-category: 'Dance & Performance'
+category: Dance & Performance
 description: 「楽しく”タップダンス”してみませんか？」週に１度サークル棟で活動しているアットホームなインカレサークルです
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_tups.jpg?alt=media&token=d3e6682c-dc3a-421b-8f90-407b35c2650d'
 instagram: 'https://www.instagram.com/tufs_tups?igsh=MXZoY3dyNmplNDA2aQ=='
 xUrl: 'https://x.com/tufs_tups'
 overview:
@@ -28,7 +29,7 @@ membership:
     - '2年生: 2人'
     - '3年生: 3人'
     - '4年生: 6人'
-  isIntraUniversity: true
+  isIntraUniversity: false
 schedule:
   frequency: 週一
   location: サークル棟多目的スペース
@@ -55,9 +56,10 @@ recruitment:
     website: ''
     line: ''
   targetGrades:
-    - '1年生'
-    - '2年生'
-    - '3年生'
-    - '4年生'
+    - 1年生
+    - 2年生
+    - 3年生
+    - 4年生
 lastUpdated: '2026-04-05'
 ---
+

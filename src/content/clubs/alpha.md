@@ -1,18 +1,21 @@
 ---
-nameJa: ALPHA
+nameJa: 学生NGO ALPHA
 nameEn: ALPHA
-category: Volunteer
+category:
+  - Volunteer
+  - Language & International
+  - Social Issues
 description: フィリピンの教育支援を行うインカレサークル
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_alpha.jpeg?alt=media&token=213d2534-6af1-4f7f-8cd8-279927c64b8a'
-instagram: 'https://www.instagram.com/学生NGO ALPHA/'
-xUrl: 'https://x.com/学生NGO ALPHA'
+instagram: 'https://www.instagram.com/ngo_alpha/'
+xUrl: 'https://x.com/NGO_ALPHA'
 overview:
-  philosophy: 'everybody smile!!'
+  philosophy: everybody smile!!
   guidelines: 準備中
   activities: 週に1回のミーティングと年に2回のフィリピンでの教室建設
 operations:
   executiveMembers:
-    - '3年生'
+    - 3年生
   organization: 創設者、執行班、渉外班、WS班
 membership:
   memberCount: 57
@@ -21,7 +24,7 @@ membership:
     - '2年生: 18人'
     - '3年生: 13人'
     - '4年生: 7人'
-  isIntraUniversity: true
+  isIntraUniversity: false
 schedule:
   frequency: |-
     国内活動　毎週金曜日18:30〜21:00
@@ -57,15 +60,16 @@ recruitment:
     ⑥ 希望日
     上記項目を以下アドレスまでご連絡ください。
     連絡先 :ngo.alpha@gmail.com
-  annualFee: '5000円'
+  annualFee: 5000円
   hasSelection: false
-  targetAudience: '1、2年生'
+  targetAudience: 1、2年生
   contact:
     facebook: 'https://www.facebook.com/share/1BFTtgKnuQ/?mibextid=wwXIfr'
     website: 'https://alphakoho.wixsite.com/website-1'
     line: なし
   targetGrades:
-    - '1年生'
-    - '2年生'
+    - 1年生
+    - 2年生
 lastUpdated: '2026-04-05'
 ---
+

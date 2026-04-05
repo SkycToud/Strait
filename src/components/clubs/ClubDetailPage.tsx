@@ -99,6 +99,13 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                 サンプル（実在しない団体です）
               </div>
             )}
+            <div className="flex flex-wrap gap-2 mb-3">
+              {club.categories.map((cat) => (
+                <span key={cat} className="inline-flex items-center px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full text-xs font-bold border border-white/30">
+                  {cat}
+                </span>
+              ))}
+            </div>
             <h1 className="text-4xl lg:text-6xl font-extrabold tracking-tight mb-4 font-headline">{club.nameJa}</h1>
             <p className="hidden lg:block text-lg lg:text-xl text-white/90 max-w-2xl font-body leading-relaxed">
               {club.description || "Enjoy activities and team bonding within the community."}
@@ -285,11 +292,11 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                     {y5 > 0 && <div className="bg-secondary h-full" style={{ width: `${y5p}%` }}></div>}
                   </div>
                   <div className={`grid ${y5 > 0 ? 'grid-cols-5' : 'grid-cols-4'} gap-1 mt-2 text-[10px] text-center font-bold`}>
-                    <div>1st: {y1}</div>
-                    <div>2nd: {y2}</div>
-                    <div>3rd: {y3}</div>
-                    <div>4th: {y4}</div>
-                    {y5 > 0 && <div>Grad: {y5}</div>}
+                    <div>1年生: {y1}</div>
+                    <div>2年生: {y2}</div>
+                    <div>3年生: {y3}</div>
+                    <div>4年生: {y4}</div>
+                    {y5 > 0 && <div>院生: {y5}</div>}
                   </div>
                 </div>
                 <div className="flex items-center gap-2">
@@ -734,17 +741,17 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
       <div className="max-w-7xl mx-auto px-6 mt-16 mb-12 py-8 border-t border-outline-variant/10 space-y-12">
         {/* Navigation - Bottom Left */}
         <div className="flex flex-wrap gap-8 items-center border-l-4 border-primary pl-6 py-2">
-          <Link 
-            href={`/clubs/${categorySlug}`} 
+          <Link
+            href={`/clubs/${categorySlug}`}
             className="group flex items-center gap-3 text-sm font-bold text-on-surface-variant hover:text-primary transition-all"
           >
             <div className="p-2 rounded-full border border-outline-variant group-hover:bg-primary-container group-hover:border-primary transition-all">
               <ArrowLeft className="w-4 h-4" />
             </div>
-            <span>{club.category}へ戻る</span>
+            <span>カテゴリへ戻る</span>
           </Link>
-          <Link 
-            href="/clubs/all" 
+          <Link
+            href="/clubs/all"
             className="group flex items-center gap-3 text-sm font-bold text-on-surface-variant hover:text-primary transition-all"
           >
             <div className="p-2 rounded-full border border-outline-variant group-hover:bg-primary-container group-hover:border-primary transition-all">
@@ -759,7 +766,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
           <div className="flex-1"></div>
           <div className="flex flex-col md:flex-row items-center gap-6 text-right">
             <p className="text-sm text-on-surface-variant font-medium">最終更新日: {club.lastUpdated || "2024-03-20"}</p>
-            <a 
+            <a
               href="https://docs.google.com/forms/d/e/1FAIpQLSeMkj-o5DL1o-pmjrAtCTabjB2v5_1BCa33hCpvHvHE21rjjQ/viewform?usp=publish-editor"
               target="_blank"
               rel="noopener noreferrer"

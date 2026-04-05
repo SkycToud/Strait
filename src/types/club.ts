@@ -1,11 +1,11 @@
-export type Club = Pick<ClubDetail, 'id' | 'nameJa' | 'nameEn' | 'category' | 'description' | 'thumbnail' | 'instagram' | 'xUrl' | 'isSample'>;
+export type Club = Pick<ClubDetail, 'id' | 'nameJa' | 'nameEn' | 'categories' | 'description' | 'thumbnail' | 'instagram' | 'xUrl' | 'isSample'>;
 
 export interface ClubDetail {
   // Existing fields
   id: string;
   nameJa: string;
   nameEn: string;
-  category: string;
+  categories: string[];
   description: string;
   thumbnail?: string;
   instagram?: string;

@@ -7,9 +7,10 @@ import { slugify } from '@/lib/utils';
 interface ClubCardProps {
   club: ClubDetail;
   index?: number;
+  categorySlug?: string;
 }
 
-export default function ClubCard({ club }: ClubCardProps) {
+export default function ClubCard({ club, categorySlug }: ClubCardProps) {
   const isIntra = club.membership?.isIntraUniversity !== false; 
   
   const targetYears = useMemo(() => {
@@ -34,11 +35,11 @@ export default function ClubCard({ club }: ClubCardProps) {
     return nums.join(', ') + "年生";
   }, [club.recruitment?.targetGrades]);
   
-  const categorySlug = slugify(club.category);
+  const actualCategorySlug = categorySlug || slugify(club.categories[0] || 'others');
 
   return (
     <Link 
-      href={`/clubs/${categorySlug}/${club.id}`} 
+      href={`/clubs/${actualCategorySlug}/${club.id}`} 
       className="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col h-full"
     >
       <div className="relative h-56 overflow-hidden bg-surface-variant">
@@ -52,11 +53,6 @@ export default function ClubCard({ club }: ClubCardProps) {
           <div className="absolute top-4 left-4 bg-amber-500 px-2.5 py-1 rounded-full text-[10px] font-bold text-white shadow-sm flex items-center gap-1">
             <span className="material-symbols-outlined text-xs">science</span>
             サンプル
-          </div>
-        )}
-        {club.recruitment && (
-          <div className="absolute top-4 right-4 bg-primary px-3 py-1 rounded-full text-[10px] font-bold text-white shadow-sm">
-            Currently Recruiting
           </div>
         )}
       </div>

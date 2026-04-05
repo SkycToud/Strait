@@ -19,7 +19,7 @@ overview:
     ・旅などに関するエッセイ、旅行記、留学体験記などの執筆
 operations:
   executiveMembers:
-    - '4年生'
+    - 4年生
   organization: 代表、副代表、会計、SNS担当
 membership:
   memberCount: 16
@@ -34,7 +34,7 @@ schedule:
   annualPlan:
     - 新歓　4月
     - 外語祭   11月
-    - '2026年度はZINEの販売やVlogの展示に加え、世界各地の若者たちに聞いたリアルな声を紹介するインタビュー企画など多彩なコンテンツを展示しました。'
+    - 2026年度はZINEの販売やVlogの展示に加え、世界各地の若者たちに聞いたリアルな声を紹介するインタビュー企画など多彩なコンテンツを展示しました。
 recruitment:
   appeal: |-
     各々のペースに合わせて活動できます。
@@ -50,9 +50,10 @@ recruitment:
     website: 'https://grizzled-blanket-a8f.notion.site/TUFPOST-HOME-1cd0bd941b3f80e7a799f2a9e18de71f (全体) http://tufs-wonderfulwander.info/(ワンダフルワンダー)'
     line: ''
   targetGrades:
-    - '1年生'
-    - '2年生'
-    - '3年生'
-    - '4年生'
+    - 1年生
+    - 2年生
+    - 3年生
+    - 4年生
 lastUpdated: '2026-04-05'
 ---
+

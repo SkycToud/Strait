@@ -11,9 +11,11 @@ export async function generateStaticParams() {
   const clubsData = getAllClubs();
   
   clubsData.forEach((club) => {
-    paths.push({
-      category: slugify(club.category),
-      id: club.id,
+    club.categories.forEach((cat) => {
+      paths.push({
+        category: slugify(cat),
+        id: club.id,
+      });
     });
   });
   
@@ -31,7 +33,7 @@ export default async function ClubDetailPageWrapper({
   const club = getClubById(id);
   
   // Verify the category matches
-  if (!club || slugify(club.category) !== categorySlug) {
+  if (!club || !club.categories.some(cat => slugify(cat) === categorySlug)) {
     notFound();
   }
 

@@ -140,7 +140,7 @@ export default async function ClubsPage() {
                 {recentClubs.map((club) => (
                   <Link
                     key={club.id}
-                    href={`/clubs/${slugify(club.category)}/${club.id}`}
+                    href={`/clubs/${slugify(club.categories[0] || 'others')}/${club.id}`}
                     className="flex items-center gap-3 md:gap-4 p-3 md:p-4 bg-surface-container-low rounded-xl group cursor-pointer hover:bg-surface-container-high transition-colors"
                   >
                     <div className="w-12 h-12 md:w-16 md:h-16 rounded-lg bg-white shadow-sm flex-shrink-0 flex items-center justify-center overflow-hidden">
@@ -151,7 +151,7 @@ export default async function ClubsPage() {
                       )}
                     </div>
                     <div className="flex-1 min-w-0">
-                      <span className="text-[9px] md:text-[10px] font-bold text-primary-dim uppercase tracking-widest">{club.category}</span>
+                      <span className="text-[9px] md:text-[10px] font-bold text-primary-dim uppercase tracking-widest">{club.categories.join(' / ')}</span>
                       <h4 className="font-bold text-sm md:text-base text-on-surface truncate">{club.nameJa}</h4>
                       <p className="text-[10px] md:text-xs text-on-surface-variant">更新日: {club.lastUpdated}</p>
                     </div>

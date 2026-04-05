@@ -8,7 +8,7 @@ import { ArrowLeft } from 'lucide-react';
 
 export function generateStaticParams() {
   const clubsData = getAllClubs();
-  const categories = Array.from(new Set(clubsData.map((club) => club.category)));
+  const categories = Array.from(new Set(clubsData.flatMap((club) => club.categories)));
   return categories.map((category) => ({
     category: slugify(category),
   }));
@@ -31,14 +31,14 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const { category: slug } = await params;
   
   const clubsData = getAllClubs();
-  const activeCategory = clubsData.find((club) => slugify(club.category) === slug)?.category;
+  const activeCategory = clubsData.flatMap(c => c.categories).find((cat) => slugify(cat) === slug);
   
   if (!activeCategory) {
     notFound();
   }
 
   const typedClubsData = clubsData as ClubDetail[];
-  const categoryClubs = typedClubsData.filter((club) => club.category === activeCategory);
+  const categoryClubs = typedClubsData.filter((club) => club.categories.includes(activeCategory));
   
   const info = categoryInfo[slug] || { title: `${activeCategory}一覧`, subtitle: `Explore clubs in ${activeCategory}` };
 

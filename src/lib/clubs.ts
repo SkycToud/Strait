@@ -13,9 +13,16 @@ export function getClubById(id: string): ClubDetail | undefined {
   const fileContent = fs.readFileSync(filePath, 'utf-8');
   const { data, content } = matter(fileContent);
 
+  const rawCategory = data.categories || data.category;
+  const categories = Array.isArray(rawCategory) ? rawCategory : (rawCategory ? [rawCategory] : []);
+
+  delete data.category;
+  delete data.categories;
+
   return {
     id,
-    ...(data as Omit<ClubDetail, 'id'>)
+    categories,
+    ...(data as Omit<ClubDetail, 'id' | 'categories'>)
   };
 }
 

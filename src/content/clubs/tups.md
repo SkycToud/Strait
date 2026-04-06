@@ -53,6 +53,8 @@ recruitment:
     facebook: ''
     website: ''
     line: ''
+    instagram: 'https://www.instagram.com/tufs_tups?igsh=MXZoY3dyNmplNDA2aQ=='
+    xUrl: 'https://x.com/tufs_tups'
   targetGrades:
     - 1年生
     - 2年生

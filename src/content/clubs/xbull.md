@@ -44,6 +44,8 @@ recruitment:
     facebook: ''
     website: ''
     line: ''
+    instagram: 'https://www.instagram.com/tufs_owarai/'
+    xUrl: ''
   targetGrades:
     - 1年生
     - 2年生

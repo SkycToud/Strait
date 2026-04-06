@@ -38,7 +38,12 @@ recruitment:
     - 2年生
     - 3年生
     - 4年生
-  contact: {}
+  contact:
+    facebook: ''
+    website: ''
+    line: ''
+    instagram: 'https://www.instagram.com/tufs_artclub/'
+    xUrl: ''
 lastUpdated: '2026-04-05'
 ---
 

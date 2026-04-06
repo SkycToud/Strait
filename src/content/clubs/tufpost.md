@@ -48,6 +48,8 @@ recruitment:
     facebook: ''
     website: 'https://grizzled-blanket-a8f.notion.site/TUFPOST-HOME-1cd0bd941b3f80e7a799f2a9e18de71f (全体) http://tufs-wonderfulwander.info/(ワンダフルワンダー)'
     line: ''
+    instagram: 'https://www.instagram.com/tufpost/'
+    xUrl: ''
   targetGrades:
     - 1年生
     - 2年生

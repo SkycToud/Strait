@@ -44,6 +44,8 @@ recruitment:
     facebook: ''
     website: ''
     line: ''
+    instagram: 'https://www.instagram.com/tufs_souls/'
+    xUrl: 'https://x.com/tufs_souls'
   targetGrades:
     - 1年生
     - 2年生

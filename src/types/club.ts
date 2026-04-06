@@ -50,6 +50,8 @@ export interface ClubDetail {
       facebook?: string;
       website?: string;
       line?: string;
+      instagram?: string;
+      xUrl?: string;
     };
   };
   lastUpdated?: string;

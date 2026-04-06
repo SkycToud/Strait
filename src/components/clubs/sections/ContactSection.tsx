@@ -6,7 +6,11 @@ interface ContactSectionProps {
 }
 
 export default function ContactSection({ club }: ContactSectionProps) {
-  const { instagram, xUrl, recruitment, lastUpdated } = club;
+  const { recruitment, lastUpdated } = club;
+  
+  // recruitment.contact を優先し、なければトップレベルの値を使用
+  const instagram = recruitment.contact.instagram || club.instagram;
+  const xUrl = recruitment.contact.xUrl || club.xUrl;
 
   return (
     <section className="glass-card p-6 scroll-mt-24" id="contact">

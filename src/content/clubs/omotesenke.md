@@ -1,12 +1,9 @@
 ---
 nameJa: 表千家茶道部
 nameEn: Omotesenke Tea Ceremony
-category: 
-  - Music & Arts
-  - Others
+category: Music & Arts
 description: 表千家茶道部
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_omotesenke.jpeg?alt=media&token=c5095bce-0248-4cb1-b7ed-4c8b8ed30c45'
-instagram: 'https://www.instagram.com/tufs_omotesenke/'
 overview:
   philosophy: 丁寧な所作とおもてなしの精神を身に着け、美味しい抹茶を点てる。外国の文化が身近な外大だからこそ、日本の伝統文化に親しみ、広める。
   guidelines: 準備中
@@ -25,7 +22,7 @@ membership:
     - '2年生: 7人'
     - '3年生: 6人'
     - '4年生: 4人'
-  isIntraUniversity: true
+  isIntraUniversity: false
 schedule:
   frequency: 週1〜2回（第二・第四月曜日、毎週金曜日）
   location: 学内の和室（学生会館1階）
@@ -58,6 +55,8 @@ recruitment:
     - 2年生
     - 3年生
     - 4年生
-lastUpdated: '2026-04-05'
+  applicationFlow: 4月に和室で体験入部を実施。InstagramのDMよりお問い合わせください。
+lastUpdated: '2026-04-06'
+instagram: 'https://www.instagram.com/tufs_omotesenke/'
 ---
 

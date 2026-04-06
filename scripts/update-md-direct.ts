@@ -103,8 +103,8 @@ function normalizeX(raw: string): string {
 
 function parseTargetGrades(text: string): string[] {
   if (!text) return [];
-  if (text.includes('全学年') || text.includes('どなたでも') || text.includes('誰でも')) {
-    return ['1年生', '2年生', '3年生', '4年生'];
+  if (text.includes('全学年')) {
+    return ['1年生', '2年生', '3年生', '4年生', '院生'];
   }
   const grades: string[] = [];
   if (text.includes('1') || text.includes('１')) grades.push('1年生');

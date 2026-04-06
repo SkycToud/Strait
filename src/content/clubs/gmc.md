@@ -4,7 +4,6 @@ nameEn: GMC
 category: Music & Arts
 description: 外大公認軽音サークル、ゆるゆるGMCです。
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_gmc.jpg?alt=media&token=3b821a1e-0ec6-4554-a736-f0a8a586c082'
-instagram: 'https://www.instagram.com/gmctufs/'
 overview:
   philosophy: "音楽を楽しみましょう\U0001F3B6"
   guidelines: 準備中
@@ -20,7 +19,7 @@ membership:
     - '2年生: 35人'
     - '3年生: 22人'
     - '4年生: 27人'
-  isIntraUniversity: true
+  isIntraUniversity: false
 schedule:
   frequency: 全体では月1程度
   location: サークル棟地下一階 音楽室B
@@ -45,6 +44,9 @@ recruitment:
     - 2年生
     - 3年生
     - 4年生
-lastUpdated: '2026-04-05'
+    - 院生
+  applicationFlow: インスタや新歓で配るチラシから、公式LINEを追加して入部手続きを行っていただきます。
+lastUpdated: '2026-04-06'
+instagram: 'https://www.instagram.com/gmctufs/'
 ---
 

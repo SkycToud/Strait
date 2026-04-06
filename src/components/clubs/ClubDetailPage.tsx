@@ -42,6 +42,14 @@ interface ClubDetailPageProps {
   categorySlug: string;
 }
 
+type AnnualPlanKind = 'normal' | 'candidate' | 'range' | 'seasonal';
+
+interface ParsedAnnualPlan {
+  label: string;
+  event: string;
+  kind: AnnualPlanKind;
+}
+
 const isValidUrl = (url: string | undefined) => {
   if (!url) return false;
   const invalidValues = ['なし', 'なし。', 'none', 'n/a', '-', ''];
@@ -74,13 +82,114 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
   const y4p = total ? (y4 / total) * 100 : 0;
   const y5p = total ? (y5 / total) * 100 : 0;
 
-  // Helper to parse annual plan months
-  const parseAnnualPlan = (str: string) => {
-    const match = str.match(/(\d+)\s*月[\s:：]+\s*([\s\S]*)/);
-    if (match) {
-      return { month: match[1], event: match[2] };
+  const parseAnnualPlan = (str: string): ParsedAnnualPlan => {
+    const normalized = str.replace(/\u3000/g, ' ').trim();
+
+    const isSeasonalLabel = (label: string) =>
+      /(通年|年間|春休み|夏休み|冬休み|春学期|秋学期|前期|後期|春季|夏季|秋季|冬季|春|夏|秋|冬|不定期|随時)/.test(label);
+
+    const isTemporalLabel = (label: string) => /\d{1,2}\s*月/.test(label) || isSeasonalLabel(label);
+
+    const detectKind = (label: string): AnnualPlanKind => {
+      if (/(または|もしくは|あるいは|or)/i.test(label)) {
+        return 'candidate';
+      }
+      if (/\d{1,2}\s*月.*(?:〜|～|~|-|−|ー|から).+\d{1,2}\s*月/.test(label)) {
+        return 'range';
+      }
+      if (isSeasonalLabel(label)) {
+        return 'seasonal';
+      }
+      return 'normal';
+    };
+
+    const toDisplayLabel = (rawLabel: string, kind: AnnualPlanKind) => {
+      const compact = rawLabel.replace(/\s+/g, '');
+
+      const candidatePair = compact.match(/(\d{1,2})月.*?(?:または|もしくは|あるいは|or)\s*(\d{1,2})月/i);
+      if (candidatePair) {
+        return `${candidatePair[1]}・${candidatePair[2]}`;
+      }
+
+      const rangePair = compact.match(/(\d{1,2})月.*?(?:〜|～|~|-|−|ー|から)\s*(\d{1,2})月/);
+      if (rangePair) {
+        return `${rangePair[1]}-${rangePair[2]}`;
+      }
+
+      const singleMonth = compact.match(/^(\d{1,2})月$/);
+      if (singleMonth) {
+        return singleMonth[1];
+      }
+
+      if (kind === 'seasonal') {
+        if (compact.includes('通年') || compact.includes('年間')) return '通年';
+        if (compact.includes('前期')) return '前期';
+        if (compact.includes('後期')) return '後期';
+        if (compact.includes('春')) return '春';
+        if (compact.includes('夏')) return '夏';
+        if (compact.includes('秋')) return '秋';
+        if (compact.includes('冬')) return '冬';
+      }
+
+      if (compact.length <= 4) {
+        return compact;
+      }
+
+      return compact.slice(0, 4);
+    };
+
+    const splitMatch = normalized.match(/^(.+?)(?:\s*[：:]\s*|\s+)(.+)$/);
+
+    if (splitMatch && isTemporalLabel(splitMatch[1].trim())) {
+      const rawLabel = splitMatch[1].trim();
+      const event = splitMatch[2].trim();
+      const kind = detectKind(rawLabel);
+      return {
+        label: toDisplayLabel(rawLabel, kind),
+        event,
+        kind,
+      };
     }
-    return { month: '--', event: str };
+
+    const monthPrefixMatch = normalized.match(/^(\d{1,2})\s*月\s*[：:]\s*(.+)$/);
+    if (monthPrefixMatch) {
+      return {
+        label: monthPrefixMatch[1],
+        event: monthPrefixMatch[2].trim(),
+        kind: 'normal',
+      };
+    }
+
+    return {
+      label: '--',
+      event: str,
+      kind: 'normal',
+    };
+  };
+
+  const getAnnualPlanStyle = (kind: AnnualPlanKind) => {
+    if (kind === 'candidate') {
+      return {
+        badgeClass: 'bg-amber-500 text-white border-amber-300',
+        cardClass: 'border-amber-300/70 bg-amber-50/70 border-dashed',
+      };
+    }
+    if (kind === 'range') {
+      return {
+        badgeClass: 'bg-secondary text-on-secondary border-secondary/30',
+        cardClass: 'border-secondary/20 bg-secondary-container/20',
+      };
+    }
+    if (kind === 'seasonal') {
+      return {
+        badgeClass: 'bg-tertiary text-on-tertiary border-tertiary/30',
+        cardClass: 'border-tertiary/20 bg-tertiary-container/30',
+      };
+    }
+    return {
+      badgeClass: 'bg-primary text-white border-white',
+      cardClass: 'border-outline-variant/10 bg-surface-container-lowest',
+    };
   };
 
   return (
@@ -214,15 +323,21 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               <div className="mb-8"><h2 className="text-2xl font-bold font-headline">年間予定</h2></div>
               <div className="space-y-0 relative before:absolute before:inset-0 before:ml-5 before:-translate-x-px md:before:mx-auto md:before:translate-x-0 before:h-full before:w-0.5 before:bg-outline-variant/20">
                 {club.schedule?.annualPlan?.map((plan, idx) => {
-                  const { month, event } = parseAnnualPlan(plan);
+                  const parsedPlan = parseAnnualPlan(plan);
+                  const style = getAnnualPlanStyle(parsedPlan.kind);
                   const isLast = idx === (club.schedule?.annualPlan?.length || 0) - 1;
                   return (
                     <div key={idx} className={`relative flex items-center justify-between md:justify-normal md:odd:flex-row-reverse group ${!isLast ? 'pb-8' : ''}`}>
-                      <div className="flex items-center justify-center w-10 h-10 rounded-full border border-white bg-primary text-white shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2">
-                        <span className="text-xs font-bold">{month}</span>
+                      <div className={`flex items-center justify-center min-w-10 h-10 px-2 rounded-full border shadow shrink-0 md:order-1 md:group-odd:-translate-x-1/2 md:group-even:translate-x-1/2 ${style.badgeClass}`}>
+                        <span className="text-xs font-bold leading-none">{parsedPlan.label}</span>
                       </div>
-                      <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm">
-                        <h4 className="font-bold text-on-surface whitespace-pre-wrap">{event}</h4>
+                      <div className={`w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] p-5 rounded-xl border shadow-sm ${style.cardClass}`}>
+                        {parsedPlan.kind === 'candidate' && (
+                          <span className="inline-flex items-center px-2 py-0.5 mb-2 rounded-full text-[11px] font-bold bg-amber-100 text-amber-700 border border-amber-300/80">
+                            候補
+                          </span>
+                        )}
+                        <h4 className="font-bold text-on-surface whitespace-pre-wrap">{parsedPlan.event}</h4>
                       </div>
                     </div>
                   );
@@ -424,14 +539,20 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               <div className="space-y-3">
                 {club.schedule?.annualPlan?.length && club.schedule.annualPlan.length > 0 && club.schedule.annualPlan[0] !== "準備中" ? (
                   club.schedule.annualPlan.map((plan, idx) => {
-                    const { month, event } = parseAnnualPlan(plan);
+                    const parsedPlan = parseAnnualPlan(plan);
+                    const style = getAnnualPlanStyle(parsedPlan.kind);
                     return (
                       <div key={idx} className="flex items-center gap-3">
-                        <div className="flex items-center justify-center w-8 h-8 rounded-full bg-primary text-white text-xs font-bold shrink-0">
-                          {month}
+                        <div className={`flex items-center justify-center min-w-8 h-8 px-2 rounded-full border text-xs font-bold shrink-0 ${style.badgeClass}`}>
+                          {parsedPlan.label}
                         </div>
-                        <div className="bg-surface-container-lowest p-3 rounded-lg flex-1">
-                          <p className="font-medium text-sm whitespace-pre-wrap">{event}</p>
+                        <div className={`p-3 rounded-lg flex-1 border ${style.cardClass}`}>
+                          {parsedPlan.kind === 'candidate' && (
+                            <span className="inline-flex items-center px-2 py-0.5 mb-1 rounded-full text-[10px] font-bold bg-amber-100 text-amber-700 border border-amber-300/80">
+                              候補
+                            </span>
+                          )}
+                          <p className="font-medium text-sm whitespace-pre-wrap">{parsedPlan.event}</p>
                         </div>
                       </div>
                     );

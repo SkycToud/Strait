@@ -1,12 +1,9 @@
 ---
 nameJa: お笑いサークルXBULL
 nameEn: XBULL
-category: 
-  - Arts & Music
-  - Others
+category: Music & Arts
 description: バモ
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_xbull.png?alt=media&token=e973c143-0322-4ee2-bc7e-e4d697865762'
-instagram: 'https://www.instagram.com/tufs_owarai/'
 overview:
   philosophy: お笑いをやりたい人やお笑い好きな人が集まって楽しくワイワイしよう！
   guidelines: 準備中
@@ -22,7 +19,7 @@ membership:
     - '2年生: 7人'
     - '3年生: 15人'
     - '4年生: 5人'
-  isIntraUniversity: true
+  isIntraUniversity: false
 schedule:
   frequency: 毎週火曜6限
   location: 100教室
@@ -52,6 +49,8 @@ recruitment:
     - 2年生
     - 3年生
     - 4年生
-lastUpdated: '2026-04-05'
+    - 院生
+  applicationFlow: 新歓公演が4/14に開かれ、そこで詳細を話します！そこで来れない方も、毎週火曜100教室で部会をしているのでそこに来てみてください！大歓迎です！連絡はInstagramで待ってます！
+lastUpdated: '2026-04-06'
 ---
 

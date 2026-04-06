@@ -1,7 +1,10 @@
 ---
 nameJa: 地域活性化サークルいもに会
 nameEn: Regional Revitalization Circle "Imoni-kai"
-category: Volunteer & Other Organizations
+category: 
+  - Volunteer
+  - Social Issues
+  - Planning
 description: 外大生の視点を活かして日本の地域を活性化しよう！芋煮を食べたい人も大歓迎！
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_imoni.jpg?alt=media&token=8dd9bfd6-3e21-40df-9d3b-1a39f6b47cce'
 overview:

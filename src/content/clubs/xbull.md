@@ -1,7 +1,9 @@
 ---
 nameJa: お笑いサークルXBULL
 nameEn: XBULL
-category: Music & Arts
+category:
+  - Music & Arts
+  - Others
 description: バモ
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_xbull.png?alt=media&token=e973c143-0322-4ee2-bc7e-e4d697865762'
 overview:

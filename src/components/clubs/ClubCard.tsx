@@ -54,6 +54,11 @@ export default function ClubCard({ club, categorySlug }: ClubCardProps) {
   return (
     <Link 
       href={`/clubs/${actualCategorySlug}/${club.id}`} 
+      data-analytics-event="select_content"
+      data-analytics-param-content-type="club_card"
+      data-analytics-param-item-id={club.id}
+      data-analytics-param-item-title={club.nameJa}
+      data-analytics-param-category-slug={actualCategorySlug}
       className="group bg-surface-container-lowest rounded-3xl overflow-hidden shadow-[0_4px_24px_rgba(0,0,0,0.04)] hover:shadow-[0_8px_32px_rgba(0,0,0,0.08)] transition-all duration-300 flex flex-col h-full"
     >
       <div className="relative h-56 overflow-hidden bg-surface-variant">

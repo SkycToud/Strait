@@ -1,8 +1,10 @@
 ---
 nameJa: たふえね
 nameEn: ''
-category: Volunteer & Other Organizations
-description: たふえねのロゴです
+category:
+  - Volunteer
+  - Social Issues
+description: 「外大生」の視点から、環境課題への理解を深める
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_tufuene.png?alt=media&token=6b2ce513-f4ea-4e6a-b133-994f18139dc9'
 overview:
   philosophy: 東京外国語大学が掲げる2030年カーボンニュートラル目標を学生の立場から推進する。

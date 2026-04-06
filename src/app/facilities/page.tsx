@@ -4,9 +4,21 @@ import { useState } from 'react';
 import FacilityStatusCard from '@/components/facilities/FacilityStatusCard';
 import facilityData from '@/data/facilities.json';
 import PageHeader from '@/components/layout/PageHeader';
+import { logUserBehavior } from '@/lib/firebaseClient';
 
 export default function FacilitiesPage() {
   const [filter, setFilter] = useState('all');
+
+  const handleFilterChange = (nextFilter: string) => {
+    setFilter(nextFilter);
+
+    logUserBehavior('select_content', {
+      content_type: 'facility_filter',
+      item_id: nextFilter,
+      filter_name: nextFilter,
+      source_page: window.location.pathname,
+    });
+  };
 
   const filteredData = facilityData.filter(f => {
     if (filter === 'all') return true;
@@ -29,25 +41,25 @@ export default function FacilitiesPage() {
         {/* Quick Filter Tabs */}
         <div className="flex flex-wrap gap-2 mb-6 md:mb-10 justify-start">
           <button
-            onClick={() => setFilter('all')}
+            onClick={() => handleFilterChange('all')}
             className={`px-3 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-bold transition-all shadow-md ${filter === 'all' ? 'bg-primary text-on-primary shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
           >
             全て (All)
           </button>
           <button
-            onClick={() => setFilter('study')}
+            onClick={() => handleFilterChange('study')}
             className={`px-3 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all ${filter === 'study' ? 'bg-primary text-on-primary shadow-md shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
           >
             本部管理棟
           </button>
           <button
-            onClick={() => setFilter('library')}
+            onClick={() => handleFilterChange('library')}
             className={`px-3 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all ${filter === 'library' ? 'bg-primary text-on-primary shadow-md shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
           >
             図書館
           </button>
           <button
-            onClick={() => setFilter('amenity')}
+            onClick={() => handleFilterChange('amenity')}
             className={`px-3 md:px-5 py-1.5 md:py-2 rounded-full text-xs md:text-sm font-medium transition-all ${filter === 'amenity' ? 'bg-primary text-on-primary shadow-md shadow-primary/20' : 'bg-surface-container-high text-on-surface-variant hover:bg-surface-container-highest'}`}
           >
             食生活・厚生
@@ -75,6 +87,16 @@ export default function FacilitiesPage() {
             href="https://www.tufs.ac.jp/abouttufs/contactus/campusmap.html"
             target="_blank"
             rel="noopener noreferrer"
+            onClick={() =>
+              logUserBehavior('select_content', {
+                content_type: 'facility_external_link',
+                item_id: 'campus-map',
+                item_title: 'Campus Map',
+                destination_type: 'external',
+                destination_path_or_url: 'https://www.tufs.ac.jp/abouttufs/contactus/campusmap.html',
+                source_page: window.location.pathname,
+              })
+            }
             className="shrink-0 px-6 py-3 bg-surface-container-high text-on-surface font-medium rounded-full hover:bg-surface-container-highest transition-colors flex items-center gap-2"
           >
             マップを開く

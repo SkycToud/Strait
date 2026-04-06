@@ -99,7 +99,16 @@ export default function Home() {
             <h2 className="text-xl font-bold flex items-center gap-2">
               直近の予定
             </h2>
-            <Link href="/calendar" className="text-sm font-semibold text-primary hover:underline">See All</Link>
+            <Link
+              href="/calendar"
+              className="text-sm font-semibold text-primary hover:underline"
+              data-analytics-event="select_content"
+              data-analytics-param-content-type="home_cta"
+              data-analytics-param-item-id="home-upcoming-see-all"
+              data-analytics-param-item-title="Upcoming Schedule See All"
+            >
+              See All
+            </Link>
           </div>
           <div className="relative overflow-hidden rounded-3xl bg-gradient-to-br from-primary to-primary-container p-5 md:p-8 text-white shadow-xl shadow-primary/20 group">
             <div className="relative z-10 flex flex-row justify-between items-center gap-4 md:gap-6">
@@ -122,7 +131,16 @@ export default function Home() {
         <section className="lg:col-span-4 flex flex-col">
           <div className="flex items-center justify-between mb-4 px-2">
             <h2 className="text-xl font-bold">施設の営業状況</h2>
-            <Link href="/facilities" className="text-sm font-semibold text-primary hover:underline">See All</Link>
+            <Link
+              href="/facilities"
+              className="text-sm font-semibold text-primary hover:underline"
+              data-analytics-event="select_content"
+              data-analytics-param-content-type="home_cta"
+              data-analytics-param-item-id="home-facilities-see-all"
+              data-analytics-param-item-title="Facilities See All"
+            >
+              See All
+            </Link>
           </div>
           <div className="flex flex-col gap-3 h-full">
             {facilities.map((facility, index) => {
@@ -169,7 +187,16 @@ export default function Home() {
         <section className="lg:col-span-12">
           <div className="mb-4 px-2 flex justify-between items-center">
             <h2 className="text-xl font-bold">よく使うリンク</h2>
-            <Link href="/links" className="text-sm font-semibold text-primary hover:underline md:hidden">View All</Link>
+            <Link
+              href="/links"
+              className="text-sm font-semibold text-primary hover:underline md:hidden"
+              data-analytics-event="select_content"
+              data-analytics-param-content-type="home_cta"
+              data-analytics-param-item-id="home-links-view-all-mobile"
+              data-analytics-param-item-title="Quick Links View All Mobile"
+            >
+              View All
+            </Link>
           </div>
           <div className="grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-3 md:gap-4">
             {quickLinks.map((link, index) => (
@@ -178,6 +205,11 @@ export default function Home() {
                 href={link.url}
                 target="_blank"
                 rel="noopener noreferrer"
+                data-analytics-event="select_content"
+                data-analytics-param-content-type="link"
+                data-analytics-param-item-id={link.id}
+                data-analytics-param-item-title={link.title}
+                data-analytics-param-item-category={link.category}
                 className="group bg-surface-container-low hover:bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl transition-all duration-300 flex flex-col md:flex-row items-start gap-3 md:gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5 animate-fade-in"
                 style={{ animationDelay: `${index * 50}ms`, animationFillMode: 'both' }}
               >
@@ -194,6 +226,10 @@ export default function Home() {
             {/* Others */}
             <Link
               href="/links"
+              data-analytics-event="select_content"
+              data-analytics-param-content-type="home_cta"
+              data-analytics-param-item-id="home-links-other-resources"
+              data-analytics-param-item-title="Other Resources"
               className="group bg-surface-container-low hover:bg-white p-4 md:p-6 rounded-2xl md:rounded-3xl transition-all duration-300 flex flex-col md:flex-row items-start gap-3 md:gap-4 border border-transparent hover:border-primary-container/20 hover:shadow-lg hover:shadow-primary/5 hidden lg:flex"
             >
               <div className="w-10 h-10 md:w-12 md:h-12 rounded-xl md:rounded-2xl bg-white shadow-sm flex items-center justify-center group-hover:scale-110 transition-transform">

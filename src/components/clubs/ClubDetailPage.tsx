@@ -488,13 +488,13 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
             <section className="bg-surface-container-low p-6 rounded-xl scroll-mt-20" id="sns">
               <h2 className="text-xl font-bold font-headline mb-4">SNS情報</h2>
               <div className="flex flex-wrap gap-3">
-                {isValidUrl(club.instagram) && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
+                {isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && (
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.instagram || club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
                     <Instagram className="w-5 h-5" />
                   </a>
                 )}
-                {isValidUrl(club.xUrl) && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.xUrl} target="_blank" rel="noopener noreferrer" title="X">
+                {isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && (
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.xUrl || club.xUrl} target="_blank" rel="noopener noreferrer" title="X">
                     <XIcon className="w-5 h-5" />
                   </a>
                 )}
@@ -514,7 +514,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                   </a>
                 )}
               </div>
-              {!isValidUrl(club.instagram) && !isValidUrl(club.xUrl) && 
+              {!isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && !isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && 
                !isValidUrl(club.recruitment?.contact?.facebook) && 
                !isValidUrl(club.recruitment?.contact?.website) && 
                !isValidUrl(club.recruitment?.contact?.line) && (
@@ -641,13 +641,13 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
           <section className="bg-surface-container-low p-6 rounded-xl">
             <h3 className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4 pl-1">SNS情報</h3>
             <div className="flex justify-start items-center gap-4">
-              {isValidUrl(club.instagram) && (
-                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
+              {isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && (
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.instagram || club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
                   <Instagram className="w-6 h-6" />
                 </a>
               )}
-              {isValidUrl(club.xUrl) && (
-                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.xUrl} target="_blank" rel="noopener noreferrer" title="X">
+              {isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && (
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.xUrl || club.xUrl} target="_blank" rel="noopener noreferrer" title="X">
                   <XIcon className="w-6 h-6" />
                 </a>
               )}
@@ -667,7 +667,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                 </a>
               )}
             </div>
-            {!isValidUrl(club.instagram) && !isValidUrl(club.xUrl) && 
+            {!isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && !isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && 
              !isValidUrl(club.recruitment?.contact?.facebook) && 
              !isValidUrl(club.recruitment?.contact?.website) && 
              !isValidUrl(club.recruitment?.contact?.line) && (

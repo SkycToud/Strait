@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import { getRecentlyUpdatedClubs } from '@/lib/clubs';
-import { toCategorySlug } from '@/lib/club-categories';
+import { toCategoryLabelJa, toCategorySlug } from '@/lib/club-categories';
 import PageHeader from '@/components/layout/PageHeader';
 
 export default async function ClubUpdatesPage() {
@@ -31,7 +31,9 @@ export default async function ClubUpdatesPage() {
                   )}
                 </div>
                 <div className="flex-1 min-w-0">
-                  <span className="text-[10px] font-bold text-primary-dim uppercase tracking-widest">{club.categories.join(' / ')}</span>
+                  <span className="inline-flex max-w-full items-center gap-1.5 rounded-full bg-primary/12 px-2.5 py-1 text-[10px] md:text-xs font-bold text-primary leading-none tracking-normal">
+                    {club.categories.map(toCategoryLabelJa).join(' ・ ')}
+                  </span>
                   <h4 className="font-bold text-base text-on-surface truncate">{club.nameJa}</h4>
                   <p className="text-xs text-on-surface-variant">更新日: {club.lastUpdated}</p>
                 </div>

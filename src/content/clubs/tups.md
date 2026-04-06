@@ -35,6 +35,7 @@ schedule:
   annualPlan:
     - 11月　外語祭に出演
 recruitment:
+  applicationDeadline: ''
   appeal: |-
     ・初心者が多くアットホームな雰囲気
     ・お金があまりかからない

@@ -5,7 +5,7 @@ import { ClubDetail } from '@/types/club';
 import { slugify } from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Instagram, Facebook, Globe, MessageCircle, ArrowLeft } from 'lucide-react';
+import { Instagram, Facebook, Globe, MessageCircle, ArrowLeft, Newspaper } from 'lucide-react';
 
 const XIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
@@ -76,7 +76,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
 
   // Helper to parse annual plan months
   const parseAnnualPlan = (str: string) => {
-    const match = str.match(/(\d+)\s*月[\s:：]+\s*(.*)/);
+    const match = str.match(/(\d+)\s*月[\s:：]+\s*([\s\S]*)/);
     if (match) {
       return { month: match[1], event: match[2] };
     }
@@ -222,7 +222,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                         <span className="text-xs font-bold">{month}</span>
                       </div>
                       <div className="w-[calc(100%-4rem)] md:w-[calc(50%-2.5rem)] bg-surface-container-lowest p-5 rounded-xl border border-outline-variant/10 shadow-sm">
-                        <h4 className="font-bold text-on-surface">{event}</h4>
+                        <h4 className="font-bold text-on-surface whitespace-pre-wrap">{event}</h4>
                       </div>
                     </div>
                   );
@@ -431,7 +431,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                           {month}
                         </div>
                         <div className="bg-surface-container-lowest p-3 rounded-lg flex-1">
-                          <p className="font-medium text-sm">{event}</p>
+                          <p className="font-medium text-sm whitespace-pre-wrap">{event}</p>
                         </div>
                       </div>
                     );
@@ -471,7 +471,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                   <span className="material-symbols-outlined text-primary-container">schedule</span>
                   <div>
                     <p className="font-bold text-sm">入会締切</p>
-                    <p className="text-sm opacity-90">{club.recruitment?.applicationDeadline || "通年募集"}</p>
+                    <p className="text-sm opacity-90 whitespace-pre-wrap">{club.recruitment?.applicationDeadline || "通年募集"}</p>
                   </div>
                 </li>
                 <li className="flex gap-3">
@@ -508,6 +508,11 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                     <Globe className="w-5 h-5" />
                   </a>
                 )}
+                {isValidUrl(club.recruitment?.contact?.media) && (
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.media} target="_blank" rel="noopener noreferrer" title="Media">
+                    <Newspaper className="w-5 h-5" />
+                  </a>
+                )}
                 {isValidUrl(club.recruitment?.contact?.line) && (
                   <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE">
                     <MessageCircle className="w-5 h-5" />
@@ -517,6 +522,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               {!isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && !isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && 
                !isValidUrl(club.recruitment?.contact?.facebook) && 
                !isValidUrl(club.recruitment?.contact?.website) && 
+               !isValidUrl(club.recruitment?.contact?.media) && 
                !isValidUrl(club.recruitment?.contact?.line) && (
                 <p className="text-sm text-on-surface-variant">SNS情報は登録されていません。</p>
               )}
@@ -624,7 +630,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                 <span className="material-symbols-outlined text-primary-container">schedule</span>
                 <div>
                   <p className="font-bold">入会締切</p>
-                  <p className="text-sm opacity-90">{club.recruitment?.applicationDeadline || "通年募集"}</p>
+                  <p className="text-sm opacity-90 whitespace-pre-wrap">{club.recruitment?.applicationDeadline || "通年募集"}</p>
                 </div>
               </li>
               <li className="flex gap-4">
@@ -661,6 +667,11 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                   <Globe className="w-6 h-6" />
                 </a>
               )}
+              {isValidUrl(club.recruitment?.contact?.media) && (
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.media} target="_blank" rel="noopener noreferrer" title="Media">
+                  <Newspaper className="w-6 h-6" />
+                </a>
+              )}
               {isValidUrl(club.recruitment?.contact?.line) && (
                 <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE">
                   <MessageCircle className="w-6 h-6" />
@@ -670,6 +681,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
             {!isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && !isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && 
              !isValidUrl(club.recruitment?.contact?.facebook) && 
              !isValidUrl(club.recruitment?.contact?.website) && 
+             !isValidUrl(club.recruitment?.contact?.media) && 
              !isValidUrl(club.recruitment?.contact?.line) && (
               <p className="text-sm text-on-surface-variant">SNS情報は登録されていません。</p>
             )}

@@ -28,12 +28,16 @@ membership:
 schedule:
   frequency: |-
     国内活動　毎週金曜日18:30〜21:00
-    フィリピン　年2回　15日　夏休み　春休み
+    フィリピン　年2回　夏休み・春休みの2週間
   location: 吉祥寺　フィリピン
   annualPlan:
     - 8月　中旬）夏休み15日間の渡航
     - 3月　初旬）春休み15日間の渡航
 recruitment:
+  applicationDeadline: |-
+    4月末頃
+    先着20名程度
+    4月の新歓説明会に参加した方が申込できます
   appeal: アットホームな雰囲気
   challenges: 建設活動が暑くて辛い、暑い日と寒い日に行う街頭募金、ミーティング以外にもイベント出展などの活動はあるが、大変だが楽しい
   welcomeEvents: |-

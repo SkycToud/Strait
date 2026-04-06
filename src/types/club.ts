@@ -49,6 +49,7 @@ export interface ClubDetail {
     contact: {
       facebook?: string;
       website?: string;
+      media?: string;
       line?: string;
       instagram?: string;
       xUrl?: string;

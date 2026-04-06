@@ -68,13 +68,21 @@ function yamlMultilineString(value: string | undefined | null, indent: number): 
 
 // ====== Markdown ファイル生成 ======
 function generateMarkdown(club: any): string {
-  const category = CATEGORY_MAP[club.category] || 'Others';
+  const mappedCategory = CATEGORY_MAP[club.category] || club.category || 'Others';
+  const categoryValues = Array.isArray(mappedCategory) ? mappedCategory : [mappedCategory];
 
   const lines: string[] = [];
   lines.push('---');
   lines.push(`nameJa: ${yamlString(club.nameJa)}`);
   lines.push(`nameEn: ${yamlString(club.nameEn || '')}`);
-  lines.push(`category: ${yamlString(category)}`);
+  if (categoryValues.length <= 1) {
+    lines.push(`category: ${yamlString(categoryValues[0])}`);
+  } else {
+    lines.push('category:');
+    categoryValues.forEach((value: string) => {
+      lines.push(`  - ${yamlString(value)}`);
+    });
+  }
   lines.push(`description: ${yamlString(club.description || '')}`);
 
   if (club.isSample) {
@@ -85,14 +93,6 @@ function generateMarkdown(club: any): string {
     lines.push(`thumbnail: ${yamlString(club.thumbnail)}`);
   }
 
-  if (club.instagram) {
-    lines.push(`instagram: ${yamlString(club.instagram)}`);
-  }
-
-  if (club.xUrl) {
-    lines.push(`xUrl: ${yamlString(club.xUrl)}`);
-  }
-
   if (club.metadata) {
     lines.push(`metadata: ${yamlString(club.metadata)}`);
   }
@@ -100,9 +100,7 @@ function generateMarkdown(club: any): string {
   // overview
   lines.push('overview:');
   lines.push(`  philosophy: ${yamlMultilineString(club.overview?.philosophy, 4)}`);
-  if (club.overview?.guidelines) {
-    lines.push(`  guidelines: ${yamlMultilineString(club.overview.guidelines, 4)}`);
-  }
+  lines.push('  guidelines: 準備中');
   lines.push(`  activities: ${yamlMultilineString(club.overview?.activities, 4)}`);
 
   // operations
@@ -139,20 +137,20 @@ function generateMarkdown(club: any): string {
 
   // recruitment
   lines.push('recruitment:');
+  lines.push("  applicationDeadline: ''");
   lines.push(`  appeal: ${yamlMultilineString(club.recruitment?.appeal, 4)}`);
   lines.push(`  challenges: ${yamlMultilineString(club.recruitment?.challenges, 4)}`);
-  lines.push(`  applicationFlow: ${yamlMultilineString(club.recruitment?.applicationFlow, 4)}`);
   lines.push(`  welcomeEvents: ${yamlMultilineString(club.recruitment?.welcomeEvents, 4)}`);
-  if (club.recruitment?.applicationDeadline) {
-    lines.push(`  applicationDeadline: ${yamlString(club.recruitment.applicationDeadline)}`);
-  }
   lines.push(`  annualFee: ${yamlString(club.recruitment?.annualFee || '準備中')}`);
   lines.push(`  hasSelection: ${club.recruitment?.hasSelection ? 'true' : 'false'}`);
   lines.push(`  targetAudience: ${yamlMultilineString(club.recruitment?.targetAudience, 4)}`);
   lines.push('  contact:');
   lines.push(`    facebook: ${yamlString(club.recruitment?.contact?.facebook || '')}`);
   lines.push(`    website: ${yamlString(club.recruitment?.contact?.website || '')}`);
+  lines.push(`    media: ${yamlString(club.recruitment?.contact?.media || '')}`);
   lines.push(`    line: ${yamlString(club.recruitment?.contact?.line || '')}`);
+  lines.push(`    instagram: ${yamlString(club.recruitment?.contact?.instagram || club.instagram || '')}`);
+  lines.push(`    xUrl: ${yamlString(club.recruitment?.contact?.xUrl || club.xUrl || '')}`);
 
   // targetGrades
   const grades = club.recruitment?.targetGrades || [];

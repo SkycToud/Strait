@@ -1,13 +1,9 @@
 ---
 nameJa: 地域活性化サークルいもに会
 nameEn: Regional Revitalization Circle "Imoni-kai"
-category: 
-  - Volunteer
-  - Social Issues
-  - Planning
+category: Volunteer & Other Organizations
 description: 外大生の視点を活かして日本の地域を活性化しよう！芋煮を食べたい人も大歓迎！
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_imoni.jpg?alt=media&token=8dd9bfd6-3e21-40df-9d3b-1a39f6b47cce'
-instagram: 'https://www.instagram.com/imoni.kai_tufs/'
 overview:
   philosophy: 夏学期・冬学期の集中講義「地域活性化のためのスタディツアー（通称：山形スタディツアー）」に参加したメンバーによって結成されたサークルです。山形をはじめとした日本各地の地域活性化について、外大生の視点から考えることを目指しています。
   guidelines: 準備中
@@ -23,7 +19,7 @@ membership:
     - '2年生: 6人'
     - '3年生: 2人'
     - '4年生: 8人'
-  isIntraUniversity: true
+  isIntraUniversity: false
 schedule:
   frequency: 定例ミーティングは週に1回、企画は月に1回程度
   location: 定例ミーティングは外大およびオンライン、企画は主に都内
@@ -63,6 +59,16 @@ recruitment:
     - 2年生
     - 3年生
     - 4年生
-lastUpdated: '2026-04-05'
+    - 院生
+  applicationFlow: |-
+    新歓イベント「芋煮会」
+    日時：4月16日（木）17：30
+    会場：府中市紅葉丘文化センター（外大から徒歩15分程度）
+    参加費：500円
+    連絡方法：インスタのDMかメール（tufs.imonikai@gmail.com）までご連絡ください。
+
+    活動の見学はいつでも大歓迎です。同様にご連絡ください。
+lastUpdated: '2026-04-06'
+instagram: 'https://www.instagram.com/imoni.kai_tufs/'
 ---
 

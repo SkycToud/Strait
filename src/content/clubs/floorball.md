@@ -4,7 +4,6 @@ nameEn: Floorball Club
 category: Ball Sports
 description: スウェーデン発祥のフロアボールは屋内で行うホッケーです!!
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_floorball.png?alt=media&token=4d028686-1739-48fc-8f20-06bda592c835'
-instagram: 'https://www.instagram.com/tufs_floorball/'
 overview:
   philosophy: 気軽に、楽しく身体を動かしましょう！部費はなく、必要な用具も貸し出しますー! フロアボールは大学から始めた人がほとんどです!! 部員も学部生から留学生、職員さんまで様々です!
   guidelines: 初心者から経験者まで、技術向上とチームワークを重視
@@ -25,8 +24,7 @@ schedule:
   frequency: 週2回
   location: メインアリーナ
   annualPlan:
-    - 6月　調布市大会
-    - 9月　東大、千葉大交流会
+    - '6月: 調布市大会 9月: 東大、千葉大交流会'
     - その他にも色々なイベントが随時あります!
 recruitment:
   applicationDeadline: ''
@@ -47,6 +45,9 @@ recruitment:
     - 2年生
     - 3年生
     - 4年生
-lastUpdated: '2026-04-05'
+    - 院生
+  applicationFlow: "いつでも体験お待ちしてます！ インスタグラムのDMに一言くださると嬉しいです\U0001F61A"
+lastUpdated: '2026-04-06'
+instagram: 'https://www.instagram.com/tufs_floorball/'
 ---
 

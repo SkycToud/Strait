@@ -1,10 +1,9 @@
 ---
 nameJa: TUFPOST
 nameEn: TUFPOST
-category: Others
+category: Hobbies
 description: サークルのロゴ
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_tufpost.jpg?alt=media&token=02a2d8e5-46d2-4aee-90f0-1d0bdaf5bc1b'
-instagram: 'https://www.instagram.com/tufpost/'
 overview:
   philosophy: |-
     ・多彩なメンバーが出会い、一緒に活動することで、今まで誰も見たことがないような「おもしろい」が生まれる、そんな場所です。
@@ -27,17 +26,14 @@ membership:
     - '1年生: 3人'
     - '3年生: 4人'
     - '4年生: 5人'
-  isIntraUniversity: true
+  isIntraUniversity: false
 schedule:
   frequency: 個人のペース
   location: オンラインなど
   annualPlan:
-    - 4月　新歓
-    - |-
-      11月　外語祭
-      2026年度はZINEの販売やVlogの展示に加え、
-      世界各地の若者たちに聞いたリアルな声を紹介する
-      インタビュー企画など多彩なコンテンツを展示しました。
+    - 新歓　4月
+    - 外語祭   11月
+    - 2026年度はZINEの販売やVlogの展示に加え、世界各地の若者たちに聞いたリアルな声を紹介するインタビュー企画など多彩なコンテンツを展示しました。
 recruitment:
   applicationDeadline: ''
   appeal: |-
@@ -50,7 +46,7 @@ recruitment:
   targetAudience: 全学年
   contact:
     facebook: ''
-    website: 'https://grizzled-blanket-a8f.notion.site/TUFPOST-HOME-1cd0bd941b3f80e7a799f2a9e18de71f'
+    website: 'https://grizzled-blanket-a8f.notion.site/TUFPOST-HOME-1cd0bd941b3f80e7a799f2a9e18de71f (全体) http://tufs-wonderfulwander.info/(ワンダフルワンダー)'
     media: 'http://tufs-wonderfulwander.info/'
     line: ''
     instagram: 'https://www.instagram.com/tufpost/'
@@ -60,6 +56,9 @@ recruitment:
     - 2年生
     - 3年生
     - 4年生
-lastUpdated: '2026-04-05'
+    - 院生
+  applicationFlow: インスタのDMから入会希望や相談受け付けています
+lastUpdated: '2026-04-06'
+instagram: 'https://www.instagram.com/tufpost/'
 ---
 

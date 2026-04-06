@@ -1,14 +1,9 @@
 ---
 nameJa: 学生NGO ALPHA
 nameEn: ALPHA
-category:
-  - Volunteer
-  - Language & International
-  - Social Issues
+category: Volunteer & Other Organizations
 description: フィリピンの教育支援を行うインカレサークル
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_alpha.jpeg?alt=media&token=213d2534-6af1-4f7f-8cd8-279927c64b8a'
-instagram: 'https://www.instagram.com/ngo_alpha/'
-xUrl: 'https://x.com/NGO_ALPHA'
 overview:
   philosophy: everybody smile!!
   guidelines: 準備中
@@ -28,11 +23,11 @@ membership:
 schedule:
   frequency: |-
     国内活動　毎週金曜日18:30〜21:00
-    フィリピン　年2回　夏休み・春休みの2週間
+    フィリピン　年2回　15日　夏休み　春休み
   location: 吉祥寺　フィリピン
   annualPlan:
-    - 8月　中旬）夏休み15日間の渡航
-    - 3月　初旬）春休み15日間の渡航
+    - 夏休み（8月中盤）15日間の渡航
+    - 春休み（3月前半）15日間の渡航
 recruitment:
   applicationDeadline: |-
     4月末頃
@@ -64,6 +59,20 @@ recruitment:
   targetGrades:
     - 1年生
     - 2年生
-lastUpdated: '2026-04-05'
+  applicationFlow: |-
+    4/10（金）・18（土）18:30〜 
+    新歓説明会@武蔵野プレイス
+    事前予約必須
+    ① 氏名
+    ② 大学
+    ③ 学年
+    ④ 学部学科
+    ⑤ 連絡先
+    ⑥ 希望日
+    上記項目を以下アドレスまでご連絡ください。
+    連絡先 :ngo.alpha@gmail.com
+lastUpdated: '2026-04-06'
+instagram: 'https://www.instagram.com/ngo_alpha/'
+xUrl: 'https://x.com/NGO_ALPHA'
 ---
 

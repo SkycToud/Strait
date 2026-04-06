@@ -18,14 +18,22 @@ export default function ClubCard({ club, categorySlug }: ClubCardProps) {
   const targetYears = useMemo(() => {
     const grades = club.recruitment?.targetGrades;
     if (!grades || grades.length === 0) return "全学年";
+
+    const uniqueGrades = [...new Set(grades)];
+    const undergradGrades = ['1年生', '2年生', '3年生', '4年生'];
+    const includesAllUndergrad = undergradGrades.every((grade) => uniqueGrades.includes(grade));
+
+    if (includesAllUndergrad) {
+      return uniqueGrades.includes('院生') ? '学部生+院生' : '学部生';
+    }
     
     // Format grades (e.g., ["1年生", "2年生", "3年生"] -> "1~3年生")
-    const nums = grades
+    const nums = uniqueGrades
       .map(g => parseInt(g.replace(/[^0-9]/g, '')))
       .filter(n => !isNaN(n))
       .sort((a, b) => a - b);
       
-    if (nums.length === 0) return grades.join(', ');
+    if (nums.length === 0) return uniqueGrades.join(', ');
     
     // Check if it's a continuous range
     const isContinuous = nums.length > 1 && nums.every((n, i) => i === 0 || n === nums[i-1] + 1);

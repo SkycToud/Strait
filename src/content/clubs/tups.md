@@ -4,7 +4,6 @@ nameEn: TUPS
 category: Dance & Performance
 description: 「楽しく”タップダンス”してみませんか？」週に１度サークル棟で活動しているアットホームなインカレサークルです
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_tups.jpg?alt=media&token=a5b5b26c-56e3-4211-89f5-ed4025339aef'
-xUrl: 'https://x.com/tufs_tups'
 overview:
   philosophy: |-
     楽しく！自由に！タップダンス！
@@ -33,7 +32,7 @@ schedule:
   frequency: 週一
   location: サークル棟多目的スペース
   annualPlan:
-    - 11月　外語祭に出演
+    - 毎年11月の外語祭に出演
 recruitment:
   applicationDeadline: ''
   appeal: |-
@@ -61,6 +60,8 @@ recruitment:
     - 2年生
     - 3年生
     - 4年生
-lastUpdated: '2026-04-05'
+    - 院生
+  applicationFlow: 各種SNS(インスタ、X)のDMで随時受け付けています。体験希望や入会希望の旨を送ってください。
+lastUpdated: '2026-04-06'
 ---
 

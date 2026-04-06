@@ -2,6 +2,7 @@ import fs from 'fs';
 import path from 'path';
 import matter from 'gray-matter';
 import { ClubDetail } from '@/types/club';
+import { toCategorySlug } from '@/lib/club-categories';
 
 const contentDir = path.join(process.cwd(), 'src/content/clubs');
 
@@ -11,11 +12,27 @@ export function getClubById(id: string): ClubDetail | undefined {
     return undefined;
   }
   const fileContent = fs.readFileSync(filePath, 'utf-8');
-  const { data, content } = matter(fileContent);
+  const { data } = matter(fileContent);
+
+  const rawCategory = data.categories ?? data.category;
+  const categories = (Array.isArray(rawCategory) ? rawCategory : (rawCategory ? [rawCategory] : []))
+    .map((value) => String(value).trim())
+    .filter((value) => value.length > 0);
+  const categorySlugs = categories.map(toCategorySlug);
+  const primaryCategorySlug = categorySlugs[0] ?? 'others';
+
+  const restData = Object.fromEntries(
+    Object.entries(data as Record<string, unknown>).filter(
+      ([key]) => key !== 'category' && key !== 'categories'
+    )
+  );
 
   return {
     id,
-    ...(data as Omit<ClubDetail, 'id'>)
+    categories,
+    categorySlugs,
+    primaryCategorySlug,
+    ...(restData as Omit<ClubDetail, 'id' | 'categories'>)
   };
 }
 
@@ -33,7 +50,7 @@ export function getAllClubs(): ClubDetail[] {
   return clubs;
 }
 
-export function getClubsByCategory(category: string): ClubDetail[] {
+export function getClubsByCategory(): ClubDetail[] {
   const allClubs = getAllClubs();
   // We match by URL slug internally? 
   // Wait, in previous code, categorySlug vs category... we might need to export a slugify function or handle matching in the components.

@@ -1,0 +1,2 @@
+﻿scripts/fetch-firebase-urls.ts(72,13): error TS2322: Type 'string | number | boolean | null | undefined' is not assignable to type 'string | number | boolean | null'.
+  Type 'undefined' is not assignable to type 'string | number | boolean | null'.

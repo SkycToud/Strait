@@ -3,6 +3,7 @@
 import { useState } from 'react';
 import { ClubDetail } from '@/types/club';
 import { slugify } from '@/lib/utils';
+import { toCategoryLabelJa } from '@/lib/club-categories';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Instagram, Facebook, Globe, MessageCircle, ArrowLeft, Newspaper } from 'lucide-react';
@@ -238,8 +239,8 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
             )}
             <div className="flex flex-wrap gap-2 mb-3">
               {club.categories.map((cat) => (
-                <span key={cat} className="inline-flex items-center px-3 py-1 bg-white/20 backdrop-blur-sm text-white rounded-full text-xs font-bold border border-white/30">
-                  {cat}
+                <span key={cat} className="inline-flex items-center px-3.5 py-1.5 bg-black/45 backdrop-blur-md text-white rounded-full text-xs font-extrabold border border-white/55 shadow-[0_2px_10px_rgba(0,0,0,0.25)]">
+                  {toCategoryLabelJa(cat)}
                 </span>
               ))}
             </div>

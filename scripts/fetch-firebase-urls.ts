@@ -66,12 +66,13 @@ async function run() {
       if (!downloadToken) {
         // Generate a new download token if it doesn't exist
         const crypto = require('crypto');
-        downloadToken = crypto.randomUUID();
+        const generatedToken = crypto.randomUUID();
         await matchedFile.setMetadata({
           metadata: {
-            firebaseStorageDownloadTokens: downloadToken
+            firebaseStorageDownloadTokens: generatedToken
           }
         });
+        downloadToken = generatedToken;
         console.log(`Generated new download token for ${matchedFile.name}`);
       }
 

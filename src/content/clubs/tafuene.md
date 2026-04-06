@@ -46,7 +46,7 @@ recruitment:
     facebook: ''
     website: ''
     line: ''
-    instagram: 'https://www.instagram.com/＠tufsenergy/'
+    instagram: 'https://www.instagram.com/tufsenergy/'
     xUrl: ''
   targetGrades:
     - 1年生

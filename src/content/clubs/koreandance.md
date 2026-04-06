@@ -45,6 +45,8 @@ recruitment:
     facebook: ''
     website: ''
     line: ''
+    instagram: 'https://www.instagram.com/tufsmuyong/'
+    xUrl: 'https://x.com/tufsmuyong1'
   targetGrades:
     - 1年生
     - 2年生

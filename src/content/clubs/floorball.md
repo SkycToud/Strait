@@ -39,6 +39,8 @@ recruitment:
     facebook: ''
     website: ''
     line: ''
+    instagram: 'https://www.instagram.com/tufs_floorball/'
+    xUrl: ''
   targetGrades:
     - 1年生
     - 2年生

@@ -55,6 +55,8 @@ recruitment:
     facebook: 'https://www.facebook.com/share/1BFTtgKnuQ/?mibextid=wwXIfr'
     website: 'https://alphakoho.wixsite.com/website-1'
     line: なし
+    instagram: 'https://www.instagram.com/ngo_alpha/'
+    xUrl: 'https://x.com/NGO_ALPHA'
   targetGrades:
     - 1年生
     - 2年生

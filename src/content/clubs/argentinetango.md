@@ -51,6 +51,8 @@ recruitment:
     facebook: ''
     website: ''
     line: ''
+    instagram: 'https://www.instagram.com/tufs_tango?igsh=MWF4MG8wY2p5b3I0ag=='
+    xUrl: 'https://x.com/tufs_tango'
   targetGrades:
     - 1年生
     - 2年生

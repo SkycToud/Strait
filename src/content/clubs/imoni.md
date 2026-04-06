@@ -55,6 +55,8 @@ recruitment:
     facebook: ''
     website: 'https://note.com/tufsimoni'
     line: ''
+    instagram: 'https://www.instagram.com/imoni.kai_tufs/'
+    xUrl: ''
   targetGrades:
     - 1年生
     - 2年生

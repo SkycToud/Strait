@@ -59,6 +59,5 @@ recruitment:
     - 院生
   applicationFlow: インスタのDMから入会希望や相談受け付けています
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/tufpost/'
 ---
 

@@ -45,8 +45,8 @@ recruitment:
     website: ''
     media: ''
     line: ''
-    instagram: '@tufs_urasenke'
-    xUrl: '@TufsUrasenke'
+    instagram: 'https://www.instagram.com/tufs_urasenke/'
+    xUrl: 'https://x.com/TufsUrasenke'
   targetGrades:
     - 1年生
     - 2年生

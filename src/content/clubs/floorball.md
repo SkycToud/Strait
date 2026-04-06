@@ -48,6 +48,5 @@ recruitment:
     - 院生
   applicationFlow: "いつでも体験お待ちしてます！ インスタグラムのDMに一言くださると嬉しいです\U0001F61A"
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/tufs_floorball/'
 ---
 

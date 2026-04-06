@@ -75,7 +75,5 @@ recruitment:
     上記項目を以下アドレスまでご連絡ください。
     連絡先 :ngo.alpha@gmail.com
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/ngo_alpha/'
-xUrl: 'https://x.com/NGO_ALPHA'
 ---
 

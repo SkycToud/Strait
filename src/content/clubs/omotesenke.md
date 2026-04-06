@@ -59,6 +59,5 @@ recruitment:
     - 4年生
   applicationFlow: 4月に和室で体験入部を実施。InstagramのDMよりお問い合わせください。
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/tufs_omotesenke/'
 ---
 

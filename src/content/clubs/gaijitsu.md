@@ -124,8 +124,8 @@ recruitment:
     website: 'https://gaigosai.com'
     media: ''
     line: 'https://lin.ee/onujdji'
-    instagram: '@tufs_gaigosai'
-    xUrl: '@tufs_gaigosai'
+    instagram: 'https://www.instagram.com/tufs_gaigosai/'
+    xUrl: 'https://x.com/tufs_gaigosai'
   targetGrades: 
     - 1年生
     - 2年生

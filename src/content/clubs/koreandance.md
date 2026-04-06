@@ -58,7 +58,5 @@ recruitment:
     4月の外新歓、舞踊系合同新歓に参加します。
     いつでも活動時間中に見学・体験を行っているので、お気軽にインスタやXのDMまたはGmailでご連絡ください！
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/tufsmuyong/'
-xUrl: 'https://x.com/tufsmuyong1'
 ---
 

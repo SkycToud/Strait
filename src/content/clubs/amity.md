@@ -53,6 +53,5 @@ recruitment:
     4/8 舞踏系合同新歓
     4/10-4月下旬 体験入部
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/tufs_amity/'
 ---
 

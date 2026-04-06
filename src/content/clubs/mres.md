@@ -60,6 +60,5 @@ recruitment:
     オンライン新歓・20-21:00
     4/8,12,15,19,22,26・ZOOM・インスタのDMでご連絡ください！
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/mres_habitatforhumanity_tufs?igsh=Y2szYmhud3l3Nm5n&utm_source=qr'
 ---
 

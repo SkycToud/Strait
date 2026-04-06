@@ -47,6 +47,5 @@ recruitment:
     xUrl: ''
   applicationFlow: '毎週金曜日16:00〜制作室で部会を行っているので、興味がある方はインスタからご連絡いただき、部会への参加をお願いします。'
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/tufs_artclub/'
 ---
 

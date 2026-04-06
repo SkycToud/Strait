@@ -1,9 +1,10 @@
 'use client';
-import React, { useState, useMemo } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import { CalendarPlus, Clock, MapPin, FileText, AlertCircle, ChevronLeft, ChevronRight } from 'lucide-react';
 import { buildGoogleCalendarUrl } from '@/lib/google-calendar';
 import calendarData from '@/data/calendar.json';
 import PageHeader from '@/components/layout/PageHeader';
+import { logUserBehavior } from '@/lib/firebaseClient';
 
 // Helper to format date strings like "2026-04-01" to "4月1日"
 export const formatEventDate = (dateStr?: string) => {
@@ -76,6 +77,7 @@ export default function CalendarPage() {
   const [view] = useState<'list' | 'calendar'>('list');
   const [currentMonth] = useState(new Date()); // Default to current month
   const [searchQuery, setSearchQuery] = useState('');
+  const lastLoggedSearchRef = useRef('');
   const timingToDay = (timing: string): number => {
     switch (timing) {
       case '初旬': return 1;
@@ -110,6 +112,34 @@ export default function CalendarPage() {
       event.label.toLowerCase().includes(query)
     );
   }, [allEvents, searchQuery]);
+
+  useEffect(() => {
+    const trimmedQuery = searchQuery.trim();
+
+    if (!trimmedQuery) {
+      lastLoggedSearchRef.current = '';
+      return;
+    }
+
+    const timer = window.setTimeout(() => {
+      if (lastLoggedSearchRef.current === trimmedQuery) {
+        return;
+      }
+
+      logUserBehavior('search', {
+        content_type: 'calendar_event',
+        search_term: trimmedQuery,
+        result_count: events.length,
+        source_page: window.location.pathname,
+      });
+
+      lastLoggedSearchRef.current = trimmedQuery;
+    }, 500);
+
+    return () => {
+      window.clearTimeout(timer);
+    };
+  }, [events.length, searchQuery]);
 
 
   const year = currentMonth.getFullYear();
@@ -209,6 +239,16 @@ export default function CalendarPage() {
                               href={gcUrl}
                               target="_blank"
                               rel="noopener noreferrer"
+                              onClick={() =>
+                                logUserBehavior('select_content', {
+                                  content_type: 'calendar_event',
+                                  item_title: ev.label,
+                                  event_date: ev.date || ev.startDate,
+                                  destination_type: 'external',
+                                  destination_path_or_url: gcUrl,
+                                  source_page: window.location.pathname,
+                                })
+                              }
                               className="text-on-surface-variant font-medium text-xs hover:text-primary transition-colors flex items-center gap-1.5"
                             >
                               <CalendarPlus className="w-4 h-4" /> Googleカレンダーに追加

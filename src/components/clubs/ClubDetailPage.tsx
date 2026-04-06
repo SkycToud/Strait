@@ -6,6 +6,7 @@ import { slugify } from '@/lib/utils';
 import Link from 'next/link';
 import Image from 'next/image';
 import { Instagram, Facebook, Globe, MessageCircle, ArrowLeft, Newspaper } from 'lucide-react';
+import { logUserBehavior } from '@/lib/firebaseClient';
 
 const XIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
@@ -57,6 +58,21 @@ const isValidUrl = (url: string | undefined) => {
 };
 
 export default function ClubDetailPage({ club, categorySlug }: ClubDetailPageProps) {
+  const trackClubExternalLink = (linkType: string, url: string | undefined) => {
+    if (!url) return;
+
+    logUserBehavior('select_content', {
+      content_type: 'club_external_link',
+      item_id: club.id,
+      item_title: club.nameJa,
+      category_slug: categorySlug,
+      link_type: linkType,
+      destination_type: 'external',
+      destination_path_or_url: url,
+      source_page: window.location.pathname,
+    });
+  };
+
   // Helper to parse year distribution numbers
   const getYearNum = (str: string) => {
     const parts = str.split(/[:：]/);
@@ -610,32 +626,32 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               <h2 className="text-xl font-bold font-headline mb-4">SNS情報</h2>
               <div className="flex flex-wrap gap-3">
                 {isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.instagram || club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.instagram || club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram" onClick={() => trackClubExternalLink('instagram', club.recruitment?.contact?.instagram || club.instagram)}>
                     <Instagram className="w-5 h-5" />
                   </a>
                 )}
                 {isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.xUrl || club.xUrl} target="_blank" rel="noopener noreferrer" title="X">
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.xUrl || club.xUrl} target="_blank" rel="noopener noreferrer" title="X" onClick={() => trackClubExternalLink('x', club.recruitment?.contact?.xUrl || club.xUrl)}>
                     <XIcon className="w-5 h-5" />
                   </a>
                 )}
                 {isValidUrl(club.recruitment?.contact?.facebook) && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.facebook} target="_blank" rel="noopener noreferrer" title="Facebook">
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.facebook} target="_blank" rel="noopener noreferrer" title="Facebook" onClick={() => trackClubExternalLink('facebook', club.recruitment?.contact?.facebook)}>
                     <Facebook className="w-5 h-5" />
                   </a>
                 )}
                 {isValidUrl(club.recruitment?.contact?.website) && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.website} target="_blank" rel="noopener noreferrer" title="HP">
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.website} target="_blank" rel="noopener noreferrer" title="HP" onClick={() => trackClubExternalLink('website', club.recruitment?.contact?.website)}>
                     <Globe className="w-5 h-5" />
                   </a>
                 )}
                 {isValidUrl(club.recruitment?.contact?.media) && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.media} target="_blank" rel="noopener noreferrer" title="Media">
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.media} target="_blank" rel="noopener noreferrer" title="Media" onClick={() => trackClubExternalLink('media', club.recruitment?.contact?.media)}>
                     <Newspaper className="w-5 h-5" />
                   </a>
                 )}
                 {isValidUrl(club.recruitment?.contact?.line) && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE">
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE" onClick={() => trackClubExternalLink('line', club.recruitment?.contact?.line)}>
                     <MessageCircle className="w-5 h-5" />
                   </a>
                 )}
@@ -769,32 +785,32 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
             <h3 className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4 pl-1">SNS情報</h3>
             <div className="flex justify-start items-center gap-4">
               {isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && (
-                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.instagram || club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram">
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.instagram || club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram" onClick={() => trackClubExternalLink('instagram', club.recruitment?.contact?.instagram || club.instagram)}>
                   <Instagram className="w-6 h-6" />
                 </a>
               )}
               {isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && (
-                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.xUrl || club.xUrl} target="_blank" rel="noopener noreferrer" title="X">
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.xUrl || club.xUrl} target="_blank" rel="noopener noreferrer" title="X" onClick={() => trackClubExternalLink('x', club.recruitment?.contact?.xUrl || club.xUrl)}>
                   <XIcon className="w-6 h-6" />
                 </a>
               )}
               {isValidUrl(club.recruitment?.contact?.facebook) && (
-                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.facebook} target="_blank" rel="noopener noreferrer" title="Facebook">
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.facebook} target="_blank" rel="noopener noreferrer" title="Facebook" onClick={() => trackClubExternalLink('facebook', club.recruitment?.contact?.facebook)}>
                   <Facebook className="w-6 h-6" />
                 </a>
               )}
               {isValidUrl(club.recruitment?.contact?.website) && (
-                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.website} target="_blank" rel="noopener noreferrer" title="HP">
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.website} target="_blank" rel="noopener noreferrer" title="HP" onClick={() => trackClubExternalLink('website', club.recruitment?.contact?.website)}>
                   <Globe className="w-6 h-6" />
                 </a>
               )}
               {isValidUrl(club.recruitment?.contact?.media) && (
-                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.media} target="_blank" rel="noopener noreferrer" title="Media">
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.media} target="_blank" rel="noopener noreferrer" title="Media" onClick={() => trackClubExternalLink('media', club.recruitment?.contact?.media)}>
                   <Newspaper className="w-6 h-6" />
                 </a>
               )}
               {isValidUrl(club.recruitment?.contact?.line) && (
-                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE">
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE" onClick={() => trackClubExternalLink('line', club.recruitment?.contact?.line)}>
                   <MessageCircle className="w-6 h-6" />
                 </a>
               )}
@@ -919,6 +935,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               href="https://docs.google.com/forms/d/e/1FAIpQLSeMkj-o5DL1o-pmjrAtCTabjB2v5_1BCa33hCpvHvHE21rjjQ/viewform?usp=publish-editor"
               target="_blank"
               rel="noopener noreferrer"
+              onClick={() => trackClubExternalLink('correction_form', 'https://docs.google.com/forms/d/e/1FAIpQLSeMkj-o5DL1o-pmjrAtCTabjB2v5_1BCa33hCpvHvHE21rjjQ/viewform?usp=publish-editor')}
               className="px-6 py-2.5 rounded-full border border-outline text-on-surface-variant text-sm font-bold hover:bg-surface-container-highest hover:border-primary transition-all flex items-center gap-2"
             >
               <span className="material-symbols-outlined text-sm">edit_note</span>

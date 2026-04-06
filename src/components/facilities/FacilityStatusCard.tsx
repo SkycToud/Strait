@@ -65,10 +65,18 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
     target: "_blank",
     rel: "noopener noreferrer"
   } : {};
+  const analyticsProps = facility.link ? {
+    'data-analytics-event': 'select_content',
+    'data-analytics-param-content-type': 'facility_external_link',
+    'data-analytics-param-item-id': facility.id,
+    'data-analytics-param-item-title': facility.name,
+    'data-analytics-param-facility-type': facility.type,
+  } : {};
 
   return (
     <Tag 
       {...tagProps as any}
+      {...analyticsProps}
       className={cn(
         "group rounded-2xl p-4 md:p-6 shadow-sm transition-all duration-300 relative overflow-hidden flex flex-col",
         isOpen 

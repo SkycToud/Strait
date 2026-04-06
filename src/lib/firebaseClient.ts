@@ -1,5 +1,5 @@
 import { initializeApp, getApps, getApp } from "firebase/app";
-import { getAnalytics, isSupported, logEvent } from "firebase/analytics";
+import { getAnalytics, isSupported, logEvent, type Analytics } from "firebase/analytics";
 
 const firebaseConfig = {
   apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
@@ -14,14 +14,50 @@ const firebaseConfig = {
 // Initialize Firebase
 const app = !getApps().length ? initializeApp(firebaseConfig) : getApp();
 
-export const logUserBehavior = async (eventName: string, eventParams?: any) => {
+type AnalyticsEventParams = Record<string, string | number | boolean | null | undefined>;
+
+const isBrowser = typeof window !== "undefined";
+const isDebugAnalyticsEnabled = process.env.NEXT_PUBLIC_ANALYTICS_DEBUG === "true";
+
+export const isAnalyticsTrackingEnabled =
+  isBrowser &&
+  Boolean(process.env.NEXT_PUBLIC_FIREBASE_MEASUREMENT_ID) &&
+  (process.env.NODE_ENV === "production" || isDebugAnalyticsEnabled);
+
+let analyticsInstancePromise: Promise<Analytics | null> | null = null;
+
+const getAnalyticsInstance = () => {
+  if (!isAnalyticsTrackingEnabled) {
+    return Promise.resolve(null);
+  }
+
+  if (!analyticsInstancePromise) {
+    analyticsInstancePromise = isSupported()
+      .then((supported) => {
+        if (!supported) {
+          return null;
+        }
+        return getAnalytics(app);
+      })
+      .catch(() => null);
+  }
+
+  return analyticsInstancePromise;
+};
+
+export const logUserBehavior = async (eventName: string, eventParams?: AnalyticsEventParams) => {
+  if (!isAnalyticsTrackingEnabled) {
+    return;
+  }
+
   try {
-    const supported = await isSupported();
-    if (supported) {
-      const analytics = getAnalytics(app);
+    const analytics = await getAnalyticsInstance();
+    if (analytics) {
       logEvent(analytics, eventName, eventParams);
     }
   } catch (error) {
-    console.error("Firebase Analytics Error:", error);
+    if (process.env.NODE_ENV !== "production") {
+      console.error("Firebase Analytics Error:", error);
+    }
   }
 };

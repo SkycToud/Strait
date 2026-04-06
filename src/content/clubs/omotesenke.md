@@ -1,7 +1,9 @@
 ---
 nameJa: 表千家茶道部
 nameEn: Omotesenke Tea Ceremony
-category: Music & Arts
+category:
+  - Music & Arts
+  - Others
 description: 表千家茶道部
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_omotesenke.jpeg?alt=media&token=c5095bce-0248-4cb1-b7ed-4c8b8ed30c45'
 overview:

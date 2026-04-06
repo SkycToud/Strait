@@ -1,7 +1,7 @@
 ---
 nameJa: TUFPOST
 nameEn: TUFPOST
-category: Hobbies
+category: Others
 description: サークルのロゴ
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_tufpost.jpg?alt=media&token=02a2d8e5-46d2-4aee-90f0-1d0bdaf5bc1b'
 overview:

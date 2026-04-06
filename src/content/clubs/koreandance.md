@@ -1,7 +1,9 @@
 ---
 nameJa: 朝鮮舞踊部
 nameEn: ''
-category: Music & Arts
+category: 
+  - Music & Arts
+  - Dance & Performance
 description: 朝鮮舞踊部です♪
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_koreandance.jpeg?alt=media&token=791b448f-0fcb-4257-8141-047b5cb2d923'
 overview:

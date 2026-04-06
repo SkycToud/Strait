@@ -1,7 +1,7 @@
 ---
 nameJa: Mres
 nameEn: Mres
-category: Volunteer & Other Organizations
+category: Volunteer
 description: A world where everyone has a decent place to live
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_mres.jpg?alt=media&token=5a930b47-5b46-4024-a226-28f60e3ea701'
 overview:

@@ -1,7 +1,9 @@
 ---
 nameJa: K-POPカバーダンスサークル Souls
 nameEn: K-POP Cover Dance Circle
-category: Music & Arts
+category:
+  - Music & Arts
+  - Dance & Performance
 description: 私たちと一緒にkpop踊りましょう♬❕️
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_souls.jpg?alt=media&token=fd2506eb-82a2-4cc7-9af0-dc78c087ce2b'
 overview:

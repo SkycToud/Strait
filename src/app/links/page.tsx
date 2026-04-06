@@ -1,12 +1,10 @@
 import LinkCard from '@/components/links/LinkCard';
 import linksData from '@/data/links.json';
 import PageHeader from '@/components/layout/PageHeader';
-import PageViewTracker from '@/components/links/PageViewTracker';
 
 export default function LinksPage() {
   return (
     <section className="max-w-7xl mx-auto">
-      <PageViewTracker pageName="Links" />
       <PageHeader
         title="関連リンク集"
         subtitle="Relevant Links"

@@ -36,6 +36,9 @@ export default function LinkCard({ item, index }: { item: LinkItem; index: numbe
       item_url: item.url,
       item_title: item.title,
       item_category: item.category,
+      source_page: window.location.pathname,
+      destination_type: "external",
+      destination_path_or_url: item.url,
     });
   };
 

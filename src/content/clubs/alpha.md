@@ -1,7 +1,10 @@
 ---
 nameJa: 学生NGO ALPHA
 nameEn: ALPHA
-category: Volunteer & Other Organizations
+category: 
+  - Volunteer
+  - Language & International
+  - Planning
 description: フィリピンの教育支援を行うインカレサークル
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_alpha.jpeg?alt=media&token=213d2534-6af1-4f7f-8cd8-279927c64b8a'
 overview:

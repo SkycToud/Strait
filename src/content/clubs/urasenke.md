@@ -1,7 +1,9 @@
 ---
 nameJa: 裏千家茶道倶楽部
 nameEn: Urasenke Tea Ceremony Club
-category: Music & Arts
+category:
+  - Music & Arts
+  - Others
 description: みんな、自分で着付けしております！
 thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_urasenke.jpeg?alt=media&token=ec0cff72-678e-4f98-823f-2856dc7d6267'
 overview:

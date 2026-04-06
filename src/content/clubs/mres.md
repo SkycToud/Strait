@@ -33,6 +33,7 @@ schedule:
     - 2月　Mres春合宿・春GV
     - 3月　新歓準備
 recruitment:
+  applicationDeadline: ''
   appeal: 
     - 海外旅行では経験し難い現地のリアルを垣間見ることができます。
     - 国内での活動も活発的で、幅広くボランティアに興味がある方におすすめのサークルです。
@@ -51,6 +52,7 @@ recruitment:
   contact:
     facebook: ''
     website: ''
+    media: ''
     line: ''
     instagram: 'https://www.instagram.com/mres_habitatforhumanity_tufs?igsh=Y2szYmhud3l3Nm5n&utm_source=qr'
     xUrl: ''

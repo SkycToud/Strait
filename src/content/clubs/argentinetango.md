@@ -36,6 +36,7 @@ schedule:
     - 12月　忘年会
     - 3月　卒業生送別会
 recruitment:
+  applicationDeadline: ''
   appeal: |-
     ・やっぱりカッコいい！派手な動きは無いけれど、哀愁のある音楽とダンスは情感が溢れる。
     ・ダンスタンゴサークルは日本唯一。

@@ -1,5 +1,5 @@
 import { ClubDetail } from '@/types/club';
-import { Instagram, ExternalLink, Facebook, Globe, MessageCircle, Clock } from 'lucide-react';
+import { Instagram, ExternalLink, Facebook, Globe, MessageCircle, Clock, Newspaper } from 'lucide-react';
 
 interface ContactSectionProps {
   club: ClubDetail;
@@ -69,7 +69,7 @@ export default function ContactSection({ club }: ContactSectionProps) {
         </div>
 
         {/* その他連絡先 */}
-        {(recruitment.contact.facebook || recruitment.contact.website || recruitment.contact.line) && (
+        {(recruitment.contact.facebook || recruitment.contact.website || recruitment.contact.media || recruitment.contact.line) && (
           <div>
             <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-3">
               その他連絡先
@@ -107,6 +107,22 @@ export default function ContactSection({ club }: ContactSectionProps) {
                   <ExternalLink className="w-4 h-4 text-slate-400" />
                 </a>
               )}
+              {recruitment.contact.media && (
+                <a 
+                  href={recruitment.contact.media}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-4 rounded-xl bg-purple-50 dark:bg-purple-900/20 hover:bg-purple-100 dark:hover:bg-purple-900/30 transition-colors group"
+                >
+                  <Newspaper className="w-6 h-6 text-purple-600" />
+                  <div className="flex-1">
+                    <p className="font-medium text-slate-900 dark:text-white group-hover:text-purple-600 transition-colors">
+                      Media
+                    </p>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-slate-400" />
+                </a>
+              )}
               {recruitment.contact.line && (
                 <div className="flex items-center gap-3 p-4 rounded-xl bg-green-50 dark:bg-green-900/20">
                   <MessageCircle className="w-6 h-6 text-green-600" />
@@ -131,7 +147,7 @@ export default function ContactSection({ club }: ContactSectionProps) {
           </div>
         )}
 
-        {!instagram && !xUrl && !recruitment.contact.facebook && !recruitment.contact.website && !recruitment.contact.line && (
+        {!instagram && !xUrl && !recruitment.contact.facebook && !recruitment.contact.website && !recruitment.contact.media && !recruitment.contact.line && (
           <div className="text-center py-8">
             <p className="text-slate-400 italic">SNS情報は準備中です</p>
           </div>

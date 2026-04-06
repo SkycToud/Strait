@@ -30,7 +30,7 @@ schedule:
     - 5月 バカネタ祭り
     - 6月 新入生初ライブ
     - 8月 夏合宿
-    - 11月外語祭公演
+    - 11月　外語祭公演
     - 3月 卒業公演
 recruitment:
   applicationDeadline: ''

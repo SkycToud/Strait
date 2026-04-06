@@ -32,7 +32,7 @@ schedule:
   frequency: 週一
   location: サークル棟多目的スペース
   annualPlan:
-    - 毎年11月の外語祭に出演
+    - 11月　外語祭に出演
 recruitment:
   applicationDeadline: ''
   appeal: |-

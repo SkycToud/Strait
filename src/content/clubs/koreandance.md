@@ -26,8 +26,8 @@ schedule:
   frequency: 週2日
   location: サークル棟5階武道場板間
   annualPlan:
-    - 4月の舞踊系合同新歓
-    - 11月の外語祭
+    - 4月　舞踊系合同新歓
+    - 11月　外語祭
 recruitment:
   applicationDeadline: ''
   appeal: |-

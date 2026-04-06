@@ -29,8 +29,8 @@ schedule:
     フィリピン　年2回　15日　夏休み　春休み
   location: 吉祥寺　フィリピン
   annualPlan:
-    - 夏休み（8月中盤）15日間の渡航
-    - 春休み（3月前半）15日間の渡航
+    - 夏休み　（8月中旬）15日間の渡航
+    - 春休み　（3月初旬）15日間の渡航
 recruitment:
   applicationDeadline: |-
     4月末頃

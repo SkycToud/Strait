@@ -31,9 +31,9 @@ schedule:
   frequency: 個人のペース
   location: オンラインなど
   annualPlan:
-    - 新歓　4月
-    - 外語祭   11月
-    - 2026年度はZINEの販売やVlogの展示に加え、世界各地の若者たちに聞いたリアルな声を紹介するインタビュー企画など多彩なコンテンツを展示しました。
+    - '4月: 新歓'
+    - '11月: 外語祭'
+    - '2026年度はZINEの販売やVlogの展示に加え、世界各地の若者たちに聞いたリアルな声を紹介するインタビュー企画など多彩なコンテンツを展示しました。'
 recruitment:
   applicationDeadline: ''
   appeal: |-
@@ -46,7 +46,7 @@ recruitment:
   targetAudience: 全学年
   contact:
     facebook: ''
-    website: 'https://grizzled-blanket-a8f.notion.site/TUFPOST-HOME-1cd0bd941b3f80e7a799f2a9e18de71f (全体) http://tufs-wonderfulwander.info/(ワンダフルワンダー)'
+    website: 'https://grizzled-blanket-a8f.notion.site/TUFPOST-HOME-1cd0bd941b3f80e7a799f2a9e18de71f'
     media: 'http://tufs-wonderfulwander.info/'
     line: ''
     instagram: 'https://www.instagram.com/tufpost/'
@@ -59,6 +59,5 @@ recruitment:
     - 院生
   applicationFlow: インスタのDMから入会希望や相談受け付けています
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/tufpost/'
 ---
 

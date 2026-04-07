@@ -138,6 +138,11 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
         return singleMonth[1];
       }
 
+      const monthPhase = compact.match(/^(\d{1,2})月(上旬|中旬|下旬)$/);
+      if (monthPhase) {
+        return `${monthPhase[1]}月${monthPhase[2]}`;
+      }
+
       if (kind === 'seasonal') {
         if (compact.includes('通年') || compact.includes('年間')) return '通年';
         if (compact.includes('前期')) return '前期';
@@ -155,6 +160,16 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
       return compact.slice(0, 4);
     };
 
+    const lines = normalized
+      .split('\n')
+      .map((line) => line.trim())
+      .filter(Boolean);
+    const firstLine = lines[0] || '';
+    const restLines = lines.slice(1).join('\n').trim();
+
+    const buildEvent = (...parts: Array<string | undefined>) =>
+      parts.map((part) => (part || '').trim()).filter(Boolean).join('\n');
+
     const splitMatch = normalized.match(/^(.+?)(?:\s*[：:]\s*|\s+)(.+)$/);
 
     if (splitMatch && isTemporalLabel(splitMatch[1].trim())) {
@@ -164,6 +179,26 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
       return {
         label: toDisplayLabel(rawLabel, kind),
         event,
+        kind,
+      };
+    }
+
+    const firstLineSplitMatch = firstLine.match(/^(.+?)(?:\s*[：:]\s*|\s+)(.+)$/);
+    if (firstLineSplitMatch && isTemporalLabel(firstLineSplitMatch[1].trim())) {
+      const rawLabel = firstLineSplitMatch[1].trim();
+      const kind = detectKind(rawLabel);
+      return {
+        label: toDisplayLabel(rawLabel, kind),
+        event: buildEvent(firstLineSplitMatch[2], restLines),
+        kind,
+      };
+    }
+
+    if (firstLine && isTemporalLabel(firstLine) && restLines) {
+      const kind = detectKind(firstLine);
+      return {
+        label: toDisplayLabel(firstLine, kind),
+        event: restLines,
         kind,
       };
     }

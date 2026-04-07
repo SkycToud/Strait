@@ -60,7 +60,5 @@ recruitment:
     - 院生
   applicationFlow: '4月はサークル棟3階舞踊場で、毎週金曜日18:00〜体験会実施。連絡はサークルのSNSまで。4月以降でも連絡下されば、いつでも体験会実施します！'
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/tufs_tango?igsh=MWF4MG8wY2p5b3I0ag=='
-xUrl: 'https://x.com/tufs_tango'
 ---
 

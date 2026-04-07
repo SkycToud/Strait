@@ -26,11 +26,11 @@ schedule:
     - 6月 JCC夏合宿
     - 8月 夏派遣&夏GV
     - 9月 Mres夏合宿・JCCフェスタ
-    - 10月アセンブリ
+    - 10月　アセンブリ
     - 11月 外語祭
     - 12月 引き継ぎ
     - 2月 Mres春合宿・春GV
-    - 3月新歓準備
+    - 3月　新歓準備
 recruitment:
   applicationDeadline: ''
   appeal: 海外旅行では経験し難い現地のリアルを垣間見ることができます。国内での活動も活発的で、幅広くボランティアに興味がある方におすすめのサークルです。
@@ -60,6 +60,5 @@ recruitment:
     オンライン新歓・20-21:00
     4/8,12,15,19,22,26・ZOOM・インスタのDMでご連絡ください！
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/mres_habitatforhumanity_tufs?igsh=Y2szYmhud3l3Nm5n&utm_source=qr'
 ---
 

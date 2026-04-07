@@ -26,8 +26,8 @@ schedule:
   frequency: 週2日
   location: サークル棟5階武道場板間
   annualPlan:
-    - 4月の舞踊系合同新歓
-    - 11月の外語祭
+    - 4月　舞踊系合同新歓
+    - 11月　外語祭
 recruitment:
   applicationDeadline: ''
   appeal: |-
@@ -58,7 +58,5 @@ recruitment:
     4月の外新歓、舞踊系合同新歓に参加します。
     いつでも活動時間中に見学・体験を行っているので、お気軽にインスタやXのDMまたはGmailでご連絡ください！
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/tufsmuyong/'
-xUrl: 'https://x.com/tufsmuyong1'
 ---
 

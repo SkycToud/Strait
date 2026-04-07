@@ -47,6 +47,5 @@ recruitment:
     - 院生
   applicationFlow: インスタや新歓で配るチラシから、公式LINEを追加して入部手続きを行っていただきます。
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/gmctufs/'
 ---
 

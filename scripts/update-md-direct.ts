@@ -33,14 +33,17 @@ const NAME_TO_MD: Record<string, string> = {
 };
 
 const GENRE_TO_CATEGORY: Record<string, string> = {
+  '球技': 'Ball Sports',
+  '武道・武術': 'Martial Arts',
+  '武道': 'Martial Arts',
+  '美術・音楽': 'Music & Arts',
   '芸術・音楽': 'Music & Arts',
   '舞踊・ダンス': 'Dance & Performance',
-  '球技': 'Ball Sports',
-  '伝統文化': 'Japanese Culture / Language / Social',
-  'ボランティア': 'Volunteer & Other Organizations',
-  '語学・国際交流': 'Language & Social Studies',
-  '武道': 'Martial Arts',
-  '陸上・格闘技': 'Track & Field / Martial Arts',
+  'その他スポーツ': 'Other Sports',
+  'ボランティア': 'Volunteer',
+  '語学・国際交流': 'Language & International',
+  '社会課題': 'Social Issues',
+  '企画': 'Planning',
 };
 
 // CSV Parser
@@ -115,12 +118,12 @@ function parseTargetGrades(text: string): string[] {
 }
 
 function resolveCategory(genresField: string): string {
-  if (!genresField) return 'Hobbies';
+  if (!genresField) return 'Others';
   const genres = genresField.split(',').map(g => g.trim()).filter(Boolean);
   for (const genre of genres) {
     if (GENRE_TO_CATEGORY[genre]) return GENRE_TO_CATEGORY[genre];
   }
-  return 'Hobbies';
+  return 'Others';
 }
 
 function main() {

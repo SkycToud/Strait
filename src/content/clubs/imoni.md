@@ -72,6 +72,5 @@ recruitment:
 
     活動の見学はいつでも大歓迎です。同様にご連絡ください。
 lastUpdated: '2026-04-06'
-instagram: 'https://www.instagram.com/imoni.kai_tufs/'
 ---
 

@@ -57,7 +57,7 @@ schedule:
      ・物品上げ
     - 2月　総括合宿
 recruitment:
-  applicationDeadline: ''
+  applicationDeadline: '入会受付期間4/20(月)～4/24(金)'
   appeal: |-
     屋内-装飾局：
       「屋内」の管理運営と屋内外の「装飾」の2つの分野があるため、幅広い仕事を経験できます！屋内企画に関わりたいあなたも、装飾を作りたいあなたもぜひおくそうへ！

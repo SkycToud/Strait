@@ -20,7 +20,7 @@ membership:
     - '2年生: 49人'
     - '3年生: 44人'
     - '4年生: 41人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 各グループごとに週1回2時間
   location: サークル棟地下舞踊場、サブアリーナ、武道場、多目的室

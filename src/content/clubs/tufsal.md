@@ -4,7 +4,7 @@ nameEn: Tufsal
 category:
   - Ball Sports
 description: 新加入選手、マネージャー募集中！！！
-thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_tufsal.png?alt=media&token=cc26f875-7358-45fe-8284-55de98c14287'
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_tufsal.png?alt=media&token=e94b19f1-a20b-44c4-87a0-c99f3f5ac300'
 overview:
   philosophy: 真剣にフットサルに取り組みながら、学業や他活動にも全力で取り組む。メリハリある姿勢を大切にし、個人とチームの成長を実現する。
   activities: 週4回フットサルに打ち込む。年間通して、練習、練習試合を行い、公式戦に出場。

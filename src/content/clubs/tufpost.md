@@ -26,7 +26,7 @@ membership:
     - '1年生: 3人'
     - '3年生: 4人'
     - '4年生: 5人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 個人のペース
   location: オンラインなど

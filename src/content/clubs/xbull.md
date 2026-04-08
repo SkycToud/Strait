@@ -21,7 +21,7 @@ membership:
     - '2年生: 7人'
     - '3年生: 15人'
     - '4年生: 5人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 毎週火曜6限
   location: 100教室

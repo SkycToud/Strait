@@ -6,7 +6,8 @@ import { slugify } from '@/lib/utils';
 import { toCategoryLabelJa } from '@/lib/club-categories';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Instagram, Facebook, Globe, MessageCircle, ArrowLeft, Newspaper } from 'lucide-react';
+import { Instagram, Facebook, Globe, ArrowLeft, Newspaper } from 'lucide-react';
+import { SiLine } from '@icons-pack/react-simple-icons';
 import { logUserBehavior } from '@/lib/firebaseClient';
 
 const XIcon = ({ className }: { className?: string }) => (
@@ -688,8 +689,8 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                   </a>
                 )}
                 {isValidUrl(club.recruitment?.contact?.line) && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE" onClick={() => trackClubExternalLink('line', club.recruitment?.contact?.line)}>
-                    <MessageCircle className="w-5 h-5" />
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-[#06C755] hover:shadow-md transition-all group" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE" onClick={() => trackClubExternalLink('line', club.recruitment?.contact?.line)}>
+                    <SiLine className="w-5 h-5" />
                   </a>
                 )}
               </div>
@@ -847,8 +848,8 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                 </a>
               )}
               {isValidUrl(club.recruitment?.contact?.line) && (
-                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE" onClick={() => trackClubExternalLink('line', club.recruitment?.contact?.line)}>
-                  <MessageCircle className="w-6 h-6" />
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-[#06C755] hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE" onClick={() => trackClubExternalLink('line', club.recruitment?.contact?.line)}>
+                  <SiLine className="w-6 h-6" />
                 </a>
               )}
             </div>

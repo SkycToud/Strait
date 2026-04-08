@@ -6,7 +6,7 @@ category:
 description: |
   プロメテウスホールで行われた冬の演奏会
   Last winter concert
-thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_hakugakai.jpeg?alt=media&token=e5f72901-7057-42b5-a5d4-6d6d4776209c'
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_hakugakai.jpeg?alt=media&token=d3350426-6c8b-4ba4-99af-f93490a7dc95'
 overview:
   philosophy: |-
     練習を重ね、和楽器の楽しさを共有していく。

@@ -5,7 +5,7 @@ category:
   - Music & Arts
   - Others
 description: 表千家茶道部
-thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_omotesenke.jpeg?alt=media&token=c5095bce-0248-4cb1-b7ed-4c8b8ed30c45'
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_omotesenke.jpeg?alt=media&token=8f1765d9-22e1-4ad0-bbba-76d777347de2'
 overview:
   philosophy: 丁寧な所作とおもてなしの精神を身に着け、美味しい抹茶を点てる。外国の文化が身近な外大だからこそ、日本の伝統文化に親しみ、広める。
   guidelines: 準備中
@@ -24,7 +24,7 @@ membership:
     - '2年生: 7人'
     - '3年生: 6人'
     - '4年生: 4人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 週1〜2回（第二・第四月曜日、毎週金曜日）
   location: 学内の和室（学生会館1階）

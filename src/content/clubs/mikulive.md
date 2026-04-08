@@ -6,7 +6,7 @@ category:
   - Dance & Performance
   - Planning
 description: 初音ミクのライブをプロデュースしませんか？
-thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_mikulive.JPG?alt=media&token=a1af782c-b1ff-4e3c-9882-e8e23351acb8'
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_mikulive.jpg?alt=media&token=e135d692-d83e-4fe3-8a32-69edf9211585'
 overview:
   philosophy: 初音ミクカルチャー及びボカロカルチャーとその創作活動を通じて交流を行い、各々の技術力向上を目指す。
   activities: |-

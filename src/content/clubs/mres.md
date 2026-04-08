@@ -17,7 +17,7 @@ membership:
   yearDistribution:
     - '2年生: 8人'
     - '3年生: 5人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 定期ミーティング月2回＋ボランティア活動
   location: 講義棟2F 206-1ボランティア活動スペース

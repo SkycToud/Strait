@@ -22,7 +22,7 @@ membership:
     - '2年生: 6人'
     - '3年生: 2人'
     - '4年生: 8人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 定例ミーティングは週に1回、企画は月に1回程度
   location: 定例ミーティングは外大およびオンライン、企画は主に都内

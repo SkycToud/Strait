@@ -2,7 +2,7 @@
 nameJa: フィリピン民族舞踊団
 category: Dance & Performance
 description: フィリピン民族舞踊団です！
-thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_philipdance.jpeg?alt=media&token=d735ddfe-86cd-42e7-a9d3-e2d516b4690c'
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_philipdance.jpeg?alt=media&token=d30a1b59-c37b-4034-81ff-35ec37f4d7b9'
 overview:
   philosophy: フィリピンの豊かで多様な文化を、踊りを通して伝える活動を行っています。
   activities: ショーに向けた練習、大使館や自治体の依頼による公演

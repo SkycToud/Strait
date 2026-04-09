@@ -6,7 +6,8 @@ import { slugify } from '@/lib/utils';
 import { toCategoryLabelJa } from '@/lib/club-categories';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Instagram, Facebook, Globe, MessageCircle, ArrowLeft, Newspaper } from 'lucide-react';
+import { Instagram, Facebook, Globe, ArrowLeft, Newspaper } from 'lucide-react';
+import { SiLine } from '@icons-pack/react-simple-icons';
 import { logUserBehavior } from '@/lib/firebaseClient';
 
 const XIcon = ({ className }: { className?: string }) => (
@@ -92,6 +93,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
   const y4 = getYearNum(years.find(y => y.includes('4年生')) || '0');
   const y5 = getYearNum(years.find(y => y.includes('院生')) || '0');
   const total = y1 + y2 + y3 + y4 + y5 || club.membership?.memberCount || 0;
+  const memberLabel = y1 === 0 ? "（※今年度）" : "（※前年度）";
 
   const y1p = total ? (y1 / total) * 100 : 0;
   const y2p = total ? (y2 / total) * 100 : 0;
@@ -455,7 +457,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               <h2 className="text-xl font-bold font-headline mb-4">メンバー構成</h2>
               <div className="space-y-4">
                 <div>
-                  <p className="text-xs font-bold text-primary uppercase mb-1">合計人数</p>
+                  <p className="text-xs font-bold text-primary uppercase mb-1">合計人数{memberLabel}</p>
                   <div className="flex items-baseline gap-2">
                     <span className="text-3xl font-extrabold text-primary">{total}</span>
                     <span className="text-sm text-on-surface-variant font-medium">名</span>
@@ -687,8 +689,8 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                   </a>
                 )}
                 {isValidUrl(club.recruitment?.contact?.line) && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE" onClick={() => trackClubExternalLink('line', club.recruitment?.contact?.line)}>
-                    <MessageCircle className="w-5 h-5" />
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-[#06C755] hover:shadow-md transition-all group" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE" onClick={() => trackClubExternalLink('line', club.recruitment?.contact?.line)}>
+                    <SiLine className="w-5 h-5" />
                   </a>
                 )}
               </div>
@@ -711,7 +713,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
             <div className="relative">
               <h2 className="text-2xl font-bold font-headline mb-6">メンバー構成</h2>
               <div className="mb-8">
-                <p className="text-xs font-bold text-primary uppercase mb-1">合計人数</p>
+                <p className="text-xs font-bold text-primary uppercase mb-1">合計人数{memberLabel}</p>
                 <div className="flex items-baseline gap-2">
                   <span className="text-5xl font-extrabold text-primary">{total}</span>
                   <span className="text-on-surface-variant font-medium">名</span>
@@ -846,8 +848,8 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                 </a>
               )}
               {isValidUrl(club.recruitment?.contact?.line) && (
-                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE" onClick={() => trackClubExternalLink('line', club.recruitment?.contact?.line)}>
-                  <MessageCircle className="w-6 h-6" />
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-[#06C755] hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.line} target="_blank" rel="noopener noreferrer" title="LINE" onClick={() => trackClubExternalLink('line', club.recruitment?.contact?.line)}>
+                  <SiLine className="w-6 h-6" />
                 </a>
               )}
             </div>

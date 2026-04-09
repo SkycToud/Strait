@@ -20,7 +20,7 @@ membership:
     - '2年生: 49人'
     - '3年生: 44人'
     - '4年生: 41人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 各グループごとに週1回2時間
   location: サークル棟地下舞踊場、サブアリーナ、武道場、多目的室
@@ -32,7 +32,7 @@ schedule:
     - '11月:外語祭公演'
     - '2月:卒業公演'
 recruitment:
-  applicationDeadline: ''
+  applicationDeadline: '4月中、または外語祭後の期間'
   appeal: "とにかく仲が良い❗️推し活にもダンスにも全力で取り組んでいる人が多いです\U0001F63B\n有名な曲、大手事務所の曲はもちろん、マイナーな中小事務所のアイドルもカバーすることができます！！Youtubeに過去のカバーダンスも載っていますのでぜひご覧ください\U0001F3B6♡"
   challenges: メンバーの特徴を捉えたり、全員の振りをそろえて本家そっくりにカバーすること❗️
   welcomeEvents: "インスタグラムにて公開する入部フォームを提出していただければ完了です❗️\n体験会は3回開催してます\U0001F31F"

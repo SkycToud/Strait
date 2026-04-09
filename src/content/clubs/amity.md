@@ -17,7 +17,7 @@ membership:
   yearDistribution:
     - '3年生: 1人'
     - '4年生: 3人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 週2(月曜と金曜)
   location: 月曜：サークル棟5階武道場 金曜：サークル棟2階サブアリーナ

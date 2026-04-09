@@ -19,7 +19,7 @@ membership:
     - '2年生: 35人'
     - '3年生: 22人'
     - '4年生: 27人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 全体では月1程度
   location: サークル棟地下一階 音楽室B

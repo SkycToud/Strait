@@ -21,7 +21,7 @@ membership:
   yearDistribution:
     - '1年生: 2人'
     - '4年生: 1人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 週2日
   location: サークル棟5階武道場板間

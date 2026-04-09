@@ -2,7 +2,7 @@
 nameJa: 美術部
 category: Music & Arts
 description: 未経験OK！絵を描きたいなら美術部へ
-thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_art.png?alt=media&token=336e1982-26e3-49d4-9cc4-a448e1704feb'
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_art.png?alt=media&token=41b2a170-ae9e-4653-8900-2f2a05825ca5'
 overview:
   philosophy: 必要なもの：創作意欲
   activities: 作品展示に向けて、個々で制作に取り組んでいます。外語祭では作品展示とグッズの販売も行います。
@@ -17,7 +17,7 @@ membership:
     - '2年生: 6人'
     - '3年生: 1人'
     - '4年生: 2人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 基本自由、週1回部会あり
   location: サークル棟2階制作室

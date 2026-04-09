@@ -20,7 +20,7 @@ membership:
     - '2年生: 4人'
     - '3年生: 1人'
     - '4年生: 2人'
-  isIntraUniversity: false
+  isIntraUniversity: true
 schedule:
   frequency: 週1昼休みの対面ミーティング、週1約1時間のオンラインミーティング
   location: VOLAS、Zoom

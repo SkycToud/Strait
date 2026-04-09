@@ -3,7 +3,7 @@ nameJa: 外語祭実行委員会
 nameEn: Gaigosai Executive Committee
 category: Planning
 description: 世界との新たな出会いを生み出す外語祭、愛され続ける外語祭をつくる
-thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_gaijitsu.jpeg?alt=media&token=bc6e3fb5-b6dc-4de0-9c18-2765f26b26d5'
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_gaijitsu.jpeg?alt=media&token=76959a75-43b2-4ec2-aa40-9abc43105d62'
 overview:
   philosophy: 外語祭の企画・運営
   guidelines: 準備中
@@ -57,7 +57,7 @@ schedule:
      ・物品上げ
     - 2月　総括合宿
 recruitment:
-  applicationDeadline: ''
+  applicationDeadline: '入会受付期間4/20(月)～4/24(金)'
   appeal: |-
     屋内-装飾局：
       「屋内」の管理運営と屋内外の「装飾」の2つの分野があるため、幅広い仕事を経験できます！屋内企画に関わりたいあなたも、装飾を作りたいあなたもぜひおくそうへ！

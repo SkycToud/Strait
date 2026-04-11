@@ -5,8 +5,8 @@ category:
   - Language & International
   - Planning
   - Others
-description: 新歓用オープンチャットのQRコードです。ここから入会できます。
-thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_mpj.JPG?alt=media&token=41491734-62d3-4522-8807-478ffe753f5e'
+description: 今年のナミビア研修で、砂漠の上で 'MPJ' の文字を作りました！
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_mpj.jpeg?alt=media&token=f9e6a256-bd3a-49aa-ae2b-8e70ce4c7f83'
 overview:
   philosophy: アフリカを学び、発信する
   guidelines: 準備中

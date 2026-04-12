@@ -1,7 +1,7 @@
 ---
 nameJa: 中央ユーラシア同好会ユルタ
 nameEn: Yurta
-thumbnail: ''
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_yurta.jpeg?alt=media&token=a1bdb5d2-7bd0-4aaf-bcdc-1ff133e71c27'
 category:
   - Planning
 description: 中央ユーラシアの民族文化が好きな人、集まれ！

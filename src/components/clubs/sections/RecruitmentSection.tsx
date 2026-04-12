@@ -79,6 +79,11 @@ export default function RecruitmentSection({ club }: RecruitmentSectionProps) {
               <p className="text-slate-700 dark:text-slate-300">
                 {recruitment.hasSelection ? '選考あり' : '選考なし'}
               </p>
+              {recruitment.selectionDetail && (
+                <p className="text-sm text-slate-500 dark:text-slate-400 mt-2 whitespace-pre-wrap border-t border-slate-200 dark:border-slate-700 pt-2">
+                  {recruitment.selectionDetail}
+                </p>
+              )}
             </div>
           </div>
         )}

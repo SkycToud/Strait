@@ -640,6 +640,9 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                   <div>
                     <p className="font-bold text-sm">選考</p>
                     <p className="text-sm opacity-90">{club.recruitment?.hasSelection ? "選考あり" : "選考なし。どなたでも歓迎！"}</p>
+                    {club.recruitment?.selectionDetail && (
+                      <p className="text-xs opacity-80 mt-1 whitespace-pre-wrap">{club.recruitment.selectionDetail}</p>
+                    )}
                   </div>
                 </li>
                 <li className="flex gap-3">
@@ -664,8 +667,13 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               <h2 className="text-xl font-bold font-headline mb-4">SNS情報</h2>
               <div className="flex flex-wrap gap-3">
                 {isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && (
-                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.instagram || club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram" onClick={() => trackClubExternalLink('instagram', club.recruitment?.contact?.instagram || club.instagram)}>
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group" href={club.recruitment?.contact?.instagram || club.instagram} target="_blank" rel="noopener noreferrer" title="公式Instagram" onClick={() => trackClubExternalLink('instagram', club.recruitment?.contact?.instagram || club.instagram)}>
                     <Instagram className="w-5 h-5" />
+                  </a>
+                )}
+                {isValidUrl(club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment) && (
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:shadow-md transition-all group" href={club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment} target="_blank" rel="noopener noreferrer" title="新歓用Instagram" onClick={() => trackClubExternalLink('instagram_recruitment', club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment)}>
+                    <Instagram className="w-5 h-5 text-[#FF91AB]" />
                   </a>
                 )}
                 {isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && (
@@ -799,6 +807,9 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                 <div>
                   <p className="font-bold">選考</p>
                   <p className="text-sm opacity-90">{club.recruitment?.hasSelection ? "選考あり" : "選考なし。どなたでも歓迎！"}</p>
+                  {club.recruitment?.selectionDetail && (
+                    <p className="text-xs opacity-80 mt-1 whitespace-pre-wrap">{club.recruitment.selectionDetail}</p>
+                  )}
                 </div>
               </li>
               <li className="flex gap-4">
@@ -823,8 +834,13 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
             <h3 className="text-xs font-bold uppercase tracking-widest text-on-surface-variant mb-4 pl-1">SNS情報</h3>
             <div className="flex justify-start items-center gap-4">
               {isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && (
-                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.instagram || club.instagram} target="_blank" rel="noopener noreferrer" title="Instagram" onClick={() => trackClubExternalLink('instagram', club.recruitment?.contact?.instagram || club.instagram)}>
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-primary hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.instagram || club.instagram} target="_blank" rel="noopener noreferrer" title="公式Instagram" onClick={() => trackClubExternalLink('instagram', club.recruitment?.contact?.instagram || club.instagram)}>
                   <Instagram className="w-6 h-6" />
+                </a>
+              )}
+              {isValidUrl(club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment) && (
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment} target="_blank" rel="noopener noreferrer" title="新歓用Instagram" onClick={() => trackClubExternalLink('instagram_recruitment', club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment)}>
+                  <Instagram className="w-6 h-6 text-[#FF91AB]" />
                 </a>
               )}
               {isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && (
@@ -853,7 +869,9 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                 </a>
               )}
             </div>
-            {!isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && !isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && 
+            {!isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && 
+             !isValidUrl(club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment) &&
+             !isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && 
              !isValidUrl(club.recruitment?.contact?.facebook) && 
              !isValidUrl(club.recruitment?.contact?.website) && 
              !isValidUrl(club.recruitment?.contact?.media) && 

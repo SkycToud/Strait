@@ -1,7 +1,7 @@
 ---
 nameJa: 東京外国語大学管弦楽団
 nameEn: Tufsorc
-thumbnail: ''
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_tufsorc.jpeg?alt=media&token=0db40f74-72b0-4dec-b775-8aa4d776a3d2'
 category:
   - Music & Arts
 description: 年2回、外部のホールで定期演奏会を行っています
@@ -25,7 +25,9 @@ schedule:
   frequency: '週2回（水曜日16:30〜19:30、土曜日13:00〜16:00）'
   location: 音楽室
   annualPlan:
-    - 定期演奏会（4月、8月）外語祭での演奏（11月）
+    - 4月　定期演奏会 
+    - 8月　定期演奏会
+    - 11月　外語祭での演奏
 recruitment:
   appeal: |-
     大きなホールでの定期演奏会と、それに向けた強化練習を行う合宿が年2回あるので、充実した日々を送ることができる！
@@ -46,6 +48,7 @@ recruitment:
   applicationDeadline: 通年募集
   annualFee: 'あり（部費：2,000円/月、演奏会出演費：25,000~30,000円/回、合宿費：40,000~50,000円/回）'
   hasSelection: false
+  selectionDetail: '※募集人数を超えた管楽器などはオーディションを行う場合があります。'
   targetAudience: パートによっては経験者のみの募集になります。募集状況は公式インスタグラムをご確認ください。学年は問いません！
   targetGrades:
     - 1年生

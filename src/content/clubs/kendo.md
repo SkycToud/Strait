@@ -1,7 +1,7 @@
 ---
 nameJa: 剣道部
 nameEn: Kendo
-thumbnail: ''
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_kendo.jpeg?alt=media&token=61b3ed6f-9549-4b3f-85f7-db0506a2c8b1'
 category:
   - Martial Arts
 description: 剣道しよう。
@@ -28,14 +28,14 @@ schedule:
   location: サークル棟5階武道場、サークル棟2階サブアリーナ
   annualPlan:
     - 4月　新歓
-    - '5月～6月　大会・確定新歓'
+    - 5月～6月　大会・確定新歓
     - 7月　夏納会
     - 8月　合宿・夏休み
     - 9月　大会
     - 10月　留学生入部
     - 11月　大会
     - 12月　オープン大会・冬納会・クリパ
-    - '1月～2月　稽古・SV'
+    - 1月～2月　稽古・SV
     - 3月　追いコン
 recruitment:
   appeal: 初心者、留学生大歓迎！剣道を通じたコミュニケーションで、部の雰囲気はとってもいいです！用具一式の貸し出しを行なっているので、体育会系ながらもハードル低く始めることができます！もちろん経験者も大歓迎なので皆バラバラのレベルからでも楽しく時に厳しく全員で剣道を頑張ることができます！
@@ -53,7 +53,7 @@ recruitment:
     - 4年生
     - 院生
   contact:
-    website: https://www.tufskendo-club.d.dooo.jp/home/
+    website: http://tufskendo-club.d.dooo.jp/home/
     instagram: 'https://www.instagram.com/tufs_kendo_team_since1966/'
     xUrl: 'https://x.com/tufskendo2022?s=21'
 lastUpdated: '2026-04-09'

@@ -1,7 +1,7 @@
 ---
 nameJa: 少林寺拳法部
 nameEn: Shorinji
-thumbnail: ''
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_shorinji.jpg?alt=media&token=b42f4a93-af19-4be7-a248-e961c379f3bf'
 category:
   - Martial Arts
 description: 少林寺拳法の楽しさをぜひ体験しに来てください！

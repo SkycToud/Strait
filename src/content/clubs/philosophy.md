@@ -1,7 +1,7 @@
 ---
 nameJa: 外大哲学会
 nameEn: Philosophy
-thumbnail: ''
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_philosophy.jpeg?alt=media&token=9d2e2b94-672f-446a-8d80-8317f985bcb9'
 category:
   - Others
 description: 写真の人物はマルクスです。外大哲学会で待ってるよ！
@@ -63,9 +63,9 @@ schedule:
   frequency: 週1-2回（自由参加）
   location: 講義棟5階グループ研究室いるか
   annualPlan:
-    - 学期シーズン；
-    - 隔週木曜⑥限～哲学対話
+    - 4月～7月　隔週木曜⑥限～哲学対話
     - 夏休み　校外フィールドワーク（博物館・展示めぐり／映画鑑賞／散歩など）
+    - 10月～1月　隔週木曜⑥限～哲学対話
     - 11月 屋内展示・フォーラムに向けて企画準備＆哲学対話
     - 春休み　校外フィールドワーク（博物館・展示めぐり／映画鑑賞／散歩など）
 recruitment:

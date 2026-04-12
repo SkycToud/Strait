@@ -10,6 +10,7 @@ export default function ContactSection({ club }: ContactSectionProps) {
   
   // recruitment.contact を優先し、なければトップレベルの値を使用
   const instagram = recruitment.contact.instagram || club.instagram;
+  const instagramRecruitment = recruitment.contact.instagramRecruitment || club.instagramRecruitment;
   const xUrl = recruitment.contact.xUrl || club.xUrl;
 
   return (
@@ -36,10 +37,30 @@ export default function ContactSection({ club }: ContactSectionProps) {
                 <Instagram className="w-6 h-6 text-[#E1306C]" />
                 <div className="flex-1">
                   <p className="font-medium text-slate-900 dark:text-white group-hover:text-[#E1306C] transition-colors">
-                    Instagram
+                    公式Instagram
                   </p>
                   <p className="text-sm text-slate-600 dark:text-slate-400">
                     最新情報や活動様子を発信中
+                  </p>
+                </div>
+                <ExternalLink className="w-4 h-4 text-slate-400" />
+              </a>
+            )}
+
+            {instagramRecruitment && (
+              <a 
+                href={instagramRecruitment} 
+                target="_blank" 
+                rel="noopener noreferrer"
+                className="flex items-center gap-3 p-4 rounded-xl bg-[#FFB7C5]/10 hover:bg-[#FFB7C5]/20 transition-colors group"
+              >
+                <Instagram className="w-6 h-6 text-[#FF91AB]" />
+                <div className="flex-1">
+                  <p className="font-medium text-slate-900 dark:text-white group-hover:text-[#FF91AB] transition-colors">
+                    新歓用Instagram
+                  </p>
+                  <p className="text-sm text-slate-600 dark:text-slate-400">
+                    入部相談や新歓情報をチェック！
                   </p>
                 </div>
                 <ExternalLink className="w-4 h-4 text-slate-400" />
@@ -147,7 +168,7 @@ export default function ContactSection({ club }: ContactSectionProps) {
           </div>
         )}
 
-        {!instagram && !xUrl && !recruitment.contact.facebook && !recruitment.contact.website && !recruitment.contact.media && !recruitment.contact.line && (
+        {!instagram && !instagramRecruitment && !xUrl && !recruitment.contact.facebook && !recruitment.contact.website && !recruitment.contact.media && !recruitment.contact.line && (
           <div className="text-center py-8">
             <p className="text-slate-400 italic">SNS情報は準備中です</p>
           </div>

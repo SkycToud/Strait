@@ -41,7 +41,8 @@ recruitment:
     - 1年生
     - 2年生
   contact:
-    instagram: 'https://www.instagram.com/公式Instagram @tufsbellydance / 新歓用アカウント @bellydance.tufs2026/'
+    instagram: 'https://www.instagram.com/tufsbellydance/'
+    instagramRecruitment: 'https://www.instagram.com/bellydance.tufs2026/'
 lastUpdated: '2026-04-11'
 ---
 

@@ -1,4 +1,4 @@
-export type Club = Pick<ClubDetail, 'id' | 'nameJa' | 'nameEn' | 'categories' | 'description' | 'thumbnail' | 'instagram' | 'xUrl' | 'isSample'>;
+export type Club = Pick<ClubDetail, 'id' | 'nameJa' | 'nameEn' | 'categories' | 'description' | 'thumbnail' | 'instagram' | 'instagramRecruitment' | 'xUrl' | 'isSample'>;
 
 export interface ClubDetail {
   // Existing fields
@@ -11,6 +11,7 @@ export interface ClubDetail {
   description: string;
   thumbnail?: string;
   instagram?: string;
+  instagramRecruitment?: string;
   xUrl?: string;
   metadata?: string;
   isSample?: boolean;
@@ -44,6 +45,7 @@ export interface ClubDetail {
     applicationDeadline?: string;
     annualFee?: string;
     hasSelection?: boolean;
+    selectionDetail?: string;
     targetGrades: string[];
     targetAudience?: string;
     contact: {
@@ -52,6 +54,7 @@ export interface ClubDetail {
       media?: string;
       line?: string;
       instagram?: string;
+      instagramRecruitment?: string;
       xUrl?: string;
     };
   };

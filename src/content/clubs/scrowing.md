@@ -1,7 +1,7 @@
 ---
 nameJa: 端艇部
 nameEn: Scrowing
-thumbnail: ''
+thumbnail: 'https://firebasestorage.googleapis.com/v0/b/strait-infomation.firebasestorage.app/o/images%2Fclubs%2F2026_scrowing.jpeg?alt=media&token=66801677-caf6-454b-a833-f229bde07be0'
 category:
   - Other Sports
 description: 現役部員全員での集合写真です！端艇部の仲の良さが伝わる一枚だと思います！

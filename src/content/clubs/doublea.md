@@ -24,7 +24,7 @@ membership:
     - '1年生: 13人'
     - '2年生: 14人'
     - '3年生: 10人'
-    - '4年生: 13人'
+    - '4年生: 26人'
   isIntraUniversity: true
 schedule:
   frequency: 週1回火曜日

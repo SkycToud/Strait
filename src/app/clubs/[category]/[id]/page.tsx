@@ -73,6 +73,7 @@ export default async function ClubDetailPageWrapper({
       applicationDeadline: "準備中",
       annualFee: "準備中",
       hasSelection: false,
+      selectionDetail: "",
       targetGrades: [],
       targetAudience: "準備中",
       contact: {

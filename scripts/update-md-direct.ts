@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 
 // CSV Path
-const CSV_PATH = 'c:\\Users\\fujit\\Downloads\\サークル情報掲載用アンケート（回答） - シート4.csv';
+const CSV_PATH = 'c:\\Users\\fujit\\Downloads\\サークル情報掲載用アンケート（回答） - シート6.csv';
 
 const CONTENT_DIR = path.join(process.cwd(), 'src/content/clubs');
 
@@ -226,7 +226,8 @@ function main() {
     data.category = categories;
     if (description) data.description = description;
 
-    // Note: data.thumbnail is NOT updated as per user request.
+    // Reflect thumbnail as '' per user request
+    data.thumbnail = '';
 
     // Overview
     data.overview = data.overview || {};

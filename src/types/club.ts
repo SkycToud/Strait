@@ -13,6 +13,7 @@ export interface ClubDetail {
   instagram?: string;
   instagramRecruitment?: string;
   xUrl?: string;
+  form?: string;
   metadata?: string;
   isSample?: boolean;
   
@@ -56,8 +57,10 @@ export interface ClubDetail {
       instagram?: string;
       instagramRecruitment?: string;
       xUrl?: string;
+      form?: string;
     };
   };
   lastUpdated?: string;
 }
+
 

@@ -44,6 +44,7 @@ recruitment:
   contact:
     instagram: 'https://www.instagram.com/projectyurta?igsh=MWpnaWd1M3k2dXk3eQ%3D%3D&utm_source=qr'
     xUrl: 'https://x.com/tufs_yurt?s=21&t=7En9ii6Rbfwiw6rNKzTE-A'
+    form: 'https://forms.gle/GPATGpNRRkAwXAMv5'
 lastUpdated: '2026-04-09'
 ---
 

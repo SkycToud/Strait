@@ -45,11 +45,11 @@ export default function AllClubsList({ initialClubs }: AllClubsListProps) {
         <div className="flex flex-col gap-4">
           {/* Search Row */}
           <div className="relative w-full">
-            <span className="absolute left-5 top-1/2 -translate-y-1/2 material-symbols-outlined text-primary text-2xl" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>search</span>
+            <span className="absolute left-4 md:left-5 top-1/2 -translate-y-1/2 material-symbols-outlined text-primary text-lg md:text-2xl" style={{ fontVariationSettings: "'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24" }}>search</span>
             <input
               type="text"
               placeholder="サークル名やキーワードを検索..."
-              className="w-full pl-14 pr-6 py-5 bg-surface-container-low rounded-2xl border-2 border-transparent focus:border-primary focus:bg-white focus:shadow-[0_0_0_4px_rgba(var(--primary-rgb),0.1)] outline-none transition-all text-lg placeholder:text-on-surface-variant/50"
+              className="w-full pl-11 md:pl-14 pr-4 md:pr-6 py-3 md:py-5 bg-surface-container-low rounded-xl md:rounded-2xl border-2 border-transparent focus:border-primary focus:bg-white focus:shadow-[0_0_0_4px_rgba(var(--primary-rgb),0.1)] outline-none transition-all text-sm md:text-lg placeholder:text-on-surface-variant/50"
               value={searchQuery}
               onChange={(e) => setSearchQuery(e.target.value)}
             />
@@ -132,7 +132,7 @@ export default function AllClubsList({ initialClubs }: AllClubsListProps) {
 
       {/* Grid */}
       {filteredClubs.length > 0 ? (
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 md:gap-8">
           {filteredClubs.map(club => (
             <ClubCard key={club.id} club={club} />
           ))}

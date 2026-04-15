@@ -253,7 +253,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
       };
     }
     return {
-      badgeClass: 'bg-primary text-white border-white',
+      badgeClass: 'bg-primary text-on-primary border-primary-container',
       cardClass: 'border-outline-variant/10 bg-surface-container-lowest',
     };
   };
@@ -277,7 +277,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               {club.nameJa}
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
           <div className="absolute bottom-0 left-0 p-8 lg:p-12 text-white">
             {club.isSample && (
               <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-3 bg-amber-500/90 text-white rounded-full text-xs font-bold">
@@ -629,7 +629,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
             </section>
 
             {/* 入会案内 */}
-            <section className="bg-primary text-white p-6 rounded-xl scroll-mt-20" id="recruitment">
+            <section className="bg-primary text-on-primary p-6 rounded-xl scroll-mt-20" id="recruitment">
               <h2 className="text-xl font-bold font-headline mb-4">入会案内</h2>
               <ul className="space-y-4">
                 <li className="flex gap-3">
@@ -805,7 +805,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
           </section>
 
           {/* 入会案内 (Join Us) */}
-          <section className="bg-primary text-white rounded-xl p-8 shadow-xl shadow-blue-900/10">
+          <section className="bg-primary text-on-primary rounded-xl p-8 shadow-xl shadow-blue-900/10">
             <h2 className="text-2xl font-bold font-headline mb-6">入会案内</h2>
             <ul className="space-y-6">
               <li className="flex gap-4">

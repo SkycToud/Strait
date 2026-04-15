@@ -6,7 +6,7 @@ import { slugify } from '@/lib/utils';
 import { toCategoryLabelJa } from '@/lib/club-categories';
 import Link from 'next/link';
 import Image from 'next/image';
-import { Instagram, Facebook, Globe, ArrowLeft, Newspaper } from 'lucide-react';
+import { Instagram, Facebook, Globe, ArrowLeft, Newspaper, UserPlus } from 'lucide-react';
 import { SiLine } from '@icons-pack/react-simple-icons';
 import { logUserBehavior } from '@/lib/firebaseClient';
 
@@ -14,6 +14,18 @@ const XIcon = ({ className }: { className?: string }) => (
   <svg viewBox="0 0 24 24" fill="currentColor" className={className} aria-hidden="true">
     <path d="M18.901 1.153h3.68l-8.04 9.19 9.45 12.504h-7.4l-5.794-7.57-6.62 7.57H.5l8.6-9.83L0 1.154h7.6l5.237 6.93 6.064-6.93zm-1.29 19.483h2.04L6.49 3.248H4.3z" />
   </svg>
+);
+
+const SakuraBadge = () => (
+  <span className="absolute -top-1.5 -right-1.5 inline-flex h-[18px] w-[18px] items-center justify-center text-pink-500 pointer-events-none" aria-hidden="true">
+    <svg viewBox="0 0 24 24" className="h-[18px] w-[18px]" fill="currentColor">
+      <circle cx="12" cy="8" r="2.7" />
+      <circle cx="8.2" cy="11" r="2.7" />
+      <circle cx="15.8" cy="11" r="2.7" />
+      <circle cx="9.6" cy="15.1" r="2.7" />
+      <circle cx="14.4" cy="15.1" r="2.7" />
+    </svg>
+  </span>
 );
 
 const ExpandableText = ({ text }: { text: string }) => {
@@ -241,7 +253,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
       };
     }
     return {
-      badgeClass: 'bg-primary text-white border-white',
+      badgeClass: 'bg-primary text-on-primary border-primary-container',
       cardClass: 'border-outline-variant/10 bg-surface-container-lowest',
     };
   };
@@ -258,7 +270,6 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               fill
               className="absolute inset-0 w-full h-full object-cover"
               priority
-              quality={100}
               sizes="(max-width: 1280px) 100vw, 1280px"
             />
           ) : (
@@ -266,7 +277,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               {club.nameJa}
             </div>
           )}
-          <div className="absolute inset-0 bg-gradient-to-t from-on-background/80 via-transparent to-transparent"></div>
+          <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent"></div>
           <div className="absolute bottom-0 left-0 p-8 lg:p-12 text-white">
             {club.isSample && (
               <div className="inline-flex items-center gap-1.5 px-3 py-1 mb-3 bg-amber-500/90 text-white rounded-full text-xs font-bold">
@@ -618,7 +629,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
             </section>
 
             {/* 入会案内 */}
-            <section className="bg-primary text-white p-6 rounded-xl scroll-mt-20" id="recruitment">
+            <section className="bg-primary text-on-primary p-6 rounded-xl scroll-mt-20" id="recruitment">
               <h2 className="text-xl font-bold font-headline mb-4">入会案内</h2>
               <ul className="space-y-4">
                 <li className="flex gap-3">
@@ -673,7 +684,10 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                 )}
                 {isValidUrl(club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment) && (
                   <a className="p-3 bg-surface-container-lowest rounded-full hover:shadow-md transition-all group" href={club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment} target="_blank" rel="noopener noreferrer" title="新歓用Instagram" onClick={() => trackClubExternalLink('instagram_recruitment', club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment)}>
-                    <Instagram className="w-5 h-5 text-[#FF91AB]" />
+                    <span className="relative flex h-5 w-5 items-center justify-center">
+                      <Instagram className="w-5 h-5 text-[#FF91AB]" />
+                      <SakuraBadge />
+                    </span>
                   </a>
                 )}
                 {isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && (
@@ -701,12 +715,18 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                     <SiLine className="w-5 h-5" />
                   </a>
                 )}
+                {isValidUrl(club.recruitment?.contact?.form || club.form) && (
+                  <a className="p-3 bg-surface-container-lowest rounded-full hover:text-orange-600 hover:shadow-md transition-all group" href={club.recruitment?.contact?.form || club.form} target="_blank" rel="noopener noreferrer" title="入会フォーム" onClick={() => trackClubExternalLink('form', club.recruitment?.contact?.form || club.form)}>
+                    <UserPlus className="w-5 h-5" />
+                  </a>
+                )}
               </div>
               {!isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && !isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && 
                !isValidUrl(club.recruitment?.contact?.facebook) && 
                !isValidUrl(club.recruitment?.contact?.website) && 
                !isValidUrl(club.recruitment?.contact?.media) && 
-               !isValidUrl(club.recruitment?.contact?.line) && (
+               !isValidUrl(club.recruitment?.contact?.line) &&
+               !isValidUrl(club.recruitment?.contact?.form || club.form) && (
                 <p className="text-sm text-on-surface-variant">SNS情報は登録されていません。</p>
               )}
             </section>
@@ -785,7 +805,7 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
           </section>
 
           {/* 入会案内 (Join Us) */}
-          <section className="bg-primary text-white rounded-xl p-8 shadow-xl shadow-blue-900/10">
+          <section className="bg-primary text-on-primary rounded-xl p-8 shadow-xl shadow-blue-900/10">
             <h2 className="text-2xl font-bold font-headline mb-6">入会案内</h2>
             <ul className="space-y-6">
               <li className="flex gap-4">
@@ -840,7 +860,10 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
               )}
               {isValidUrl(club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment) && (
                 <a className="p-4 bg-surface-container-lowest rounded-full hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment} target="_blank" rel="noopener noreferrer" title="新歓用Instagram" onClick={() => trackClubExternalLink('instagram_recruitment', club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment)}>
-                  <Instagram className="w-6 h-6 text-[#FF91AB]" />
+                  <span className="relative flex h-6 w-6 items-center justify-center">
+                    <Instagram className="w-6 h-6 text-[#FF91AB]" />
+                    <SakuraBadge />
+                  </span>
                 </a>
               )}
               {isValidUrl(club.recruitment?.contact?.xUrl || club.xUrl) && (
@@ -868,6 +891,11 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
                   <SiLine className="w-6 h-6" />
                 </a>
               )}
+              {isValidUrl(club.recruitment?.contact?.form || club.form) && (
+                <a className="p-4 bg-surface-container-lowest rounded-full hover:text-orange-600 hover:shadow-md transition-all group scale-110" href={club.recruitment?.contact?.form || club.form} target="_blank" rel="noopener noreferrer" title="入会フォーム" onClick={() => trackClubExternalLink('form', club.recruitment?.contact?.form || club.form)}>
+                  <UserPlus className="w-6 h-6" />
+                </a>
+              )}
             </div>
             {!isValidUrl(club.recruitment?.contact?.instagram || club.instagram) && 
              !isValidUrl(club.recruitment?.contact?.instagramRecruitment || club.instagramRecruitment) &&
@@ -875,7 +903,8 @@ export default function ClubDetailPage({ club, categorySlug }: ClubDetailPagePro
              !isValidUrl(club.recruitment?.contact?.facebook) && 
              !isValidUrl(club.recruitment?.contact?.website) && 
              !isValidUrl(club.recruitment?.contact?.media) && 
-             !isValidUrl(club.recruitment?.contact?.line) && (
+             !isValidUrl(club.recruitment?.contact?.line) &&
+             !isValidUrl(club.recruitment?.contact?.form || club.form) && (
               <p className="text-sm text-on-surface-variant">SNS情報は登録されていません。</p>
             )}
           </section>

@@ -1,5 +1,6 @@
 'use client';
 import Link from 'next/link';
+import Image from 'next/image';
 import { usePathname } from 'next/navigation';
 import { Home, Calendar, Building2, Users, Link2 } from 'lucide-react';
 import { cn } from '@/lib/utils';
@@ -25,7 +26,7 @@ export default function Header() {
     <nav className="fixed top-0 w-full z-50 glass-nav shadow-sm shadow-outline-variant/20 border-b border-outline-variant/20">
       <div className="flex justify-between items-center h-16 px-6 md:px-12 w-full">
         <Link href="/" className="flex items-center gap-2 text-2xl font-bold tracking-tighter text-primary hover:opacity-80 transition-opacity">
-          <img src="/icon.png" alt="Strait" className="w-8 h-8" />
+          <Image src="/icon.png" alt="Strait" width={32} height={32} className="w-8 h-8" />
           Strait
         </Link>
         

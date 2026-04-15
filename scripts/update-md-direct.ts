@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 
 // CSV Path
-const CSV_PATH = 'c:\\Users\\fujit\\Downloads\\サークル情報掲載用アンケート（回答） - シート6.csv';
+const CSV_PATH = 'c:\\Users\\fujit\\Downloads\\サークル情報掲載用アンケート（回答） - シート8.csv';
 
 const CONTENT_DIR = path.join(process.cwd(), 'src/content/clubs');
 
@@ -26,6 +26,8 @@ const NAME_TO_MD: Record<string, string> = {
   'TUFPOST': 'tufpost',
   'フィリピン民族舞踊団': 'philippinefolkdanceclub',
   '東京外国語大学KpopカバーダンスサークルSouls': 'souls',
+  'Quattro': 'quattro',
+  'アイドルコピーダンスサークル牡丹坂46': 'botanzaka',
 };
 
 const GENRE_TO_CATEGORY: Record<string, string> = {

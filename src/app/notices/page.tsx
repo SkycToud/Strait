@@ -53,7 +53,7 @@ export default function NoticesPage() {
             href="https://www.tufs.ac.jp/student/NEWS/index.html"
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary text-white text-sm font-medium rounded-full hover:bg-primary/90 transition-colors duration-200 shadow-sm shadow-primary/20"
+            className="inline-flex items-center gap-1.5 px-3 py-1.5 bg-primary text-on-primary text-sm font-medium rounded-full hover:opacity-90 transition-colors duration-200 shadow-sm shadow-primary/20"
           >
             HPを確認
             <ExternalLink className="w-3.5 h-3.5" />
@@ -69,7 +69,7 @@ export default function NoticesPage() {
             onClick={() => setActiveCategory(cat)}
             className={`px-4 py-1.5 rounded-full text-sm font-semibold transition-all duration-200 ${
               activeCategory === cat
-                ? 'bg-primary text-white shadow-md shadow-primary/20'
+                ? 'bg-primary text-on-primary shadow-md shadow-primary/20'
                 : 'bg-surface-container-low text-on-surface-variant hover:bg-surface-container hover:text-on-surface'
             }`}
           >

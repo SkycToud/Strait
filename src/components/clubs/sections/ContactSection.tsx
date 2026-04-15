@@ -1,5 +1,14 @@
 import { ClubDetail } from '@/types/club';
-import { Instagram, ExternalLink, Facebook, Globe, MessageCircle, Clock, Newspaper } from 'lucide-react';
+import { Instagram, ExternalLink, Facebook, Globe, MessageCircle, Clock, Newspaper, UserPlus } from 'lucide-react';
+
+const SakuraBadge = () => (
+  <span className="absolute -bottom-1 -right-1 inline-flex h-50 w-50 items-center justify-center rounded-full bg-white shadow-sm ring-1 ring-pink-200" aria-hidden="true">
+    <svg viewBox="0 0 32 32" className="h-3.5 w-3.5" fill="none">
+      <path d="M12 5.5c.8 1.6 2.3 2.6 4.1 2.8-1.2 1.2-1.7 2.9-1.4 4.6-1.1-.8-2.4-1.2-3.7-1.2s-2.6.4-3.7 1.2c.3-1.7-.2-3.4-1.4-4.6 1.8-.2 3.3-1.2 4.1-2.8z" fill="#f472b6"/>
+      <circle cx="12" cy="12" r="1.5" fill="#ec4899"/>
+    </svg>
+  </span>
+);
 
 interface ContactSectionProps {
   club: ClubDetail;
@@ -12,6 +21,7 @@ export default function ContactSection({ club }: ContactSectionProps) {
   const instagram = recruitment.contact.instagram || club.instagram;
   const instagramRecruitment = recruitment.contact.instagramRecruitment || club.instagramRecruitment;
   const xUrl = recruitment.contact.xUrl || club.xUrl;
+  const form = recruitment.contact.form || club.form;
 
   return (
     <section className="glass-card p-6 scroll-mt-24" id="contact">
@@ -54,7 +64,10 @@ export default function ContactSection({ club }: ContactSectionProps) {
                 rel="noopener noreferrer"
                 className="flex items-center gap-3 p-4 rounded-xl bg-[#FFB7C5]/10 hover:bg-[#FFB7C5]/20 transition-colors group"
               >
-                <Instagram className="w-6 h-6 text-[#FF91AB]" />
+                <div className="relative inline-flex">
+                  <Instagram className="w-6 h-6 text-[#FF91AB]" />
+                  <SakuraBadge />
+                </div>
                 <div className="flex-1">
                   <p className="font-medium text-slate-900 dark:text-white group-hover:text-[#FF91AB] transition-colors">
                     新歓用Instagram
@@ -90,7 +103,7 @@ export default function ContactSection({ club }: ContactSectionProps) {
         </div>
 
         {/* その他連絡先 */}
-        {(recruitment.contact.facebook || recruitment.contact.website || recruitment.contact.media || recruitment.contact.line) && (
+        {(recruitment.contact.facebook || recruitment.contact.website || recruitment.contact.media || recruitment.contact.line || recruitment.contact.form || club.form) && (
           <div>
             <h3 className="text-lg font-semibold text-slate-800 dark:text-slate-200 mb-3">
               その他連絡先
@@ -144,6 +157,22 @@ export default function ContactSection({ club }: ContactSectionProps) {
                   <ExternalLink className="w-4 h-4 text-slate-400" />
                 </a>
               )}
+              {(recruitment.contact.form || club.form) && (
+                <a 
+                  href={recruitment.contact.form || club.form}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="flex items-center gap-3 p-4 rounded-xl bg-orange-50 dark:bg-orange-900/20 hover:bg-orange-100 dark:hover:bg-orange-900/30 transition-colors group"
+                >
+                  <UserPlus className="w-6 h-6 text-orange-600" />
+                  <div className="flex-1">
+                    <p className="font-medium text-slate-900 dark:text-white group-hover:text-orange-600 transition-colors">
+                      入会フォーム
+                    </p>
+                  </div>
+                  <ExternalLink className="w-4 h-4 text-slate-400" />
+                </a>
+              )}
               {recruitment.contact.line && (
                 <div className="flex items-center gap-3 p-4 rounded-xl bg-green-50 dark:bg-green-900/20">
                   <MessageCircle className="w-6 h-6 text-green-600" />
@@ -168,7 +197,7 @@ export default function ContactSection({ club }: ContactSectionProps) {
           </div>
         )}
 
-        {!instagram && !instagramRecruitment && !xUrl && !recruitment.contact.facebook && !recruitment.contact.website && !recruitment.contact.media && !recruitment.contact.line && (
+        {!instagram && !instagramRecruitment && !xUrl && !recruitment.contact.facebook && !recruitment.contact.website && !recruitment.contact.media && !recruitment.contact.line && !recruitment.contact.form && !club.form && (
           <div className="text-center py-8">
             <p className="text-slate-400 italic">SNS情報は準備中です</p>
           </div>

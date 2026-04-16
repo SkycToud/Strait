@@ -67,7 +67,7 @@ const categories = [
 ];
 
 export default async function ClubsPage() {
-  const recentClubs = getRecentlyUpdatedClubs(30, 4);
+  const recentClubs = await getRecentlyUpdatedClubs(30, 4);
   return (
     <div className="max-w-[1200px] mx-auto w-full">
       <div className="flex flex-col gap-12">

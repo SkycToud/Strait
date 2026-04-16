@@ -4,7 +4,7 @@ import { toCategoryLabelJa, toCategorySlug } from '@/lib/club-categories';
 import PageHeader from '@/components/layout/PageHeader';
 
 export default async function ClubUpdatesPage() {
-  const recentClubs = getRecentlyUpdatedClubs(30);
+  const recentClubs = await getRecentlyUpdatedClubs(30);
 
   return (
     <div className="max-w-7xl mx-auto w-full pb-16 px-4 sm:px-6">

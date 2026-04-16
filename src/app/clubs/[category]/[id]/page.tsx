@@ -6,7 +6,7 @@ import { ClubDetail } from '@/types/club';
 
 export async function generateStaticParams() {
   const paths: Array<{ category: string; id: string }> = [];
-  const clubsData = getAllClubs();
+  const clubsData = await getAllClubs();
   
   clubsData.forEach((club) => {
     const slugs = club.categorySlugs ?? club.categories.map((cat) => toCategorySlug(cat));
@@ -30,7 +30,7 @@ export default async function ClubDetailPageWrapper({
   const normalizedCategorySlug = normalizeCategorySlug(categorySlug);
   
   // Find the club by ID
-  const club = getClubById(id);
+  const club = await getClubById(id);
   if (!club) {
     notFound();
   }

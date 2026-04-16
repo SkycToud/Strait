@@ -1,6 +1,5 @@
 import Link from 'next/link';
 import { ExternalLink, Bell } from 'lucide-react';
-import { headers } from 'next/headers';
 import type { TufsNewsItem } from '@/app/api/tufs-news/route';
 
 // カテゴリごとの色定義
@@ -20,13 +19,13 @@ function getCategoryStyle(category: string) {
 }
 
 async function fetchNotices(): Promise<TufsNewsItem[]> {
-  try {
-    const headersList = await headers();
-    const host = headersList.get('host') ?? 'localhost:3000';
-    const protocol = headersList.get('x-forwarded-proto') ?? 'http';
-    const baseUrl =
-      process.env.NEXT_PUBLIC_BASE_URL ?? `${protocol}://${host}`;
+  const baseUrl = process.env.NEXT_PUBLIC_BASE_URL;
+  if (!baseUrl) {
+    console.warn('[TufsNotices] NEXT_PUBLIC_BASE_URL is not set');
+    return [];
+  }
 
+  try {
     const res = await fetch(`${baseUrl}/api/tufs-news`, {
       next: { revalidate: 3600 },
     });

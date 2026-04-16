@@ -1,4 +1,5 @@
 import * as admin from 'firebase-admin';
+import { getFirestore } from 'firebase-admin/firestore';
 
 // サーバーサイドでのFirebase Admin SDK初期化
 let app: admin.app.App;
@@ -30,6 +31,5 @@ if (!admin.apps.length) {
   app = admin.apps[0]!;
 }
 
-export const db = admin.firestore();
-db.settings({ databaseId: 'clubs' });
+export const db = getFirestore(app, 'clubs');
 export { app };

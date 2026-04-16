@@ -4,7 +4,7 @@ import path from 'path';
 import matter from 'gray-matter';
 import { toCategorySlug } from '../src/lib/club-categories';
 
-const CLUBS_DIR = path.join(__dirname, '../src/content/clubs-archive');
+const CLUBS_DIR = path.join(__dirname, '../src/content/clubs');
 const SERVICE_ACCOUNT_PATH = path.join(__dirname, '../firebase-admin-key.json');
 
 // サービスアカウントキーの読み込み

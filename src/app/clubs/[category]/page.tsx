@@ -6,8 +6,8 @@ import ClubCard from '@/components/clubs/ClubCard';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
-export function generateStaticParams() {
-  const clubsData = getAllClubs();
+export async function generateStaticParams() {
+  const clubsData = await getAllClubs();
   const categories = Array.from(new Set(clubsData.flatMap((club) => club.categories.map(toCategorySlug))));
   return categories.map((category) => ({
     category,
@@ -31,7 +31,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
   const { category: slug } = await params;
   const normalizedSlug = normalizeCategorySlug(slug);
   
-  const clubsData = getAllClubs();
+  const clubsData = await getAllClubs();
   const activeCategory = clubsData
     .find((club) => (club.categorySlugs ?? []).includes(normalizedSlug) || club.categories.some((cat) => toCategorySlug(cat) === normalizedSlug))
     ?.categories?.[0];
@@ -40,8 +40,7 @@ export default async function CategoryPage({ params }: { params: Promise<{ categ
     notFound();
   }
 
-  const typedClubsData = clubsData as ClubDetail[];
-  const categoryClubs = typedClubsData.filter((club) => {
+  const categoryClubs = clubsData.filter((club) => {
     const slugs = club.categorySlugs ?? club.categories.map((cat) => toCategorySlug(cat));
     return slugs.includes(normalizedSlug);
   });

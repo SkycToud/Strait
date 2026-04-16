@@ -1,79 +1,55 @@
-import fs from 'fs';
-import path from 'path';
-import matter from 'gray-matter';
 import { ClubDetail } from '@/types/club';
-import { toCategorySlug } from '@/lib/club-categories';
+import { db } from '@/lib/firebase-admin';
 
-const contentDir = path.join(process.cwd(), 'src/content/clubs');
-
-export function getClubById(id: string): ClubDetail | undefined {
-  const filePath = path.join(contentDir, `${id}.md`);
-  if (!fs.existsSync(filePath)) {
+export async function getClubById(id: string): Promise<ClubDetail | undefined> {
+  try {
+    const doc = await db.collection('clubs').doc(id).get();
+    if (!doc.exists) {
+      return undefined;
+    }
+    return doc.data() as ClubDetail;
+  } catch (error) {
+    console.error(`Error fetching club ${id}:`, error);
     return undefined;
   }
-  const fileContent = fs.readFileSync(filePath, 'utf-8');
-  const { data } = matter(fileContent);
-
-  const rawCategory = data.categories ?? data.category;
-  const categories = (Array.isArray(rawCategory) ? rawCategory : (rawCategory ? [rawCategory] : []))
-    .map((value) => String(value).trim())
-    .filter((value) => value.length > 0);
-  const categorySlugs = categories.map(toCategorySlug);
-  const primaryCategorySlug = categorySlugs[0] ?? 'others';
-
-  const restData = Object.fromEntries(
-    Object.entries(data as Record<string, unknown>).filter(
-      ([key]) => key !== 'category' && key !== 'categories'
-    )
-  );
-
-  return {
-    id,
-    categories,
-    categorySlugs,
-    primaryCategorySlug,
-    ...(restData as Omit<ClubDetail, 'id' | 'categories'>)
-  };
 }
 
-export function getAllClubs(): ClubDetail[] {
-  if (!fs.existsSync(contentDir)) return [];
-  const files = fs.readdirSync(contentDir);
-  const clubs = files
-    .filter(file => file.endsWith('.md'))
-    .map(file => {
-      const id = file.replace(/\.md$/, '');
-      return getClubById(id);
-    })
-    .filter((club): club is ClubDetail => club !== undefined);
-
-  return clubs;
+export async function getAllClubs(): Promise<ClubDetail[]> {
+  try {
+    const snapshot = await db.collection('clubs').get();
+    const clubs = snapshot.docs.map(doc => doc.data() as ClubDetail);
+    return clubs;
+  } catch (error) {
+    console.error('Error fetching clubs:', error);
+    return [];
+  }
 }
 
-export function getClubsByCategory(): ClubDetail[] {
-  const allClubs = getAllClubs();
-  // We match by URL slug internally? 
-  // Wait, in previous code, categorySlug vs category... we might need to export a slugify function or handle matching in the components.
-  // We'll leave filtering to the caller, or just provide it here.
-  return allClubs;
+export async function getClubsByCategory(): Promise<ClubDetail[]> {
+  return getAllClubs();
 }
 
-export function getRecentlyUpdatedClubs(days: number = 30, limit?: number): ClubDetail[] {
-  const allClubs = getAllClubs();
-  const now = new Date();
-  const cutoffDate = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
+export async function getRecentlyUpdatedClubs(days: number = 30, limit?: number): Promise<ClubDetail[]> {
+  try {
+    const allClubs = await getAllClubs();
+    const now = new Date();
+    const cutoffDate = new Date(now.getTime() - days * 24 * 60 * 60 * 1000);
 
-  const recentClubs = allClubs
-    .filter(club => {
-      if (!club.lastUpdated) return false;
-      const updatedDate = new Date(club.lastUpdated);
-      return updatedDate >= cutoffDate;
-    })
-    .sort((a, b) => {
-      const dateA = new Date(a.lastUpdated || '1970-01-01');
-      const dateB = new Date(b.lastUpdated || '1970-01-01');
-      return dateB.getTime() - dateA.getTime();
-    });
+    const recentClubs = allClubs
+      .filter(club => {
+        if (!club.lastUpdated) return false;
+        const updatedDate = new Date(club.lastUpdated);
+        return updatedDate >= cutoffDate;
+      })
+      .sort((a, b) => {
+        const dateA = new Date(a.lastUpdated || '1970-01-01');
+        const dateB = new Date(b.lastUpdated || '1970-01-01');
+        return dateB.getTime() - dateA.getTime();
+      });
 
-  return limit ? recentClubs.slice(0, limit) : recentClubs;
+    return limit ? recentClubs.slice(0, limit) : recentClubs;
+  } catch (error) {
+    console.error('Error fetching recently updated clubs:', error);
+    return [];
+  }
 }

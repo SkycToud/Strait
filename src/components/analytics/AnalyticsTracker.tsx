@@ -2,7 +2,7 @@
 
 import { useEffect } from 'react';
 import { usePathname, useSearchParams } from 'next/navigation';
-import { isAnalyticsTrackingEnabled, logUserBehavior } from '@/lib/firebaseClient';
+import { isAnalyticsTrackingEnabled, logUserBehavior, scheduleAnalyticsInit } from '@/lib/firebaseClient';
 
 type TrackableElement = HTMLElement & {
   dataset: DOMStringMap;
@@ -62,6 +62,12 @@ const buildEventParams = (element: TrackableElement, pathname: string) => {
 export default function AnalyticsTracker() {
   const pathname = usePathname() || '/';
   const searchParams = useSearchParams();
+
+  useEffect(() => {
+    if (isAnalyticsTrackingEnabled) {
+      scheduleAnalyticsInit();
+    }
+  }, []);
 
   useEffect(() => {
     if (!isAnalyticsTrackingEnabled) {

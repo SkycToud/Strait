@@ -25,6 +25,28 @@ export const isAnalyticsTrackingEnabled =
   (process.env.NODE_ENV === "production" || isDebugAnalyticsEnabled);
 
 let analyticsInstancePromise: Promise<Analytics | null> | null = null;
+let isAnalyticsInitScheduled = false;
+
+export const scheduleAnalyticsInit = () => {
+  if (isAnalyticsInitScheduled || analyticsInstancePromise) return;
+  isAnalyticsInitScheduled = true;
+
+  const init = () => {
+    if (analyticsInstancePromise) return;
+    analyticsInstancePromise = isSupported()
+      .then((supported) => {
+        if (!supported) return null;
+        return getAnalytics(app);
+      })
+      .catch(() => null);
+  };
+
+  if (typeof requestIdleCallback !== "undefined") {
+    requestIdleCallback(init, { timeout: 3000 });
+  } else {
+    setTimeout(init, 2000);
+  }
+};
 
 const getAnalyticsInstance = () => {
   if (!isAnalyticsTrackingEnabled) {

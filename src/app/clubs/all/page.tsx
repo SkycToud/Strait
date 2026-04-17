@@ -2,6 +2,8 @@ import Link from 'next/link';
 import { getAllClubs } from '@/lib/clubs';
 import AllClubsList from '@/components/clubs/AllClubsList';
 
+export const revalidate = 300;
+
 export default async function AllClubsPage() {
   const allClubs = await getAllClubs();
 

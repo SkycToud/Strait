@@ -6,6 +6,9 @@ import ClubCard from '@/components/clubs/ClubCard';
 import Link from 'next/link';
 import { ArrowLeft } from 'lucide-react';
 
+export const revalidate = 300;
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const clubsData = await getAllClubs();
   const categories = Array.from(new Set(clubsData.flatMap((club) => club.categories.map(toCategorySlug))));

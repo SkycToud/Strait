@@ -3,7 +3,7 @@ import path from 'path';
 import matter from 'gray-matter';
 
 // CSV Path
-const CSV_PATH = 'c:\\Users\\fujit\\Downloads\\サークル情報掲載用アンケート（回答） - シート9.csv';
+const CSV_PATH = 'c:\\Users\\fujit\\Downloads\\サークル情報掲載用アンケート（回答） - シート10.csv';
 
 const CONTENT_DIR = path.join(process.cwd(), 'src/content/clubs');
 

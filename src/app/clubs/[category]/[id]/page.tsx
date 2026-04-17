@@ -4,6 +4,9 @@ import { notFound } from 'next/navigation';
 import ClubDetailPage from '@/components/clubs/ClubDetailPage';
 import { ClubDetail } from '@/types/club';
 
+export const revalidate = 300;
+export const dynamicParams = true;
+
 export async function generateStaticParams() {
   const paths: Array<{ category: string; id: string }> = [];
   const clubsData = await getAllClubs();

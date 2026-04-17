@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "eslint",
     "update-clubs-data": "npx tsx scripts/update-clubs-data.ts",
-    "migrate-clubs-to-firestore": "npx tsx scripts/migrate-clubs-to-firestore.ts"
+    "migrate-clubs-to-firestore": "npx tsx scripts/migrate-clubs-to-firestore.ts",
+    "validate-facility-schedules": "npx tsx scripts/validate-facility-schedule-exceptions.ts"
   },
   "dependencies": {
     "@icons-pack/react-simple-icons": "^13.13.0",

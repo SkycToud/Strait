@@ -2,6 +2,7 @@
 
 import { useState } from 'react';
 import FacilityStatusCard from '@/components/facilities/FacilityStatusCard';
+import { Facility } from '@/components/facilities/FacilityStatusCard';
 import facilityData from '@/data/facilities.json';
 import PageHeader from '@/components/layout/PageHeader';
 import { logUserBehavior } from '@/lib/firebaseClient';
@@ -67,8 +68,8 @@ export default function FacilitiesPage() {
         </div>
         {/* Facility Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {filteredData.map((facility, index) => (
-            <FacilityStatusCard key={facility.id} facility={facility as any} index={index} />
+          {filteredData.map((facility) => (
+            <FacilityStatusCard key={facility.id} facility={facility as Facility} />
           ))}
         </div>
 

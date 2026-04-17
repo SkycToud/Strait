@@ -1,8 +1,7 @@
 'use client';
 import { cn } from '@/lib/utils';
-import { useEffect, useState } from 'react';
-import { CONST_SCHEDULE_DATA } from '@/lib/schedules';
-import { getFacilityStatus } from '@/lib/schedule-utils';
+import { FacilityId, getFacilityDataWithMonthlyExceptions } from '@/lib/schedules';
+import { getFacilityStatus, getJSTDay } from '@/lib/schedule-utils';
 
 export type Facility = {
   id: string;
@@ -14,6 +13,8 @@ export type Facility = {
   link?: string;
 };
 
+const WEEKDAY_HIGH_WEEKEND_LOW_FACILITY_IDS = new Set(['research-lecture', 'agora']);
+
 const getAccuracyLabel = (accuracy: string) => {
   switch (accuracy) {
     case 'high': return '高';
@@ -23,34 +24,17 @@ const getAccuracyLabel = (accuracy: string) => {
   }
 };
 
-export default function FacilityStatusCard({ facility, index }: { facility: Facility; index: number }) {
-  const [status, setStatus] = useState<{isOpen: boolean; hours: {start: string; end: string}[]; note?: string}>({
-    isOpen: true,
-    hours: [],
-    note: ''
-  });
-  
-  useEffect(() => {
-    // Get real-time status from schedule system
-    const scheduleData = CONST_SCHEDULE_DATA[facility.id as keyof typeof CONST_SCHEDULE_DATA];
-    if (scheduleData) {
-      const currentStatus = getFacilityStatus(new Date(), scheduleData);
-      setStatus(currentStatus);
-    }
-  }, [facility.id]);
+export default function FacilityStatusCard({ facility }: { facility: Facility }) {
+  const now = new Date();
+  const scheduleData = getFacilityDataWithMonthlyExceptions(facility.id as FacilityId, now);
+  const status = getFacilityStatus(now, scheduleData);
+  const day = getJSTDay(now);
+  const isWeekend = day === 0 || day === 6;
+  const displayAccuracy = WEEKDAY_HIGH_WEEKEND_LOW_FACILITY_IDS.has(facility.id)
+    ? (isWeekend ? 'low' : 'high')
+    : facility.accuracy;
 
   const isOpen = status.isOpen;
-
-  // Type label mapping based on original mock
-  const getTypeLabel = (type: string) => {
-    if (type === 'study') return 'Study Facility';
-    if (type === 'food') return 'Cafeteria';
-    if (type === 'store') return 'Store';
-    if (type === 'administration') return 'Administration';
-    if (type === 'service') return 'Service';
-    if (type === 'extracurricular') return 'Extracurricular';
-    return 'Facility';
-  };
 
   const getHoursLabel = (type: string) => {
     if (type === 'food' || type === 'store') return '営業時間';
@@ -59,12 +43,6 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
     return '開館時間';
   };
 
-  const Tag = facility.link ? 'a' : 'div';
-  const tagProps = facility.link ? {
-    href: facility.link,
-    target: "_blank",
-    rel: "noopener noreferrer"
-  } : {};
   const analyticsProps = facility.link ? {
     'data-analytics-event': 'select_content',
     'data-analytics-param-content-type': 'facility_external_link',
@@ -73,18 +51,16 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
     'data-analytics-param-facility-type': facility.type,
   } : {};
 
-  return (
-    <Tag 
-      {...tagProps as any}
-      {...analyticsProps}
-      className={cn(
-        "group rounded-2xl p-4 md:p-6 shadow-sm transition-all duration-300 relative overflow-hidden flex flex-col",
-        isOpen 
-          ? "bg-surface-container-lowest hover:shadow-xl hover:shadow-primary/5 border border-surface-container-high/50" 
-          : "bg-surface-container-low/50 border border-surface-container-high hover:border-surface-variant opacity-80 hover:opacity-100",
-        facility.link ? "cursor-pointer" : ""
-      )}
-    >
+  const cardClassName = cn(
+    "group rounded-2xl p-4 md:p-6 shadow-sm transition-all duration-300 relative overflow-hidden flex flex-col",
+    isOpen
+      ? "bg-surface-container-lowest hover:shadow-xl hover:shadow-primary/5 border border-surface-container-high/50"
+      : "bg-surface-container-low/50 border border-surface-container-high hover:border-surface-variant opacity-80 hover:opacity-100",
+    facility.link ? "cursor-pointer" : ""
+  );
+
+  const content = (
+    <>
       <div className="absolute top-0 right-0 p-2 md:p-3">
         <span className={cn(
           "px-2 md:px-3 py-1 rounded-lg text-[10px] md:text-xs font-bold tracking-wide uppercase",
@@ -113,7 +89,7 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
               <span className="material-symbols-outlined text-sm" data-icon="schedule">schedule</span> {getHoursLabel(facility.type)}
             </span>
             <span className={cn("font-semibold", isOpen ? "text-on-surface" : "text-on-surface-variant")}>
-              {status.hours.length > 0 
+              {status.hours.length > 0
                 ? status.hours.map(h => `${h.start} - ${h.end}`).join(', ')
                 : ''
               }
@@ -131,10 +107,29 @@ export default function FacilityStatusCard({ facility, index }: { facility: Faci
       <div className="flex justify-end pt-2">
         <div className="flex items-center gap-1.5 text-on-surface-variant/70">
           <span className="material-symbols-outlined text-sm" data-icon="info">info</span>
-          <span className="text-xs">情報の精度: {getAccuracyLabel(facility.accuracy)}</span>
+          <span className="text-xs">情報の精度: {getAccuracyLabel(displayAccuracy)}</span>
         </div>
       </div>
+    </>
+  );
 
-    </Tag>
+  if (facility.link) {
+    return (
+      <a
+        href={facility.link}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...analyticsProps}
+        className={cardClassName}
+      >
+        {content}
+      </a>
+    );
+  }
+
+  return (
+    <div className={cardClassName}>
+      {content}
+    </div>
   );
 }

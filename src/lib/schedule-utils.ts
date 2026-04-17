@@ -1,5 +1,67 @@
 import { ScheduleRule, FacilityData } from './schedules';
 
+function getRuleDateSpecificity(rule: ScheduleRule): number {
+    if (rule.type === 'specific_date') return 2;
+    if (rule.type === 'range') return 1;
+    return 0;
+}
+
+function getRuleRecurringSpecificity(rule: ScheduleRule): number {
+    if (rule.type === 'wednesday' || rule.type === 'saturday' || rule.type === 'sunday') {
+        return 1;
+    }
+    if (rule.type === 'weekday') {
+        return 0;
+    }
+    return -1;
+}
+
+function getRuleSourcePriority(rule: ScheduleRule): number {
+    if (rule.source === 'monthly') {
+        return 2;
+    }
+    return 1;
+}
+
+function getRuleOpenClosePriority(rule: ScheduleRule): number {
+    return rule.isClosed ? 1 : 0;
+}
+
+function compareRulesByPrecedence(a: ScheduleRule, b: ScheduleRule): number {
+    const sourceDiff = getRuleSourcePriority(b) - getRuleSourcePriority(a);
+    if (sourceDiff !== 0) {
+        return sourceDiff;
+    }
+
+    const dateSpecificityDiff = getRuleDateSpecificity(b) - getRuleDateSpecificity(a);
+    if (dateSpecificityDiff !== 0) {
+        return dateSpecificityDiff;
+    }
+
+    const recurringSpecificityDiff = getRuleRecurringSpecificity(b) - getRuleRecurringSpecificity(a);
+    if (recurringSpecificityDiff !== 0) {
+        return recurringSpecificityDiff;
+    }
+
+    const openCloseDiff = getRuleOpenClosePriority(b) - getRuleOpenClosePriority(a);
+    if (openCloseDiff !== 0) {
+        return openCloseDiff;
+    }
+
+    return 0;
+}
+
+function getHighestPriorityRule(date: Date, rules: ScheduleRule[]): ScheduleRule | null {
+    const matchedRules = rules.filter((rule) => matchesRule(date, rule));
+
+    if (matchedRules.length === 0) {
+        return null;
+    }
+
+    matchedRules.sort(compareRulesByPrecedence);
+    return matchedRules[0];
+}
+
 export function getJSTDateString(date: Date): string {
     return new Intl.DateTimeFormat('en-CA', {
         timeZone: 'Asia/Tokyo',
@@ -57,22 +119,13 @@ export function getCurrentTime(date: Date = new Date()): string {
 
 export function isFacilityOpen(date: Date, facility: FacilityData): boolean {
     const currentTime = getCurrentTime(date);
-    
-    // Check rules in order of precedence
-    for (const rule of facility.rules) {
-        if (rule.isClosed && matchesRule(date, rule)) {
-            return false;
-        }
+
+    const topRule = getHighestPriorityRule(date, facility.rules);
+    if (!topRule || topRule.isClosed) {
+        return false;
     }
-    
-    // Find matching rule for current time
-    for (const rule of facility.rules) {
-        if (matchesRule(date, rule) && !rule.isClosed) {
-            return rule.hours.some(hour => isTimeInRange(currentTime, hour.start, hour.end));
-        }
-    }
-    
-    return false;
+
+    return topRule.hours.some(hour => isTimeInRange(currentTime, hour.start, hour.end));
 }
 
 export function matchesRule(date: Date, rule: ScheduleRule): boolean {
@@ -106,14 +159,13 @@ export function matchesRule(date: Date, rule: ScheduleRule): boolean {
 }
 
 export function getFacilityHours(date: Date, facility: FacilityData): { start: string; end: string }[] {
-    // Find matching rule
-    for (const rule of facility.rules) {
-        if (matchesRule(date, rule) && !rule.isClosed) {
-            return rule.hours;
-        }
+    const topRule = getHighestPriorityRule(date, facility.rules);
+
+    if (!topRule || topRule.isClosed) {
+        return [];
     }
-    
-    return [];
+
+    return topRule.hours;
 }
 
 export function getFacilityStatus(date: Date, facility: FacilityData): {
@@ -122,34 +174,29 @@ export function getFacilityStatus(date: Date, facility: FacilityData): {
     note?: string;
 } {
     const currentTime = getCurrentTime(date);
-    
-    // Rule priority: specific_date > range > weekday types
-    // Check for closed rules first (in priority order)
-    for (const rule of facility.rules) {
-        if (rule.isClosed && matchesRule(date, rule)) {
-            return {
-                isOpen: false,
-                hours: [],
-                note: rule.note || '営業時間外'
-            };
-        }
+
+    const topRule = getHighestPriorityRule(date, facility.rules);
+    if (!topRule) {
+        return {
+            isOpen: false,
+            hours: [],
+            note: '営業時間外'
+        };
     }
-    
-    // Find matching open rule (in priority order)
-    for (const rule of facility.rules) {
-        if (!rule.isClosed && matchesRule(date, rule)) {
-            const isOpen = rule.hours.some(hour => isTimeInRange(currentTime, hour.start, hour.end));
-            return {
-                isOpen,
-                hours: rule.hours,
-                note: rule.note
-            };
-        }
+
+    if (topRule.isClosed) {
+        return {
+            isOpen: false,
+            hours: [],
+            note: topRule.note || '営業時間外'
+        };
     }
-    
+
+    const isOpen = topRule.hours.some(hour => isTimeInRange(currentTime, hour.start, hour.end));
+
     return {
-        isOpen: false,
-        hours: [],
-        note: '営業時間外'
+        isOpen,
+        hours: topRule.hours,
+        note: topRule.note
     };
 }

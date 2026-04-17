@@ -1,0 +1,148 @@
+{
+  "month": "2026-02",
+  "exceptions": [
+    {
+      "facilityId": "library",
+      "type": "specific_date",
+      "date": "2026-02-24",
+      "status": "open",
+      "hours": [{ "start": "09:00", "end": "17:00" }]
+    },
+    {
+      "facilityId": "library",
+      "type": "specific_date",
+      "date": "2026-02-25",
+      "status": "closed",
+      "note": "入試"
+    },
+    {
+      "facilityId": "library",
+      "type": "specific_date",
+      "date": "2026-02-27",
+      "status": "closed",
+      "note": "指定休館日"
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "specific_date",
+      "date": "2026-02-01",
+      "status": "closed",
+      "note": "定休日"
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "range",
+      "startDate": "2026-02-02",
+      "endDate": "2026-02-06",
+      "status": "open",
+      "hours": [{ "start": "11:30", "end": "13:00" }]
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "specific_date",
+      "date": "2026-02-07",
+      "status": "closed",
+      "note": "定休日"
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "specific_date",
+      "date": "2026-02-08",
+      "status": "closed",
+      "note": "定休日"
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "range",
+      "startDate": "2026-02-09",
+      "endDate": "2026-02-10",
+      "status": "open",
+      "hours": [{ "start": "11:30", "end": "13:00" }]
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "specific_date",
+      "date": "2026-02-11",
+      "status": "closed",
+      "note": "祝日"
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "range",
+      "startDate": "2026-02-12",
+      "endDate": "2026-02-13",
+      "status": "open",
+      "hours": [{ "start": "11:30", "end": "13:00" }]
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "specific_date",
+      "date": "2026-02-14",
+      "status": "closed",
+      "note": "定休日"
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "specific_date",
+      "date": "2026-02-15",
+      "status": "closed",
+      "note": "定休日"
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "range",
+      "startDate": "2026-02-16",
+      "endDate": "2026-02-20",
+      "status": "open",
+      "hours": [{ "start": "11:30", "end": "13:00" }]
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "specific_date",
+      "date": "2026-02-21",
+      "status": "closed",
+      "note": "定休日"
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "specific_date",
+      "date": "2026-02-22",
+      "status": "closed",
+      "note": "定休日"
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "specific_date",
+      "date": "2026-02-23",
+      "status": "closed",
+      "note": "天皇誕生日（祝日）"
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "specific_date",
+      "date": "2026-02-24",
+      "status": "closed"
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "specific_date",
+      "date": "2026-02-25",
+      "status": "closed"
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "range",
+      "startDate": "2026-02-26",
+      "endDate": "2026-02-27",
+      "status": "open",
+      "hours": [{ "start": "11:30", "end": "13:00" }]
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "specific_date",
+      "date": "2026-02-28",
+      "status": "closed",
+      "note": "定休日"
+    }
+  ]
+}

@@ -1,0 +1,39 @@
+{
+  "month": "2026-03",
+  "exceptions": [
+    {
+      "facilityId": "library",
+      "type": "specific_date",
+      "date": "2026-03-11",
+      "status": "open",
+      "hours": [{ "start": "09:00", "end": "17:00" }]
+    },
+    {
+      "facilityId": "library",
+      "type": "specific_date",
+      "date": "2026-03-12",
+      "status": "closed"
+    },
+    {
+      "facilityId": "library",
+      "type": "specific_date",
+      "date": "2026-03-20",
+      "status": "closed",
+      "note": "祝日"
+    },
+    {
+      "facilityId": "library",
+      "type": "specific_date",
+      "date": "2026-03-25",
+      "status": "closed",
+      "note": "月末休館日・臨時休館"
+    },
+    {
+      "facilityId": "library",
+      "type": "specific_date",
+      "date": "2026-03-31",
+      "status": "open",
+      "hours": [{ "start": "09:00", "end": "17:00" }]
+    }
+  ]
+}

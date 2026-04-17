@@ -20,6 +20,7 @@ export type ScheduleRule = {
     hours: { start: string; end: string }[];
     note?: string;
     isClosed?: boolean;
+    source?: 'base' | 'monthly';
 };
 
 export type FacilityData = {
@@ -31,7 +32,24 @@ export type FacilityData = {
     unpublishedFrom?: string; // YYYY-MM-DD
 };
 
+export type MonthlyExceptionEntry = {
+    facilityId: FacilityId;
+    type: 'specific_date' | 'range';
+    status: 'open' | 'closed';
+    date?: string;
+    startDate?: string;
+    endDate?: string;
+    hours?: { start: string; end: string }[];
+    note?: string;
+};
+
+export type MonthlyFacilityExceptionFile = {
+    month: string; // YYYY-MM
+    exceptions: MonthlyExceptionEntry[];
+};
+
 import calendarData from '../data/calendar.json';
+import { MONTHLY_FACILITY_EXCEPTION_DATA } from '../data/facility-schedule-exceptions';
 
 // Helper Functions
 const times = (start: string, end: string) => [{ start, end }];
@@ -119,6 +137,81 @@ const RESTRICTED_ENTRY_RULES: ScheduleRule[] = calendarData.events
     })
     .filter((rule): rule is ScheduleRule => rule !== null);
 
+const MONTHLY_EXCEPTION_REGISTRY: Record<string, MonthlyFacilityExceptionFile> =
+    MONTHLY_FACILITY_EXCEPTION_DATA.reduce((acc, item) => {
+        acc[item.month] = item as MonthlyFacilityExceptionFile;
+        return acc;
+    }, {} as Record<string, MonthlyFacilityExceptionFile>);
+
+function toMonthKey(date: Date): string {
+    const parts = new Intl.DateTimeFormat('en-CA', {
+        timeZone: 'Asia/Tokyo',
+        year: 'numeric',
+        month: '2-digit'
+    }).format(date).split('-');
+
+    return `${parts[0]}-${parts[1]}`;
+}
+
+function monthlyExceptionToRule(entry: MonthlyExceptionEntry): ScheduleRule {
+    const isClosed = entry.status === 'closed';
+
+    if (entry.type === 'specific_date') {
+        if (!entry.date) {
+            throw new Error(`Monthly exception is missing date for facility ${entry.facilityId}`);
+        }
+
+        return {
+            type: 'specific_date',
+            dates: [entry.date],
+            hours: isClosed ? [] : (entry.hours || []),
+            isClosed,
+            note: entry.note,
+            source: 'monthly'
+        };
+    }
+
+    if (!entry.startDate || !entry.endDate) {
+        throw new Error(`Monthly range exception is missing startDate/endDate for facility ${entry.facilityId}`);
+    }
+
+    return {
+        type: 'range',
+        startDate: entry.startDate,
+        endDate: entry.endDate,
+        hours: isClosed ? [] : (entry.hours || []),
+        isClosed,
+        note: entry.note,
+        source: 'monthly'
+    };
+}
+
+export function getMonthlyExceptionRules(facilityId: FacilityId, date: Date): ScheduleRule[] {
+    const monthKey = toMonthKey(date);
+    const monthData = MONTHLY_EXCEPTION_REGISTRY[monthKey];
+
+    if (!monthData) {
+        return [];
+    }
+
+    return monthData.exceptions
+        .filter((entry) => entry.facilityId === facilityId)
+        .map(monthlyExceptionToRule);
+}
+
+export function getFacilityDataWithMonthlyExceptions(facilityId: FacilityId, date: Date): FacilityData {
+    const base = CONST_SCHEDULE_DATA[facilityId];
+    const monthlyRules = getMonthlyExceptionRules(facilityId, date);
+
+    return {
+        ...base,
+        rules: [
+            ...monthlyRules,
+            ...base.rules,
+        ]
+    };
+}
+
 export const CONST_SCHEDULE_DATA: Record<FacilityId, FacilityData> = {
     'research-lecture': {
         name: '研究講義棟',
@@ -139,27 +232,6 @@ export const CONST_SCHEDULE_DATA: Record<FacilityId, FacilityData> = {
         nameEn: 'TUFS Library',
         category: 'facility',
         rules: [
-            // Exceptions: Jan 2026
-            Rules.closedRange('2026-01-01', '2026-01-04', '年始休業'),
-            Rules.date('2026-01-16', times('09:00', '17:00')),
-            Rules.closedRange('2026-01-17', '2026-01-18', '共通テスト'),
-
-            // Exceptions: Feb 2026
-            Rules.date('2026-02-24', times('09:00', '17:00')),
-            Rules.closedDate('2026-02-25', '入試'),
-            Rules.closedDate('2026-02-27', '指定休館日'),
-
-            // Exceptions: Mar 2026
-            Rules.date('2026-03-11', times('09:00', '17:00')),
-            Rules.closedDate('2026-03-12'),
-            Rules.closedDate('2026-03-20', '祝日'),
-            Rules.closedDate('2026-03-25', '月末休館日・臨時休館'),
-            Rules.date('2026-03-31', times('09:00', '17:00')),
-
-            // Exceptions: Apr 2026
-            Rules.date('2026-04-29', HO.DEFAULT, '昭和の日'),
-            Rules.date('2026-04-30', times('09:00', '17:00')),
-
             // Default Logic
             Rules.weekday(times('09:00', '20:00')),
             Rules.subWeekday('saturday', times('13:00', '20:00')),
@@ -191,42 +263,9 @@ export const CONST_SCHEDULE_DATA: Record<FacilityId, FacilityData> = {
         nameEn: 'Cafeteria Meal (1F)',
         category: 'facility',
         rules: [
-            Rules.closedRange('2026-01-01', '2026-01-04', '年始休業'),
-            Rules.range('2026-01-05', '2026-01-06', HO.LUNCH_STD),
-            Rules.date('2026-01-07', HO.LUNCH_SHORT, '短縮営業'),
-            Rules.range('2026-01-08', '2026-01-09', HO.LUNCH_STD),
-            Rules.closedRange('2026-01-10', '2026-01-12', '祝日含む'),
-            Rules.date('2026-01-13', HO.LUNCH_STD),
-            Rules.date('2026-01-14', HO.LUNCH_SHORT, '短縮営業'),
-            Rules.date('2026-01-15', HO.LUNCH_STD),
-            Rules.closedRange('2026-01-16', '2026-01-18'),
-            Rules.range('2026-01-19', '2026-01-23', HO.LUNCH_EXAM),
-            Rules.closedRange('2026-01-24', '2026-01-25'),
-            Rules.range('2026-01-26', '2026-01-30', times('11:30', '13:00')),
-            Rules.closedDate('2026-01-31'),
-
-            // February 2026
-            Rules.closedDate('2026-02-01', '定休日'),
-            Rules.range('2026-02-02', '2026-02-06', times('11:30', '13:00')),
-            Rules.closedDate('2026-02-07', '定休日'),
-            Rules.closedDate('2026-02-08', '定休日'),
-            Rules.range('2026-02-09', '2026-02-10', times('11:30', '13:00')),
-            Rules.closedDate('2026-02-11', '祝日'),
-            Rules.range('2026-02-12', '2026-02-13', times('11:30', '13:00')),
-            Rules.closedDate('2026-02-14', '定休日'),
-            Rules.closedDate('2026-02-15', '定休日'),
-            Rules.range('2026-02-16', '2026-02-20', times('11:30', '13:00')),
-            Rules.closedDate('2026-02-21', '定休日'),
-            Rules.closedDate('2026-02-22', '定休日'),
-            Rules.closedDate('2026-02-23', '天皇誕生日（祝日）'),
-            Rules.closedDate('2026-02-24'),
-            Rules.closedDate('2026-02-25'),
-            Rules.range('2026-02-26', '2026-02-27', times('11:30', '13:00')),
-            Rules.closedDate('2026-02-28', '定休日'),
-
             // Default schedule
-            Rules.weekday(HO.LUNCH_STD),
             Rules.subWeekday('wednesday', HO.LUNCH_WED),
+            Rules.weekday(HO.LUNCH_STD),
             Rules.subWeekday('saturday', [], true),
             Rules.subWeekday('sunday', [], true),
         ]
@@ -247,12 +286,6 @@ export const CONST_SCHEDULE_DATA: Record<FacilityId, FacilityData> = {
         nameEn: 'Cafeteria Savoru (2F)',
         category: 'facility',
         rules: [
-            Rules.closedRange('2026-01-01', '2026-01-04', '年始休業'),
-            Rules.range('2026-01-05', '2026-01-09', HO.LUNCH_STD),
-            Rules.closedRange('2026-01-10', '2026-01-12'),
-            Rules.range('2026-01-13', '2026-01-15', HO.LUNCH_STD),
-            Rules.closedRange('2026-01-16', '2026-01-31', '1月末まで休業'),
-
             // Default schedule
             Rules.weekday(HO.LUNCH_STD),
             Rules.subWeekday('saturday', [], true),

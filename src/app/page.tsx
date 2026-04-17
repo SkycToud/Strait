@@ -1,21 +1,22 @@
 export const revalidate = 3600;
 
 import Link from 'next/link';
-import NoticeSection from '@/components/notice/NoticeSection';
 import {
   BookOpen,
   Utensils,
-  Building,
-  Calendar,
-  Building2,
-  Settings
+  Building
 } from 'lucide-react';
 import calendarData from '@/data/calendar.json';
 import facilityData from '@/data/facilities.json';
-import { CONST_SCHEDULE_DATA, FacilityId } from '@/lib/schedules';
+import { FacilityId, getFacilityDataWithMonthlyExceptions } from '@/lib/schedules';
 import { getFacilityStatus as calculateStatus } from '@/lib/schedule-utils';
 import linksData from '@/data/links.json';
 import { TufsNotices } from '@/components/TufsNotices';
+
+type HomeFacility = {
+  id: string;
+  name: string;
+};
 
 export default function Home() {
   const quickLinks = linksData.slice(0, 3);
@@ -55,8 +56,9 @@ export default function Home() {
 
   const facilities = facilityData.slice(0, 3);
 
-  const getFacilityStatus = (facility: any) => {
-    const scheduleData = CONST_SCHEDULE_DATA[facility.id as FacilityId];
+  const getFacilityStatus = (facility: HomeFacility) => {
+    const now = new Date();
+    const scheduleData = getFacilityDataWithMonthlyExceptions(facility.id as FacilityId, now);
     if (!scheduleData) {
       return {
         isOpen: false,
@@ -65,7 +67,7 @@ export default function Home() {
       };
     }
 
-    const currentStatus = calculateStatus(new Date(), scheduleData);
+    const currentStatus = calculateStatus(now, scheduleData);
     return {
       isOpen: currentStatus.isOpen,
       status: currentStatus.isOpen ? 'Open' : (currentStatus.hours.length > 0 ? 'Closed' : 'Closed'),

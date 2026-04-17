@@ -1,0 +1,20 @@
+{
+  "month": "2026-04",
+  "exceptions": [
+    {
+      "facilityId": "library",
+      "type": "specific_date",
+      "date": "2026-04-29",
+      "status": "open",
+      "hours": [{ "start": "09:00", "end": "20:00" }],
+      "note": "昭和の日"
+    },
+    {
+      "facilityId": "library",
+      "type": "specific_date",
+      "date": "2026-04-30",
+      "status": "open",
+      "hours": [{ "start": "09:00", "end": "17:00" }]
+    }
+  ]
+}

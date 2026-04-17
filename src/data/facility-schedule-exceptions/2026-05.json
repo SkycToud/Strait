@@ -1,0 +1,162 @@
+{
+  "month": "2026-05",
+  "exceptions": [
+    {
+      "facilityId": "library",
+      "type": "specific_date",
+      "date": "2026-05-01",
+      "status": "open",
+      "hours": [{ "start": "09:00", "end": "17:00" }]
+    },
+    {
+      "facilityId": "library",
+      "type": "range",
+      "startDate": "2026-05-02",
+      "endDate": "2026-05-06",
+      "status": "closed"
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "range",
+      "startDate": "2026-05-01",
+      "endDate": "2026-05-06",
+      "status": "closed",
+      "note": "休業"
+    },
+    {
+      "facilityId": "meal-cafeteria",
+      "type": "range",
+      "startDate": "2026-05-01",
+      "endDate": "2026-05-06",
+      "status": "closed",
+      "note": "休業"
+    },
+    {
+      "facilityId": "savoru-cafeteria",
+      "type": "range",
+      "startDate": "2026-05-01",
+      "endDate": "2026-05-06",
+      "status": "closed",
+      "note": "休業"
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-07",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-08",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-11",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-12",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-13",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "15:00" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-14",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-15",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-18",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-19",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-20",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "15:00" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-21",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-22",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-25",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-26",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-27",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "15:00" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-28",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    },
+    {
+      "facilityId": "hatchpotchi",
+      "type": "specific_date",
+      "date": "2026-05-29",
+      "status": "open",
+      "hours": [{ "start": "11:00", "end": "16:30" }]
+    }
+  ]
+}

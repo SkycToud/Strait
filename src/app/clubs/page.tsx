@@ -3,6 +3,8 @@ import { toCategoryLabelJa, toCategorySlug } from '@/lib/club-categories';
 import PageHeader from '@/components/layout/PageHeader';
 import { getRecentlyUpdatedClubs } from '@/lib/clubs';
 
+export const revalidate = 300;
+
 const categories = [
   {
     id: "Ball Sports",
